@@ -41,7 +41,7 @@ git submodule update --init --depth 1   # pulls third_party/flashrag
 ### 2 Create a virtual‑env & install
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python -m venv venv && source venv/bin/activate
 
 pip install -e ./third_party/flashrag        # editable install of your FlashRAG copy
 pip install faiss-cpu python-docx pandas openpyxl langid tqdm transformers
