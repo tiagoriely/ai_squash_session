@@ -1,0 +1,3 @@
+[submodule "third_party/flashrag"]
+	path = third_party/flashrag
+	url = https://github.com/RUC-NLPIR/FlashRAG.git
