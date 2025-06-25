@@ -1,5 +1,11 @@
 import argparse, time, yaml, textwrap
 from pathlib import Path
+
+# --- monkey-patch ------------------------------------------------------------
+import torch.nn as nn
+nn.Module.cuda = lambda self, device=None: self     # <-- ① no-op cuda()
+# -----------------------------------------------------------------------------
+
 from flashrag.retriever.retriever import DenseRetriever
 
 def load_cfg(path: str | Path) -> dict:
