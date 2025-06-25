@@ -1,0 +1,30 @@
+
+# Baseline dense retrieval with FAISS (no reranker)
+# --------------------------------------------------------------------------------
+retrieval_method:            e5-base-v2
+retrieval_topk:              5
+
+# paths --------------------------------------------------------------------------
+index_path:                  indexes/my_kb/e5-base-v2_Flat.index
+corpus_path:                 data/my_kb.jsonl
+retrieval_model_path:        intfloat/e5-base-v2
+
+# encoder settings ---------------------------------------------------------------
+retrieval_query_max_length:  64
+retrieval_pooling_method:    mean
+retrieval_use_fp16:          false
+retrieval_batch_size:        32
+use_sentence_transformer:    false
+
+# FAISS runtime ---------------------------------------------------------------
+faiss_gpu:                   false
+
+# rerank / cache ---------------------------------------------------------------
+use_reranker:                false
+save_retrieval_cache:        false
+use_retrieval_cache:         false
+retrieval_cache_path:  null
+
+# misc --------------------------------------------------------------------------
+instruction:                 null
+device:                      cpu    # cpu / mps / cuda

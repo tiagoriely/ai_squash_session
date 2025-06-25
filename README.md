@@ -1,134 +1,125 @@
-# ai\_squash\_session
+# ai_squash_session
 
-A minimal sandbox that embeds **FlashRAG** (vendored in `third_party/flashrag`) so you can *own the code*, hack it, and use it to build a Retrieval‑Augmented Generation (RAG) stack on top of your private documents.
+A lightweight playground that vendored **FlashRAG** so you can hack every line and run controlled experiments for **retrieval, reranking and generation** on your own documents.
 
 ---
 
-## 📂 Directory layout (after first run)
+## 📂 Repo anatomy
 
 ```text
 ai_squash_session/
-├── data/                  # raw + processed corpora
-│   ├── raw/               #  ⤷ drop .docx / .csv / .xlsx / .json here
-│   └── my_kb.jsonl        #  ⤷ generated JSONL corpus
-├── indexes/               # FAISS / BM25 indexes land here
-│   └── my_kb/
-│       └── e5-base-v2_Flat.index
-├── scripts/               # one‑off utilities
-│   ├── prepare_corpus.py  # converts raw ⇒ JSONL
-│   └── check_index.py     # tiny index inspector
-├── src/                   # demo code you actually import/run
-│   └── test_retrieve.py   # smoke test for retrieval
-├── third_party/flashrag/  # full FlashRAG source, editable & versioned
-└── README.md              # you are here
+├── configs/
+│   └── retrieval/              # YAML configs for each retrieval experiment
+│       ├── faiss_base.yaml     # dense, no rerank
+│       └── faiss_rerank.yaml   # dense + cross‑encoder rerank
+│
+├── data/
+│   ├── raw/                    # drop .docx / .csv / .xlsx / .json here
+│   └── my_kb.jsonl             # auto‑generated corpus
+│
+├── indexes/                    # FAISS (or other) index artefacts
+│   └── my_kb/e5-base-v2_Flat.index
+│
+├── pipelines/
+│   └── run_retrieval.py        # thin driver: YAML → DenseRetriever → stdout
+│
+├── scripts/
+│   └── check_index.py          # optional FAISS inspector
+│
+├── src/
+│   └── corpus_tools.py         # prepare_corpus() & helpers
+│
+├── tests/
+│   └── test_retrieval.py       # parametrised over configs/retrieval/*.yaml
+│
+├── third_party/flashrag/       # vendored FlashRAG source, editable
+├── requirements.txt
+└── README.md   ← you are here
 ```
 
-*(Everything else—virtual‑env, PyCharm settings, etc.—stays outside the repo.)*
+> **Why this layout?** Behaviour lives in YAML. Code paths stay generic. Add a new optimisation → just commit a new config and CI runs it automatically.
 
 ---
 
-## 🚀 Quick‑start: retrieval‑only pathway
+## 🚀 Quick‑start (retrieval‑only)
 
-### 1 Clone & pull FlashRAG as submodule
-
-```bash
-# one‑time setup
-git clone https://github.com/<you>/ai_squash_session.git && cd ai_squash_session
-
-git submodule update --init --depth 1   # pulls third_party/flashrag
-```
-
-### 2 Create a virtual‑env & install
+### 1 Clone & init submodule
 
 ```bash
-python -m venv venv && source venv/bin/activate
-
-pip install -e ./third_party/flashrag        # editable install of your FlashRAG copy
-pip install faiss-cpu python-docx pandas openpyxl langid tqdm transformers
+# first time
+$ git clone https://github.com/<you>/ai_squash_session.git && cd ai_squash_session
+$ git submodule update --init --depth 1
 ```
 
-> **Apple‑silicon users:** no CUDA available; the code already detects `mps` (Metal) or falls back to CPU.
-> **Linux/NVIDIA:** install `faiss-gpu` & the matching CUDA PyTorch wheel if you want GPU search.
-
-### 3 Add files to `data/raw/`
-
-Copy any `.docx`, `.csv`, `.xlsx`, or `.json` you care about into `data/raw/`.
-
-### 4 Generate the corpus JSONL
+### 2 Create venv & install deps
 
 ```bash
-python scripts/prepare_corpus.py                # writes data/my_kb.jsonl
+$ python -m venv venv && source venv/bin/activate
+$ pip install --upgrade pip
+# editable FlashRAG + runtime libs
+$ pip install -e third_party/flashrag faiss-cpu datasets PyYAML transformers
 ```
+*(Apple‑silicon: the code auto‑detects `mps`; Linux/NVIDIA: swap `faiss-cpu` for `faiss-gpu`, install CUDA PyTorch.)*
 
-### 5 Build a dense index (E5‑base)
+### 3 Add docs & build index
 
 ```bash
-python -m flashrag.retriever.index_builder \
-  --retrieval_method e5-base-v2 \
-  --model_path intfloat/e5-base-v2 \
-  --corpus_path data/my_kb.jsonl \
-  --save_dir indexes/my_kb \
-  --faiss_type Flat
+$ cp ~/Docs/*.docx data/raw/
+$ python src/corpus_tools.py                # writes data/my_kb.jsonl
+$ python -m flashrag.retriever.index_builder \
+      --retrieval_method e5-base-v2 \
+      --model_path intfloat/e5-base-v2 \
+      --corpus_path data/my_kb.jsonl \
+      --save_dir indexes/my_kb \
+      --faiss_type Flat
 ```
 
-*Patches already applied in `third_party/flashrag` ensure this runs on CPU/MPS.*
-
-### 6 Smoke‑test retrieval
+### 4 Run baseline retrieval (config‑driven)
 
 ```bash
-python src/test_retrieve.py
+$ python pipelines/run_retrieval.py configs/retrieval/faiss_base.yaml \
+        --query "cross-court lob drill"
 ```
 
-Expected sample output:
-
-```text
-[0] Drill - Lob cross (repetitive).docx → Duration: approx. 60‑70 min The session…
-[1] practice_schedule.xlsx            → ### Sheet1 Time  Coach…
-```
-
-### 7 Inspect your index (optional)
+### 5 Try the rerank variant
 
 ```bash
-python scripts/check_index.py
+$ python pipelines/run_retrieval.py configs/retrieval/faiss_rerank.yaml \
+        --query "cross-court lob drill"
 ```
 
-Shows vector count, dimension, and a quick nearest‑neighbour sanity check.
+Output now shows rescored ordering.
+
+### 6 Run the test‑suite & CI locally
+
+```bash
+$ pytest -q                 # runs every config under tests/
+```
+
+GitHub Actions (`.github/workflows/ci.yml`) repeats that on every push/PR—green badge means all configs still work.
 
 ---
 
-## 🔮 Next steps
+## 🔮 Roadmap sections (placeholders you can fill later)
 
-### Generation (coming soon)
+### Generation (`pipelines/run_generate.py`, `configs/generation/*`)
+* retrieval → prompt building → LLM call
+* supports vanilla GPT‑4, local Llama‑cpp, or FlashRAG’s built‑in generator.
 
-*Placeholder.*
-You’ll plug `DenseRetriever` (or `MultiRetrieverRouter`) into an LLM prompt builder, maybe via the `flashrag.generator` pipeline.
-Add your instructions here once you stabilise on a generator setup.
+### Hybrid BM25 + dense (coming)
+* new YAML under `configs/retrieval/bm25_dense.yaml`
+* extend `src/build_index.py` to build Pyserini text index.
 
-### Reranking
-
-* Enable `use_reranker` in the config and add a cross‑encoder (e.g. `cross-encoder/ms-marco-MiniLM-L-6-v2`).
-
-### Multi‑modal search
-
-* Build two separate indexes with `--index_modal text` and `--index_modal image`; use `MultiModalRetriever`.
+### Evaluation metrics
+* implement `src/eval.py` (nDCG@k, ROUGE‑L, BLEU) and call from tests or CI.
 
 ---
 
-## ✏️ Maintaining your vendored FlashRAG
+## ✏️ Maintaining your FlashRAG fork
 
-* **Edit** files in `third_party/flashrag/…`, commit inside the submodule, then:
+| Task | Command |
+|------|---------|
+| **Edit code** | `vim third_party/flashrag/flashrag/retriever/utils.py` ➜ `git add -u && git commit` inside submodule ➜ `git add third_party/flashrag && git commit` in root |
+| **Sync upstream** | `cd third_party/flashrag && git fetch origin && git merge origin/main` ➜ commit new submodule SHA |
 
-  ```bash
-  cd third_party/flashrag && git add -u && git commit -m "feat: …"
-  cd ../.. && git add third_party/flashrag && git commit -m "Bump FlashRAG submodule"
-  ```
-* **Update**\* to latest upstream:
-
-  ```bash
-  cd third_party/flashrag
-  git fetch origin && git merge origin/main
-  cd ../..
-  git add third_party/flashrag && git commit -m "FlashRAG upstream sync"
-  ```
-
-Happy hacking! 🚀
+Happy coding! 🚀
