@@ -1,10 +1,15 @@
 name: CI
-
 on: [push, pull_request]
 
 jobs:
   run-tests:
-    runs-on: macos-14          # Apple silicon; or ubuntu-latest for CPU
+    runs-on: macos-14
+    env:
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      KMP_DUPLICATE_LIB_OK: "TRUE"
+      TOKENIZERS_PARALLELISM: "false"
+
     steps:
       - uses: actions/checkout@v4
         with:
