@@ -3,9 +3,12 @@ from pathlib import Path
 
 # --- monkey-patch ------------------------------------------------------------
 """ this section is here to avoid using cuda"""
+import torch
 import torch.nn as nn
-nn.Module.cuda = lambda self, device=None: self
-torch.Tensor.cuda = lambda self, device=None, **kw: self
+
+if not torch.cuda.is_available():        # keep real .cuda() on GPU runners
+    nn.Module.cuda    = lambda self, device=None: self
+    torch.Tensor.cuda = lambda self, device=None, **kw: self
 # -----------------------------------------------------------------------------
 
 from flashrag.retriever.retriever import DenseRetriever
