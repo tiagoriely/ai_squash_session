@@ -2,8 +2,10 @@ import argparse, time, yaml, textwrap
 from pathlib import Path
 
 # --- monkey-patch ------------------------------------------------------------
+""" this section is here to avoid using cuda"""
 import torch.nn as nn
-nn.Module.cuda = lambda self, device=None: self     # <-- ① no-op cuda()
+nn.Module.cuda = lambda self, device=None: self
+torch.Tensor.cuda = lambda self, device=None, **kw: self
 # -----------------------------------------------------------------------------
 
 from flashrag.retriever.retriever import DenseRetriever
