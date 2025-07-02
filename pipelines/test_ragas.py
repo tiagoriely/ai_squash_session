@@ -1,3 +1,6 @@
+import pytest
+ragas = pytest.importorskip("ragas")
+
 from datasets import Dataset
 from ragas import evaluate
 from ragas.metrics import (
