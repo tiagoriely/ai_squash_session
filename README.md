@@ -77,14 +77,15 @@ $ python -m flashrag.retriever.index_builder \
 ### 4 Run baseline retrieval (config‑driven)
 
 ```bash
-$ python pipelines/run_retrieval.py configs/retrieval/faiss_base.yaml \
-        --query "cross-court lob drill"
+$ python pipelines/retrieval/run_semantic_retrieval.py \
+       configs/retrieval/faiss_base.yaml \
+       --query "cross-court lob drill"
 ```
 
 ### 5 Try the rerank variant
 
 ```bash
-$ python pipelines/run_retrieval.py configs/retrieval/faiss_rerank.yaml \
+$ python pipelines/retrieval/run_semantic_retrieval.py configs/retrieval/faiss_rerank.yaml \
         --query "cross-court lob drill"
 ```
 
@@ -105,6 +106,11 @@ GitHub Actions (`.github/workflows/ci.yml`) repeats that on every push/PR—gree
 ### Generation (`pipelines/run_generate.py`, `configs/generation/*`)
 * retrieval → prompt building → LLM call
 * supports vanilla GPT‑4, local Llama‑cpp, or FlashRAG’s built‑in generator.
+
+```bash
+$ python3 pipelines/generation/run_generation.py configs/retrieval/faiss_rerank.yaml \
+  --query "Design a 60-minute squash session to improve my lobs"
+```
 
 ### Hybrid BM25 + dense (coming)
 * new YAML under `configs/retrieval/bm25_dense.yaml`

@@ -1,0 +1,22 @@
+# Ignore Python cache and virtualenv
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Ignore logs and runtime files
+*.log
+
+# Ignore Jupyter and notebooks
+.ipynb_checkpoints
+
+# Ignore environment/config
+.env
+
+# Ignore datasets and indices (optional, if large)
+data/my_kb.jsonl
+indexes/
+
+# MacOS files
+.DS_Store

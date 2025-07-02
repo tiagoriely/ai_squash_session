@@ -37,4 +37,4 @@ if __name__ == "__main__":
     print(f"\n⏱  {1000*(time.perf_counter()-t0):.1f} ms   |   top-k={len(docs)}\n")
 
     for r, (d, s) in enumerate(zip(docs, scores), 1):
-        print(f"{r:2d}. id={d['id']:<4} score={s:6.4f}  {shorten(d['contents'])}")
+        print(f"{r:2d}. id={d['id']:<4} score={s:6.4f}  source={(d['source'])}")

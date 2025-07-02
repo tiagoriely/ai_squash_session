@@ -1,0 +1,30 @@
+📘 1. Use consistent structure
+Always start with a metadata block (e.g. Title, Type, Tags, Duration, Focus).
+
+Separate sections clearly (e.g. --- or headings like ## Exercise 1).
+
+Include an optional “Notes” section for extra context.
+
+🔤 2. Include rich keywords and synonyms
+Use varied terminology in the text: e.g., “cross lob”, “high ball to the back”, “defensive lob”.
+
+This helps match more diverse queries using both dense and sparse retrieval.
+
+🧱 3. Use full sentences when possible
+Instead of just Cross lob drill, write:
+“This drill helps players practice cross-court lobs from the front under pressure.”
+
+🔖 4. Tag drills meaningfully
+Add a Tags: field with useful keywords:
+Tags: lob, height, cross-court, recovery, movement
+
+🧩 5. Repeat key phrases in Exercises
+Reuse focus points throughout the text (e.g. “switch roles”, “hit with height”).
+
+Repetition strengthens semantic matches for dense retrieval models.
+
+🧠 6. Include “Focus” and “Goals” explicitly
+Helps the reranker understand the purpose of the session.
+
+🗂 7. One session per file
+Keep each .docx file focused on a single session or drill set to maintain clean granularity.
