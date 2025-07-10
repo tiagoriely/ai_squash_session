@@ -16,7 +16,10 @@ venv/
 
 # Ignore datasets and indices (optional, if large)
 data/my_kb.jsonl
-indexes/
+rag/indexes/
+finetuning/data/finetune_splits/*.jsonl
 
 # MacOS files
 .DS_Store
+
+

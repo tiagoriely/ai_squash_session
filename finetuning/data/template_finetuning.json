@@ -1,0 +1,48 @@
+{
+  "id": 42,
+  "title": "Defensive Cross-Lob from the Front",
+  "type": "drill",
+  "participants": 2,
+  "duration_min": 60,
+  "squash_level": "Advanced",
+  "fitness": "Medium",
+  "intensity": "Medium",
+  "focus": "Learn to use a defensive cross-court lob from the front of the court to escape pressure and regain the T-position.",
+  "rest_between_blocks_sec": 90,
+
+  "warm_up": [
+    { "time_sec": 150, "pattern": "Boast–Drive–Drop–Drive" },
+    { "time_sec": 150, "pattern": "Boast–Drive (2 shots)" }
+  ],
+
+  "exercises": [
+  {
+    "name": "Exercise 1",
+    "block_time_sec": 630,          // 10 min 30 s total
+    "segments": [
+      {
+        "time_sec": 180,
+        "sides": ["forehand"],
+        "pattern": "Deep straight drive – Deep straight drive – Hard Drive"
+      },
+      {
+        "time_sec": 180,
+        "sides": ["forehand"],
+        "pattern": "Deep straight drive – Deep straight drive – Straight Kill"
+      },
+      {
+        "time_sec": 180,
+        "sides": ["forehand"],
+        "pattern": "Deep straight drive – Deep straight drive – Straight Lob"
+      }
+    ]
+  }
+],
+
+
+  "optional_game": "First to 15 — every time an opponent plays a short ball, the response must be a defensive cross-court lob",
+
+  "support_doc": "defensive_cross_lob_support.pdf",
+
+  "instructions": "Set up with Player A on the T and Player B in the forehand front corner. After a straight drive and boast sequence, Player B replies with a straight drop that Player A must lift as a high, soft cross-court lob to the opposite back corner; rally stops after the lob. Work in three 9-minute 30-second blocks (90-second rest), swap roles each block, and mirror on backhand if desired. Focus on an open racket face, high finish, and immediate recovery to the T. Finish with an optional game to 15 where every short ball must be answered with a defensive lob."
+}

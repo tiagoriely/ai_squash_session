@@ -1,0 +1,34 @@
+# ---------- data ----------
+dataset_path: finetuning/data/finetune_splits/train_instruct.jsonl
+valid_path:   finetuning/data/finetune_splits/valid_instruct.jsonl
+test_path:    finetuning/data/finetune_splits/test_instruct.jsonl   # eval script only
+
+template_schema: finetuning/data/template_schema.json
+
+# ---------- model ----------
+model_name_or_path: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+load_in_4bit: false          # keep false on CPU/MPS
+
+# ---------- PEFT / LoRA ----------
+training:
+  lora_r: 8
+  lora_alpha: 16
+  target_modules: [q_proj, k_proj, v_proj]
+
+# ---------- Trainer args ----------
+training_arguments:
+  fp16: false
+  bf16: false            # flip to true only if bf16 is supported
+  mixed_precision: "no"
+  per_device_train_batch_size: 1      # was 4
+  gradient_accumulation_steps: 4      # keep same effective batch (optional)
+  num_train_epochs: 3
+  logging_steps: 25
+  evaluation_strategy: steps
+  eval_steps: 100
+  save_strategy: steps
+  save_steps: 500
+  load_best_model_at_end: true
+  metric_for_best_model: eval_loss
+
+output_dir: finetuning/checkpoints/lora_crosslob

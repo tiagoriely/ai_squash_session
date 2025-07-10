@@ -50,18 +50,59 @@ INTENSITY_PATTERNS = {
     "high":   re.compile(r"\bhigh\s*intensity\b", re.I),
 }
 
-# CORRECTED: Specific shots should match the phrases directly
 SPECIFICSHOT_PATTERNS = {
-    "cross lob":       re.compile(r"\bcross\s*lob\b", re.I),
-    "straight lob":    re.compile(r"\bstraight\s*lob\b", re.I),
-    "volley straight": re.compile(r"\bvolley\s*straight\b", re.I),
-    # Add other specific shot phrases if you have them, e.g., "drop kill", "forehand drive"
-    "volley drop":     re.compile(r"\bvolley\s*drop\b", re.I),
-    "lob cross":       re.compile(r"\blob\s*cross\b", re.I), # Added from your content
-    "straight drive":  re.compile(r"\bstraight\s*drive\b", re.I), # Added from your content
-    "straight drop":   re.compile(r"\bstraight\s*drop\b", re.I), # Added from your content
-    "hard cross":      re.compile(r"\bhard\s*cross\b", re.I), # Added from your content
-    "volley drive":    re.compile(r"\bvolley\s*drive\b", re.I), # Added from your content
+    # ─── Boasts ─────────────────────────────────────────────────────────────
+    "2-wall boast":        re.compile(r"\b2[-\s]*wall\s*boast\b", re.I),
+    "3-wall boast":        re.compile(r"\b3[-\s]*wall\s*boast\b", re.I),
+    "trickle boast":       re.compile(r"\btrickle\s*boast\b",   re.I),
+    "reverse boast":       re.compile(r"\breverse\s*boast\b",   re.I),
+
+    # volley + boast
+    "volley 2-wall boast": re.compile(r"\bvolley\s*2[-\s]*wall\s*boast\b", re.I),
+    "volley 3-wall boast": re.compile(r"\bvolley\s*3[-\s]*wall\s*boast\b", re.I),
+    "volley reverse boast":re.compile(r"\bvolley\s*reverse\s*boast\b",     re.I),
+
+    # ─── Drops ──────────────────────────────────────────────────────────────
+    "counter drop":        re.compile(r"\bcounter\s*drop\b",     re.I),
+    "cross drop":          re.compile(r"\bcross\s*drop\b",       re.I),
+    "straight drop":       re.compile(r"\bstraight\s*drop\b",    re.I),
+    "volley cross drop":   re.compile(r"\bvolley\s*cross\s*drop\b",   re.I),
+    "volley straight drop":re.compile(r"\bvolley\s*straight\s*drop\b", re.I),
+
+    # ─── Drives / deep shots / kills ───────────────────────────────────────
+    "deep drive":          re.compile(r"\bdeep\s*drive\b",       re.I),
+    "hard drive":          re.compile(r"\bhard\s*drive\b",       re.I),
+    "straight drive":      re.compile(r"\bstraight\s*drive\b",   re.I),
+    "volley deep drive":   re.compile(r"\bvolley\s*deep\s*drive\b",   re.I),
+    "volley hard drive":   re.compile(r"\bvolley\s*hard\s*drive\b",   re.I),
+    "volley straight drive":re.compile(r"\bvolley\s*straight\s*drive\b", re.I),
+    "straight kill":       re.compile(r"\bstraight\s*kill\b",    re.I),
+    "cross kill":          re.compile(r"\bcross\s*kill\b",       re.I),
+    "volley cross kill":   re.compile(r"\bvolley\s*cross\s*kill\b",   re.I),
+    "volley straight kill":re.compile(r"\bvolley\s*straight\s*kill\b", re.I),
+
+    # ─── Cross-variants ────────────────────────────────────────────────────
+    "cross lob":           re.compile(r"\bcross\s*lob\b",        re.I),
+    "lob cross":           re.compile(r"\blob\s*cross\b",        re.I),
+    "cross wide":          re.compile(r"\bcross\s*wide\b",       re.I),
+    "cross down the middle":re.compile(r"\bcross[-\s]*down\s*the\s*middle\b", re.I),
+    "cross-court nick":    re.compile(r"\bcross[-\s]*court\s*nick\b", re.I),
+    "hard cross":          re.compile(r"\bhard\s*cross\b",       re.I),
+    "volley cross":        re.compile(r"\bvolley\s*cross\b",     re.I),
+    "volley hard cross":   re.compile(r"\bvolley\s*hard\s*cross\b",  re.I),
+    "volley cross lob":    re.compile(r"\bvolley\s*cross\s*lob\b",   re.I),
+    "volley cross-court nick":
+                          re.compile(r"\bvolley\s*cross[-\s]*court\s*nick\b", re.I),
+
+    # ─── Lobs / flicks ─────────────────────────────────────────────────────
+    "straight lob":        re.compile(r"\bstraight\s*lob\b",     re.I),
+    "volley straight lob": re.compile(r"\bvolley\s*straight\s*lob\b", re.I),
+    "flick":               re.compile(r"\bflick\b",              re.I),
+    "volley flick":        re.compile(r"\bvolley\s*flick\b",     re.I),
+
+    # (keep any originals that weren’t duplicates)
+    "volley drop":         re.compile(r"\bvolley\s*drop\b",      re.I),
+    "volley drive":        re.compile(r"\bvolley\s*drive\b",     re.I),
 }
 
 
