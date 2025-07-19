@@ -26,12 +26,12 @@ if not torch.cuda.is_available():
     nn.Module.cuda = lambda self, device=None: self
     torch.Tensor.cuda = lambda self, device=None, **kw: self
 
-# CORRECTED IMPORT PATH FOR DenseRetriever
+# IMPORT PATH FOR DenseRetriever
 from third_party.flashrag.flashrag.retriever.retriever import DenseRetriever
 
 # --- Field Retrieval Components ---
 # Import from your new field_matcher.py
-from .field_matcher import parse_user_prompt, score_document
+from rag.pipelines.retrieval.field_retrieval.field_matcher import parse_user_prompt, score_document
 
 
 # Function to load YAML config (copied from your semantic retrieval script)
@@ -177,7 +177,7 @@ if __name__ == "__main__":
                 f"  Type: {doc.get('type')}, Participants: {doc.get('participants')}, Level: {doc.get('squashLevel')}")
             print(f"  Intensity: {doc.get('intensity')}, Duration: {doc.get('duration')}")
             print(f"  Shots: {doc.get('shots')}, Shot Side: {doc.get('shotSide')}")
-            print(f"  Spec. Shots: {doc.get('specificShots')}")
+            print(f"  Spec. Shots: {doc.get('primaryShots')}")
             print("-" * 20)
     else:
         print("No documents found meeting the hybrid criteria.")

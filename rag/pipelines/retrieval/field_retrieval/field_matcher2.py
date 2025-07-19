@@ -74,7 +74,11 @@ SPECIFICSHOT_PATTERNS = {
     # ─── Cross-variants ────────────────────────────────────────────────────
     "cross lob":           re.compile(r"\bcross\s*lob\b",        re.I),
     "lob cross":           re.compile(r"\blob\s*cross\b",        re.I),
+    "deep cross":          re.compile(r"\bcross\s*lob\b",        re.I),
+    "cross deep":          re.compile(r"\bcross\s*lob\b",        re.I),
     "cross wide":          re.compile(r"\bcross\s*wide\b",       re.I),
+    "wide cross":          re.compile(r"\bcross\s*wide\b",       re.I),
+
     "cross down the middle":re.compile(r"\bcross[-\s]*down\s*the\s*middle\b", re.I),
     "cross-court nick":    re.compile(r"\bcross[-\s]*court\s*nick\b", re.I),
     "hard cross":          re.compile(r"\bhard\s*cross\b",       re.I),
@@ -168,7 +172,8 @@ def parse_user_prompt(prompt: str):
     user_preferences['shots'] = extract_field_values(prompt, SHOT_PATTERNS, allow_multiple=True)
     user_preferences['shotSide'] = extract_field_values(prompt, SHOT_SIDE_PATTERNS, allow_multiple=True)
     # ADDED specificShots parsing
-    user_preferences['specificShots'] = extract_field_values(prompt, SPECIFICSHOT_PATTERNS, allow_multiple=True)
+    user_preferences['primaryShots'] = extract_field_values(prompt, SPECIFICSHOT_PATTERNS, allow_multiple=True)
+    user_preferences['secondaryShots'] = extract_field_values(prompt, SPECIFICSHOT_PATTERNS, allow_multiple=True)
     user_preferences['movement'] = extract_field_values(prompt, MOVEMENT_PATTERNS, allow_multiple=True)
 
     return user_preferences
@@ -187,10 +192,11 @@ def score_document(document: dict, user_desires: dict) -> float:
         'squashLevel': 2.0,
         'intensity': 1.5,
         'duration': 1.0,
-        'shots': 1.2,
+        'shots': 1.0,
         'shotSide': 0.8,
         'fitness': 0.5,
-        'specificShots': 1.8, # Added weight for specificShots, give it a higher weight
+        'primaryShots': 2.0,
+        'secondaryShots': 1.0,
         'movement': 1.0,
     }
 
@@ -241,9 +247,12 @@ def score_document(document: dict, user_desires: dict) -> float:
         score += weights['shotSide'] * len(matched_sides)
 
     # Match 'specificShots' (check for overlap)
-    if user_desires.get('specificShots') and document.get('specificShots'):
-        matched_specific_shots = set(user_desires['specificShots']).intersection(set(document['specificShots']))
-        score += weights['specificShots'] * len(matched_specific_shots)
+    if user_desires.get('primaryShots') and document.get('primaryShots'):
+        matched_primary_shots = set(user_desires['primaryShots']).intersection(set(document['primaryShots']))
+        score += weights['primaryShots'] * len(matched_primary_shots)
+    if user_desires.get('secondaryShots') and document.get('secondaryShots'):
+        matched_secondary_shots = set(user_desires['secondaryShots']).intersection(set(document['secondaryShots']))
+        score += weights['secondaryShots'] * len(matched_secondary_shots)
 
     # Match 'movement' (check for overlap)
     if user_desires.get('movement') and document.get('movement'):

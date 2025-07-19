@@ -29,18 +29,18 @@ Duration: <total session duration, e.g. 60 min>
 Session Focus: <the theme or skill being developed, inferred from context>
 
 Warm-up  (total 8–10 min)
-1. <drill name> – <duration>
+1. <duration> – <drill name>
 2. …
 
 Session  
 Exercise 1  (<exercise duration including rest, e.g. 9 min30sec>)
-• <drill 1> – <duration> (Switch roles halfway)
-• <drill 2> – <duration> (Switch roles halfway)
+• <duration>: <drill 1> (Forehand side, Switch roles halfway)
+• <duration>: <drill 2> (Backhand side, Switch roles halfway)
 Rest 1 min 30 s
 
 Exercise 2  
-• <drill 1> – <duration> (Backhand side, Switch roles halfway)
-• <drill 2> – <duration> (Forehand side, Switch roles halfway)
+• <duration>: <drill 1> (Forehand side, Switch roles halfway)
+• <duration>: <drill 2> (Backhand side, Switch roles halfway)
 Rest 1 min 30 s
 
 ...

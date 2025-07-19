@@ -65,8 +65,8 @@ $ pip install -e third_party/flashrag faiss-cpu datasets PyYAML transformers
 
 ```bash
 $ cp ~/Docs/*.docx data/raw/
-$ python src/corpus_tools.py                # writes data/my_kb.jsonl
-$ python -m flashrag.retriever.index_builder \
+$ python3 src/corpus_tools.py                # writes data/my_kb.jsonl
+$ python3 -m flashrag.retriever.index_builder \
       --retrieval_method e5-base-v2 \
       --model_path intfloat/e5-base-v2 \
       --corpus_path data/my_kb.jsonl \
@@ -77,16 +77,16 @@ $ python -m flashrag.retriever.index_builder \
 ### 4 Run baseline retrieval (config‑driven)
 
 ```bash
-$ python pipelines/retrieval/run_semantic_retrieval.py \
-       configs/retrieval/faiss_base.yaml \
-       --query "cross-court lob drill"
+$ python3 rag/pipelines/retrieval/run_semantic_retrieval.py \
+       rag/configs/retrieval/faiss_base.yaml \
+       --query "I want to improve my straight game"
 ```
 
 ### 5 Try the rerank variant
 
 ```bash
-$ python pipelines/retrieval/run_semantic_retrieval.py configs/retrieval/faiss_rerank.yaml \
-        --query "cross-court lob drill"
+$ python3 rag/pipelines/retrieval/run_semantic_retrieval.py rag/configs/retrieval/faiss_rerank.yaml \
+        --query "I want to improve my straight game"
 ```
 
 Output now shows rescored ordering.
@@ -108,8 +108,8 @@ GitHub Actions (`.github/workflows/ci.yml`) repeats that on every push/PR—gree
 * supports vanilla GPT‑4, local Llama‑cpp, or FlashRAG’s built‑in generator.
 
 ```bash
-$ python3 pipelines/generation/run_generation.py configs/retrieval/faiss_rerank.yaml \
-  --query "Design a 60-minute squash session to improve my lobs"
+$ python3 rag/pipelines/generation/run_generation.py rag/configs/retrieval/faiss_rerank.yaml \
+  --query "Design a 60-minute squash session to improve my straight game"
 ```
 
 ### Hybrid BM25 + dense (coming)

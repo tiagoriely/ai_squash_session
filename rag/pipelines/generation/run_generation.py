@@ -1,6 +1,6 @@
 # python rag/pipelines/generation/run_generation.py \
 #        rag/configs/retrieval/faiss_rerank.yaml \
-#        --query "I'm an intermediate player ..."
+#        --query "I'm an advanced player and I want to improve my lobs"
 
 
 import argparse, time, yaml, textwrap, re

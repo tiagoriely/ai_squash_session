@@ -84,7 +84,11 @@ SPECIFICSHOT_PATTERNS = {
     # ─── Cross-variants ────────────────────────────────────────────────────
     "cross lob":           re.compile(r"\bcross\s*lob\b",        re.I),
     "lob cross":           re.compile(r"\blob\s*cross\b",        re.I),
+    "deep cross":          re.compile(r"\bcross\s*lob\b",        re.I),
+    "cross deep":          re.compile(r"\bcross\s*lob\b",        re.I),
     "cross wide":          re.compile(r"\bcross\s*wide\b",       re.I),
+    "wide cross":          re.compile(r"\bcross\s*wide\b",       re.I),
+
     "cross down the middle":re.compile(r"\bcross[-\s]*down\s*the\s*middle\b", re.I),
     "cross-court nick":    re.compile(r"\bcross[-\s]*court\s*nick\b", re.I),
     "hard cross":          re.compile(r"\bhard\s*cross\b",       re.I),
@@ -103,6 +107,11 @@ SPECIFICSHOT_PATTERNS = {
     # (keep any originals that weren’t duplicates)
     "volley drop":         re.compile(r"\bvolley\s*drop\b",      re.I),
     "volley drive":        re.compile(r"\bvolley\s*drive\b",     re.I),
+
+    # ─── Ghosting ──────────────────────────────────────────────────────────
+    "3-step ghosting": re.compile(r"\b3[-\s]*step(s)?\s*ghost(ing|s)?\b", re.I),
+    "2-step ghosting": re.compile(r"\b2[-\s]*step(s)?\s*ghost(ing|s)?\b", re.I),
+    "1-step ghosting": re.compile(r"\b1[-\s]*step(s)?\s*ghost(ing|s)?\b", re.I),
 }
 
 
@@ -173,7 +182,7 @@ def main(raw_dir="data/raw", out_path="data/my_kb.jsonl"):
             lines = text.split('\n')
 
             # Updated key_value_pattern to include 'specificShots'
-            key_value_pattern = re.compile(r"^(type|participants|squashlevel|fitness|duration|shots|shotSide|intensity|specificShots):\s*(.+)$",
+            key_value_pattern = re.compile(r"^(type|participants|squashlevel|fitness|duration|shots|shotSide|intensity|primaryShots|secondaryShots):\s*(.+)$",
                                            re.IGNORECASE)
 
             for line in lines:
@@ -187,7 +196,7 @@ def main(raw_dir="data/raw", out_path="data/my_kb.jsonl"):
                         # For general shots and shot sides, split by common delimiters
                         session_data[key] = [v.strip() for v in re.split(r'\s+and/or\s+|\s+and\s+|,', value) if
                                              v.strip()]
-                    elif key == "specificshots":
+                    elif key == "primaryShots" or key == "secondaryShots":
                         # For specificShots, split only by comma, to keep phrases like "cross lob" together
                         session_data[key] = [v.strip() for v in value.split(',') if v.strip()]
                     else:
@@ -208,7 +217,10 @@ def main(raw_dir="data/raw", out_path="data/my_kb.jsonl"):
                                                                                        SQUASH_LEVEL_PATTERNS),
                 "fitness": session_data.get("fitness") or extract_field_values(search_text, FITNESS_PATTERNS),
                 "intensity": session_data.get("intensity") or extract_field_values(search_text, INTENSITY_PATTERNS),
-                "specificShots": session_data.get("specificshots", []) or extract_field_values(search_text, SPECIFICSHOT_PATTERNS, allow_multiple=True), # Changed from SHOT_PATTERNS
+                "primaryShots": session_data.get("primaryShots", []) or extract_field_values(search_text, SPECIFICSHOT_PATTERNS, allow_multiple=True), # Changed from SHOT_PATTERNS
+                "secondaryShots": session_data.get("primaryShots", []) or extract_field_values(search_text,
+                                                                                             SPECIFICSHOT_PATTERNS,
+                                                                                             allow_multiple=True),
                 "shots": session_data.get("shots", []) or extract_field_values(search_text, SHOT_PATTERNS,
                                                                                allow_multiple=True),
                 "shotSide": session_data.get("shotside", []) or extract_field_values(search_text, SHOT_SIDE_PATTERNS,
