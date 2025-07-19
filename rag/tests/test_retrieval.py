@@ -7,7 +7,7 @@ CFG_LIST = glob.glob(str(ROOT / "configs" / "retrieval" / "*.yaml"))
 @pytest.mark.parametrize("cfg_path", CFG_LIST)
 def test_retrieval_cfg(cfg_path):
     out = subprocess.check_output(
-        [sys.executable, ROOT / "pipelines" / "retrieval" / "run_semantic_retrieval.py",
+        [sys.executable, ROOT / "pipelines" / "retrieval" / "semantic_retrieval" / "run_semantic_retrieval.py",
          cfg_path, "--query", "sanity"],
         text=True,
         cwd=ROOT
