@@ -1,0 +1,22 @@
+templates:
+  squash.tmpl.warmup.standard:
+    extends: ["tmpl.activity.base"]
+    focus_tags: ["warmup", "movement", "touch"]
+    defaults: { minutes: 10, side_target: both }
+
+activities:
+
+  # Warmup 1
+  - activity_id: squash.activity.warmup.boast_drive_drop.v1
+    name: Warm-up – Boast/Drive/Drop patterns
+    extends: ["squash.tmpl.warmup.standard"]
+    allowed_actions: ["boast", "drive", "drop"]
+    rules:
+      sequence:
+        - "A: boast → B: drive → A: drop → B: drive"            # Exercise 1
+        - "A: drive, boast (2 hits) ↔ B: drop, drive (2 hits)"   # Exercise 2
+      timing:
+        per_exercise: "2:30"
+        block: "5:00 (Exercise 1 → Exercise 2, continuous)"
+      rotation: "switch roles after completing the 5:00 block; repeat to fill 10:00"
+

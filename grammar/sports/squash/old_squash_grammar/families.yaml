@@ -1,0 +1,296 @@
+# families.yaml (optional file)
+content:
+  # ---- Root family node (abstract) -----------------------------------------
+  ## Drives Root
+  - activity_id: squash.activity.length.drives.v1
+    name: Drives (length standard)
+    is_abstract: true              # true or false?
+    family_id: squash.family.length.drives
+    defaults: { shotSide: both }
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive"]
+    rules:
+      constraint: "first bounce must land behind the T-line"
+
+  ## Boast-Drive-Cross Root
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.v1
+    name: Boast-Drive-Cross
+    is_abstract: true
+    family_id: squash.family.pattern.diagonal.boast_drive_cross
+    defaults: { shotSide: both }
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                       "cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross",
+                       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast"]
+    rules:
+      sequence: "boast → drive → cross (repeat)"
+      constraint: "crosses must travel diagonally; first bounce behind T-line"
+
+  ## Front Versus Back
+  - activity_id: squash.activity.front_and_back.front_versus_back.v1
+    name: Front Versus Back
+    is_abstract: true
+    family_id: squash.family.front_and_back.front_versus_back
+    defaults: { shotSide: both }
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                       "cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross", "volley cross", "volley hard cross", "volley cross lob", "volley cross-court nick", "cross-court nick",
+                       "drop", "cross drop", "straight drop", "volley cross drop", "volley straight drop",
+                       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast", "reverse boast", "volley reverse boast",
+                       "lob", "straight lob", "cross lob"]
+    rules:
+      roles:
+        deep_player:
+          constraint: "May hit only drives, crosses or lobs that land *behind* the T-line."
+        front_player:
+          constraint: "May hit only drops or boasts that land *in front* of the T-line."
+      rotation:
+        on_goal_reached: "Swap roles and restart score."
+
+
+
+
+
+
+  # ---- Variants (abstract content, inherit from the root concept) ----------
+  ## Drives with Kill
+  - activity_id: squash.activity.length.drives.with_kill.v1
+    name: Drives with Kill
+    family_id: squash.family.length.drives
+    is_abstract: true
+    variant_of: squash.activity.length.drives.v1
+    variant_axes: [ kill ]
+    defaults: { ShotSide: both }
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                      "straight kill", "volley straight kill"]
+    rules:
+      constraint: "Non-kill shots: second bounce behind the T-line; kills may finish short (unless overridden)."
+
+  # Drives with Drop off the Bounce  (no volley)
+  - activity_id: squash.activity.length.drives.with_drop_off_the_bounce.v1
+    name: Drives with Drop off the Bounce
+    family_id: squash.family.length.drives
+    is_abstract: true
+    variant_of: squash.activity.length.drives.v1
+    variant_axes: [ straight_drop ]          # off-bounce drop, no volley
+    defaults: { shotSide: both }
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive",
+                       "volley hard drive", "volley straight drive", "straight drop" ]
+    rules:
+      constraint: "Straight drop allowed off the bounce; otherwise first bounce behind the T-line."
+
+  # Drives with Volley Straight Drop
+  - activity_id: squash.activity.length.drives.with_volley_straight_drop.v1
+    name: Drives with Volley Straight Drop
+    family_id: squash.family.length.drives
+    is_abstract: true
+    variant_of: squash.activity.length.drives.v1
+    variant_axes: [ drop, volley ]
+    defaults: { shotSide: both }
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                      "volley straight drop"]
+    rules:
+      constraint: "Maintain length criteria except on the designated volley straight drop."
+
+  # Drives with Boast off the bounce (no volley)
+  - activity_id: squash.activity.length.drives.with_boast.v1
+    name: Drives with Boast
+    family_id: squash.family.length.drives
+    is_abstract: true
+    variant_of: squash.activity.length.drives.v1
+    variant_axes: [ boast ]
+    defaults: { shotSide: both }
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive",
+                      "volley hard drive", "volley straight drive", "boast" ]
+    rules:
+      constraint: "Boast only where specified; otherwise meet the length requirement."
+
+  # Drives with Volley Boast
+  - activity_id: squash.activity.length.drives.with_volley_boast.v1
+    name: Drives with Volley Boast
+    family_id: squash.family.length.drives
+    is_abstract: true
+    variant_of: squash.activity.length.drives.v1
+    variant_axes: [ boast, volley ]          # boast + volley
+    defaults: { shotSide: both }
+    allowed_actions:
+      [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive",
+        "volley straight drive", "volley boast" ]
+    rules:
+      constraint: "Volley boasts permitted where specified; all other shots obey normal length rule."
+
+  # Boast-Drive-Cross Deep-only variant
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.v1
+    name: Boast-Drive-Cross (Deep Only)
+    family_id: squash.family.pattern.diagonal.boast_drive_cross
+    is_abstract: true
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.v1
+    variant_axes: [ deep_only ]
+    defaults: { shotSide: both }
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                       "cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross",
+                       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast"]
+    rules:
+      sequence: "boast → drive → cross"
+      constraint: "all shots excluding the boast must land behind the T-line"
+
+  # Boast-Drive-Cross Kills-allowed variant
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.v1
+    name: Boast-Drive-Cross (Kills Allowed)
+    family_id: squash.family.pattern.diagonal.boast_drive_cross
+    is_abstract: true
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.v1
+    variant_axes: [ kill ]
+    defaults: { shotSide: both }
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                       "cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross",
+                       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast", "straight kill", "volley straight kill", "cross kill"]
+    rules:
+      sequence: "boast → drive → cross"
+      constraint: "second bounce behind the T-line, excluding the boast which must land first bounce in front of the line"
+
+  # Boast-Drive-Cross with counter drop variant
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.v1
+    name: Boast-Drop/Cross-Drive (Counter Drop Allowed)
+    family_id: squash.family.pattern.diagonal.boast_drive_cross
+    is_abstract: true
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.v1
+    variant_axes: [ counter_drop ]
+    defaults: { shotSide: both }
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                       "cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross",
+                       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast",
+                       "counter straight drop"]
+    rules:
+      description: >
+        A plays a diagonal boast.  Players may now exchange **any number of
+        counter straight drops** (boast → drop → drop → …).  
+        Whenever a player finally chooses a **cross-court** (deep), the opponent
+        must reply with a straight or deep **drive**.  
+        After that drive, the pattern restarts with the next boast.
+      sequence:
+        - "boast (A)"
+        - "( straight drop (B) | straight drop (A) )*"   # zero or more drops
+        - "cross (whoever chooses)"                      # first cross ends the drops
+        - "drive (opponent of cross)"                    # deep / straight drive
+        - "→ restart pattern at next boast"
+      constraint: >
+        Every cross and the succeeding drive must land behind the T-line.
+        Counter straight drops are allowed repeatedly **only** after a boast is played; no other shots, excluding the cross, are permitted during the drop phase.
+
+ # Boast-Drive-Cross open court with counter drop variant
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.open_drop.v1
+    name: Boast-Drop-Cross with Open Rally using Counter Drop
+    family_id: squash.family.pattern.diagonal.boast_drive_cross
+    is_abstract: true
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.v1
+    variant_axes: [ counter_drop_open ]
+    defaults: { shotSide: both }
+    # Allowing any shot once rally is open
+    allowed_actions:
+      ["drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+       "cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross", "volley cross", "volley hard cross", "volley cross lob", "volley cross-court nick", "cross-court nick",
+       "drop", "counter drop", "cross drop", "straight drop", "volley cross drop", "volley straight drop",
+       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast", "trickle boast", "reverse boast", "volley reverse boast",
+       "lob", "straight lob", "cross lob", "volley straight lob", "volley cross lob",
+       "volley", "volley drop", "volley drive", "volley cross", "volley lob", "volley flick", "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast", "volley deep drive", "volley hard drive", "volley straight drive", "volley cross drop", "volley straight drop", "volley cross kill", "volley straight kill", "volley straight lob", "volley cross-court nick", "volley hard cross",
+       "straight kill", "volley straight kill", "cross kill", "volley cross kill"
+      ]
+    rules:
+      description: >
+        A begins each rally with a diagonal boast.  
+        • **Base path (Cross → Drive):** If the opponent responds with a deep cross,
+          the striker must follow with a straight/deep drive; then the pattern resets
+          with the next boast.  
+        • **Drop branch (Drop → Open Rally):**  If instead the opponent counter-drops
+          straight, the rally becomes open—any shots are allowed—until the rally
+          finishes.  The next rally restarts with a boast.
+
+      sequence:
+        - "boast (A)"
+        - "IF opponent plays cross (B):"
+        - "    drive (A)"
+        - "    → restart with next boast"
+        - "ELSE IF opponent plays straight drop (B):"
+        - "    open rally  # any legal shots allowed"
+        - "    → restart with next boast"
+      constraint: >
+        After the first boast, a cross must be played. The optional counter straight drop is only available starting from the second boast.
+        If a drop is played there are **no** shot or depth restrictions until the
+        rally ends.
+
+  # Boast-Cross-Drive with Extra Drive
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.extra_drive.v1
+    name: Boast-Cross-Drive + Extra Drive
+    family_id: squash.family.pattern.diagonal.boast_drive_cross
+    is_abstract: true
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.v1
+    variant_axes: [ extra_drive ]              # new axis for retrieval / analysis
+    defaults: { shotSide: both }
+    # no drops / kills in this variant
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                       "cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross",
+                       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast" ]
+    rules:
+      description: >
+        • Follow the sequence given
+        • One (and only one) **additional drive** is then allowed by either player.  
+        After that extra drive, the pattern restarts with a new boast.
+      sequence:
+        - "boast (A)"
+        - "cross (B)"
+        - "drive (A)               # mandatory"
+        - "optional: extra drive (A or B)"
+        - "→ restart pattern with next boast"
+      constraint: >
+        All crosses and both drives must land behind the T-line.
+        The optional extra drive can be used **only once**.
+
+## Front v Back with Kills
+
+  - activity_id: squash.activity.front_and_back.front_versus_back.kills_allowed.v1
+    name: Front Versus Back (Kills Allowed)
+    family_id: squash.family.front_and_back.front_versus_back
+    is_abstract: true
+    variant_of: squash.activity.front_and_back.front_versus_back.v1   # tie-back to root
+    variant_axes: [ kill ]                                            # helpful for retrieval / filters
+
+    defaults: { shotSide: both }
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                       "cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross", "volley cross", "volley hard cross", "volley cross lob", "volley cross-court nick", "cross-court nick",
+                       "drop", "cross drop", "straight drop", "volley cross drop", "volley straight drop",
+                       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast", "reverse boast", "volley reverse boast",
+                       "lob", "straight lob", "cross lob", "straight kill", "volley straight kill", "cross kill", "volley cross kill"]
+    rules:
+      roles:
+        deep_player:
+          constraint: "May hit only drives, crosses or lobs and kills; second bounce behind the T-line."
+        front_player:
+          constraint: "May hit drops or boasts finishing in front of the T-line."
+      rotation:
+        on_goal_reached: "Swap roles (deep ↔ front) and reset the score."
+
+
+
+  # ---- Combination examples -------------------------------------------------
+
+  ## Drives with Kill and Volley straight Drop
+  - activity_id: squash.activity.length.drives.with_kill_and_volley_straight_drop.v1
+    name: Drives with Kill + Volley Straight Drop
+    family_id: squash.family.length.drives
+    is_abstract: true
+    variant_of: squash.activity.length.drives.v1
+    variant_axes: [ kill, volley_straight_drop ]
+    defaults: { shotSide: both }
+    #allowed_actions: [ "drive", "volley drive", "straight kill", "volley straight kill", "volley straight drop" ]
+    rules:
+      constraint: "Non-kill/Non-drop shots: second bounce behind the T-line."
+
+  ## Drives with Kill and Boast
+  - activity_id: squash.activity.length.drives.with_kill_and_boast.v1
+    name: Drives with Kill + Boast
+    family_id: squash.family.length.drives
+    is_abstract: true
+    variant_of: squash.activity.length.drives.v1
+    variant_axes: [ kill, boast ]
+    defaults: { shotSide: both }
+    #allowed_actions: [ "drive", "volley drive", "straight kill", "volley straight kill", "boast" ]
+    rules:
+      constraint: "Non-kill/Non-boast shots: second bounce behind the T-line."

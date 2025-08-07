@@ -1,0 +1,16 @@
+# global.yaml
+# Purpose: Sport-agnostic defaults applied first in merge chain.
+
+base:
+  version: 1          # Version of the configuration schema or content; useful for tracking changes over time.
+  status: approved    # Indicates the approval status of this config (could be "draft", "review", etc.).
+  source: seed        # "seed" suggests this is foundational or default data from which other content may be derived.
+  applicability:
+    levels: [beginner, intermediate, advanced]
+
+kind_defaults:
+  warmup: { activity_kind: warmup }
+  drill: { activity_kind: drill }
+  conditioned_game: { activity_kind: conditioned_game }
+  solo: { activity_kind: solo, applicability: { participants: [1] } }
+  ghosting: { activity_kind: ghosting, applicability: { participants: [1] } }

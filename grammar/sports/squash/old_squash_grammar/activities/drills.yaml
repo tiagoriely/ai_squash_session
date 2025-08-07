@@ -1,0 +1,104 @@
+# drills.yaml
+
+activities:
+
+  # FH Drives
+  - activity_id: squash.activity.length.drives.forehand.drill.v1
+    name: Forehand Drives (timed)
+    extends: [ "squash.tmpl.drill.length_base",
+               "squash.activity.length.drives.v1"]
+    defaults: { target_duration: "3:00", shotSide: forehand }
+    rules:
+      constraint: "first bounce must land behind the T-line"
+    variant_of: squash.activity.length.drives.v1
+
+  # BH Drives
+  - activity_id: squash.activity.length.drives.backhand.drill.v1
+    name: Backhand Drives (timed)
+    extends: [ "squash.tmpl.drill.length_base",
+               "squash.activity.length.drives.v1"]
+    defaults: { target_duration: "3:00", shotSide: backhand }
+    rules:
+      constraint: "first bounce must land behind the T-line"
+    variant_of: squash.activity.length.drives.v1
+
+
+  # FH Drives with Kills
+  - activity_id: squash.activity.length.drives_with_kill.forehand.drill.v1
+    name: Forehand Drives with Kills (timed)
+    extends: ["squash.tmpl.drill.length_base",
+              "squash.activity.length.drives.with_kill.v1"]
+    defaults: { target_duration: "4:00", shotSide: forehand }
+    rules:
+      constraint: "first or second bounce must land behind the T-line"
+      notes: "straight kills allowed"
+    variant_of: squash.activity.length.drives_with_kill.forehand.v1
+
+  # BH Drives with Kills
+  - activity_id: squash.activity.length.drives_with_kill.backhand.drill.v1
+    name: Backhand Drives with Kills (timed)
+    extends: ["squash.tmpl.drill.length_base",
+              "squash.activity.length.drives.with_kill.v1"]
+    defaults: { target_duration: "4:00", shotSide: backhand }
+    rules:
+      constraint: "first or second bounce must land behind the T-line"
+      notes: "straight kills allowed"
+    variant_of: squash.activity.length.drives_with_kill.backhand.v1
+
+  # Boast-Drive-Cross (Deep Only)
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.forehand.drill.v1
+    name: Forehand Boast-Cross-Drive (Deep Only, timed)
+    extends: ["squash.tmpl.drill.diagonal_base",
+              "squash.activity.pattern.diagonal.boast_drive_cross.deep_only.v1"]
+    defaults: { target_duration: "3:00", shotSide: forehand  }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.forehand.v1
+
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.backhand.drill.v1
+    name: Backhand Boast-Cross-Drive (Deep Only, timed)
+    extends: [ "squash.tmpl.drill.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.deep_only.v1" ]
+    defaults: { target_duration: "3:00", shotSide: backhand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.backhand.v1
+
+  # Boast-Drive-Cross (With Kills)
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.forehand.drill.v1
+    name: Forehand Boast-Cross-Drive (With Kills, timed)
+    extends: [ "squash.tmpl.drill.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.v1" ]
+    defaults: { target_duration: "3:00", shotSide: forehand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.forehand.v1
+
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.backhand.drill.v1
+    name: Backhand Boast-Cross-Drive (With Kills, timed)
+    extends: [ "squash.tmpl.drill.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.v1" ]
+    defaults: { target_duration: "3:00", shotSide: backhand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.backhand.v1
+
+  # Boast-Drive-Cross (With Counters)
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.forehand.drill.v1
+    name: Forehand Boast-Cross-Drive (With Counters, timed)
+    extends: [ "squash.tmpl.drill.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.v1" ]
+    defaults: { target_duration: "3:00", shotSide: forehand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.forehand.v1
+
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.backhand.drill.v1
+    name: Backhand Boast-Cross-Drive (With Counters, timed)
+    extends: [ "squash.tmpl.drill.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.v1" ]
+    defaults: { target_duration: "3:00", shotSide: backhand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    variant_of: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.backhand.v1
+

@@ -1,0 +1,9 @@
+# templates.yaml (global)
+# Purpose: Reusable, sport-agnostic templates.
+
+templates:
+  tmpl.activity.base:
+    defaults: {}
+    rules: {}
+    allowed_actions: []
+    focus_tags: []

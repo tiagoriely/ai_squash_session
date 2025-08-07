@@ -1,0 +1,62 @@
+# templates.yaml  ── squash project reusable bases
+templates:
+
+  # ───────── Warm-up ─────────
+  squash.tmpl.warmup.standard:
+    extends: ["tmpl.activity.base"]
+    focus_tags: ["warmup", "movement", "touch"]
+    defaults: { minutes: 10, shotSide: both }
+
+  # ───────── A. Conditioned-game base (length) ─────────
+  squash.tmpl.conditioned.length_base:
+    extends: ["tmpl.activity.base"]
+    activity_kind: conditioned_game
+    focus_tags: ["length/straight game"]
+    defaults: { minutes: 6, shotSide: both, target_points: 7 }
+
+  # ───────── A. Conditioned-game base (diagonal) ─────────
+  squash.tmpl.conditioned.diagonal_base:
+    extends: [ "tmpl.activity.base" ]
+    activity_kind: conditioned_game
+    focus_tags: [ "diagonal/diagonal game" ]
+    defaults: { minutes: 6, shotSide: both, target_points: 7 }
+
+  # ───────── A. Conditioned-game base (front_and_back) ─────────
+  squash.tmpl.conditioned.front_and_back_base:
+    extends: [ "tmpl.activity.base" ]
+    activity_kind: conditioned_game
+    focus_tags: [ "front_and_back/front versus back game" ]
+    defaults: { minutes: 6, shotSide: both, target_points: 7 }
+
+
+  # ───────── B. Drill base (length) ─────────
+  squash.tmpl.drill.length_base:
+    extends: ["tmpl.activity.base"]
+    activity_kind: drill
+    focus_tags: ["length/straight game"]
+    defaults: { minutes: 8, shotSide: both }
+
+  squash.tmpl.drill.diagonal_base:
+    extends: [ "tmpl.activity.base" ]
+    activity_kind: drill
+    focus_tags: [ "diagonal/diagonal game" ]
+    defaults: { minutes: 8, shotSide: both }
+
+  # ───────── C. Solo base (length) ─────────
+  squash.tmpl.solo.length_base:
+    extends: [ "tmpl.activity.base" ]
+    activity_kind: solo
+    focus_tags: [ "length/straight game" ]
+    defaults: { minutes: 6, shotSide: both }
+
+
+  # ───────── Optional goal helpers  ─────────
+  squash.tmpl.goal.points:
+    extends: ["tmpl.activity.base"]
+    activity_kind: conditioned_game
+    defaults: { goal: { metric: points, target: 9 } }
+
+  squash.tmpl.goal.duration:
+    extends: ["tmpl.activity.base"]
+    activity_kind: drill
+    defaults: { goal: { metric: duration, target: '3:00' } }

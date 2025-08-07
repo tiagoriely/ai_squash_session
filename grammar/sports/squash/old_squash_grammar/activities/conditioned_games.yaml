@@ -1,0 +1,149 @@
+#conditioned_game.yaml
+activities:
+
+
+  # Drives with Kills
+  - activity_id: squash.activity.length.drives_with_kill.forehand.v1
+    name: Forehand Drives with Kills (second bounce behind T)
+    extends: ["squash.tmpl.conditioned.length_base",
+              "squash.activity.length.drives.with_kill.v1"] #"squash.tmpl.length.drives_with_kill.base"]
+    defaults: { target_points: 9, shotSide: forehand }
+    rules:
+      enforcement: "All player contacts must be on forehand"
+    drill_variant_id: squash.activity.length.drives_with_kill.forehand.drill.v1
+
+  - activity_id: squash.activity.length.drives_with_kill.backhand.v1
+    name: Backhand Drives with Kills (second bounce behind T)
+    extends: ["squash.tmpl.conditioned.length_base",
+              "squash.activity.length.drives.with_kill.v1"] #"squash.tmpl.length.drives_with_kill.base"]
+    defaults: { target_points: 9, shotSide: backhand }
+    rules:
+      enforcement: "All player contacts must be on backhand"
+    drill_variant_id: squash.activity.length.drives_with_kill.backhand.drill.v1
+
+  # Boast-Drive-Cross (Deep Only)
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.forehand.v1
+    name: Forehand Boast-Cross-Drive (Deep Only)
+    extends: ["squash.tmpl.conditioned.diagonal_base",
+              "squash.activity.pattern.diagonal.boast_drive_cross.deep_only.v1"]
+    defaults: { target_points: 9, shotSide: forehand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    drill_variant_id: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.forehand.drill.v1
+
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.backhand.v1
+    name: Backhand Boast-Cross-Drive (Deep Only)
+    extends: ["squash.tmpl.conditioned.diagonal_base",
+              "squash.activity.pattern.diagonal.boast_drive_cross.deep_only.v1"]
+    defaults: { target_points: 9, shotSide: backhand }
+    rules:
+      enforcement: "Cannot play forehand drive or boast; only forehand cross"
+    drill_variant_id: squash.activity.pattern.diagonal.boast_drive_cross.deep_only.backhand.drill.v1
+
+
+  # Boast-Drive-Cross (with Kills)
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.forehand.v1
+    name: Forehand Boast-Cross-Drive (With Kills)
+    extends: [ "squash.tmpl.conditioned.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.v1" ]
+    defaults: { target_points: 9, shotSide: forehand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    drill_variant_id: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.forehand.drill.v1
+
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.backhand.v1
+    name: Backhand Boast-Cross-Drive (With Kills)
+    extends: [ "squash.tmpl.conditioned.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.v1" ]
+    defaults: { target_points: 9, shotSide: backhand }
+    rules:
+      enforcement: "Cannot play forehand drive or boast; only forehand cross"
+    drill_variant_id: squash.activity.pattern.diagonal.boast_drive_cross.kills_allowed.backhand.drill.v1
+
+  # Boast-Drive-Cross (with counter drops)
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.forehand.v1
+    name: Forehand Boast-Cross-Drive (With Counter Drops)
+    extends: [ "squash.tmpl.conditioned.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.v1" ]
+    defaults: { target_points: 9, shotSide: forehand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+    drill_variant_id: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.forehand.drill.v1
+
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.backhand.v1
+    name: Backhand Boast-Cross-Drive (With Counter Drops)
+    extends: [ "squash.tmpl.conditioned.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.v1" ]
+    defaults: { target_points: 9, shotSide: backhand }
+    rules:
+      enforcement: "Cannot play forehand drive or boast; only forehand cross"
+    drill_variant_id: squash.activity.pattern.diagonal.boast_drive_cross.counter_drop.backhand.drill.v1
+
+  # Boast-Drive-Cross (open court with counter drop)
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.open_drop.forehand.v1
+    name: Forehand Boast-Cross-Drive (Open Court With Counter Drops)
+    extends: [ "squash.tmpl.conditioned.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.open_drop.v1" ]
+    defaults: { target_points: 9, shotSide: forehand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.open_drop.backhand.v1
+    name: Backhand Boast-Cross-Drive (Open Court With Counter Drops)
+    extends: [ "squash.tmpl.conditioned.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.open_drop.v1" ]
+    defaults: { target_points: 9, shotSide: backhand }
+    rules:
+      enforcement: "Cannot play forehand drive or boast; only forehand cross"
+
+  # Boast-Drive-Cross (with extra drive)
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.extra_drive.forehand.v1
+    name: Forehand Boast-Cross-Drive (With Extra Drive)
+    extends: [ "squash.tmpl.conditioned.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.extra_drive.v1" ]
+    defaults: { target_points: 9, shotSide: forehand }
+    rules:
+      enforcement: "cannot play backhand drive or boast; only backhand cross"
+
+  - activity_id: squash.activity.pattern.diagonal.boast_drive_cross.extra_drive.backhand.v1
+    name: Backhand Boast-Cross-Drive (With Extra Drive)
+    extends: [ "squash.tmpl.conditioned.diagonal_base",
+               "squash.activity.pattern.diagonal.boast_drive_cross.extra_drive.v1" ]
+    defaults: { target_points: 9, shotSide: backhand }
+    rules:
+      enforcement: "Cannot play forehand drive or boast; only forehand cross"
+
+
+  # Front Versus Back (Deep Only)
+  - activity_id: squash.activity.front_and_back.front_versus_back.deep_only.v1
+    name: Front Versus Back (Deep Only)
+    extends: [ "squash.tmpl.conditioned.front_and_back_base",
+               "squash.activity.front_and_back.front_versus_back.v1" ]
+    defaults: { target_points: 7, shotSide: both }
+    rules:
+      roles_assignment:
+        A: deep_player      # A starts deep, B starts front
+        B: front_player
+      enforcement: "Stay in your role until one side reaches 7; then roles swap automatically."
+
+
+
+  # Front Versus Back (With Kills)
+  - activity_id: squash.activity.front_and_back.front_versus_back.with_kills.v1
+    name: Front Versus Back (With Kills)
+    extends: [ "squash.tmpl.conditioned.front_and_back_base",
+               "squash.activity.front_and_back.front_versus_back.kills_allowed.v1" ]
+    defaults: { target_points: 7, shotSide: both }
+    rules:
+      roles_assignment:
+        A: deep_player
+        B: front_player
+      enforcement: "A plays deep shots and kills, B can drop or boast until 7 points; then roles swap."
+
+
+
+
+
+
+
+

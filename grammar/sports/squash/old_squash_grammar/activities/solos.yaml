@@ -1,0 +1,106 @@
+# Solo.yaml
+
+
+activities:
+
+  # FH Deep Drives Only
+  - activity_id: squash.activity.length.drives.forehand.solo.deep.v1
+    name: Solo Forehand Deep Drives Only (timed)
+    extends: [ "squash.tmpl.solo.length_base" ]
+    defaults: { target_duration: "3:00", shotSide: forehand }
+    allowed_actions: [ "deep drive"]
+    rules:
+      constraint: "first bounce must land behind the T-line; Deep drives only"
+    variant_of: squash.activity.length.drives.forehand.v1
+
+  # BH Deep Drives Only
+  - activity_id: squash.activity.length.drives.backhand.solo.deep.v1
+    name: Solo Backhand Deep Drives Only  (timed)
+    extends: [ "squash.tmpl.solo.length_base" ]
+    defaults: { target_duration: "3:00", shotSide: backhand }
+    allowed_actions: [ "deep drive" ]
+    rules:
+      constraint: "first bounce must land behind the T-line; Deep drives only"
+    variant_of: squash.activity.length.drives.backhand.v1
+
+  # FH Hard Drives Only
+  - activity_id: squash.activity.length.drives.forehand.solo.hard.v1
+    name: Solo Forehand Hard Drives Only (timed)
+    extends: [ "squash.tmpl.solo.length_base" ]
+    defaults: { target_duration: "3:00", shotSide: forehand }
+    allowed_actions: [ "hard drive" ]
+    rules:
+      constraint: "first bounce must land behind the T-line; hard drives only"
+    variant_of: squash.activity.length.drives.forehand.v1
+
+  # BH Hard Drives Only
+  - activity_id: squash.activity.length.drives.backhand.solo.hard.v1
+    name: Solo Backhand Hard Drives Only (timed)
+    extends: [ "squash.tmpl.solo.length_base" ]
+    defaults: { target_duration: "3:00", shotSide: backhand }
+    allowed_actions: [ "hard drive" ]
+    rules:
+      constraint: "first bounce must land behind the T-line; hard drives only"
+    variant_of: squash.activity.length.drives.backhand.v1
+
+  # Any FH Drives with no pattern or specific shots
+  - activity_id: squash.activity.length.drives_with_kill.forehand.drill.solo.v1
+    name: Solo Forehand Drives with Kills (timed)
+    extends: ["squash.tmpl.solo.length_base"]
+    defaults: { target_duration: "3:00", shotSide: forehand }
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "straight kill", "volley straight kill"]
+    rules:
+      constraint: "first or second bounce must land behind the T-line"
+      notes: "straight kills allowed"
+    variant_of: squash.activity.length.drives_with_kill.v1
+
+  # Any FH Drives with no pattern
+  - activity_id: squash.activity.length.drives_with_kill.backhand.drill.solo.random_kills.v1
+    name: Solo Backhand Drives with Kills (timed)
+    extends: ["squash.tmpl.solo.length_base"]
+    defaults: { target_duration: "3:00", shotSide: backhand }
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "straight kill", "volley straight kill"]
+    rules:
+      constraint: "first or second bounce must land behind the T-line"
+      notes: "straight kills allowed"
+    variant_of: squash.activity.length.drives_with_kill.v1
+
+  # FH Hard Drives and Straight Lobs
+  - activity_id: squash.activity.pattern.length.hard_drive3_straight_lob.forehand.v1
+    name: Solo 3× Forehand Hard Drive- 1× Straight Lob (solo, timed)
+    family_id: squash.family.length.drives                     # keeps it in the length-drive family
+    extends: [ "squash.tmpl.solo.length_base" ]                # solo length template
+    variant_axes: [ hard_drive, straight_lob ]
+    defaults: { target_duration: "3:00", shotSide: forehand }
+    allowed_actions:
+      [ "hard drive", "straight lob"]
+    rules:
+      sequence:
+        - "hard drive (×3)"              # three consecutive hard drives
+        - "straight lob (×1)"            # one straight lob
+        - "→ repeat pattern for full duration"
+      constraint: >
+        All hard drives and the straight lob must land behind the T-line.
+        Maintain length; no cross-court shots or drops are permitted during the set.
+    variant_of: squash.activity.length.drives.v1
+
+  # BH Hard Drives and Straight Lobs
+  - activity_id: squash.activity.pattern.length.hard_drive3_straight_lob.backhand.v1
+    name: Solo 3× Backhand Hard Drive- 1× Backhand Straight Lob (solo, timed)
+    family_id: squash.family.length.drives                     # keeps it in the length-drive family
+    extends: [ "squash.tmpl.solo.length_base" ]                # solo length template
+    variant_axes: [ hard_drive, straight_lob ]
+    defaults: { target_duration: "3:00", shotSide: backhand }
+    allowed_actions:
+      [ "hard drive", "straight lob" ]
+    rules:
+      sequence:
+        - "hard drive (×3)"              # three consecutive hard drives
+        - "straight lob (×1)"            # one straight lob
+        - "→ repeat pattern for full duration"
+      constraint: >
+        All hard drives and the straight lob must land behind the T-line.
+        Maintain length; no cross-court shots or drops are permitted during the set.
+    variant_of: squash.activity.length.drives
