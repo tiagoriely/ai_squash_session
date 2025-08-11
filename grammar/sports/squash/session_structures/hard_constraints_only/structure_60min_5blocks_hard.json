@@ -1,0 +1,43 @@
+{
+  "session_type": "Drills",
+  "target_duration_minutes": 60,
+  "variation_name": "5-Block Variation (10 exercises)",
+  "default_rest_minutes": 1.5,
+  "blocks": [
+    {
+      "block_name": "Warm-up",
+      "exercises": [
+        { "exercise_placeholder": "Warm-up Exercise 1", "duration_minutes": 5 },
+        { "exercise_placeholder": "Warm-up Exercise 2", "duration_minutes": 5 }
+      ]
+    },
+    {
+      "block_name": "Drill Block 1",
+      "exercises": [
+        { "exercise_placeholder": "Drill 1a", "duration_minutes": 5 },
+        { "exercise_placeholder": "Drill 1b", "duration_minutes": 5 }
+      ]
+    },
+    {
+      "block_name": "Drill Block 2",
+      "exercises": [
+        { "exercise_placeholder": "Drill 2a", "duration_minutes": 5 },
+        { "exercise_placeholder": "Drill 2b", "duration_minutes": 5 }
+      ]
+    },
+    {
+      "block_name": "Drill Block 3",
+      "exercises": [
+        { "exercise_placeholder": "Drill 3a", "duration_minutes": 5 },
+        { "exercise_placeholder": "Drill 3b", "duration_minutes": 5 }
+      ]
+    },
+    {
+      "block_name": "Drill Block 4",
+      "exercises": [
+        { "exercise_placeholder": "Drill 4a", "duration_minutes": 5 },
+        { "exercise_placeholder": "Drill 4b", "duration_minutes": 5 }
+      ]
+    }
+  ]
+}

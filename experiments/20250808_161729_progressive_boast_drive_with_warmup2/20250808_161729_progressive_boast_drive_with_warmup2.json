@@ -1,0 +1,90 @@
+{
+  "experiment_details": {
+    "name": "progressive_boast_drive_with_warmup2",
+    "timestamp": "20250808_161729",
+    "config_file_used": "configs/grammar_run_random_warmup.yaml"
+  },
+  "session_plan": {
+    "title": "Boast-Drive-Cross",
+    "blocks": [
+      {
+        "block_name": "Warm-up",
+        "exercises": [
+          {
+            "name": "Boast-Cross-Boast-Drive",
+            "duration_minutes": 5.0
+          },
+          {
+            "name": "Boast-Drive (2 shots)",
+            "duration_minutes": 5.0
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 1",
+        "exercises": [
+          {
+            "name": "Boast-Drive-Cross Deep Only (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Boast-Drive-Cross Deep Only (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 2",
+        "exercises": [
+          {
+            "name": "Boast-Drive-Cross With Extra Drive (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Boast-Drive-Cross With Extra Drive (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 3",
+        "exercises": [
+          {
+            "name": "Boast-Drive-Cross With Kills Allowed (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Boast-Drive-Cross With Kills Allowed (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 4",
+        "exercises": [
+          {
+            "name": "Boast-Drive-Cross With Counter Drops (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Boast-Drive-Cross With Counter Drops (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 5",
+        "exercises": [
+          {
+            "name": "Boast-Drive-Cross With Open Rally Via Counter Drop (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Boast-Drive-Cross With Open Rally Via Counter Drop (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      }
+    ]
+  }
+}

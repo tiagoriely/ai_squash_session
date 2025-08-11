@@ -1,0 +1,77 @@
+{
+  "experiment_details": {
+    "name": "progressive_boast_drive_test",
+    "timestamp": "20250807_153201",
+    "config_file_used": "configs/grammar_progressive_family.yaml"
+  },
+  "session_plan": {
+    "title": "Progressive Family",
+    "blocks": [
+      {
+        "block_name": "Warm-up",
+        "exercises": [
+          {
+            "name": "Boast-Drive-Drop-Drive",
+            "duration_minutes": 3.0
+          },
+          {
+            "name": "Boast-Drive (2 shots)",
+            "duration_minutes": 3.0
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 1",
+        "exercises": [
+          {
+            "name": "Progression: deep_only",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Continuation of deep_only",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 2",
+        "exercises": [
+          {
+            "name": "Progression: kills_allowed",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Continuation of kills_allowed",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 3",
+        "exercises": [
+          {
+            "name": "Progression: counter_drop",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Continuation of counter_drop",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 4",
+        "exercises": [
+          {
+            "name": "Progression: open_drop",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Continuation of open_drop",
+            "duration_minutes": 4
+          }
+        ]
+      }
+    ]
+  }
+}

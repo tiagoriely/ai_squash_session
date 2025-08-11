@@ -1,0 +1,68 @@
+{
+  "experiment_details": {
+    "name": "dynamic_progressive_boast_drive_test",
+    "timestamp": "20250807_162036",
+    "config_file_used": "configs/grammar_dynamic_progressive_family.yaml"
+  },
+  "session_plan": {
+    "title": "Boast-Drive-Cross",
+    "blocks": [
+      {
+        "block_name": "Warm-up",
+        "exercises": []
+      },
+      {
+        "block_name": "Activity Block 1",
+        "exercises": [
+          {
+            "name": "With Extra Drive (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "With Extra Drive (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 2",
+        "exercises": [
+          {
+            "name": "With Open Rally Via Counter Drop (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "With Open Rally Via Counter Drop (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 3",
+        "exercises": [
+          {
+            "name": "Deep Only (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Deep Only (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 4",
+        "exercises": [
+          {
+            "name": "With Kills Allowed (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "With Kills Allowed (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      }
+    ]
+  }
+}

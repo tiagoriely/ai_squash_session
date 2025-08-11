@@ -12,13 +12,13 @@ SYNONYM_MAP = {
     },
     "participants": {
         "1": 1, "one": 1, "solo": 1,
-        "2": 2, "two": 2, "duo": 2,
-        "3": 3, "three": 3, "trio": 3,
+        "2": 2, "two": 2, "duo": 2, "second player": 2,
+        "3": 3, "three": 3, "trio": 3, "third player": 3,
         "4": 4, "four": 4,
     },
     "squashLevel": {
         "beginner": "beginner", "novice": "beginner",
-        "intermediate": "intermediate",
+        "intermediate": "intermediate", "medium": "intermediate",
         "advanced": "advanced", "expert": "advanced", "pro": "advanced", "professional": "advanced",
     },
     "intensity": {
@@ -36,8 +36,8 @@ SYNONYM_MAP = {
         "20minutes": 20, "20 minutes": 20, "20min": 20, "20 min": 20,
         "30minutes": 30, "30 minutes": 30, "30min": 30, "30 min": 30,
         "45minutes": 45, "45 minutes": 45, "45min": 45, "45 min": 45,
-        "60minutes": 60, "60 minutes": 60, "60min": 60, "60 min": 60,
-        "90minutes": 90, "90 minutes": 90, "90min": 90, "90 min": 90,
+        "60minutes": 60, "60 minutes": 60, "60min": 60, "60 min": 60, "1 hour": 60, "an hour": 60,
+        "90minutes": 90, "90 minutes": 90, "90min": 90, "90 min": 90, "hour and a half": 90,
     },
     "shots": {
         "drive": "drive",
@@ -70,9 +70,9 @@ SYNONYM_MAP = {
 # Used by hierarchical boosting logic to broaden general terms to specific variations.
 GENERAL_SHOT_TYPES = {
     "drive": ["drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive"],
-    "cross": ["cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "cross-court nick", "hard cross", "volley cross", "volley hard cross", "volley cross lob", "volley cross-court nick"],
+    "cross": ["cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross", "volley cross", "volley hard cross", "volley cross lob", "volley cross-court nick", "cross-court nick"],
     "drop": ["drop", "counter drop", "cross drop", "straight drop", "volley cross drop", "volley straight drop"],
-    "boast": ["boast", "2-wall boast", "3-wall boast", "trickle boast", "reverse boast", "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast"],
+    "boast": ["boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast", "trickle boast", "reverse boast" "volley reverse boast"],
     "lob": ["lob", "straight lob", "cross lob", "volley straight lob", "volley cross lob"],
     "volley": ["volley", "volley drop", "volley drive", "volley cross", "volley lob", "volley flick", "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast", "volley deep drive", "volley hard drive", "volley straight drive", "volley cross drop", "volley straight drop", "volley cross kill", "volley straight kill", "volley straight lob", "volley cross-court nick", "volley hard cross"],
     "kill": ["straight kill", "volley straight kill", "cross kill", "volley cross kill"],
@@ -91,20 +91,20 @@ SPECIFIC_MAPS = {
 # Defines the scoring method, base weights, and specific parameters for each field.
 FIELD_SCORING_CONFIG = {
     "type": {"method": "_score_exact_match_field", "base_weight": 3.0},
-    "participants": {"method": "_score_exact_match_field", "base_weight": 2.5},
+    "participants": {"method": "_score_exact_match_field", "base_weight": 3.0},
     "squashLevel": {"method": "_score_exact_match_field", "base_weight": 2.0},
     "intensity": {
         "method": "_score_inferred_categorical_match_field",
-        "base_weight": 2.0,
-        "secondary_match_multiplier": 0.75,
+        "base_weight": 1.0,
+        "secondary_match_multiplier": 0.5,
         "field_name_for_secondary_standardisation": "intensity"
     },
-    "duration": {"method": "_score_numerical_range_field", "base_weight": 1.5, "tolerance": 10},
+    "duration": {"method": "_score_numerical_range_field", "base_weight": 1.5, "tolerance": 20},
     "shots": {
         "method": "_score_hierarchical_boost_field",
-        "base_weight": 4.0,
-        "primary_boost_weight": 3.0,
-        "secondary_boost_weight": 1.5,
+        "base_weight": 2.0,
+        "primary_boost_weight": 6.0,
+        "secondary_boost_weight": 5.0,
         "field_name_for_standardisation": "shots",
         "general_to_specific_map_name": "GENERAL_SHOT_TYPES"
     },

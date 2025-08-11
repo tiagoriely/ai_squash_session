@@ -1,10 +1,15 @@
-# run:  python3 -m rag.pipelines.retrieval.run_field_retrieval
+# run:  python3 -m rag.pipelines.retrieval.field_retrieval.run_field_retrieval
 
 import re
 import json
 from pathlib import Path
 # Import the logic, and also the clean_and_standardise_value function for evaluation
 from rag.pipelines.retrieval.field_retrieval.field_matcher import parse_user_prompt, score_document, clean_and_standardise_value
+from evaluation.retrieval.field_fulfilment import best_hit, mean_k, coverage_k
+from evaluation.retrieval.field_fulfilment_with_score_weights import (
+    best_hit_w, mean_k_w, coverage_k_w
+)
+
 
 
 # Example Usage and Retrieval Logic (for demonstration purposes)
@@ -21,7 +26,7 @@ if __name__ == "__main__":
         for line in f:
             knowledge_base.append(json.loads(line))
 
-    user_prompt = "I want a conditioned game for 2 players focusing on cross lobs lasting about 45 minutes."
+    user_prompt = "Create a training routine that helps with 'Strategic Application of Both 2-Wall and 3-Wall Boasts within a Driving Game"
     print(f"User prompt: {user_prompt}")
     user_desires = parse_user_prompt(user_prompt)
     print(f"\nUser Desires: {user_desires}")
@@ -43,60 +48,24 @@ if __name__ == "__main__":
             print(f"  Type: {doc.get('type')}, Participants: {doc.get('participants')}, Level: {doc.get('squashLevel')}")
             print(f"  Intensity: {doc.get('intensity')}, Duration: {doc.get('duration')}")
             print(f"  Shots: {doc.get('shots')}, Shot Side: {doc.get('shotSide')}")
-            print(f"  Primary shots: {doc.get('primaryShots')}, Movement: {doc.get('movement')}")
+            print(f"  Primary shots: {doc.get('primaryShots')}")
+            print(f"  Secondary shots: {doc.get('secondaryShots')}")
             print("-" * 20)
     else:
         print("No relevant documents found for the given prompt.")
 
     # Automated Evaluation of Generation (Conceptual, using top field-retrieved doc)
     if top_n_documents:
-        generated_session_content = top_n_documents[0]['contents'] # Using content of the top retrieved doc
-        generated_session_fields = top_n_documents[0]             # Using fields of the top retrieved doc
-
-        print(f"User Desires: {user_desires}")
-
-        fulfilled_fields = 0
-        total_requested_fields = 0
-
-        # Define which fields to check for fulfilment. These should correspond to possible keys in user_desires.
-        # 'primaryShots' and 'secondaryShots' are document characteristics, not direct user desires to be checked for fulfilment.
-        fields_to_check = ['type', 'participants', 'squashLevel', 'intensity', 'duration', 'shots', 'shotSide', 'movement']
-        # If parse_user_prompt starts populating 'explicitSpecificShots', you might add it here.
-        # For now, 'shots' is assumed to contain both general and specific desired canonicals from the user.
-
-        for field in fields_to_check:
-            user_val = user_desires.get(field)
-            raw_generated_val = generated_session_fields.get(field) # Get the raw value from the top document
-
-            if user_val is not None: # Only check if the user actually requested something for this field
-                total_requested_fields += 1
-
-                # Standardise the generated document's value for a fair comparison.
-                # This is crucial if the document stores "Medium" but user_desires has "medium", etc.
-                # Use the field name (e.g., 'shots', 'duration') as the context for standardisation.
-                standardised_generated_val = clean_and_standardise_value(field, raw_generated_val)
-
-
-                if isinstance(user_val, list):
-                    # For list fields (like 'shots', 'movement'), check if ALL user's desired items
-                    # are a subset of the document's standardised list.
-                    # Ensure generated_val_standardised is also a set for the subset check.
-                    if set(user_val).issubset(set(standardised_generated_val or [])):
-                        fulfilled_fields += 1
-                elif field == 'duration':
-                    # user_val (user_dur) is already an integer from parse_user_prompt
-                    # standardised_generated_val (gen_dur) is also an integer from clean_and_standardise_value
-                    user_dur = user_val
-                    gen_dur = standardised_generated_val
-
-                    if gen_dur is not None and abs(user_dur - gen_dur) <= 10: # Check if gen_dur is not None before comparison
-                        fulfilled_fields += 1
-                    # No need for try-except for conversion here, as clean_and_standardise_value handles it.
-                else: # For exact match fields (like 'type', 'participants', 'squashLevel', 'intensity', 'shotSide')
-                    if standardised_generated_val == user_val:
-                        fulfilled_fields += 1
-
-        fulfillment_rate = (fulfilled_fields / total_requested_fields) * 100 if total_requested_fields > 0 else 0
-        print(f"\nAutomated Field Fulfilment Rate for best session: {fulfilled_fields}/{total_requested_fields} ({fulfillment_rate:.2f}%)")
+        print("\n=== Field-Fulfilment metrics ===")
+        print(f"Best-Hit (rank-1)        : {best_hit(top_n_documents, user_desires):.2%}")
+        print(f"Mean fulfilment top-5    : {mean_k(top_n_documents, user_desires, k=5):.2%}")
+        print(f"Coverage of req fields@5 : {coverage_k(top_n_documents, user_desires, k=5):.2%}")
     else:
-        print("Cannot perform automated generation evaluation: No top documents found.")
+        print("Cannot compute fulfilment metrics: no relevant documents.")
+
+
+    # PROBLEM HERE
+    print("\n=== Weighted Field-Fulfilment metrics with Market Perception ===")
+    print("Weighted best‑hit:", best_hit_w(top_n_documents, user_desires))
+    print("Weighted mean‑5 :", mean_k_w(top_n_documents, user_desires))
+    print("Weighted cov@5  :", coverage_k_w(top_n_documents, user_desires))

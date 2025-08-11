@@ -1,23 +1,17 @@
-# python rag/pipelines/generation/run_generation.py \
-#        rag/configs/retrieval/faiss_rerank.yaml \
-#        --query "I'm an advanced player and I want to improve my lobs"
-
-
+#run_generation.py
 import argparse, time, yaml, textwrap, re
 from pathlib import Path
 from flashrag.retriever.retriever import DenseRetriever
 from openai import OpenAI
 from collections import Counter
 import os
-import json # Ensure json is imported at the top if it wasn't already
+import json
 
 # Environment
 from dotenv import load_dotenv
 load_dotenv()
 
 # Patterns for session type inference
-import re
-
 SESSION_TYPES_PATTERNS = {
     "drill":            re.compile(r"\bdrill\b", re.I),
     "conditioned_game": re.compile(r"\bconditi(?:on|oned)|game\b", re.I),
@@ -100,41 +94,59 @@ if __name__ == "__main__":
     answer = generate_answer(filled_prompt, model=args.model)
     print(answer)
 
-    # ------------- NEW ► write / append ragas-ready row -------------
-    # import json, pathlib # These are already at the top, no need to re-import
+    # ------------- write / append ragas-ready row -------------
     out_path = Path("data/eval_dataset.json")
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # build the row
-    ragas_row = {
-        "question": args.query,
-        "answer": answer,
-        "contexts": [doc["contents"] for doc in docs],  # full texts shown to the LLM
-    }
-
-    current_data = [] # Initialize as an empty list
+    current_data = []
 
     if out_path.exists() and out_path.stat().st_size > 0:
         try:
-            with out_path.open("r", encoding="utf-8") as f: # Open in 'r' mode first
+            with out_path.open("r", encoding="utf-8") as f:
                 current_data = json.load(f)
-            # Ensure it's a list; if not, initialize as an empty list to prevent appending to non-list
             if not isinstance(current_data, list):
                 print(f"⚠️ Warning: {out_path} content is not a JSON list. Reinitializing.")
                 current_data = []
         except json.JSONDecodeError as e:
             print(f"❌ Error decoding {out_path}: {e}")
             print(f"Attempting to reinitialize {out_path} as an empty list.")
-            current_data = [] # If decoding fails, treat it as empty or corrupted
+            current_data = []
         except Exception as e:
             print(f"An unexpected error occurred when reading {out_path}: {e}")
             current_data = []
+
+    next_case_id = 1
+    if current_data:
+        max_existing_id = 0
+        for row in current_data:
+            if "case_id" in row and isinstance(row["case_id"], (int, str)):
+                try:
+                    max_existing_id = max(max_existing_id, int(row["case_id"]))
+                except ValueError:
+                    pass
+        next_case_id = max_existing_id + 1
+
+    # Prepare data for the RAGAS evaluation file
+    # Store document metadata in a structured way
+    retrieved_documents_info = [
+        {"id": doc["id"], "source": doc["source"]} for doc in docs
+    ]
+
+    # build the row
+    ragas_row = {
+        "case_id": next_case_id,
+        "question": args.query,
+        "answer": answer,
+        "contexts": [doc["contents"] for doc in docs],  # CRITICAL: This MUST be the full text.
+        "retrieved_documents_info": retrieved_documents_info, # Consolidated, structured metadata.
+        "reference": ""
+    }
 
     # Append the new row
     current_data.append(ragas_row)
 
     # Write the complete (updated) data back to the file
-    with out_path.open("w", encoding="utf-8") as f: # Open in 'w' mode to overwrite
+    with out_path.open("w", encoding="utf-8") as f:
         json.dump(current_data, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ 1 row added to {out_path}")
+    print(f"\n✅ 1 row added to {out_path} with Case ID: {next_case_id}")

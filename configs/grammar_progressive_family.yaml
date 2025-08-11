@@ -1,0 +1,15 @@
+# The name of the experiment, used for the output directory.
+experiment_name: "progressive_boast_drive_test"
+
+# Choose the archetype to use for building the session.
+archetype_to_use: "progressive_family"
+
+# Provide the specific inputs required by that archetype.
+inputs:
+  target_family_id: "squash.family.pattern.diagonal.boast_drive_cross"
+  session_structure_id: "structure_45min_5blocks"
+  progression_order:
+    - "deep_only"
+    - "kills_allowed"
+    - "counter_drop"
+    - "open_drop"

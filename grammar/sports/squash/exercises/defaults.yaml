@@ -1,0 +1,16 @@
+# defaults.yaml (squash)
+# Purpose: Squash-specific defaults layered after global.
+
+sport: squash
+
+kind_defaults:
+  warmup:
+    applicability: { participants: [2] }
+  drill:
+    applicability: { participants: [2] }
+  conditioned_game:
+    applicability: { participants: [2] }
+  solo:
+    applicability: { participants: [1] }
+  ghosting:
+    applicability: { participants: [1] }

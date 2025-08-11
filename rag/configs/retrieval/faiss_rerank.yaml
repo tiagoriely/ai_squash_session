@@ -5,7 +5,7 @@ retrieval_method:            e5-base-v2
 retrieval_topk:              10          # top-k that FAISS returns *before* rerank
 
 index_path:                  indexes/my_kb/e5-base-v2_Flat.index
-corpus_path:                 ../data/my_kb.jsonl
+corpus_path:                 data/processed/my_kb.jsonl
 retrieval_model_path:        intfloat/e5-base-v2
 
 retrieval_query_max_length:  64

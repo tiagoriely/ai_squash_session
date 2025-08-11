@@ -1,0 +1,77 @@
+{
+  "experiment_details": {
+    "name": "dynamic_progressive_boast_drive_test",
+    "timestamp": "20250807_165559",
+    "config_file_used": "configs/grammar_dynamic_progressive_family.yaml"
+  },
+  "session_plan": {
+    "title": "Boast-Drive-Cross",
+    "blocks": [
+      {
+        "block_name": "Warm-up",
+        "exercises": [
+          {
+            "name": "Boast-Drive-Drop-Drive",
+            "duration_minutes": 3.0
+          },
+          {
+            "name": "Boast-Drive (2 shots)",
+            "duration_minutes": 3.0
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 1",
+        "exercises": [
+          {
+            "name": "Deep Only (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "Deep Only (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 2",
+        "exercises": [
+          {
+            "name": "With Extra Drive (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "With Extra Drive (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 3",
+        "exercises": [
+          {
+            "name": "With Kills Allowed (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "With Kills Allowed (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 4",
+        "exercises": [
+          {
+            "name": "With Counter Drops (forehand)",
+            "duration_minutes": 4
+          },
+          {
+            "name": "With Counter Drops (backhand)",
+            "duration_minutes": 4
+          }
+        ]
+      }
+    ]
+  }
+}

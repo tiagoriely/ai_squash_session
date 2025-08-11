@@ -1,0 +1,86 @@
+# sequence.peg
+# Parsing Expression Grammar (PEG) for the squash "sequence" mini-language.
+# Parse ONE sequence line at a time (we recommend storing sequences as a YAML list of lines).
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Entry point (for a single line)
+# ──────────────────────────────────────────────────────────────────────────────
+Sequence        <- WS Step (StepComment? Arrow Step)* StepComment? Trailing? WS
+
+# A Step is one of: Restart directive, an Optional step, a parenthesized Repeat,
+# a parenthesized Choice, or a plain Action.
+Step            <- Restart / Optional / Repeat / Choice / Action
+
+# Allow an inline "step-level" comment after any Step (before the next arrow/end).
+StepComment     <- WS? '#' (!Newline .)*
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Control / separators
+# ──────────────────────────────────────────────────────────────────────────────
+# Arrow between steps: accept Unicode '→' or ASCII '->'
+Arrow           <- WS ('→' / '->') WS
+
+# Restart directive: appears as the RHS Step after an Arrow:
+# e.g., "... → restart pattern at next boast"
+# Everything after 'restart' to end-of-line is captured as FreeText.
+Restart         <- 'restart' WS FreeText?
+
+# Optional step: "optional: extra drive (A)"  OR  "optional: ( extra drive (A) | extra drive (B) )"
+Optional        <- 'optional:' WS (Action / Group)
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Grouping constructs
+# ──────────────────────────────────────────────────────────────────────────────
+# Repeat of a grouped thing: "( X | Y )*"
+Repeat          <- Group WS '*'
+
+# A parenthesized group that can be either a Choice or a single Action.
+Group           <- '(' WS (ChoiceInner / Action) WS ')'
+
+# Choice between two or more Actions: "( A | B | C )"
+Choice          <- '(' WS ChoiceInner WS ')'
+ChoiceInner     <- Action (WS '|' WS Action)+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Atoms
+# ──────────────────────────────────────────────────────────────────────────────
+# Action with optional actor and optional trailing inline comment
+# Examples: boast (A)
+#           "extra drive" (initiating player)  # only once
+Action          <- Name Actor? InlineComment?
+
+# Actor: a small closed set of labels (expand as needed)
+Actor           <- WS '(' WS ActorName WS ')'
+ActorName       <- 'A'
+                / 'B'
+                / 'initiating player'
+                / 'opponent'
+                / 'whoever chooses'
+                / 'opponent of cross'
+                / 'opponent of initiating player'
+
+# An action Name can be a quoted string or one or more Words separated by WS.
+# Use quotes when you need punctuation or to be unambiguous.
+Name            <- Quoted / Word (WS Word)*
+
+# Quoted strings support \" escapes; they cannot span lines.
+Quoted          <- '"' ('\\"' / !['"\r\n] .)* '"'
+
+# Words are letters followed by letters/digits/underscore/hyphen.
+Word            <- [A-Za-z][A-Za-z0-9_-]*
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Whitespace & comments
+# ──────────────────────────────────────────────────────────────────────────────
+# Inline comments are allowed AFTER an Action (typical authoring pattern).
+InlineComment   <- WS? '#' (!Newline .)*
+
+# FreeText (used after 'restart') is any non-empty tail until newline.
+FreeText        <- (!Newline .)+
+
+# Whitespace is spaces/tabs; newlines are not expected inside a single Sequence.
+WS              <- [ \t]*
+Newline         <- '\r'? '\n'
+
+# Optional trailing whitespace/comments at end of the line.
+Trailing        <- (WS '#' (!Newline .)*)?

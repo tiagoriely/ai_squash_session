@@ -1,0 +1,37 @@
+# session_type.yaml
+
+drill:
+  rally_openness: 0
+  timed: true
+  allowed_durations_minutes: [ 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5 ]
+  default_duration_minutes_by_level:
+    beginner: 2
+    intermediate: 3
+    advanced: 4
+  scoring: false
+  competitive: false
+  description: >
+    Closed pattern with a fixed sequence and no player decisions
+    beyond hitting the prescribed shot.
+
+conditioned_game:
+  rally_openness:
+    min: 0
+    max: 1
+  timed: false
+  point_duration_minutes: 0.857
+  allowed_points_per_exercise:
+    - points: 7
+      weight: 0.40
+    - points: 9
+      weight: 0.35
+    - points: 11
+      weight: 0.15
+    - points: 15
+      weight: 0.10
+  scoring: true
+  competitive: true
+  description: >
+    Closed, semi-open, or open rally where a rule or constraint shapes play
+    (e.g. players must only play straight shots).
+  

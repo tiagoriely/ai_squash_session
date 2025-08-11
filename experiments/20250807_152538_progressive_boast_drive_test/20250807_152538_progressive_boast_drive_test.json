@@ -1,0 +1,107 @@
+{
+  "experiment_details": {
+    "name": "progressive_boast_drive_test",
+    "timestamp": "20250807_152538",
+    "config_file_used": "configs/grammar_progressive_family.yaml"
+  },
+  "session_plan": {
+    "title": "Progressive Family",
+    "target_duration_minutes": 45,
+    "blocks": [
+      {
+        "block_name": "Warm-up",
+        "exercises": [
+          {
+            "name": "Boast-Drive-Drop-Drive",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          },
+          {
+            "name": "Boast-Drive (2 shots)",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            },
+        ]
+      },
+      {
+        "block_name": "Activity Block 1",
+        "exercises": [
+          {
+            "name": "Progression Step 1: deep_only",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          },
+          {
+            "name": "Continuation of deep_only",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 2",
+        "exercises": [
+          {
+            "name": "Progression Step 2: kills_allowed",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          },
+          {
+            "name": "Continuation of kills_allowed",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 3",
+        "exercises": [
+          {
+            "name": "Progression Step 3: counter_drop",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          },
+          {
+            "name": "Continuation of counter_drop",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          }
+        ]
+      },
+      {
+        "block_name": "Activity Block 4",
+        "exercises": [
+          {
+            "name": "Progression Step 4: open_drop",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          },
+          {
+            "name": "Continuation of open_drop",
+            "duration_minutes": {
+              "target": 4,
+              "variance": 1
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

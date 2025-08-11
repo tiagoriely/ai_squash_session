@@ -1,4 +1,4 @@
-# evaluation/generation/create_prompts.py
+# evaluation/generation/create_prompts_for_generation.py
 
 import json
 import random

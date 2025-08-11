@@ -1,0 +1,10 @@
+# grammar_dynamic_progressive_family.yaml
+experiment_name: "dynamic_progressive_boast_drive_test"
+
+archetype_to_use: "progressive_family"
+
+inputs:
+  target_family_id: "squash.family.pattern.diagonal.boast_drive_cross"
+  session_structure_id: "structure_60min_6blocks"
+
+# no need to mention progression now

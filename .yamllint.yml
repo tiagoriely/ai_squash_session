@@ -1,0 +1,10 @@
+# .yamllint.yml  (repo root)
+extends: default
+rules:
+  line-length: disable
+  trailing-spaces: disable
+  braces: disable           # extra spaces inside {}
+  brackets: disable         # extra spaces inside []
+  comments: disable         # comment‐spacing rules
+  empty-lines: disable
+  document-start: disable

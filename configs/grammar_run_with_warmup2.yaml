@@ -1,0 +1,10 @@
+experiment_name: "progressive_boast_drive_with_warmup2"
+archetype_to_use: "progressive_family"
+inputs:
+  target_family_id: "squash.family.pattern.diagonal.boast_drive_cross"
+  session_structure_id: "structure_60min_6blocks"
+
+  # New section to explicitly select the warm-up
+  warmup_selection:
+    variant_id_to_use: "compound_boast_cross_boast_drive_and_2_shots"
+

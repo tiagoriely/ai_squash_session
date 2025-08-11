@@ -1,0 +1,23 @@
+# This file defines the "Progressive Family" session archetype.
+
+archetype_name: "Progressive Family"
+description: >
+  A session that focuses on a single exercise family (e.g. Alley Games, Boast-Cross-Drive, etc...), with variants
+  arranged in a specific order to create a logical progression
+  (e.g., from simple to complex).
+
+# Lists the parameters that MUST be provided to the Planner to build this session.
+required_inputs:
+  - name: "target_family_id"
+    description: "The ID of the exercise family to use (e.g., squash.family.pattern.diagonal.boast_drive_cross)."
+  - name: "session_structure_id"
+    description: "The ID of the timing blueprint to apply (e.g., structure_45min_5blocks)."
+  - name: "progression_order"
+    description: "An explicit list of variant_ids from the target family, defining the order of progression."
+
+# Defines the core logic for the Planner.
+logic_rules:
+  - rule: "For each progression step, create one exercise for each 'shotSide' option."
+  - rule: "Use only variants from the specified `target_family_id`."
+  - rule: "Fill session blocks strictly according to the provided `progression_order` list."
+  - rule: "The number of items in `progression_order` must match the number of available activity slots in the chosen session structure."

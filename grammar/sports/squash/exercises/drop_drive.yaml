@@ -1,0 +1,41 @@
+# drop_drive.yaml
+
+family: Drop-Drive
+family_id: squash.family.role.straight.drop_drive
+category: straight
+base_description: A role-based straight-line pattern that combines drops and/or volley drops from
+  the back and/or middle court with straight drives from the front.
+
+# Defining parameters that can be applied to the variants of the exercise below
+# This eliminates the need for separate forehand/backhand entries.
+parameters:
+  - name: shotSide
+    description: The side of the court the exercise is focused on.
+    options: [forehand, backhand]
+
+# All variation of this exercise
+variants:
+  # Variant 1 – Deep Only
+  - variant_id: deep_only
+    name: Deep Only
+    description: >
+      One player plays straight drops from the back of the court; 
+      the other plays straight drives from the front. 
+      Players swap roles, then switch sides, and repeat.
+    # METADATA: gives you information about the variant
+    types: [drill, conditioned_game]
+    roles:
+      pattern: fixed # A drives, B drops
+      exercises_per_side: 2 # Players change role before changing sides
+      default_sides: [forehand, backhand]
+    rules:
+      sequence:
+        - "drop (B)"
+        - "drive (A)"
+        - "restart pattern (continuous until role swap)"
+      constraint: >
+        Drive: first bounce behind T-line.
+        Drop: second bounce in front of T-line.
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "drop", "straight drop",
+                      "volley straight drop"]

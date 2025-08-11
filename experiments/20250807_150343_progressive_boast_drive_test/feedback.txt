@@ -1,0 +1,5 @@
+1) it does not have warm up
+
+2) I need to generation to generate and actualy session without variance so it should have been duration_minutes: 4min (or something else as long as it meet the softs contrain requirements)
+
+3) Each block for this exercise should be one side forehand and the other exercise in the block should be backhand. Because this exercises can be played independently in the forehand and in the backhand. Thus, I need to put somewhere this logic. Preferably in the grammar logic

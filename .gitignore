@@ -15,7 +15,7 @@ venv/
 .env
 
 # Ignore datasets and indices (optional, if large)
-data/my_kb.jsonl
+data/processed/my_kb.jsonl
 rag/indexes/
 finetuning/data/finetune_splits/*.jsonl
 
