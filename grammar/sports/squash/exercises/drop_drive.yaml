@@ -1,5 +1,5 @@
 # drop_drive.yaml
-
+id: drop_drive
 family: Drop-Drive
 family_id: squash.family.role.straight.drop_drive
 category: straight
@@ -17,25 +17,136 @@ parameters:
 variants:
   # Variant 1 – Deep Only
   - variant_id: deep_only
-    name: Deep Only
+    name: Drop-Drive (Deep Only)
     description: >
       One player plays straight drops from the back of the court; 
       the other plays straight drives from the front. 
       Players swap roles, then switch sides, and repeat.
     # METADATA: gives you information about the variant
     types: [drill, conditioned_game]
+    difficulty_score: 5
+    foundational_shots: ["deep drive", "straight drive", "hard drive",
+                         "straight drop"]
+    tactical_shots: []
+    shots:
+      general: ["drive", "drop", "volley"]
+      specific: ["deep drive", "hard drive", "straight drive",
+                 "straight lob",
+                 "straight drop",
+                 "volley straight drop"]
+    movement: ["front", "back", "middle"]
     roles:
       pattern: fixed # A drives, B drops
       exercises_per_side: 2 # Players change role before changing sides
       default_sides: [forehand, backhand]
     rules:
-      sequence:
-        - "drop (B)"
-        - "drive (A)"
-        - "restart pattern (continuous until role swap)"
+      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
       constraint: >
         Drive: first bounce behind T-line.
         Drop: second bounce in front of T-line.
     allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "straight lob",
                       "drop", "straight drop",
                       "volley straight drop"]
+
+  # Variant 2 – Volley drop Deep Only
+  - variant_id: volley_drop_deep_only
+    name: Volley Straight Drop - Drive (Deep Only)
+    description: >
+      One player plays volley straight drops from the service box; 
+      the other plays straight drives from the front. 
+      Players swap roles, then switch sides, and repeat.
+    # METADATA: gives you information about the variant
+    types: [drill, conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["deep drive", "straight drive", "hard drive",
+                         "volley straight drop"]
+    tactical_shots: []
+    shots:
+      general: ["drive", "drop", "volley"]
+      specific: ["deep drive", "hard drive", "straight drive",
+                 "straight lob",
+                 "straight drop",
+                 "volley straight drop"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed # A drives, B drops
+      exercises_per_side: 2 # Players change role before changing sides
+      default_sides: [forehand, backhand]
+    rules:
+      sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      constraint: >
+        Drive: first bounce behind T-line.
+        Drop: second bounce in front of T-line.
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "straight lob",
+                      "drop", "straight drop",
+                      "volley straight drop"]
+
+  # Variant 3 – Volley drop & Straight Lob
+  - variant_id: volley_drop_straight_lob
+    name: Volley Straight Drop - Straight Lob
+    description: >
+      One player plays volley straight drops (above the head) from the service box; 
+      the other plays straight lobs from the front. 
+      Players swap roles, then switch sides, and repeat.
+    # METADATA: gives you information about the variant
+    types: [drill, conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["straight lob",
+                         "volley straight drop"]
+    tactical_shots: []
+    shots:
+      general: ["drive", "drop", "volley"]
+      specific: ["straight lob",
+                 "straight drop",
+                 "volley straight drop"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed # A straight lobs, B volley drops
+      exercises_per_side: 2 # Players change role before changing sides
+      default_sides: [forehand, backhand]
+    rules:
+      sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
+      constraint: >
+        Straight Lob: should be above the service line on the front wall and its first bounce must land behind T-line.
+        Drop: second bounce in front of T-line.
+    allowed_actions: ["lob", "straight lob",
+                      "drop", "straight drop",
+                      "volley straight drop"]
+
+  # Variant 4 – Any Straight Drive
+  - variant_id: any_straight_drive
+    name: Drop-Drive (any drive)
+    description: >
+      One player plays straight drops from the back of the court; 
+      the other plays straight drives from the front. 
+      Players swap roles, then switch sides, and repeat.
+    # METADATA: gives you information about the variant
+    types: [ drill, conditioned_game ]
+    difficulty_score: 4
+    foundational_shots: [ "deep drive", "straight drive", "hard drive",
+                          "straight drop" ]
+    tactical_shots: [ "straight kill", "straight lob" ]
+    shots:
+      general: [ "drive", "drop", "volley" ]
+      specific: [ "deep drive", "hard drive", "straight drive",
+                  "straight kill",
+                  "straight lob",
+                  "straight drop",
+                  "volley straight drop" ]
+    movement: [ "front", "back", "middle" ]
+    roles:
+      pattern: fixed # A drives, B drops
+      exercises_per_side: 2 # Players change role before changing sides
+      default_sides: [ forehand, backhand ]
+    rules:
+      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      constraint: >
+        Drive: second bounce behind T-line.
+        Drop: second bounce in front of T-line.
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive",
+                       "kill", "straight kill",
+                       "lob", "straight lob",
+                       "drop", "straight drop",
+                       "volley", "volley straight drop" ]

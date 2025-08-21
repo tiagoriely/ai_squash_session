@@ -1,3 +1,4 @@
+# rag/configs/retrieval/faiss_rerank.yaml
 # Dense retrieval with E5 + cross-encoder reranker
 # ------------------------------------------------
 

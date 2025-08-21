@@ -1,0 +1,18 @@
+block_type_id: "symmetrical_same_side_variant_progression_pair"
+description: >
+  A pair of symmetrical blocks. The first block progresses through two variants on one side,
+  and the second block is an exact mirror of the first on the opposite side.
+rules:
+  # This tactic creates two blocks.
+  block_count: 2
+  # HARD CONSTRAINT: The block must contain exactly two exercises.
+  exercise_count: 2
+  # HARD CONSTRAINT: Both exercises must be variants of the same family.
+  requires_same_family: true
+  # HARD CONSTRAINT: The variants must be different from each other.
+  require_distinct_variants: true
+  # HARD CONSTRAINT: Both exercises must be performed on the same side (e.g., both Forehand).
+  requires_same_side: true
+  # HARD CONSTRAINT: The variant with lower complexity (fewer allowed_actions) must come first.
+  enforce_complexity_progression: true
+  enforce_points_progression: true

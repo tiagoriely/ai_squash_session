@@ -1,0 +1,31 @@
+# sports/squash/session_archetypes/progressive_shotside.yaml
+
+archetype_name: "Progressive ShoteSide"
+description: >
+  A session that focuses entirely on a single shot side (e.g., forehand-only) 
+  by selecting exercises from various families and arranging them in order of 
+  increasing complexity.
+
+# --- HARD CONSTRAINTS ---
+# Rules that the planner MUST follow.
+hard_constraints:
+  - type: require_single_shotside
+    # The planner will randomly choose 'forehand' or 'backhand' at generation time
+    # and filter its entire library of exercises to only those that match.
+  - type: prefer_complexity_progression
+
+
+# --- SOFT CONSTRAINTS ---
+# Preferences that guide the planner's choices without causing failure.
+#soft_constraints:
+#  - type: prefer_complexity_progression
+    # The planner will sort the filtered exercises by complexity (allowed_actions)
+    # and fill the session from simplest to most complex.
+
+# --- COMPOSITION ---
+# This archetype is flexible and can use any block type, as its main constraint
+# is applied at the exercise-selection level.
+allowed_block_types:
+  - same_side_variant_progression
+  - from_drills_to_condition
+  - cross_family_action_similarity

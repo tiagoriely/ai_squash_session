@@ -3,9 +3,14 @@ total_duration_rules:
   # HARD CONSTRAINT: Total time cannot exceed the target_duration_minutes.
   hard_max: "target"
   # SOFT CONSTRAINT: Total time can be up to 3 minutes less than the target.
-  soft_min_undershoot: 3
+  soft_min_undershoot: 5
 variation_name: "5-Block Variation (10 exercises)"
 default_rest_minutes: 1.5
+
+completion_rules:
+  # HARD CONSTRAINT: All block placeholders in this structure must be filled.
+  require_all_blocks_filled: true
+
 blocks:
   - block_name: "Warm-up"
     exercises:

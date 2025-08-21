@@ -1,0 +1,25 @@
+# configs/synthetic_dataset_creation/dedup.yaml
+
+# High-level run params
+num: 1
+outfile: data/processed/squash_dataset_dedup_semantic_jaccard_exhaustion.jsonl
+seed: 43
+
+# Exhaustion / attempts
+max_attempts_multiplier: 50.0
+consecutive_dup_limit: 2500
+
+# Exact dedup (hash)
+dedup_by: plan     # plan | text | none
+
+# Jaccard near-dup
+jaccard_dedup: true
+jaccard_ngram: 2
+jaccard_threshold: 0.88
+jaccard_window: 500
+
+# Semantic near-dup
+semantic_dedup: true
+semantic_threshold: 0.93
+semantic_model: sentence-transformers/all-MiniLM-L6-v2
+semantic_device: null  # "cpu" | "cuda" | null for auto

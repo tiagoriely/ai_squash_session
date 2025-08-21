@@ -1,0 +1,76 @@
+{
+    "session_id": "session_001",
+    "meta": {
+        "session_type": "mix(conditioned_game, drill)",
+        "archetype": "Progressive ShoteSide",
+        "structure_id": "structure_45min_5blocks",
+        "duration": 45,
+        "shotSide": "forehand",
+        "participants": 2,
+        "applicable_squash_levels": [
+            "advanced",
+            "professional"
+        ],
+        "recommended_squash_level": "advanced",
+        "shots_general": [
+            "boast",
+            "cross",
+            "drive",
+            "drop",
+            "kill",
+            "lob",
+            "nick",
+            "volley"
+        ],
+        "shots_specific_primary": [
+            "cross lob",
+            "deep drive",
+            "hard drive",
+            "straight drive"
+        ],
+        "shots_specific_secondary": [
+            "2-wall boast",
+            "3-wall boast",
+            "counter drop",
+            "cross down the middle",
+            "cross drop",
+            "cross kill",
+            "cross-court nick",
+            "deep cross",
+            "hard cross",
+            "reverse boast",
+            "straight drop",
+            "straight kill",
+            "straight lob",
+            "trickle boast",
+            "volley 2-wall boast",
+            "volley 3-wall boast",
+            "volley cross",
+            "volley cross drop",
+            "volley cross kill",
+            "volley cross lob",
+            "volley cross-court nick",
+            "volley deep drive",
+            "volley drive",
+            "volley hard cross",
+            "volley hard drive",
+            "volley reverse boast",
+            "volley straight drive",
+            "volley straight drop",
+            "volley straight kill",
+            "volley straight lob",
+            "wide cross"
+        ],
+        "movement": [
+            "back",
+            "diagonal",
+            "front",
+            "middle",
+            "multi-directional",
+            "sideways"
+        ],
+        "rest_minutes": 1.5
+    },
+    "text": "Duration: 45 min\nSession Focus: Progressive ShoteSide (Archetype: Progressive ShoteSide)\n-------------------------------------------------------------------------------\n### Warm-up ###\n• 3 min: Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n• 3 min: Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n### Activity Block 1 ###\n• 3 min: Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n  (Rule: Drive: first bounce behind T-line. Drop: second bounce in front of...)\n• 3 min: Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand)\n  (Rule: Every cross and the succeeding drive must land behind the T-line.)\n• Rest: 1.5 min\n\n### Activity Block 2 ###\n• 3 min: Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n  (Rule: Drive: first bounce behind T-line. Drop: second bounce in front of...)\n• 7 pts: Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n• Rest: 1.5 min\n\n### Activity Block 3 ###\n• 3 min: Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)\n  (Rule: Second bounce behind the T-line)\n• 9 pts: Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Open Rally via Counter Drop (Forehand)\n• Rest: 1.5 min\n\n### Activity Block 4 ###\n• 3 min: Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n  (Rule: Drive: first bounce behind T-line. Drop: second bounce in front of...)\n• 3 min: Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)\n  (Rule: All crosses and both drives must land behind the T-line. The...)\n• Rest: 1.5 min\n\n-------------------------------------------------------------------------------\nEnd of session.",
+    "hash": "7bc389ce33c103e5e49aeca14cec8025abc7e8e6e7ce83a1d171e2f76b2a60c7"
+}

@@ -1,0 +1,15 @@
+block_type_id: "same_variant_side_switch"
+description: "A single block that contains the exact same exercise variant on both the forehand and the backhand."
+rules:
+  block_count: 1
+  # HARD CONSTRAINT: The block must contain exactly two exercises.
+  exercise_count: 2
+  # HARD CONSTRAINT: Must use the same exercise variant for both.
+  requires_same_variant: true
+  # HARD CONSTRAINT: Must apply to different sides, in a specific order.
+  # The planner will enforce finding a variant that supports [forehand, backhand].
+  requires_side_switch: true # Planner looks for forehand -> backhand
+  enforce_points_progression: true
+
+
+  # SOFT CONSTRAINT (implied by requires_side_switch): Order is Forehand, then Backhand.

@@ -44,85 +44,27 @@ def clean_and_standardise_value(field: str, value_str: str | list):
     return raw_value_lower
 
 
-# --- START: CORRECTED PARSER LOGIC ---
-def parse_user_prompt(prompt: str) -> dict:
+# --- START: USER DESIRES DELEGATION ---
+# Delegate prompt parsing to user_desires.py so we have a single source of truth.
+from rag.pipelines.retrieval.field_retrieval.user_desires import (
+    parse_user_prompt as _ud_parse_user_prompt,
+)
+
+__all__ = ["extract_user_prompt", "parse_user_prompt"]
+
+def extract_user_prompt(prompt: str, allowed_durations: list[int] | None = None) -> dict:
     """
-    Description: Parses a user prompt to extract desired field values, applying synonyms mapping.
-    For 'shots', it extracts all detected canonical shot forms (both general and specific).
-
-    Parameters:
-        - prompt (str): The raw text of the user's query.
-
-    Returns:
-        dict: A dictionary of extracted and standardised user desires,
-              with field names as keys and canonical values as values.
+    High-level extractor that aggregates all user-desire fields from free text.
+    Delegates to rag.pipelines.retrieval.field_retrieval.user_desires.parse_user_prompt.
     """
-    user_desires = {}
-    prompt_lower = prompt.lower()
+    return _ud_parse_user_prompt(prompt, allowed_durations=allowed_durations)
 
-    # Helper to find all unique terms for a field using word boundaries for accuracy
-    def _extract_terms(field_name):
-        found_terms = set()
-        # Sort terms by length, longest first, to match multi-word phrases correctly
-        terms_to_check = sorted(SYNONYM_MAP.get(field_name, {}).keys(), key=len, reverse=True)
-        for term in terms_to_check:
-            if re.search(r'\b' + re.escape(term.lower()) + r'\b', prompt_lower):
-                found_terms.add(term)
-        return found_terms
-
-
-    # --- Extract single-value fields ---
-    for field in ["type", "squashLevel", "intensity"]:
-        terms = _extract_terms(field)
-        if terms:
-            # Take the first one found (usually the longest match)
-            user_desires[field] = clean_and_standardise_value(field, list(terms)[0])
-
-    # --- Extract numerical fields with specific regex ---
-    participants_match = re.search(r'(\d+)\s*player|\b(one|two|three|four)\b|\bsolo\b', prompt_lower)
-    if participants_match:
-        val = participants_match.group(1) or participants_match.group(2) or "solo"
-        user_desires["participants"] = clean_and_standardise_value("participants", val)
-
-    duration_match = re.search(r'(\d+)\s*(?:min|hour)|an hour|hour and a half', prompt_lower)
-    if duration_match:
-        val = duration_match.group(1) or duration_match.group(0)
-        user_desires["duration"] = clean_and_standardise_value("duration", val)
-
-    # --- Extract multi-value fields ---
-    side_terms = _extract_terms("shotSide")
-    if side_terms:
-        sides = {clean_and_standardise_value("shotSide", term) for term in side_terms}
-        user_desires["shotSide"] = list(sides)
-
-    movement_terms = _extract_terms("movement")
-    if movement_terms:
-        movements = {clean_and_standardise_value("movement", term) for term in movement_terms}
-        user_desires["movement"] = list(movements)
-
-    # --- Special, hierarchical extraction for shots ---
-    all_shot_terms = set()
-    # 1. Build a master list of all known shot phrases to search for
-    general_shots_map = SPECIFIC_MAPS.get("GENERAL_SHOT_TYPES", {})
-    all_possible_shots = set(SYNONYM_MAP.get("shots", {}).keys())
-    for shots in general_shots_map.values():
-        all_possible_shots.update(shots)
-
-    # 2. Search for these phrases in the prompt (longest first for accuracy)
-    for shot in sorted(all_possible_shots, key=len, reverse=True):
-        if re.search(r'\b' + re.escape(shot.lower()) + r'\b', prompt_lower):
-            # 3. If a shot is found, add the specific term AND its general canonical form
-            all_shot_terms.add(shot)
-            all_shot_terms.add(clean_and_standardise_value("shots", shot))
-
-    if all_shot_terms:
-        user_desires["shots"] = list(filter(None, all_shot_terms))
-
-    # Final cleanup of any empty results
-    return {k: v for k, v in user_desires.items() if v}
-
-
-# --- END: CORRECTED PARSER LOGIC ---
+def parse_user_prompt(prompt: str, allowed_durations: list[int] | None = None) -> dict:
+    """
+    Backward-compatible alias. Prefer extract_user_prompt().
+    """
+    return extract_user_prompt(prompt, allowed_durations=allowed_durations)
+# --- END: USER DESIRES DELEGATION ---
 
 
 # --- 2. Field-Specific Scoring Helper Functions ---

@@ -1,0 +1,75 @@
+# sports/squash/session_block_types.yaml
+# Defines the set of rules for constructing different kinds of activity blocks.
+
+- block_type_id: "same_variant_side_switch"
+  description: "Performs the exact same exercise variant on the forehand, then the backhand."
+  rules:
+    block_count: 1
+    # HARD CONSTRAINT: The block must contain exactly two exercises.
+    exercise_count: 2
+    # HARD CONSTRAINT: Must use the same exercise variant for both.
+    requires_same_variant: true
+    # HARD CONSTRAINT: Must apply to different sides, in a specific order.
+    # The planner will enforce finding a variant that supports [forehand, backhand].
+    requires_side_switch: true # Planner looks for forehand -> backhand
+    # SOFT CONSTRAINT (implied by requires_side_switch): Order is Forehand, then Backhand.
+
+- block_type_id: "symmetrical_same_side_variant_progression_pair"
+  description: >
+    A pair of symmetrical blocks. The first block progresses through two variants on one side,
+    and the second block is an exact mirror of the first on the opposite side.
+  rules:
+    block_count: 2
+    # HARD CONSTRAINT: The block must contain exactly two exercises.
+    exercise_count: 2
+    # HARD CONSTRAINT: Both exercises must be variants of the same family.
+    requires_same_family: true
+    # HARD CONSTRAINT: The variants must be different from each other.
+    require_distinct_variants: true
+    # HARD CONSTRAINT: Both exercises must be performed on the same side (e.g., both Forehand).
+    requires_same_side: true
+    # HARD CONSTRAINT: The variant with lower complexity (fewer allowed_actions) must come first.
+    enforce_complexity_progression: true
+
+- block_type_id: "same_side_variant_progression"
+  description: "A block that progresses through two different variants from the same family, on the same side."
+  rules:
+    # HARD CONSTRAINT: The block must contain exactly two exercises.
+    exercise_count: 2
+    # HARD CONSTRAINT: Both exercises must be variants of the same family.
+    requires_same_family: true
+    # HARD CONSTRAINT: The variants must be different from each other.
+    require_distinct_variants: true
+    # HARD CONSTRAINT: Both exercises must be performed on the same side (e.g., both Forehand).
+    requires_same_side: true
+    # HARD CONSTRAINT: The variant with lower complexity (fewer allowed_actions) must come first.
+    enforce_complexity_progression: true
+
+- block_type_id: "from_drills_to_condition"
+  description: "A block that progresses from a drill to a conditioned game from the same family, where the game is at least as complex as the drill."
+  rules:
+    exercise_count: 2
+    # HARD CONSTRAINT: The block must contain a drill followed by a conditioned game.
+    allowed_sequences:
+      - [drill, conditioned_game]
+    requires_same_family: true
+    # HARD CONSTRAINT: The complexity of the conditioned game must be greater than or equal to the drill's complexity.
+    # Complexity is measured by the number of 'allowed_actions'.
+    enforce_complexity_progression: true
+
+- block_type_id: "cross_family_action_similarity"
+  description: "A block with two exercises from different families that share a high proportion of allowed shots, progressing from simpler to more complex."
+  rules:
+    # HARD CONSTRAINT: The block must contain exactly two exercises.
+    exercise_count: 2
+    # HARD CONSTRAINT: The two exercises must be of the same type.
+    allowed_sequences:
+      - [ drill, drill ]
+      - [ conditioned_game, conditioned_game ]
+    # HARD CONSTRAINT: The exercises must come from different families.
+    requires_different_families: true
+    # HARD CONSTRAINT: The exercises must have a high degree of similarity in their allowed actions.
+    # This is the Jaccard similarity index: (size of intersection) / (size of union).
+    require_action_similarity_threshold: 0.60 # e.g., 60% or higher similarity
+    # HARD CONSTRAINT: The variant with lower complexity (fewer total allowed_actions) must come first.
+    enforce_complexity_progression: true

@@ -5,6 +5,8 @@
 # ──────────────────────────────────────────────────────────────────────────────
 # Entry point (for a single line)
 # ──────────────────────────────────────────────────────────────────────────────
+# new: allows multiple sequences separated by a pipe
+SequenceChoice  <- Sequence (WS '|' WS Sequence)*
 Sequence        <- WS Step (StepComment? Arrow Step)* StepComment? Trailing? WS
 
 # A Step is one of: Restart directive, an Optional step, a parenthesized Repeat,

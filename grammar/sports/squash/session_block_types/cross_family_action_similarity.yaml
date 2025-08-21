@@ -1,0 +1,18 @@
+block_type_id: "cross_family_action_similarity"
+description: "A block with two exercises from different families that share a high proportion of allowed shots, progressing from simpler to more complex."
+rules:
+  block_count: 1
+  # HARD CONSTRAINT: The block must contain exactly two exercises.
+  exercise_count: 2
+  # HARD CONSTRAINT: The two exercises must be of the same type.
+  allowed_sequences:
+    - [ drill, drill ]
+    - [ conditioned_game, conditioned_game ]
+  # HARD CONSTRAINT: The exercises must come from different families.
+  requires_different_families: true
+  # HARD CONSTRAINT: The exercises must have a high degree of similarity in their allowed actions.
+  # This is the Jaccard similarity index: (size of intersection) / (size of union).
+  require_action_similarity_threshold: 0.60 # e.g., 60% or higher similarity
+  # HARD CONSTRAINT: The variant with lower complexity (fewer total allowed_actions) must come first.
+  enforce_complexity_progression: true
+  enforce_points_progression: true

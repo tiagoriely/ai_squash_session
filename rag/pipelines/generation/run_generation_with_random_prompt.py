@@ -1,4 +1,4 @@
-#run_generation_with_random_prompt.py
+# rag/pipelines/generation/run_generation_with_random_prompt.py
 import argparse, time, yaml, textwrap, re
 from pathlib import Path
 from flashrag.retriever.retriever import DenseRetriever

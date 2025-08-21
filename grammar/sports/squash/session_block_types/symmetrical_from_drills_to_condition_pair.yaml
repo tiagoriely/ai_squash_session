@@ -1,0 +1,14 @@
+# A pair of symmetrical blocks that progresses from a drill to a game, mirrored on both sides.
+block_type_id: "symmetrical_from_drills_to_condition_pair"
+description: "A pair of symmetrical blocks that progresses from a drill to a game, mirrored on both sides."
+rules:
+  # This tactic creates two blocks.
+  block_count: 2
+
+  # The rules for the content of each block:
+  exercise_count: 2
+  allowed_sequences:
+    - [drill, conditioned_game]
+  requires_same_family: true
+  enforce_complexity_progression: true
+  requires_same_side: true # Applies to the first block.

@@ -1,4 +1,4 @@
-#run_generation.py
+# rag/pipelines/generation/run_generation.py
 import argparse, time, yaml, textwrap, re
 from pathlib import Path
 from flashrag.retriever.retriever import DenseRetriever
@@ -68,6 +68,7 @@ if __name__ == "__main__":
     ap.add_argument("cfg", help="YAML config for retriever")
     ap.add_argument("--query", required=True)
     ap.add_argument("--model", default="gpt-4")
+
     args = ap.parse_args()
 
     cfg = load_cfg(args.cfg)

@@ -60,7 +60,7 @@ SYNONYM_MAP = {
         "front": "front",
         "middle": "middle",
         "back": "back",
-        "sideways": "sideways", "lateral": "sideways", "side-to-side": "sideways",
+        "sideways": "sideways", "lateral": "sideways", "side-to-side": "sideways", "side to side": "sideways",
         "diagonal": "diagonal",
         "multi-directional": "multi-directional", "all over the court": "multi-directional",
     },
@@ -72,13 +72,15 @@ GENERAL_SHOT_TYPES = {
     "drive": ["drive", "deep drive", "hard drive", "straight drive", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive"],
     "cross": ["cross", "cross-court", "cross court", "cross lob", "lob cross", "deep cross", "cross deep", "cross wide", "wide cross", "cross down the middle", "hard cross", "volley cross", "volley hard cross", "volley cross lob", "volley cross-court nick", "cross-court nick"],
     "drop": ["drop", "counter drop", "cross drop", "straight drop", "volley cross drop", "volley straight drop"],
-    "boast": ["boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast", "trickle boast", "reverse boast" "volley reverse boast"],
+    "boast": ["boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast", "trickle boast", "reverse boast", "volley reverse boast"],
     "lob": ["lob", "straight lob", "cross lob", "volley straight lob", "volley cross lob"],
     "volley": ["volley", "volley drop", "volley drive", "volley cross", "volley lob", "volley flick", "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast", "volley deep drive", "volley hard drive", "volley straight drive", "volley cross drop", "volley straight drop", "volley cross kill", "volley straight kill", "volley straight lob", "volley cross-court nick", "volley hard cross"],
     "kill": ["straight kill", "volley straight kill", "cross kill", "volley cross kill"],
-    # "serve": ["serve", ...],
-    # "nick": ["cross-court nick", "volley cross-court nick", ...],
-    # "flick": ["flick", "volley flick", ...],
+
+    # missing info
+    "serve": ["lob serve"],
+    "nick": ["cross-court nick", "volley cross-court nick"],
+    "flick": ["flick", "volley flick"],
 }
 
 # Dictionary to easily retrieve specific maps by name (for dynamic access in score_document)

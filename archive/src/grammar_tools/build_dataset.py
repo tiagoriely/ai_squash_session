@@ -1,7 +1,7 @@
 from pathlib import Path
 import json, random, uuid, tqdm
 
-from .planner import build_session              # ← uses your YAML grammar
+from src.grammar_tools.engine.planner import build_session              # ← uses your YAML grammar
 from rag.pipelines.generation.generator import (
     generate_session,                           # ← surface realisation LLM prompt
 )

@@ -1,0 +1,17 @@
+# A pair of symmetrical blocks with exercises from different families that share a high proportion of shots, mirrored on both sides.
+block_type_id: "symmetrical_cross_family_action_similarity_pair"
+description: "A pair of symmetrical blocks with exercises from different families that share a high proportion of shots, mirrored on both sides."
+rules:
+  # This tactic creates two blocks.
+  block_count: 2
+
+  # The rules for the content of each block:
+  exercise_count: 2
+  allowed_sequences:
+    - [ drill, drill ]
+    - [ conditioned_game, conditioned_game ]
+  requires_different_families: true
+  require_action_similarity_threshold: 0.60
+  enforce_complexity_progression: true
+  requires_same_side: true # Applies to the first block.
+  enforce_points_progression: true

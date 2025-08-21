@@ -1,56 +1,42 @@
-# In grammar/squash/exercises/warmups.yaml
-# ... other variants ...
+# sports/squash/exercises/warmups.yaml
+id: warmup_basic
+family: Warmup
+family_id: squash.family.warmup
+category: warmup
+base_description: A collection of warm-up routines for squash sessions.
 
-# WARMUP 1
-- variant_id: "compound_boast_drive_drop_drive_and_2_shots"
-  name: "Compound Boast-Drive-Drop-Drive + 2 shots"
-  description: "A scalable warm-up routine with two distinct patterns and a role rotation."
-  types: [warmup]
+# All warm-up variants
+variants:
+  # WARMUP 1
+  - variant_id: "compound_boast_drive_drop_drive_and_2_shots"
+    name: "Compound Boast-Drive-Drop-Drive + 2 shots"
+    description: "A scalable warm-up routine with two distinct patterns and a role rotation."
+    types: [warmup]
+    composition:
+      repeat_with_role_switch: true
+      components:
+        - name: "Boast-Drive-Drop-Drive"
+          proportion: 0.5
+          rules:
+            sequence: "A: boast -> B: drive -> A: drop -> B: drive"
+        - name: "Boast-Drive (2 shots)"
+          proportion: 0.5
+          rules:
+            sequence: "A (drive, boast) <-> B (drop, drive)"
 
-  # This new 'composition' key defines the internal structure and scaling logic.
-  composition:
-    # This rule tells the Planner to split the total allocated time in half
-    # and run the sequence of components twice, once for each player role.
-    repeat_with_role_switch: true
-
-    # These are the components that make up one half of the routine.
-    # Their duration is defined by proportions, not fixed minutes.
-    components:
-      - name: "Boast-Drive-Drop-Drive"
-        # This component takes up 50% of the available time for the half-block.
-        proportion: 0.5
-        rules:
-          sequence: "A: boast -> B: drive -> A: drop -> B: drive"
-
-      - name: "Boast-Drive (2 shots)"
-        # This component takes up the remaining 50% of the time.
-        proportion: 0.5
-        rules:
-          sequence: "A (drive, boast) <-> B (drop, drive)"
-
-# WARMUP 2
-- variant_id: "compound_boast_cross_boast_drive_and_2_shots"
-  name: "Compound Boast-Cross-Boast-Drive + 2 shots"
-  description: "A scalable warm-up routine with two distinct patterns and a role rotation."
-  types: [warmup]
-
-  # This new 'composition' key defines the internal structure and scaling logic.
-  composition:
-    # This rule tells the Planner to split the total allocated time in half
-    # and run the sequence of components twice, once for each player role.
-    repeat_with_role_switch: true
-
-    # These are the components that make up one half of the routine.
-    # Their duration is defined by proportions, not fixed minutes.
-    components:
-      - name: "Boast-Cross-Boast-Drive"
-        # This component takes up 50% of the available time for the half-block.
-        proportion: 0.5
-        rules:
-          sequence: "A: boast -> B: drive -> A: drop -> B: drive"
-
-      - name: "Boast-Drive (2 shots)"
-        # This component takes up the remaining 50% of the time.
-        proportion: 0.5
-        rules:
-          sequence: "A (drive, boast) <-> B (drop, drive)"
+  # WARMUP 2
+  - variant_id: "compound_boast_cross_boast_drive_and_2_shots"
+    name: "Compound Boast-Cross-Boast-Drive + 2 shots"
+    description: "A scalable warm-up routine with two distinct patterns and a role rotation."
+    types: [warmup]
+    composition:
+      repeat_with_role_switch: true
+      components:
+        - name: "Boast-Cross-Boast-Drive"
+          proportion: 0.5
+          rules:
+            sequence: "A: boast -> B: drive -> A: drop -> B: drive"
+        - name: "Boast-Drive (2 shots)"
+          proportion: 0.5
+          rules:
+            sequence: "A (drive, boast) <-> B (drop, drive)"
