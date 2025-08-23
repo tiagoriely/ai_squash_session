@@ -1,8 +1,12 @@
-# configs/synthetic_dataset_creation/dedup.yaml
+# configs/synthetic_dataset_creation/high_constraint_run.yaml
+
+# Tells the loader which grammar "world" to use.
+grammar_profile: "high_constraint_grammar"
+ebnf_file: "hard_structures.ebnf"
 
 # High-level run params
-num: 500
-outfile: data/processed/squash_dataset_dedup_semantic_jaccard_exhaustion.jsonl
+num: 5
+outfile: data/processed/high_constraint_grammar/balanced_5.jsonl
 seed: 43
 
 # Controls JSON output formatting. Set to a number (e.g., 4) for pretty-printing,

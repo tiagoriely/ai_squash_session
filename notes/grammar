@@ -1,0 +1,16 @@
+DSL - PEGS chosen for sequence order
+DSL parsed to ast for better LLM reading with RAG
+Sequence section provides an underlying "logic of an exercise flow to the RAG system
+
+
+3 grammars:
+- Balanced
+- Hard constraints
+- Softer constraints + diversity
+
+
+
+Generation
+- Meta section: fields used for field extraction but all highlighting constraints
+- Sequence (captures dynamic flow of exercise) placed in meta section to avoid too much noise. Represent a hard representation of hard constraint
+

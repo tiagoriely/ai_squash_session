@@ -1,8 +1,12 @@
-# configs/synthetic_dataset_creation/dedup.yaml
+# configs/synthetic_dataset_creation/low_constraint_run.yaml
+
+# Tells the loader which grammar "world" to use.
+grammar_profile: "low_constraint_grammar"
+ebnf_file: "loose_structures.ebnf"
 
 # High-level run params
-num: 500
-outfile: data/processed/squash_dataset_dedup_semantic_jaccard_exhaustion.jsonl
+num: 5
+outfile: data/processed/low_constraint_grammar/balanced_5.jsonl
 seed: 43
 
 # Controls JSON output formatting. Set to a number (e.g., 4) for pretty-printing,
@@ -27,3 +31,6 @@ semantic_dedup: true
 semantic_threshold: 0.93
 semantic_model: sentence-transformers/all-MiniLM-L6-v2
 semantic_device: null  # "cpu" | "cuda" | null for auto
+
+
+# maybe decreasing similarity threshold, encore_progression: false, ...

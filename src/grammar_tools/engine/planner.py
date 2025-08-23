@@ -1,7 +1,16 @@
 # src/grammar_tools/planner.py
 from __future__ import annotations
 import random
+import difflib
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+
+try:
+    from lark import Lark, UnexpectedToken
+except ImportError:
+    # This allows the code to still run if lark is not installed,
+    # though validation will be disabled.
+    Lark, UnexpectedToken = None, None
 
 from src.grammar_tools.analysis.metadata_extractor import MetadataExtractor
 
@@ -14,7 +23,17 @@ class Planner:
     """
 
     def __init__(self, exercises: Dict, structures: Dict, session_types: Dict, warmups: List,
-                 block_types: List, archetypes: Dict, field_retrieval_config: Dict):
+                 block_types: List, archetypes: Dict, field_retrieval_config: Dict, config: Dict):
+
+        self.config = config
+
+        # Get thresholds and progression rules from the main config
+        self.plan_dedup_threshold = self.config.get('plan_deduplication_threshold', 0.99)
+        self.enforce_plan_points_progression = self.config.get('enforce_plan_points_progression', False)
+
+        # Keep a history of the unique plans we've created in this run.
+        self.plan_history = []
+
         self.exercises = exercises
         self.structures = structures
         self.session_types = session_types
@@ -27,6 +46,31 @@ class Planner:
         self.metadata_extractor = MetadataExtractor(field_retrieval_config)
 
         print(f"✅ Planner initialized with support for point progression.")
+
+        # Load and compile the exercise constraint grammar
+        self.constraint_parser = None
+        if Lark:  # Check if the import was successful
+            try:
+                project_root = Path(__file__).resolve().parent.parent.parent.parent
+                peg_file_path = project_root / "grammar" / "dsl" / "exercises_rule_constraints.peg"
+
+                with open(peg_file_path, "r") as f:
+                    # Instantiate the Lark parser with your PEG grammar
+                    self.constraint_parser = Lark(f.read(), start='constraint')
+                print(f"✅ Exercise constraint grammar loaded successfully with Lark from: {peg_file_path}")
+
+            except FileNotFoundError:
+                print(
+                    f"🛑 ERROR: PEG file not found at expected path: {peg_file_path}. Constraint validation is disabled.")
+            except Exception as e:
+                print(f"🛑 ERROR: Failed to compile PEG with Lark: {e}. Constraint validation is disabled.")
+        else:
+            print(
+                "⚠️ Warning: 'lark' library not found. Constraint validation is disabled. Please run 'pip install lark-parser'.")
+
+        # After loading all data, validate the exercise library
+        if self.constraint_parser:
+            self._validate_exercise_library()
 
     def _flatten_variants(self) -> List[Dict]:
         """Creates a flat list of all variants from all families, enriched with family info."""
@@ -66,6 +110,18 @@ class Planner:
             points_opts = self.session_types['conditioned_game']['allowed_points_per_exercise']
             return random.choices([p['points'] for p in points_opts], [p['weight'] for p in points_opts])[0]
 
+    def _get_exercise_type(self, variant: Dict, context: Dict) -> Optional[str]:
+        """
+        Intelligently chooses an exercise type based on the archetype's constraints.
+        """
+        required_type = context.get('must_use_exercise_type')
+        available_types = variant.get('types', ['drill', 'conditioned_game'])
+
+        if required_type:
+            return required_type if required_type in available_types else None
+
+        return random.choice(available_types)
+
     def plan_session(self) -> Dict[str, Any] | None:
         archetype_id, archetype_def = random.choice(list(self.archetypes.items()))
         print(f"  -> Building session with STRATEGY: '{archetype_def['archetype_name']}'")
@@ -74,7 +130,19 @@ class Planner:
         if context.get("prevent_variant_repetition"):
             context["used_variants"] = set()
 
-        structure_id, structure = random.choice(list(self.structures.items()))
+        # Intelligent Structure Selection
+        # Get the preferred structure category from the archetype, default to 'mix'
+        structure_cat = archetype_def.get('structure_category', 'mix')
+
+        # Check if the category exists in our loaded structures
+        if structure_cat not in self.structures or not self.structures[structure_cat]:
+            print(f"  🛑 SESSION FAILED: No structures found for category '{structure_cat}'. Discarding.")
+            return None
+
+        # Choose a structure from the correct category
+        structure_pool = self.structures[structure_cat]
+        structure_id, structure = random.choice(list(structure_pool.items()))
+
         session_plan = {"blocks": []}
 
         # --- Build plan (logic unchanged) ---
@@ -113,27 +181,39 @@ class Planner:
                 print(f"    FAILURE: Could not fill '{block_template['block_name']}'. Discarding session.")
                 return None
 
-        # --- DURATION VALIDATION STEP (logic unchanged) ---
+        # --- VALIDATION STEPS  ---
         all_exercises = [ex for block in session_plan["blocks"] for ex in block.get("exercises", [])]
         if not all_exercises:
             print(f"  🛑 SESSION FAILED VALIDATION: No exercises were planned.")
             return None
 
+        # 1. Duration validation
         total_exercise_duration = sum(ex[3] for ex in all_exercises)
         num_activity_blocks = len(
             [b for b in session_plan["blocks"] if "Activity" in b.get("name", "") and b.get("exercises")])
         total_rest_duration = num_activity_blocks * structure.get("default_rest_minutes", 1.5)
         actual_duration = total_exercise_duration + total_rest_duration
         target_duration = structure["target_duration_minutes"]
-        undershoot_limit = structure.get("total_duration_rules", {}).get("soft_min_undershoot", 0)
+        duration_rules = structure.get("total_duration_rules", {})
+        undershoot_limit = duration_rules.get("soft_min_undershoot", 0)
+        overshoot_limit = duration_rules.get("soft_max_overshoot", 0)
 
-        if actual_duration > target_duration or actual_duration < (target_duration - undershoot_limit):
+        upper_bound = target_duration + overshoot_limit
+        lower_bound = target_duration - undershoot_limit
+
+        if not (lower_bound <= actual_duration <= upper_bound):
             print(
-                f"  🛑 SESSION FAILED DURATION CHECK: Actual time ({actual_duration:.1f}m) outside range [{target_duration - undershoot_limit}m - {target_duration}m]. Discarding.")
+                f"  🛑 SESSION FAILED DURATION CHECK: Actual time ({actual_duration:.1f}m) outside range [{lower_bound}m - {upper_bound}m]. Discarding.")  # <-- Updated print message
             return None
 
-        # --- REFACTORED METADATA GENERATION ---
-        # Create a placeholder meta object first for the extractor to use
+        # Plan points progression validation
+        if self.enforce_plan_points_progression:
+            if not self._validate_plan_points_progression(session_plan):
+                print(f"  🛑 SESSION FAILED POINTS PROGRESSION CHECK. Discarding.")
+                return None
+
+
+        # Create a placeholder meta object first for the extractor to use and final duplicate check
         session_plan["meta"] = {
             "archetype": archetype_def['archetype_name'],
             "structure_id": structure_id,
@@ -146,9 +226,95 @@ class Planner:
         final_meta = self.metadata_extractor.generate_rag_metadata(session_plan)
         session_plan["meta"] = final_meta
 
+        if self._is_plan_a_near_duplicate(session_plan):
+            return None
+
         print(
             f"  ✅ SESSION PASSED VALIDATION (Type: {final_meta.get('session_type', 'unknown')}, Actual Duration: {actual_duration:.1f}m).")
         return session_plan
+
+    def _is_plan_a_near_duplicate(self, new_plan: Dict) -> bool:
+        """
+        Checks if a newly generated plan is structurally too similar to one already created.
+        """
+        # Create a simple "signature" of the plan based on its exercise IDs.
+        # This focuses on the structure, not the text.
+        try:
+            new_signature = "-".join(
+                ex[0]['variant_id'] for block in new_plan.get("blocks", []) for ex in block.get("exercises", [])
+            )
+        except (KeyError, IndexError):
+            # If the plan structure is weird, treat it as unique
+            return False
+
+        if not new_signature:
+            return False  # An empty plan isn't a duplicate
+
+        for old_plan_signature in self.plan_history:
+            # Use Python's built-in library to get a similarity ratio
+            score = difflib.SequenceMatcher(None, new_signature, old_plan_signature).ratio()
+
+            # The check against your config value happens here!
+            if score >= self.plan_dedup_threshold:
+                print(f"  🛑 DUPLICATE PLAN DETECTED (Score: {score:.2f} >= {self.plan_dedup_threshold}). Discarding.")
+                return True  # It's a duplicate
+
+        # If we get through the whole loop, it's a unique plan
+        self.plan_history.append(new_signature)
+        return False
+
+    def _validate_plan_points_progression(self, session_plan: Dict) -> bool:
+        """
+        Checks if point-based exercises in the plan follow a non-decreasing sequence.
+        Allows for sequences like [7, 7, 11, 15] and [11, 11, 11].
+        """
+        points_sequence = [
+            ex[1] for block in session_plan.get("blocks", [])
+            for ex in block.get("exercises", [])
+            if ex[2] == "points"
+        ]
+
+        if not points_sequence:
+            return True  # No points to check, so it's valid
+
+        # Check for non-decreasing order
+        for i in range(len(points_sequence) - 1):
+            if points_sequence[i] > points_sequence[i + 1]:
+                print(f"    Progression FAIL: {points_sequence[i]} > {points_sequence[i + 1]} in {points_sequence}")
+                return False  # Found a decrease
+        return True
+
+    def _validate_exercise_library(self):
+        """
+        Parses the 'constraint_formal' field of every loaded exercise variant
+        to ensure it conforms to the PEG using the Lark parser.
+        """
+        print("  -> Validating exercise constraint library...")
+        error_count = 0
+        for family_id, family in self.exercises.items():
+            for variant in family.get("variants", []):
+                # This handles both single string and list of strings for the formal rules
+                formal_rules = variant.get("rules", {}).get("constraint_formal")
+                if not formal_rules:
+                    continue
+                if not isinstance(formal_rules, list):
+                    formal_rules = [formal_rules]
+
+                for rule in formal_rules:
+                    try:
+                        self.constraint_parser.parse(rule)
+                    except UnexpectedToken as e:
+                        print(f"  🛑 VALIDATION ERROR in variant '{variant['variant_id']}' (family: {family_id}):")
+                        print(f"     Rule: '{rule}'")
+                        print(f"     Lark Error: {e}")
+                        error_count += 1
+
+        if error_count == 0:
+            print("  ✅ All exercise constraints are syntactically valid.")
+        else:
+            print(f"  🛑 Found {error_count} invalid constraint(s). Please fix before generating.")
+            # Optionally, you could raise an exception to halt the program
+            raise ValueError(f"Found {error_count} invalid exercise constraints.")
 
     # --- All other private methods (_create_context_from_archetype, _fill_tactic, etc.) remain unchanged ---
 
@@ -157,14 +323,21 @@ class Planner:
         context = {}
         all_family_ids = list(set(v['family_id'] for v in self.all_variants if v.get('family_id')))
         if not all_family_ids: all_family_ids = [""]
+
         for constraint in archetype_def.get('hard_constraints', []):
-            if constraint['type'] == 'require_single_shotside': context['must_use_side'] = random.choice(
-                ["forehand", "backhand"])
-            if constraint['type'] == 'focus_on_single_family': context['must_use_family_id'] = random.choice(
-                all_family_ids)
-            if constraint['type'] == 'prevent_variant_repetition': context['prevent_variant_repetition'] = True
-            if constraint['type'] == 'prefer_complexity_progression': context['enforce_complexity_progression'] = True
+            constraint_type = constraint.get('type')
+            if constraint_type == 'require_single_shotside':
+                context['must_use_side'] = random.choice(["forehand", "backhand"])
+            elif constraint_type == 'focus_on_single_family':
+                context['must_use_family_id'] = random.choice(all_family_ids)
+            elif constraint_type == 'prevent_variant_repetition':
+                context['prevent_variant_repetition'] = True
+            elif constraint_type == 'prefer_complexity_progression':
+                context['enforce_complexity_progression'] = True
+            elif constraint_type == 'require_session_type':
+                context['must_use_exercise_type'] = constraint.get('value')
         return context
+
 
     def _fill_tactic(self, block_type_def: Dict, context: Dict) -> List[Dict] | None:
         # ... (implementation unchanged)
@@ -201,8 +374,16 @@ class Planner:
         return [first_block, {"exercises": mirrored_exercises}]
 
     def _get_candidate_variants(self, context: Dict, side: Optional[str] = None) -> List[Dict]:
-        # ... (implementation unchanged)
         candidate_variants = self.all_variants
+
+        required_type = context.get('must_use_exercise_type')
+        if required_type:
+            # Filter variants to only those that support the required type
+            candidate_variants = [
+                v for v in candidate_variants
+                if required_type in v.get('types', ['drill', 'conditioned_game'])
+            ]
+
         if context.get('must_use_family_id'):
             candidate_variants = [v for v in candidate_variants if v.get('family_id') == context['must_use_family_id']]
         if side:
@@ -227,7 +408,10 @@ class Planner:
             {"forehand", "backhand"}.issubset(set(p.get("options", []))) for p in v.get('family_parameters', []))]
         if not candidate_variants: return None
         variant = random.choice(candidate_variants)
-        exercise_type = random.choice(variant.get("types", ['drill']))
+
+        exercise_type = self._get_exercise_type(variant, context)
+        if not exercise_type: return None
+
         goal = self._get_random_goal(exercise_type)
         used_variants = context.get("used_variants")
         if used_variants is not None:
@@ -246,8 +430,10 @@ class Planner:
         v1, v2 = random.sample(candidate_variants, k=2)
         if len(self._get_allowed_actions(v1)) > len(self._get_allowed_actions(v2)): v1, v2 = v2, v1
 
-        type1 = random.choice(v1.get("types", ['drill']));
-        type2 = random.choice(v2.get("types", ['drill']))
+        type1 = self._get_exercise_type(v1, context)
+        type2 = self._get_exercise_type(v2, context)
+        if not type1 or not type2: return None
+
         goal1 = self._get_random_goal(type1);
         goal2 = self._get_random_goal(type2)
 
@@ -268,6 +454,12 @@ class Planner:
         side = context.get('must_use_side') or random.choice(["forehand", "backhand"])
         candidate_variants = self._get_candidate_variants(context, side=side)
         if not context.get('must_use_family_id'): return None
+
+        # This block type is inherently mixed, so the 'require_session_type' constraint cannot apply.
+        # Added a check to ensure we don't try to fill it for a drill-only or game-only session.
+        if context.get('must_use_exercise_type'):
+            return None
+
         drills = [v for v in candidate_variants if 'drill' in v.get('types', [])]
         c_games = [v for v in candidate_variants if 'conditioned_game' in v.get('types', [])]
         if not drills or not c_games: return None
@@ -293,7 +485,10 @@ class Planner:
     def _fill_cross_family_action_similarity(self, rules: Dict, context: Dict) -> List | None:
         if 'must_use_family_id' in context: return None
         threshold = rules.get('require_action_similarity_threshold', 0.35)
-        sequence_type = random.choice(rules['allowed_sequences'])[0]
+
+        sequence_type = self._get_exercise_type({"types": rules['allowed_sequences']}, context)
+        if not sequence_type: return None
+
         side = context.get('must_use_side') or random.choice(["forehand", "backhand"])
         candidate_variants = self._get_candidate_variants(context, side=side)
         candidate_variants = [v for v in candidate_variants if sequence_type in v.get('types', [])]

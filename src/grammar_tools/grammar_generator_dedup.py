@@ -15,9 +15,14 @@ from pathlib import Path
 from typing import Any, Dict, Optional
 from itertools import groupby
 from collections import Counter
-
-
 import yaml
+
+# DSL
+from src.grammar_tools.dsl_tools.structure_validator import validate_session_structure
+
+
+
+
 
 # Planner
 from src.grammar_tools.engine.planner import Planner
@@ -41,8 +46,6 @@ except Exception:  # pragma: no cover
 
 # --- Constants ---
 SEPS = "-" * 79
-GRAMMAR_PATH = Path("grammar/sports") / "squash"
-
 
 # --- Config helpers ---
 def load_config(path: Optional[Path]) -> Dict[str, Any]:
@@ -115,7 +118,23 @@ def load_grammar(grammar_path: Path) -> Dict[str, Any]:
                 data[path.stem] = yaml.safe_load(f)
         return data
 
-    with (grammar_path / "sessions_types.yaml").open("r", encoding="utf-8") as f:
+    def _load_nested_yaml_files(directory: Path) -> Dict[str, Any]:
+        data: Dict[str, Any] = {}
+        # Iterate through subdirectories (drills, mix, etc.)
+        for subdir in directory.iterdir():
+            if subdir.is_dir():
+                category_name = subdir.name
+                data[category_name] = {}
+                for path in subdir.glob("*.yaml"):
+                    with open(path, "r", encoding="utf-8") as f:
+                        data[category_name][path.stem] = yaml.safe_load(f)
+        return data
+
+    session_types_path = grammar_path.parent / "sessions_types.yaml"
+    if not session_types_path.is_file():
+        raise FileNotFoundError(f"Could not find 'sessions_types.yaml' at {session_types_path}")
+
+    with session_types_path.open("r", encoding="utf-8") as f:
         session_types = yaml.safe_load(f)
 
     block_types_dict = _load_simple_yaml_files(grammar_path / "session_block_types")
@@ -123,7 +142,7 @@ def load_grammar(grammar_path: Path) -> Dict[str, Any]:
 
     return {
         "exercises": exercises_by_family,
-        "structures": _load_simple_yaml_files(grammar_path / "session_structures"),
+        "structures": _load_nested_yaml_files(grammar_path / "session_structures"),
         "session_types": session_types,
         "warmups": warmups,
         "block_types": block_types,
@@ -163,7 +182,12 @@ def render_session_to_text(session_plan: Dict[str, Any]) -> str:
             lines.append(f"• {goal_str}: {header}")
 
             rules = exercise.get("rules", {}) or {}
-            constraint = rules.get("constraint", "")
+            constraint = rules.get("constraint") or rules.get("constraint_text")
+
+            # Check if the constraint is a list and join it into a single string
+            if isinstance(constraint, list):
+                constraint = " ".join(constraint)
+
             if constraint:
                 short_rule = textwrap.shorten(constraint, width=70, placeholder="...")
                 lines.append(f"  (Rule: {short_rule})")
@@ -262,6 +286,34 @@ def _build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Device for Sentence-Transformers (e.g., 'cpu', 'cuda'). Defaults to auto.",
     )
+
+    parser.add_argument(
+        "--grammar-profile",
+        type=str,
+        default=None,  # Default to None to ensure it's set in the config
+        help="The name of the grammar profile to use (e.g., 'balanced_grammar').",
+    )
+
+    parser.add_argument(
+        "--json-indent",
+        type=int,
+        default=None,
+        help="Indent the output JSONL for readability. Provide a number for indent level (e.g., 4).",
+    )
+
+    parser.add_argument(
+        "--ebnf-file",
+        type=str,
+        default=None,
+        help="Filename of the EBNF structure to use for validation.",
+    )
+    parser.add_argument(
+        "--planner-config",
+        type=dict,
+        default={},
+        help="Dictionary of settings to pass to the Planner.",
+    )
+
     return parser
 
 
@@ -308,10 +360,21 @@ def main() -> None:
             if write_header:
                 w.writerow(header)
             w.writerow(row)
+    # ------
 
+    # Check that the grammar_profile is set in the config.
+    if not args.grammar_profile:
+        raise ValueError("Your config file must specify a 'grammar_profile' (e.g., 'balanced_grammar').")
 
-    grammar = load_grammar(GRAMMAR_PATH)
+    # Build the dynamic grammar path.
+    grammar_path = Path("grammar/sports/squash") / args.grammar_profile
+    if not grammar_path.is_dir():
+        raise FileNotFoundError(f"Grammar profile directory not found at: {grammar_path}")
 
+    print(f"Loading grammar from profile: '{args.grammar_profile}' at path: {grammar_path}")
+    grammar = load_grammar(grammar_path)
+
+    # Load RAG config
     FIELD_RETRIEVAL_CONFIG_PATH = Path("configs/retrieval/squash_field_retrieval_config.yaml")
     if not FIELD_RETRIEVAL_CONFIG_PATH.is_file():
         raise FileNotFoundError(f"RAG config not found at: {FIELD_RETRIEVAL_CONFIG_PATH}")
@@ -326,7 +389,7 @@ def main() -> None:
         block_types=grammar["block_types"],
         archetypes=grammar["archetypes"],
         field_retrieval_config=field_retrieval_data,
-
+        config=args.planner_config
     )
 
     hash_deduper = None if args.dedup_by == "none" else HashDeduper(mode=args.dedup_by)
@@ -367,6 +430,18 @@ def main() -> None:
                         break
                 continue
 
+
+            # Get the EBNF filename directly from the run config args
+            if args.ebnf_file:
+                ebnf_path = grammar_path / args.ebnf_file
+                if not validate_session_structure(session_plan, ebnf_path):
+                    log_skip("invalid_structure", -1.0, -1)
+                    if stopper:
+                        stopper.register_dup()
+                        if stopper.exhausted:
+                            break
+                    continue
+
             text_output = render_session_to_text(session_plan)
             is_dup, session_hash = False, ""
             if hash_deduper is not None:
@@ -405,6 +480,9 @@ def main() -> None:
                             break
                     continue
 
+            # Determine the indent level from your config (e.g., 4 or None)
+            indent_level = args.json_indent if args.json_indent and args.json_indent > 0 else None
+
             accepted_id = f"session_{count + 1:03d}"
             record = {
                 "session_id": accepted_id,
@@ -413,7 +491,7 @@ def main() -> None:
             }
             if session_hash:
                 record["hash"] = session_hash
-            fh.write(json.dumps(record, ensure_ascii=False, indent=4) + "\n")
+            fh.write(json.dumps(record, ensure_ascii=False, indent=indent_level) + "\n")
 
             accepted_ids.append(accepted_id)
 

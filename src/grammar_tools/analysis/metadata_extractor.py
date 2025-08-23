@@ -2,8 +2,9 @@
 from typing import Any, Dict, List
 from collections import Counter
 from .shot_analyser import ShotAnalyser
+from .sequence_analyser import SequenceAnalyser
 
-# --- UPDATED THRESHOLDS ---
+
 # Centralised thresholds for easy tuning based on your new rules.
 DIFFICULTY_THRESHOLDS = {
     "beginner_max": 4,  # Includes scores 1, 2, 3, 4
@@ -22,6 +23,7 @@ class MetadataExtractor:
             for specific in specifics:
                 self.specific_to_general_map[specific] = general
         self.shot_analyser = ShotAnalyser(field_retrieval_config)
+        self.sequence_analyser = SequenceAnalyser()
 
     def _map_specific_to_general(self, specific_shots: List[str]) -> List[str]:
         general_shots = set()
@@ -44,17 +46,33 @@ class MetadataExtractor:
     def _determine_participants(self, exercises: List[Dict]) -> int:
         return 2
 
-    def _determine_session_type(self, exercises: List[Dict]) -> str:
+    def _determine_session_type(self, exercises):
+
+        # archetype = self.session_plan.get("meta", {}).get("archetype", "")
+        # if "conditioned_game" in archetype.lower():
+        #     return "conditioned_game"
+        # if "drill" in archetype.lower():
+        #     return "drill"
+
+        # Ignore warmups when deciding the session_type
         activity_exercises = [ex for ex in exercises if "warmup" not in ex[0].get("types", [])]
-        session_types_found = set()
-        for ex in activity_exercises:
-            session_types_found.update(ex[0].get("types", []))
-        if not session_types_found:
+        if not activity_exercises:
             return "warmup_only"
-        elif len(session_types_found) == 1:
-            return session_types_found.pop()
-        else:
-            return f"mix({', '.join(sorted(list(session_types_found)))})"
+
+        kinds = set()
+        for ex in activity_exercises:
+            mode = ex[2]  # tuple: (variant, value, mode, est_duration)
+            if mode == "timed":
+                kinds.add("drill")
+            elif mode == "points":
+                kinds.add("conditioned_game")
+
+        # Fallback (shouldn't happen): use variant types if mode was missing
+        if not kinds:
+            for ex in activity_exercises:
+                kinds.update(t for t in ex[0].get("types", []) if t in ("drill", "conditioned_game"))
+
+        return next(iter(kinds)) if len(kinds) == 1 else f"mix({', '.join(sorted(kinds))})"
 
     def _calculate_session_difficulty(self, exercises: List[Dict]) -> Dict[str, Any]:
         """
@@ -94,7 +112,11 @@ class MetadataExtractor:
     def generate_rag_metadata(self, session_plan: Dict[str, Any]) -> Dict[str, Any]:
         base_meta = session_plan.get("meta", {})
         all_exercises = [ex for block in session_plan["blocks"] for ex in block.get("exercises", [])]
+
+        # calling analysers
         classified_shots = self.shot_analyser.classify_shots(session_plan)
+        exercise_sequences = self.sequence_analyser.extract_sequences(all_exercises)
+
         primary_shots = classified_shots.get("primary", [])
         secondary_shots = classified_shots.get("secondary", [])
         all_specific_shots = sorted(primary_shots + secondary_shots)
@@ -114,6 +136,7 @@ class MetadataExtractor:
             "shots_specific_primary": primary_shots,
             "shots_specific_secondary": secondary_shots,
             "movement": self._extract_movement(all_exercises),
-            "rest_minutes": base_meta.get("rest_minutes", 1.5)
+            "rest_minutes": base_meta.get("rest_minutes", 1.5),
+            "exercise_sequences": exercise_sequences
         }
         return final_meta

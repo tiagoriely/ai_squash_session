@@ -22,13 +22,13 @@ conditioned_game:
   point_duration_minutes: 0.857
   allowed_points_per_exercise:
     - points: 7
-      weight: 0.40
+      weight: 0.45
     - points: 9
       weight: 0.35
     - points: 11
-      weight: 0.15
-    - points: 15
       weight: 0.10
+    - points: 15
+      weight: 0.05
   scoring: true
   competitive: true
   description: >
