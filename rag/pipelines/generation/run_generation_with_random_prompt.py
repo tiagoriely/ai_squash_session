@@ -1,4 +1,6 @@
 # rag/pipelines/generation/run_generation_with_random_prompt.py
+
+
 import argparse, time, yaml, textwrap, re
 from pathlib import Path
 from flashrag.retriever.retriever import DenseRetriever
@@ -8,21 +10,37 @@ import os
 import json
 import random
 
+from rag.pipelines.retrieval.field_retrieval.session_type_inference import infer_session_type
+
+# --- VERY IMPORTANT: this section is needed to use generator with local computer, if using CUDA comment the section
+import torch
+import os
+
+# Force CPU environment
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+os.environ["OMP_NUM_THREADS"] = "1"  # Prevent multiprocessing issues
+
+# Monkey patch cuda() methods to use cpu instead
+original_tensor_cuda = torch.Tensor.cuda
+original_module_cuda = torch.nn.Module.cuda
+
+def tensor_to_cpu(self, device=None, **kwargs):
+    return self.to('cpu')
+
+def module_to_cpu(self, device=None):
+    return self.to('cpu')
+
+torch.Tensor.cuda = tensor_to_cpu
+torch.nn.Module.cuda = module_to_cpu
+
+# Also override cuda availability check
+torch.cuda.is_available = lambda: False
+# ---------------------------------------------------------------------------------------------------
+
 # Environment
 from dotenv import load_dotenv
 
 load_dotenv()
-
-# Patterns for session type inference
-SESSION_TYPES_PATTERNS = {
-    "drill": re.compile(r"\bdrill\b", re.I),
-    "conditioned_game": re.compile(r"\bconditi(?:on|oned)|game\b", re.I),
-    "solo": re.compile(r"\bsolo\b", re.I),
-    "ghosting": re.compile(r"\bghosting\b", re.I),
-    "mix": re.compile(
-        r"\b(drill|conditi(?:on|oned)|game|solo|ghosting)\b.*\b(drill|conditi(?:on|oned)|game|solo|ghosting)\b", re.I),
-    "no_preference": re.compile(r"\bno preference\b", re.I)
-}
 
 
 # Helpers
@@ -113,22 +131,11 @@ if __name__ == "__main__":
     print(f"\n⏱  {t_elapsed:.1f} ms   |   top-k={len(docs)}\n")
 
     for i, doc in enumerate(docs, 1):
-        print(f"{i:2d}. id={doc['session_id']:<12}")
+        print(f"{i:2d}. id={doc['id']:<12}")
 
     print("\n=== Answer ===\n")
     context = build_context(docs)
-    # session_type = infer_type(query)
-
-    # Confirm the session type expected
-    while True:
-        session_type = input(
-            "Confirm the session type you would like? (drill, conditioned_game, mix, or no_preference): ").strip().lower()
-        if session_type in SESSION_TYPES_PATTERNS:
-            break
-        print("Invalid session type. Please try again.")
-
-    if session_type == "no_preference":
-        session_type = random.choice(["conditioned_game", "drill", "mix"])
+    session_type = infer_session_type(query)
 
     prompt_path = Path("prompts/rag") / f"session_{session_type}.txt"
     prompt_template = prompt_path.read_text(encoding="utf-8")
@@ -155,7 +162,7 @@ if __name__ == "__main__":
         max_existing_id = max(
             (int(row.get("case_id", 0)) for row in current_data if str(row.get("case_id", 0)).isdigit()), default=0)
         next_case_id = max_existing_id + 1
-    retrieved_documents_info = [{"id": doc["session_id"]} for doc in docs]
+    retrieved_documents_info = [{"id": doc["id"]} for doc in docs]
     ragas_row = {
         "case_id": next_case_id,
         "question": query,

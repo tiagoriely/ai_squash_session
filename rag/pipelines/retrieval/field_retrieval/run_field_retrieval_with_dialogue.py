@@ -3,12 +3,15 @@
 import sys
 import json
 import argparse
-import random
 from pathlib import Path
 
 # Import the logic (parse_user_prompt in field_matcher delegates to user_desires)
 from rag.pipelines.retrieval.field_retrieval.field_matcher import parse_user_prompt, score_document
 from rag.pipelines.retrieval.field_retrieval.adapters import get_adapter
+from rag.pipelines.retrieval.field_retrieval.user_desires import parse_user_prompt
+from rag.pipelines.retrieval.field_retrieval.dialogue_manager import refine_user_desires
+
+
 
 
 from evaluation.retrieval.field_fulfilment import best_hit, mean_k, coverage_k
@@ -47,20 +50,25 @@ def main():
 
     # Allow passing a prompt on the command line; otherwise use the sample
     user_prompt = (
-        "Create a training routine that helps with "
+        "Create a 60 minutes conditioned game for an advanced player that helps with "
         "'Strategic Application of Both 2-Wall and 3-Wall Boasts within a Driving Game"
     )
 
-    print(f"User prompt: {user_prompt}")
-    user_desires = parse_user_prompt(user_prompt, allowed_durations=[45, 60, 90])
-    print(f"\nUser Desires: {user_desires}")
+    # Snap durations to common buckets for the initial parse
+    allowed_durations = [45, 60, 90]
+    initial_desires = parse_user_prompt(user_prompt, allowed_durations=allowed_durations)
+    print(f"\nInitial Desires: {initial_desires}")
+
+    # call dialogue manager
+    final_user_desires = refine_user_desires(initial_desires)
+    print(f"Final User Desires: {final_user_desires}")
 
     # Score documents
     scored_documents = []
     for raw_doc in raw_knowledge_base:
         # transform the doc before scoring
         canonical_doc = adapter.transform(raw_doc)
-        s = score_document(canonical_doc, user_desires)
+        s = score_document(canonical_doc, final_user_desires)
         scored_documents.append((s, canonical_doc))  # Store the canonical doc
 
     # Rank and take top-N with positive score
@@ -88,18 +96,18 @@ def main():
     # Unweighted fulfilment metrics
     if top_n_documents:
         print("\n=== Field-Fulfilment metrics ===")
-        print(f"Best-Hit (rank-1)        : {best_hit(top_n_documents, user_desires):.2%}")
-        print(f"Mean fulfilment top-5    : {mean_k(top_n_documents, user_desires, k=5):.2%}")
-        print(f"Coverage of req fields@5 : {coverage_k(top_n_documents, user_desires, k=5):.2%}")
+        print(f"Best-Hit (rank-1)        : {best_hit(top_n_documents, final_user_desires):.2%}")
+        print(f"Mean fulfilment top-5    : {mean_k(top_n_documents, final_user_desires, k=5):.2%}")
+        print(f"Coverage of req fields@5 : {coverage_k(top_n_documents, final_user_desires, k=5):.2%}")
     else:
         print("Cannot compute fulfilment metrics: no relevant documents.")
 
     # Weighted fulfilment metrics
     if top_n_documents:
         print("\n=== Weighted Field-Fulfilment metrics with Market Perception ===")
-        print("Weighted best-hit:", best_hit_w(top_n_documents, user_desires))
-        print("Weighted mean-5 :", mean_k_w(top_n_documents, user_desires))
-        print("Weighted cov@5  :", coverage_k_w(top_n_documents, user_desires))
+        print("Weighted best-hit:", best_hit_w(top_n_documents, final_user_desires))
+        print("Weighted mean-5 :", mean_k_w(top_n_documents, final_user_desires))
+        print("Weighted cov@5  :", coverage_k_w(top_n_documents, final_user_desires))
     else:
         print("\n=== Weighted Field-Fulfilment metrics with Market Perception ===")
         print("Cannot compute weighted metrics: no relevant documents.")

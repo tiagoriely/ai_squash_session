@@ -486,7 +486,7 @@ def main() -> None:
 
             accepted_id = f"session_{count + 1:03d}"
             record = {
-                "session_id": accepted_id,
+                "id": accepted_id,
                 "meta": copy.deepcopy(session_plan["meta"]),
                 "contents": text_output,
             }

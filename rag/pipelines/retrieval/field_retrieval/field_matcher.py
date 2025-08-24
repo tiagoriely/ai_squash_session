@@ -246,6 +246,12 @@ def score_document(document: dict, user_desires: dict) -> float:
         config = FIELD_SCORING_CONFIG.get(field)
         if not config: continue
 
+        # if user has no preference
+        if user_val == 'no_preference':
+            # Award a partial score, as the user has no preference
+            total_score += config.get("base_weight", 1.0) * 0.5
+            continue
+
         method_name = config["method"]
         base_weight = config.get("base_weight", 1.0)
 

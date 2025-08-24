@@ -220,6 +220,12 @@ def parse_participants(text: str) -> Optional[int]:
     """
     t = _norm(text)
 
+    # Add a check for just a plain number, for the dialogue manager
+    if t.isdigit():
+        num = int(t)
+        if 1 <= num <= 4:  # Or whatever range is reasonable
+            return num
+
     # Solo phrases
     for ph in _SOLO_PHRASES:
         if re.search(_re_word_boundary(ph), t):

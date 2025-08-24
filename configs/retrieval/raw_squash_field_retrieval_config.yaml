@@ -5,7 +5,7 @@ SYNONYM_MAP:
     drill: "drill"
     routine: "drill"
     conditioned game: "conditioned game"
-    game: "conditioned game"
+    game: "mix"
     solo practice: "solo practice"
     solo: "solo practice"
     by myself: "solo practice"
@@ -304,7 +304,7 @@ SPECIFIC_MAPS:
 FIELD_SCORING_CONFIG:
   type:
     method: "_score_exact_match_field"
-    base_weight: 3.0
+    base_weight: 5.0
   participants:
     method: "_score_exact_match_field"
     base_weight: 3.0
@@ -318,13 +318,13 @@ FIELD_SCORING_CONFIG:
     field_name_for_secondary_standardisation: "intensity"
   duration:
     method: "_score_numerical_range_field"
-    base_weight: 1.5
-    tolerance: 20
+    base_weight: 3.0
+    tolerance: 10
   shots:
     method: "_score_hierarchical_boost_field"
-    base_weight: 2.0
+    base_weight: 1.0
     primary_boost_weight: 6.0
-    secondary_boost_weight: 5.0
+    secondary_boost_weight: 3.0
     field_name_for_standardisation: "shots"
     general_to_specific_map_name: "GENERAL_SHOT_TYPES"
   shotSide:
