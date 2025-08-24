@@ -5,7 +5,7 @@
 retrieval_method:            e5-base-v2
 retrieval_topk:              10          # top-k that FAISS returns *before* rerank
 
-index_path:                  indexes/my_kb/e5-base-v2_Flat.index
+index_path:                  indexes/balanced_grammar/e5_index/e5-base-v2_Flat.index
 corpus_path:                 data/processed/balanced_grammar/balanced_500.jsonl
 retrieval_model_path:        intfloat/e5-base-v2
 
