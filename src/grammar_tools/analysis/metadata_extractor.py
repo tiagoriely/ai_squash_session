@@ -123,12 +123,15 @@ class MetadataExtractor:
         general_shots = self._map_specific_to_general(all_specific_shots)
         difficulty_profile = self._calculate_session_difficulty(all_exercises)
 
+        side_value = base_meta.get("context", {}).get("must_use_side", ["forehand", "backhand"])
+        shot_side_final = [side_value] if isinstance(side_value, str) else side_value
+
         final_meta = {
             "session_type": self._determine_session_type(all_exercises),
             "archetype": base_meta.get("archetype"),
             "structure_id": base_meta.get("structure_id"),
             "duration": base_meta.get("duration"),
-            "shotSide": base_meta.get("context", {}).get("must_use_side", ["forehand", "backhand"]),
+            "shotSide": shot_side_final,
             "participants": self._determine_participants(all_exercises),
             "applicable_squash_levels": difficulty_profile["applicable"],
             "recommended_squash_level": difficulty_profile["recommended"],

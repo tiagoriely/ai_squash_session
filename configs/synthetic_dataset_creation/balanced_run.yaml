@@ -15,13 +15,13 @@ planner_config:
   # Add any other planner-specific rules for this profile here
 
 # High-level run params
-num: 1
-outfile: data/processed/balanced_grammar/balanced_5.jsonl
+num: 500
+outfile: data/processed/balanced_grammar/balanced_500.jsonl
 seed: 43
 
 # Controls JSON output formatting. Set to a number (e.g., 4) for pretty-printing,
 # or false for compact, single-line output.
-json_indent: 4
+json_indent: false
 
 # Exhaustion / attempts
 max_attempts_multiplier: 50.0

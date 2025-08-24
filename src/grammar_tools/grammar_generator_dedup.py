@@ -166,9 +166,10 @@ def render_session_to_text(session_plan: Dict[str, Any]) -> str:
         # The last item (estimated_duration) is ignored with '_' as it's not needed for rendering.
         for exercise, value, mode, _ in block["exercises"]:
             name = exercise.get("name", "Unnamed Exercise")
+            side_list = exercise.get("shotSide")
             full_name = (
-                f"{name} ({exercise['shotSide'].capitalize()})"
-                if exercise.get("shotSide")
+                f"{name} ({', '.join(s.capitalize() for s in side_list)})"
+                if side_list
                 else name
             )
 
@@ -487,7 +488,7 @@ def main() -> None:
             record = {
                 "session_id": accepted_id,
                 "meta": copy.deepcopy(session_plan["meta"]),
-                "text": text_output,
+                "contents": text_output,
             }
             if session_hash:
                 record["hash"] = session_hash

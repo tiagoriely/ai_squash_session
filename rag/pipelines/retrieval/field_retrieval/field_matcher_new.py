@@ -2,23 +2,15 @@
 # Reranker / ranking logic	-> Retriever · Correctness (evaluating ranking with labels)
 
 import re
-import yaml
-from pathlib import Path
+# Import the configuration from the new dedicated file
+from archive.rag.retrieval.field_retrieval_config import SYNONYM_MAP, FIELD_SCORING_CONFIG, SPECIFIC_MAPS
 
-_CONFIG_PATH = Path(__file__).parent.parent.parent.parent.parent / 'configs' / 'retrieval' / 'raw_squash_field_retrieval_config.yaml'
 
-def _load_config_from_yaml(path: Path) -> dict:
-    """Helper to load and parse the YAML config file."""
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+# MOVED TO CONFIG
+# # -- 1. Synonym Mapping -- dictionary lookup
+# # ... (your original commented-out block is preserved) ...
 
-# Load the configuration from the YAML file
-_config_data = _load_config_from_yaml(_CONFIG_PATH)
-
-# Assign the loaded data to the global variables the rest of the script expects
-SYNONYM_MAP = _config_data.get("SYNONYM_MAP", {})
-SPECIFIC_MAPS = _config_data.get("SPECIFIC_MAPS", {})
-FIELD_SCORING_CONFIG = _config_data.get("FIELD_SCORING_CONFIG", {})
+# --- Helper Functions (remain in field_matcher.py as they are core logic) ---
 
 def clean_and_standardise_value(field: str, value_str: str | list):
     """
@@ -125,6 +117,24 @@ def _score_exact_match_field(user_val, doc_val, base_weight):
         return base_weight
     return 0.0
 
+def _score_squash_level_field(user_val, doc, base_weight):
+    """
+    Scores the squash level with priority given to the 'recommended_squash_level'.
+    """
+    if user_val is None:
+        return 0.0
+
+    # 1. Prioritize the recommended level for a perfect match (full score)
+    if user_val == doc.get("recommended_squash_level"):
+        return base_weight
+
+    # 2. If no perfect match, check the applicable list for a partial match
+    elif user_val in doc.get("applicable_squash_levels", []):
+        return base_weight * 0.8
+
+    # If neither match is found, the score is zero
+    return 0.0
+
 
 def _score_numerical_range_field(user_val, doc_val_raw, base_weight, tolerance=10):
     """
@@ -211,9 +221,9 @@ def _score_hierarchical_boost_field(user_vals: list, doc: dict, base_weight: flo
     user_specific_shots = user_vals_set - user_general_shots
 
     # Standardise the document's shot lists
-    doc_main_field = set(clean_and_standardise_value("shots", doc.get("shots", [])))
-    doc_primary_field = set(clean_and_standardise_value("shots", doc.get("primaryShots", [])))
-    doc_secondary_field = set(clean_and_standardise_value("shots", doc.get("secondaryShots", [])))
+    doc_main_field = set(clean_and_standardise_value("shots", doc.get("shots_general", [])))
+    doc_primary_field = set(clean_and_standardise_value("shots", doc.get("shots_specific_primary", [])))
+    doc_secondary_field = set(clean_and_standardise_value("shots", doc.get("shots_specific_secondary", [])))
 
     total_score = 0.0
 
@@ -251,15 +261,22 @@ def score_document(document: dict, user_desires: dict) -> float:
 
         # Dispatch to the correct scoring function
         if method_name == "_score_exact_match_field":
-            total_score += _score_exact_match_field(user_val, document.get(field), base_weight)
+            doc_field = "session_type" if field == "type" else field
+            total_score += _score_exact_match_field(user_val, document.get(doc_field), base_weight)
+        elif method_name == "_score_squash_level_field":
+            total_score += _score_squash_level_field(user_val, document, base_weight)
+
         elif method_name == "_score_numerical_range_field":
             total_score += _score_numerical_range_field(user_val, document.get(field), base_weight,
                                                         config.get("tolerance"))
+
         elif method_name == "_score_list_overlap_field":
             total_score += _score_list_overlap_field(user_val, document.get(field), base_weight, field)
+
         elif method_name == "_score_inferred_categorical_match_field":
             total_score += _score_inferred_categorical_match_field(user_val, document.get('intensity'),
                                                                    document.get('fitness'), base_weight, config)
+
         elif method_name == "_score_hierarchical_boost_field":
             total_score += _score_hierarchical_boost_field(user_val, document, base_weight, config)
 

@@ -1,18 +1,18 @@
 # rag/pipelines/generation/run_generation_grammar_with_random_prompt.py
-import argparse, time, yaml, re, json, random
+import argparse, yaml, re, json, random
 from pathlib import Path
 from flashrag.retriever.retriever import DenseRetriever
 from openai import OpenAI
 from dotenv import load_dotenv
 
-from rag.pipelines.generation.grammar_constraints_integration import (
+from archive.rag.generation.grammar_constraints_integration import (
     ConstraintsMode,
     load_family_constraints, build_constraints_block,
     load_structure, build_structure_block, validate_structure,
     load_archetype, build_archetype_block, validate_archetype,
     load_session_type, build_session_type_block, validate_session_type,
 )
-from rag.pipelines.generation.grammar_enforcer import enforce as enforce_grammar
+from archive.rag.generation.grammar_enforcer import enforce as enforce_grammar
 
 load_dotenv()
 

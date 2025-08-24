@@ -5,7 +5,7 @@ from src.grammar_tools.engine.planner import build_session              # ← us
 from rag.pipelines.generation.generator import (
     generate_session,                           # ← surface realisation LLM prompt
 )
-from rag.pipelines.generation.grammar_enforcer import enforce
+from archive.rag.generation.grammar_enforcer import enforce
 
 OUT = Path("data/generated_sessions.jsonl")
 PROMPTS = [

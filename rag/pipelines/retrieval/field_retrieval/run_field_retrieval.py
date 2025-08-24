@@ -20,7 +20,7 @@ from evaluation.retrieval.field_fulfilment_with_score_weights import (
 
 
 def main():
-    KB_PATH = Path("data/processed/my_kb.jsonl")
+    KB_PATH = Path("data/processed/balanced_grammar/balanced_500.jsonl")
 
     if not KB_PATH.exists():
         print(f"Error: Knowledge base file not found at {KB_PATH}. Please run corpus_tools.py first.")

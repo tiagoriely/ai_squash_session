@@ -21,7 +21,6 @@ SESSION_TYPES_PATTERNS = {
     "ghosting": re.compile(r"\bghosting\b", re.I),
     "mix": re.compile(
         r"\b(drill|conditi(?:on|oned)|game|solo|ghosting)\b.*\b(drill|conditi(?:on|oned)|game|solo|ghosting)\b", re.I),
-    "no_preference": re.compile(r"\bno preference\b", re.I)
 }
 
 
@@ -59,12 +58,12 @@ def generate_answer(prompt: str, model="gpt-4o") -> str:
     return response.choices[0].message.content
 
 
-# def infer_type(query: str) -> str:
-#     for key, pattern in SESSION_TYPES_PATTERNS.items():
-#         if pattern.search(query):
-#             return key
-#     # If no type is inferred from the prompt, default to conditioned_game
-#     return "conditioned_game"
+def infer_type(query: str) -> str:
+    for key, pattern in SESSION_TYPES_PATTERNS.items():
+        if pattern.search(query):
+            return key
+    # If no type is inferred from the prompt, default to conditioned_game
+    return "conditioned_game"
 
 
 # Main
@@ -113,22 +112,11 @@ if __name__ == "__main__":
     print(f"\n⏱  {t_elapsed:.1f} ms   |   top-k={len(docs)}\n")
 
     for i, doc in enumerate(docs, 1):
-        print(f"{i:2d}. id={doc['session_id']:<12}")
+        print(f"{i:2d}. id={doc['id']:<4} source={(doc['source'])}")
 
     print("\n=== Answer ===\n")
     context = build_context(docs)
-    # session_type = infer_type(query)
-
-    # Confirm the session type expected
-    while True:
-        session_type = input(
-            "Confirm the session type you would like? (drill, conditioned_game, mix, or no_preference): ").strip().lower()
-        if session_type in SESSION_TYPES_PATTERNS:
-            break
-        print("Invalid session type. Please try again.")
-
-    if session_type == "no_preference":
-        session_type = random.choice(["conditioned_game", "drill", "mix"])
+    session_type = infer_type(query)
 
     prompt_path = Path("prompts/rag") / f"session_{session_type}.txt"
     prompt_template = prompt_path.read_text(encoding="utf-8")
@@ -137,6 +125,7 @@ if __name__ == "__main__":
     answer = generate_answer(filled_prompt, model=args.model)
     print(answer)
 
+    # ... (The rest of the file for saving results remains the same) ...
 
     # ------------- write / append ragas-ready row -------------
     out_path = Path("data/processed/eval_dataset.json")
@@ -155,7 +144,7 @@ if __name__ == "__main__":
         max_existing_id = max(
             (int(row.get("case_id", 0)) for row in current_data if str(row.get("case_id", 0)).isdigit()), default=0)
         next_case_id = max_existing_id + 1
-    retrieved_documents_info = [{"id": doc["session_id"]} for doc in docs]
+    retrieved_documents_info = [{"id": doc["id"], "source": doc["source"]} for doc in docs]
     ragas_row = {
         "case_id": next_case_id,
         "question": query,

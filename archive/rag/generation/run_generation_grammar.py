@@ -13,7 +13,7 @@ from openai import OpenAI
 from flashrag.retriever.retriever import DenseRetriever
 
 # ---- Grammar plumbing -------------------------------------------------------
-from rag.pipelines.generation.grammar_constraints_integration import (
+from archive.rag.generation.grammar_constraints_integration import (
     ConstraintsMode,
     load_family_constraints,
     build_constraints_block,
@@ -24,7 +24,7 @@ from rag.pipelines.generation.grammar_constraints_integration import (
     build_archetype_block,
     validate_archetype,
 )
-from rag.pipelines.generation.grammar_enforcer import enforce as enforce_grammar
+from archive.rag.generation.grammar_enforcer import enforce as enforce_grammar
 # -----------------------------------------------------------------------------
 
 

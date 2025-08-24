@@ -302,38 +302,37 @@ SPECIFIC_MAPS:
       - "volley flick"
 
 FIELD_SCORING_CONFIG:
-  # Key must be 'type' to match the query parser.
-  # The python code correctly maps this to the 'session_type' document field.
   type:
     method: "_score_exact_match_field"
-    base_weight: 2.5
-
+    base_weight: 3.0
   participants:
     method: "_score_exact_match_field"
-    base_weight: 2.5
-
-  # Key must be 'squashLevel' to match the query parser.
-  # Method MUST be the custom function to handle the new metadata.
+    base_weight: 3.0
   squashLevel:
-    method: "_score_squash_level_field"
+    method: "_score_exact_match_field"
     base_weight: 2.0
-
+  intensity:
+    method: "_score_inferred_categorical_match_field"
+    base_weight: 1.0
+    secondary_match_multiplier: 0.5
+    field_name_for_secondary_standardisation: "intensity"
   duration:
     method: "_score_numerical_range_field"
     base_weight: 1.5
-    tolerance: 15
-
+    tolerance: 20
   shots:
     method: "_score_hierarchical_boost_field"
-    base_weight: 1.0
-    primary_boost_weight: 3.0
-    secondary_boost_weight: 1.5
+    base_weight: 2.0
+    primary_boost_weight: 6.0
+    secondary_boost_weight: 5.0
+    field_name_for_standardisation: "shots"
     general_to_specific_map_name: "GENERAL_SHOT_TYPES"
-
   shotSide:
     method: "_score_list_overlap_field"
     base_weight: 1.0
-
   movement:
     method: "_score_list_overlap_field"
     base_weight: 1.0
+  fitness:
+    method: "_score_exact_match_field"
+    base_weight: 0.5

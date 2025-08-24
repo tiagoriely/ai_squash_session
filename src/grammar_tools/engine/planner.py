@@ -369,7 +369,7 @@ class Planner:
         mirrored_exercises = []
         for exercise, value, mode, duration in first_block["exercises"]:
             mirrored_exercise = dict(exercise)
-            mirrored_exercise["shotSide"] = mirror_side
+            mirrored_exercise["shotSide"] = [mirror_side]
             mirrored_exercises.append((mirrored_exercise, value, mode, duration))
         return [first_block, {"exercises": mirrored_exercises}]
 
@@ -418,8 +418,8 @@ class Planner:
             used_variants.add((variant['variant_id'], 'forehand'));
             used_variants.add((variant['variant_id'], 'backhand'))
         instance_fh, instance_bh = dict(variant), dict(variant)
-        instance_fh['shotSide'] = 'forehand';
-        instance_bh['shotSide'] = 'backhand'
+        instance_fh['shotSide'] = ['forehand']
+        instance_bh['shotSide'] = ['backhand']
         return [self._package_exercise(instance_fh, goal, exercise_type),
                 self._package_exercise(instance_bh, goal, exercise_type)]
 
@@ -446,8 +446,8 @@ class Planner:
             used_variants.add((v2['variant_id'], side))
 
         instance1, instance2 = dict(v1), dict(v2)
-        instance1['shotSide'] = side;
-        instance2['shotSide'] = side
+        instance1['shotSide'] = [side]
+        instance2['shotSide'] = [side]
         return [self._package_exercise(instance1, goal1, type1), self._package_exercise(instance2, goal2, type2)]
 
     def _fill_from_drills_to_condition(self, rules: Dict, context: Dict) -> List | None:
@@ -474,8 +474,8 @@ class Planner:
                         used_variants.add((drill_v['variant_id'], side));
                         used_variants.add((cg_v['variant_id'], side))
                     drill_instance, cg_instance = dict(drill_v), dict(cg_v)
-                    drill_instance['shotSide'] = side;
-                    cg_instance['shotSide'] = side
+                    drill_instance['shotSide'] = [side]
+                    cg_instance['shotSide'] = [side]
                     goal_drill = self._get_random_goal('drill');
                     goal_cg = self._get_random_goal('conditioned_game')
                     return [self._package_exercise(drill_instance, goal_drill, 'drill'),
@@ -510,8 +510,8 @@ class Planner:
                         used_variants.add((v1['variant_id'], side));
                         used_variants.add((v2['variant_id'], side))
                     instance1, instance2 = dict(v1), dict(v2)
-                    instance1['shotSide'] = side;
-                    instance2['shotSide'] = side
+                    instance1['shotSide'] = [side]
+                    instance2['shotSide'] = [side]
                     return [self._package_exercise(instance1, goal1, sequence_type),
                             self._package_exercise(instance2, goal2, sequence_type)]
         return None

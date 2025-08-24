@@ -7,7 +7,6 @@ from pathlib import Path
 from collections import defaultdict
 from typing import Optional, Set, Dict
 
-# Load configuration from the central YAML file instead of a Python file.
 _CONFIG_PATH = Path(__file__).parent.parent.parent.parent.parent / 'configs' / 'retrieval' / 'raw_squash_field_retrieval_config.yaml'
 
 def _load_config_from_yaml(path: Path) -> dict:

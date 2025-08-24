@@ -31,7 +31,7 @@ from typing import Mapping, Sequence, Any
 from rag.pipelines.retrieval.field_retrieval.field_matcher import (
     clean_and_standardise_value,
 )
-from rag.configs.field_retrieval_config import FIELD_SCORING_CONFIG
+from archive.rag.retrieval.field_retrieval_config import FIELD_SCORING_CONFIG
 
 # ---------------------------------------------------------------------
 # low‑level satisfaction check – identical to the plain version
