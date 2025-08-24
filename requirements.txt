@@ -132,7 +132,7 @@ kiwisolver==1.4.8
 langchain==0.3.25
 langchain-community==0.3.24
 langchain-core==0.3.67
-langchain-google-genai==2.1.4
+#langchain-google-genai==2.1.4
 langchain-openai==0.3.27
 langchain-text-splitters==0.3.8
 langcodes==3.5.0
