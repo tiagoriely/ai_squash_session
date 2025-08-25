@@ -37,16 +37,47 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
       # For the human coach and the RAG's semantic understanding
       constraint_text: "All shots excluding the boast must land behind the T-line."
-      # For the grammar-based generator's validation and enforcement (using PEG)
-      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
-
-    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
-                      "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
-                      "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast",
-                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross"]
+    allowed_actions:
+    # Relevant Actions
+  - "drive"
+  - "deep drive"
+  - "hard drive"
+  - "straight drive"
+  - "volley drive"
+  - "volley deep drive"
+  - "volley hard drive"
+  - "volley straight drive"
+  - "boast"
+  - "2-wall boast"
+  - "3-wall boast"
+  - "volley 2-wall boast"
+  - "volley 3-wall boast"
+  - "cross"
+  - "cross lob"
+  - "deep cross"
+  - "wide cross"
+  - "cross down the middle"
+  - "hard cross"
+  # --- Thematic Chaos ---
+  - "drop"
+  - "counter drop"
+  - "cross drop"
+  - "straight drop"
+  - "volley drop"
+  - "volley cross drop"
+  - "volley straight drop"
+  - "kill"
+  - "cross kill"
+  - "straight kill"
+  - "volley cross kill"
+  - "volley straight kill"
+  - "cross-court nick"
+  - "volley cross-court nick"
+  - "trickle boast"
+  - "reverse boast"
+  - "volley reverse boast"
 
   # Variant 2 – Kills Allowed
   - variant_id: kills_allowed
@@ -73,16 +104,44 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
       # IMPORTANT SECTION SOFT/HARD CONSTRAINT
       constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
-      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[2] > t_line"
-    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
-                      "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
-                      "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast",
-                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
-                      "straight kill", "volley straight kill", "cross kill"]
+    allowed_actions:
+      # Relevant Actions
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "volley drive"
+      - "volley deep drive"
+      - "volley hard drive"
+      - "volley straight drive"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "volley 2-wall boast"
+      - "volley 3-wall boast"
+      - "cross"
+      - "cross lob"
+      - "deep cross"
+      - "wide cross"
+      - "cross down the middle"
+      - "hard cross"
+      - "straight kill"
+      - "volley straight kill"
+      - "cross kill"
+      # --- Thematic Chaos ---
+      - "drop"
+      - "counter drop"
+      - "cross drop"
+      - "straight drop"
+      - "volley drop"
+      - "volley cross drop"
+      - "volley straight drop"
+      - "trickle boast"
+      - "reverse boast"
+      - "volley reverse boast"
 
   # Variant 3: Counter_Drop
   - variant_id: counter_drop
@@ -108,14 +167,40 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
       constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
-      constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
-    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive",
-                       "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
-                       "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast",
-                       "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
-                       "drop", "counter drop", "straight drop"]
+    allowed_actions:
+      # Relevant Actions
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "volley drive"
+      - "volley deep drive"
+      - "volley hard drive"
+      - "volley straight drive"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "volley 2-wall boast"
+      - "volley 3-wall boast"
+      - "cross"
+      - "cross lob"
+      - "deep cross"
+      - "wide cross"
+      - "cross down the middle"
+      - "hard cross"
+      - "drop"
+      - "counter drop"
+      - "straight drop"
+      # --- Thematic Chaos ---
+      - "kill"
+      - "cross kill"
+      - "straight kill"
+      - "volley cross kill"
+      - "volley straight kill"
+      - "volley hard cross"
+      - "volley cross-court nick"
+      - "cross-court nick"
 
   # Variant 4 – Extra Drive
   - variant_id: extra_drive
@@ -144,17 +229,46 @@ variants:
     rules:
       description: >
         Follow the sequence. One (and only one) additional drive is then allowed by either player. After that extra drive, the pattern restarts with a new boast.
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> optional: ( straight drive (initiating player) | straight drive (opponent) | deep drive (initiating player) | deep drive (opponent) | hard drive (initiating player) | hard drive (opponent) ) -> restart pattern with next boast"
       constraint_text:
         - "All cross-court shots and drives in the main sequence must have their first bounce land behind the T-line."
         - "The optional extra drive may be used a maximum of one time per rally."
-      constraint_formal:
-        - "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
-        - "REQUIRE COUNT(shot(straight_drive, deep_drive, hard_drive)) <= 1"
-    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
-                      "volley", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
-                      "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast",
-                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross"]
+    allowed_actions:
+      # Relevant Actions
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "volley"
+      - "volley drive"
+      - "volley deep drive"
+      - "volley hard drive"
+      - "volley straight drive"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "volley 2-wall boast"
+      - "volley 3-wall boast"
+      - "cross"
+      - "cross lob"
+      - "deep cross"
+      - "wide cross"
+      - "cross down the middle"
+      - "hard cross"
+      # --- Thematic Chaos ---
+      - "drop"
+      - "counter drop"
+      - "cross drop"
+      - "straight drop"
+      - "volley drop"
+      - "volley cross drop"
+      - "volley straight drop"
+      - "kill"
+      - "cross kill"
+      - "straight kill"
+      - "volley cross kill"
+      - "volley straight kill"
+      - "cross-court nick"
+      - "volley cross-court nick"
 
 #  # Variant 5 – Open Drop
 #  - variant_id: open_drop
@@ -196,7 +310,6 @@ variants:
 #        is played out until a player wins the point. Any shot is legal during the open rally.
 #      # This sequence represents the grammar:
 #      # Rally -> Boast ( (Cross - Drive Restart) | (CounterDrop OpenRally) )
-#      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern | boast (initiating player) -> counter drop (opponent) -> open rally"
 #    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
 #                      "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
 #                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
@@ -237,11 +350,27 @@ variants:
       description: >
         Each rally begins with a boast. Players should alternate who initiates the rally.
         and follow the pattern boast → cross lob → volley drive.
-      sequence: "boast (initiating player) -> cross lob (opponent) -> volley drive (initiating player) -> restart pattern with next boast"
       constraint_text: "All cross lob shots and volley drives must have their first bounce land behind the T-line."
-      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
-
-    allowed_actions: [  "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
-                        "cross lob",
-                        "boast", "2-wall boast", "3-wall boast",
-                        "volley 2-wall boast", "volley 3-wall boast"]
+    allowed_actions:
+      # Relevant Actions
+      - "volley drive"
+      - "volley deep drive"
+      - "volley hard drive"
+      - "volley straight drive"
+      - "cross lob"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "volley 2-wall boast"
+      - "volley 3-wall boast"
+      # --- Thematic Chaos ---
+      - "drop"
+      - "counter drop"
+      - "cross drop"
+      - "straight drop"
+      - "volley drop"
+      - "volley cross drop"
+      - "volley straight drop"
+      - "trickle boast"
+      - "reverse boast"
+      - "volley reverse boast"

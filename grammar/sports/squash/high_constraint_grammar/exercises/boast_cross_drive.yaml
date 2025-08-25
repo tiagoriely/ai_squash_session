@@ -1,0 +1,647 @@
+# sports/squash/exercises/boast_cross_drive.yaml
+id: boast_cross_drive
+family: Boast-Cross-Drive
+family_id: squash.family.pattern.diagonal.boast_cross_drive
+category: diagonal
+base_description: A three-shot sequence of boast, cross and drive to move the opponent diagonally.
+
+# All variation of this exercise
+variants:
+  # Variant 1, Part A: Deep Only - Forehand - Drill
+  - variant_id: deep_only_forehand_drill # Principle 3: ID is now highly specific
+    name: "Boast-Cross-Drive Deep Only (Forehand Drill)"
+    description: "A drill version of the Boast-Cross-Drive pattern focused on the forehand side, where all shots excluding the boast must land behind the T-line."
+    # METADATA: gives you information about the variant
+    shotSide: [forehand]
+    types: [drill]
+    difficulty_score: 6
+    # Principle 5: Foundational/Tactical shots are minimized to the core sequence
+    foundational_shots: ["2-wall boast", "deep cross", "deep drive"]
+    tactical_shots: []
+    # Metadata is also minimized to reflect the strictness
+    shots:
+      general: [ "boast", "cross", "drive" ]
+      specific: ["2-wall boast", "deep cross", "deep drive"]
+    movement: ["diagonal", "front", "middle", "back"]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    # Principle 2: DSL hard Rules (same as the balanced grammar)
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    # Principle 1: Allowed actions ONLY include shots mentioned in the sequence
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "boast", "2-wall boast", "3-wall boast",
+                      "cross", "deep cross", "hard cross"]
+
+  # Variant 1, Part B: Deep Only - Backhand - Drill
+  - variant_id: deep_only_backhand_drill # Principle 3: ID is now highly specific
+    name: "Boast-Cross-Drive Deep Only (Backhand Drill)"
+    description: "A drill version of the Boast-Cross-Drive pattern focused on the backhand side, where all shots excluding the boast must land behind the T-line."
+    # METADATA: gives you information about the variant
+    shotSide: [backhand] # # Principle 3: ID is now highly specific
+    types: [drill]
+    difficulty_score: 6
+    # Principle 5: Foundational/Tactical shots are minimized to the core sequence
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive" ]
+    tactical_shots: [ ]
+    # Metadata is also minimized to reflect the strictness
+    shots:
+      general: [ "boast", "cross", "drive" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive"]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    # Principle 2: DSL hard Rules (same as the balanced grammar)
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    # Principle 1: Allowed actions ONLY include shots mentioned in the sequence
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "boast", "2-wall boast", "3-wall boast",
+                      "cross", "deep cross", "hard cross"]
+
+  # ---- Conditioned
+  # Variant 1, Part C: Deep Only - Forehand - Conditioned Game
+  - variant_id: deep_only_forehand_conditioned_game # Principle 3: ID is now highly specific
+    name: "Boast-Cross-Drive Deep Only (Forehand Conditioned Game)"
+    description: "A conditioned game version of the Boast-Cross-Drive pattern focused on the forehand side, where all shots excluding the boast must land behind the T-line."
+    # METADATA: gives you information about the variant
+    shotSide: [ forehand ]
+    types: [conditioned_game]
+    difficulty_score: 6
+    # Principle 5: Foundational/Tactical shots are minimized to the core sequence
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive" ]
+    tactical_shots: [ ]
+    # Metadata is also minimized to reflect the strictness
+    shots:
+      general: [ "boast", "cross", "drive" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    # Principle 2: DSL hard Rules (same as the balanced grammar)
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    # Principle 1: Allowed actions ONLY include shots mentioned in the sequence
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "boast", "2-wall boast", "3-wall boast",
+                      "cross", "deep cross", "hard cross"]
+
+  # Variant 1, Part D: Deep Only - Backhand - Conditioned Game
+  - variant_id: deep_only_backhand_conditioned_game # Principle 3: ID is now highly specific
+    name: "Boast-Cross-Drive Deep Only (Backhand Conditioned Game)"
+    description: "A conditioned game version of the Boast-Cross-Drive pattern focused on the backhand side, where all shots excluding the boast must land behind the T-line."
+    # METADATA: gives you information about the variant
+    shotSide: [ backhand ] # Principle 3: ID is now highly specific
+    types: [conditioned_game]
+    difficulty_score: 6
+    # Principle 5: Foundational/Tactical shots are minimized to the core sequence
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive" ]
+    tactical_shots: [ ]
+    # Metadata is also minimized to reflect the strictness
+    shots:
+      general: [ "boast", "cross", "drive" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    # Principle 2: DSL hard Rules (same as the balanced grammar)
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    # Principle 1: Allowed actions ONLY include shots mentioned in the sequence
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "boast", "2-wall boast", "3-wall boast",
+                      "cross", "deep cross", "hard cross"]
+
+
+  # ------------
+
+
+
+
+
+
+
+  # Variant 2 – Part A: Kills Allowed - Forehand - Drill
+  - variant_id: kills_allowed_forehand_drill
+    name: Boast-Cross-Drive With Kills Allowed (Forehand Drill)
+    description: >
+      A drill on the forehand side where players follow the base pattern, but are also permitted to play kills (straight kills or cross kills). 
+      Here the second bounce of deep shots must land behind the T-line.
+    shotSide: [forehand]
+    types: [drill]
+    difficulty_score: 6
+    foundational_shots: ["2-wall boast", "deep cross", "deep drive", "straight kill", "cross kill"]
+    tactical_shots: []
+    shots:
+      general: [ "boast", "cross", "drive", "kill" ]
+      specific: ["2-wall boast", "deep cross", "deep drive", "straight kill", "cross kill"]
+    movement: ["diagonal", "front", "middle", "back"]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> (cross | cross kill) (opponent) -> (drive | straight kill) (initiating player) -> restart pattern with next boast"
+      # IMPORTANT SECTION SOFT/HARD CONSTRAINT
+      constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[2] > t_line"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                       "boast", "2-wall boast", "3-wall boast",
+                       "cross", "deep cross", "hard cross",
+                       "kill", "straight kill", "cross kill"]
+
+  # Variant 2 – Part B: Kills Allowed - Backhand - Drill
+  - variant_id: kills_allowed_backhand_drill
+    name: Boast-Cross-Drive With Kills Allowed (Backhand Drill)
+    description: >
+      A drill on the backhand side where players follow the base pattern, but are also permitted to play kills (straight kills or cross kills). 
+      Here the second bounce of deep shots must land behind the T-line.
+    shotSide: [backhand]
+    types: [drill]
+    difficulty_score: 6
+    foundational_shots: ["2-wall boast", "deep cross", "deep drive", "straight kill", "cross kill"]
+    tactical_shots: [ ]
+    shots:
+      general: [ "boast", "cross", "drive", "kill" ]
+      specific: ["2-wall boast", "deep cross", "deep drive", "straight kill", "cross kill"]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> (cross | cross kill) (opponent) -> (drive | straight kill) (initiating player) -> restart pattern with next boast"
+      # IMPORTANT SECTION SOFT/HARD CONSTRAINT
+      constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[2] > t_line"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                       "boast", "2-wall boast", "3-wall boast",
+                       "cross", "deep cross", "hard cross",
+                       "kill", "straight kill", "cross kill"]
+
+  # Variant 2 – Part C: Kills Allowed - Forehand - Conditioned Game
+  - variant_id: kills_allowed_forehand_conditioned_game
+    name: Boast-Cross-Drive With Kills Allowed (Forehand Conditioned Game)
+    description: >
+      A conditioned game on the forehand side where players follow the base pattern, but are also permitted to play kills (straight kills or cross kills). 
+      Here the second bounce of deep shots must land behind the T-line.
+    shotSide: [forehand]
+    types: [conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["2-wall boast", "deep cross", "deep drive", "straight kill", "cross kill"]
+    tactical_shots: [ ]
+    shots:
+      general: [ "boast", "cross", "drive", "kill" ]
+      specific: ["2-wall boast", "deep cross", "deep drive", "straight kill", "cross kill"]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> (cross | cross kill) (opponent) -> (drive | straight kill) (initiating player) -> restart pattern with next boast"
+      # IMPORTANT SECTION SOFT/HARD CONSTRAINT
+      constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[2] > t_line"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                       "boast", "2-wall boast", "3-wall boast",
+                       "cross", "deep cross", "hard cross",
+                       "kill", "straight kill", "cross kill"]
+
+  # Variant 2 – Part D: Kills Allowed - Backhand - Conditioned Game
+  - variant_id: kills_allowed_backhand_conditioned_game
+    name: Boast-Cross-Drive With Kills Allowed (Backhand Conditioned Game)
+    description: >
+      A conditioned game on the backhand side where players follow the base pattern, but are also permitted to play kills (straight kills or cross kills). 
+      Here the second bounce of deep shots must land behind the T-line.
+    shotSide: [backhand]
+    types: [conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["2-wall boast", "deep cross", "deep drive", "straight kill", "cross kill"]
+    tactical_shots: [ ]
+    shots:
+      general: [ "boast", "cross", "drive", "kill" ]
+      specific: ["2-wall boast", "deep cross", "deep drive", "straight kill", "cross kill"]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> (cross | cross kill) (opponent) -> (drive | straight kill) (initiating player) -> restart pattern with next boast"
+      # IMPORTANT SECTION SOFT/HARD CONSTRAINT
+      constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[2] > t_line"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                       "boast", "2-wall boast", "3-wall boast",
+                       "cross", "deep cross", "hard cross",
+                       "kill", "straight kill", "cross kill"]
+
+  # ----------------------
+
+
+  # Variant 3 - Part A: Counter Drops - Forehand - Drill
+  - variant_id: counter_drop_forehand_drill
+    name: Boast-Cross-Drive With Counter Drops (Forehand Drill)
+    description: >
+      A drill where after a boast, players can engage in a counter-drop rally before hitting a cross to reset the main pattern.
+    shotSide: [forehand]
+    types: [drill]
+    difficulty_score: 7
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive", "counter drop", "straight drop" ]
+    tactical_shots: ["counter drop", "straight drop" ]
+    shots:
+      general: [ "boast", "cross", "drive", "drop" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive", "counter drop", "straight drop" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
+      constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
+      constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "boast", "2-wall boast", "3-wall boast",
+                      "cross", "deep cross", "hard cross",
+                      "drop", "counter drop", "straight drop"]
+
+  # Variant 3 - Part B: Counter Drops - Backhand - Drill
+  - variant_id: counter_drop_backhand_drill
+    name: Boast-Cross-Drive With Counter Drops (Backhand Drill)
+    description: >
+      A drill where after a boast, players can engage in a counter-drop rally before hitting a cross to reset the main pattern.
+    shotSide: [backhand]
+    types: [drill]
+    difficulty_score: 7
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive", "counter drop", "straight drop" ]
+    tactical_shots: [ "counter drop", "straight drop" ]
+    shots:
+      general: [ "boast", "cross", "drive", "drop" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive", "counter drop", "straight drop" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
+      constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
+      constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "boast", "2-wall boast", "3-wall boast",
+                      "cross", "deep cross", "hard cross",
+                      "drop", "counter drop", "straight drop"]
+
+  # Variant 3 - Part C: Counter Drops - Forehand - Conditioned Game
+  - variant_id: counter_drop_forehand_conditioned_game
+    name: Boast-Cross-Drive With Counter Drops (Forehand Conditioned Game)
+    description: >
+      A conditioned game where after a boast, players can engage in a counter-drop rally before hitting a cross to reset the main pattern.
+    shotSide: [forehand]
+    types: [conditioned_game]
+    difficulty_score: 7
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive", "counter drop", "straight drop" ]
+    tactical_shots: [ "counter drop", "straight drop" ]
+    shots:
+      general: [ "boast", "cross", "drive", "drop" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive", "counter drop", "straight drop" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
+      constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
+      constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "boast", "2-wall boast", "3-wall boast",
+                      "cross", "deep cross", "hard cross",
+                      "drop", "counter drop", "straight drop"]
+
+  # Variant 3 - Part B: Counter Drops - Backhand - Conditioned Game
+  - variant_id: counter_drop_backhand_conditioned_game
+    name: Boast-Cross-Drive With Counter Drops (Backhand Conditioned Game)
+    description: >
+      A conditioned game where after a boast, players can engage in a counter-drop rally before hitting a cross to reset the main pattern.
+    shotSide: [backhand]
+    types: [conditioned_game]
+    difficulty_score: 7
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive", "counter drop", "straight drop" ]
+    tactical_shots: [ "counter drop", "straight drop" ]
+    shots:
+      general: [ "boast", "cross", "drive", "drop" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive", "counter drop", "straight drop" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
+      constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
+      constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "boast", "2-wall boast", "3-wall boast",
+                      "cross", "deep cross", "hard cross",
+                      "drop", "counter drop", "straight drop"]
+
+
+
+
+
+  # ----------------
+
+  # Variant 4, Part A: Extra Drive - Forehand - Drill
+  - variant_id: extra_drive_forehand_drill # Principle 3: ID is now highly specific
+    name: "Boast-Cross-Drive Extra Drive (Forehand Drill)"
+    description: >
+      A drill version of the standard pattern on the forehand side, but one optional extra drive (after the first drive only) is allowed 
+      by either player before the pattern resets.
+    # METADATA: gives you information about the variant
+    shotSide: [ forehand ]
+    types: [ drill ]
+    difficulty_score: 6
+    # Principle 5: Foundational/Tactical shots are minimized to the core sequence
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive" ]
+    tactical_shots: [ ]
+    # Metadata is also minimized to reflect the strictness
+    shots:
+      general: [ "boast", "cross", "drive" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    # Principle 2: DSL hard Rules (same as the balanced grammar)
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    # Principle 1: Allowed actions ONLY include shots mentioned in the sequence
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive",
+                       "boast", "2-wall boast", "3-wall boast",
+                       "cross", "deep cross", "hard cross" ]
+
+  # Variant 4, Part B: Extra Drive - Backhand - Drill
+  - variant_id: extra_drive_backhand_drill # Principle 3: ID is now highly specific
+    name: "Boast-Cross-Drive Extra Drive (Backhand Drill)"
+    description: >
+      A drill version of the standard pattern on the backhand side, but one optional extra drive (after the first drive only) is allowed 
+      by either player before the pattern resets.
+    # METADATA: gives you information about the variant
+    shotSide: [ backhand ] # # Principle 3: ID is now highly specific
+    types: [ drill ]
+    difficulty_score: 6
+    # Principle 5: Foundational/Tactical shots are minimized to the core sequence
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive" ]
+    tactical_shots: [ ]
+    # Metadata is also minimized to reflect the strictness
+    shots:
+      general: [ "boast", "cross", "drive" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    # Principle 2: DSL hard Rules (same as the balanced grammar)
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    # Principle 1: Allowed actions ONLY include shots mentioned in the sequence
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive",
+                       "boast", "2-wall boast", "3-wall boast",
+                       "cross", "deep cross", "hard cross" ]
+
+  # ---- Conditioned
+  # Variant 4, Part C: Extra Drive - Forehand - Conditioned Game
+  - variant_id: extra_drive_forehand_conditioned_game # Principle 3: ID is now highly specific
+    name: "Boast-Cross-Drive Extra Drive (Forehand Conditioned Game)"
+    description: >
+      A conditioned game version of the standard pattern on the forehand side, but one optional extra drive (after the first drive only) is allowed 
+      by either player before the pattern resets.
+    # METADATA: gives you information about the variant
+    shotSide: [ forehand ]
+    types: [ conditioned_game ]
+    difficulty_score: 6
+    # Principle 5: Foundational/Tactical shots are minimized to the core sequence
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive" ]
+    tactical_shots: [ ]
+    # Metadata is also minimized to reflect the strictness
+    shots:
+      general: [ "boast", "cross", "drive" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    # Principle 2: DSL hard Rules (same as the balanced grammar)
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    # Principle 1: Allowed actions ONLY include shots mentioned in the sequence
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive",
+                       "boast", "2-wall boast", "3-wall boast",
+                       "cross", "deep cross", "hard cross" ]
+
+  # Variant 4, Part D: Extra Drive - Backhand - Conditioned Game
+  - variant_id: extra_drive_backhand_conditioned_game # Principle 3: ID is now highly specific
+    name: "Boast-Cross-Drive Extra Drive (Backhand Conditioned Game)"
+    description: >
+      A conditioned game version of the standard pattern on the backhand side, but one optional extra drive (after the first drive only) is allowed 
+      by either player before the pattern resets.
+    # METADATA: gives you information about the variant
+    shotSide: [ backhand ] # Principle 3: ID is now highly specific
+    types: [ conditioned_game ]
+    difficulty_score: 6
+    # Principle 5: Foundational/Tactical shots are minimized to the core sequence
+    foundational_shots: [ "2-wall boast", "deep cross", "deep drive" ]
+    tactical_shots: [ ]
+    # Metadata is also minimized to reflect the strictness
+    shots:
+      general: [ "boast", "cross", "drive" ]
+      specific: [ "2-wall boast", "deep cross", "deep drive" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    # Principle 2: DSL hard Rules (same as the balanced grammar)
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    # Principle 1: Allowed actions ONLY include shots mentioned in the sequence
+    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive",
+                       "boast", "2-wall boast", "3-wall boast",
+                       "cross", "deep cross", "hard cross" ]
+
+
+
+
+
+  # -----------------
+
+  # Variant 4 – Extra Drive
+  - variant_id: extra_drive
+    name: Boast-Cross-Drive With Extra Drive
+    description: >
+      The standard pattern, but one optional extra drive (after the first drive only) is allowed 
+      by either player before the pattern resets.
+    types: [drill, conditioned_game]
+    difficulty_score: 6
+    foundational_shots: [ "2-wall boast", "3-wall boast",
+                          "hard cross", "cross lob",
+                          "deep drive", "hard drive", "straight drive",
+                          "volley hard drive", "volley straight drive" ]
+    tactical_shots: ["deep drive", "hard drive", "straight drive"]
+
+    shots:
+      general: [ "boast", "cross", "drive", "volley", "lob" ]
+      specific: [ "deep drive", "hard drive", "straight drive",
+                  "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                  "2-wall boast", "3-wall boast", "volley 2-wall boast",
+                  "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross" ]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      description: >
+        Follow the sequence. One (and only one) additional drive is then allowed by either player. After that extra drive, the pattern restarts with a new boast.
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> optional: ( straight drive (initiating player) | straight drive (opponent) | deep drive (initiating player) | deep drive (opponent) | hard drive (initiating player) | hard drive (opponent) ) -> restart pattern with next boast"
+      constraint_text:
+        - "All cross-court shots and drives in the main sequence must have their first bounce land behind the T-line."
+        - "The optional extra drive may be used a maximum of one time per rally."
+      constraint_formal:
+        - "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
+        - "REQUIRE COUNT(shot(straight_drive, deep_drive, hard_drive)) <= 1"
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "volley", "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                      "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast",
+                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross"]
+
+#  # Variant 5 – Open Drop
+#  - variant_id: open_drop
+#    name: Boast-Cross-Drive With Open Rally via Counter Drop
+#    description: >
+#      A counter-drop after the initial boast opens the rally up to any shot, turning
+#      it into a full court point.
+#    types: [conditioned_game]
+#    difficulty_score: 7
+#    foundational_shots: [ "2-wall boast", "3-wall boast",
+#                          "hard cross", "cross lob",
+#                          "deep drive", "hard drive", "straight drive",
+#                          "volley hard drive", "volley straight drive" ]
+#    tactical_shots: [ "counter drop", "straight drop" ]
+#    shots:
+#      general: [ "boast", "cross", "drive", "kill", "drop", "lob", "volley" ]
+#      specific: ["deep drive", "hard drive", "straight drive",
+#                 "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+#                 "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
+#                 "cross-court nick", "volley cross-court nick",
+#                 "volley cross", "volley hard cross", "volley cross lob",
+#                 "counter drop", "cross drop", "straight drop",
+#                 "volley cross drop", "volley straight drop",
+#                 "2-wall boast", "3-wall boast", "trickle boast", "reverse boast",
+#                 "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast",
+#                 "straight lob", "cross lob",
+#                 "volley straight lob", "volley cross lob",
+#                 "straight kill", "cross kill",
+#                 "volley cross kill", "volley straight kill"]
+#    movement: [ "diagonal", "front", "middle", "back", "sideways", "multi-directional" ]
+#    roles:
+#      pattern: alternating # no fixed role
+#      exercises_per_side: 1 # Players do not need to change role before changing sides
+#    rules:
+#      description: >
+#        Each rally begins with a boast. Players should alternate who initiates the rally.
+#        - Base path: follow boast → cross → drive.
+#        - Drop branch: If the boast is returned with a straight counter-drop, the rally becomes 'open' and
+#        is played out until a player wins the point. Any shot is legal during the open rally.
+#      # This sequence represents the grammar:
+#      # Rally -> Boast ( (Cross - Drive Restart) | (CounterDrop OpenRally) )
+#      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern | boast (initiating player) -> counter drop (opponent) -> open rally"
+#    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+#                      "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+#                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
+#                      "cross-court nick", "volley cross-court nick",
+#                      "volley cross", "volley hard cross", "volley cross lob",
+#                      "drop", "counter drop", "cross drop", "straight drop",
+#                      "volley cross drop", "volley straight drop",
+#                      "boast", "2-wall boast", "3-wall boast", "trickle boast", "reverse boast",
+#                      "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast",
+#                      "lob", "straight lob", "cross lob",
+#                      "volley", "volley straight lob", "volley cross lob",
+#                      "kill", "straight kill", "cross kill",
+#                      "volley cross kill", "volley straight kill"]
+
+  # Variant 6 – Cross Lob & Volley Straight
+  - variant_id: cross_lob_and_volley_straight
+    name: Boast - Cross Lob - Volley Drive
+    description: >
+            A variation where the cross-court shot must be a lob, and the subsequent drive must be taken 
+            as any type of volley straight drive.
+    types: [drill, conditioned_game]
+    difficulty_score: 7
+    foundational_shots: [ "2-wall boast", "3-wall boast",
+                          "cross lob",
+                          "volley hard drive", "volley straight drive" ]
+    tactical_shots: []
+    shots:
+      general: [ "boast", "cross", "drive", "drop", "lob", "volley" ]
+      specific: ["volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                 "cross lob",
+                 "2-wall boast", "3-wall boast",
+                 "volley 2-wall boast"]
+    movement: [ "diagonal", "front", "middle", "back" ]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      description: >
+        Each rally begins with a boast. Players should alternate who initiates the rally.
+        and follow the pattern boast → cross lob → volley drive.
+      sequence: "boast (initiating player) -> cross lob (opponent) -> volley drive (initiating player) -> restart pattern with next boast"
+      constraint_text: "All cross lob shots and volley drives must have their first bounce land behind the T-line."
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    allowed_actions: [  "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                        "cross lob",
+                        "boast", "2-wall boast", "3-wall boast",
+                        "volley 2-wall boast", "volley 3-wall boast"]

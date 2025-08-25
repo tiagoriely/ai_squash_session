@@ -18,29 +18,46 @@ variants:
         - name: "Boast-Drive-Drop-Drive"
           proportion: 0.5
           rules:
-            # careful not being read by loader change potentially later
             sequence: "A: boast -> B: drive -> A: drop -> B: drive"
         - name: "Boast-Drive (2 shots)"
           proportion: 0.5
           rules:
-            # careful not being read by loader change potentially later
             sequence: "A (drive, boast) <-> B (drop, drive)"
 
   # WARMUP 2
   - variant_id: "compound_boast_cross_boast_drive_and_2_shots"
     name: "Compound Boast-Cross-Boast-Drive + 2 shots"
     description: "A scalable warm-up routine with two distinct patterns and a role rotation."
-    types: [warmup]
+    types: [ warmup ]
     composition:
       repeat_with_role_switch: true
       components:
         - name: "Boast-Cross-Boast-Drive"
           proportion: 0.5
           rules:
-            # careful not being read by loader change potentially later
             sequence: "A: boast -> B: drive -> A: drop -> B: drive"
         - name: "Boast-Drive (2 shots)"
           proportion: 0.5
           rules:
-            # careful not being read by loader change potentially later
             sequence: "A (drive, boast) <-> B (drop, drive)"
+
+  # WARMUP 3
+  - variant_id: "compound_boast_drive_and_2_shots"
+    name: "Compound Boast-Drive + 2 shots"
+    description: "A scalable warm-up routine with two distinct patterns and a role rotation."
+    types: [warmup]
+    composition:
+      repeat_with_role_switch: true
+      components:
+        - name: "Boast-Drive"
+          proportion: 0.5
+          rules:
+            sequence: "A: boast -> B: drive"
+        - name: "Boast-Drive (2 shots)"
+          proportion: 0.5
+          rules:
+            sequence: "A (drive, boast) <-> B (drop, drive)"
+
+
+
+

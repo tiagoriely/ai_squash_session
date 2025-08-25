@@ -4,6 +4,7 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+.venv-py311
 
 # Ignore logs and runtime files
 *.log
@@ -21,5 +22,6 @@ finetuning/data/finetune_splits/*.jsonl
 
 # MacOS files
 .DS_Store
+
 
 

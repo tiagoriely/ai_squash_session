@@ -1,0 +1,237 @@
+# drop_drive.yaml
+id: drop_drive
+family: Drop-Drive
+family_id: squash.family.role.straight.drop_drive
+category: straight
+base_description: A role-based straight-line pattern that combines drops and/or volley drops from
+  the back and/or middle court with straight drives from the front.
+
+# Defining parameters that can be applied to the variants of the exercise below
+# This eliminates the need for separate forehand/backhand entries.
+parameters:
+  - name: shotSide
+    description: The side of the court the exercise is focused on.
+    options: [forehand, backhand]
+
+# All variation of this exercise
+variants:
+  # Variant 1 – Deep Only
+  - variant_id: deep_only
+    name: Drop-Drive (Deep Only)
+    description: >
+      One player plays straight drops from the back of the court; 
+      the other plays straight drives from the front. 
+      Players swap roles, then switch sides, and repeat.
+    # METADATA: gives you information about the variant
+    types: [drill, conditioned_game]
+    difficulty_score: 5
+    foundational_shots: ["deep drive", "straight drive", "hard drive",
+                         "straight drop"]
+    tactical_shots: []
+    shots:
+      general: ["drive", "drop", "volley"]
+      specific: ["deep drive", "hard drive", "straight drive",
+                 "straight lob",
+                 "straight drop",
+                 "volley straight drop"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed # A drives, B drops
+      exercises_per_side: 2 # Players change role before changing sides
+      default_sides: [forehand, backhand]
+    rules:
+      constraint_text:
+        - "Drive: all drives first bounces must land behind T-line."
+        - "Drop: all drops second bounces must land in front of T-line."
+    allowed_actions:
+      # Relevant Actions
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "straight lob"
+      - "drop"
+      - "straight drop"
+      - "volley straight drop"
+      # --- Thematic Chaos ---
+      - "cross"
+      - "cross lob"
+      - "deep cross"
+      - "wide cross"
+      - "hard cross"
+      - "volley cross"
+      - "cross drop"
+      - "cross kill"
+      - "cross-court nick"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "trickle boast"
+      - "reverse boast"
+      - "volley 2-wall boast"
+
+  # Variant 2 – Volley drop Deep Only
+  - variant_id: volley_drop_deep_only
+    name: Volley Straight Drop - Drive (Deep Only)
+    description: >
+      One player plays volley straight drops from the service box; 
+      the other plays straight drives from the front. 
+      Players swap roles, then switch sides, and repeat.
+    # METADATA: gives you information about the variant
+    types: [drill, conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["deep drive", "straight drive", "hard drive",
+                         "volley straight drop"]
+    tactical_shots: []
+    shots:
+      general: ["drive", "drop", "volley"]
+      specific: ["deep drive", "hard drive", "straight drive",
+                 "straight lob",
+                 "straight drop",
+                 "volley straight drop"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed # A drives, B drops
+      exercises_per_side: 2 # Players change role before changing sides
+      default_sides: [forehand, backhand]
+    rules:
+      constraint_text:
+        - "Drive: The first bounce of all drives must land behind the T-line."
+        - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
+    allowed_actions:
+      # Relevant Actions
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "straight lob"
+      - "drop"
+      - "straight drop"
+      - "volley straight drop"
+      # --- Thematic Chaos ---
+      - "cross"
+      - "cross lob"
+      - "deep cross"
+      - "wide cross"
+      - "hard cross"
+      - "volley cross"
+      - "cross drop"
+      - "cross kill"
+      - "cross-court nick"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "trickle boast"
+      - "reverse boast"
+      - "volley 2-wall boast"
+
+  # Variant 3 – Volley drop & Straight Lob
+  - variant_id: volley_drop_straight_lob
+    name: Volley Straight Drop - Straight Lob
+    description: >
+      One player plays volley straight drops (above the head) from the service box; 
+      the other plays straight lobs from the front. 
+      Players swap roles, then switch sides, and repeat.
+    # METADATA: gives you information about the variant
+    types: [drill, conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["straight lob",
+                         "volley straight drop"]
+    tactical_shots: []
+    shots:
+      general: ["drive", "drop", "volley"]
+      specific: ["straight lob",
+                 "straight drop",
+                 "volley straight drop"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed # A straight lobs, B volley drops
+      exercises_per_side: 2 # Players change role before changing sides
+      default_sides: [forehand, backhand]
+    rules:
+      constraint_text:
+        - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
+        - "Volley Drop: The second bounce must land in front of the T-line."
+    allowed_actions:
+      # Relevant Actions
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "straight drop"
+      - "volley straight drop"
+      # --- Thematic Chaos ---
+      - "cross"
+      - "cross lob"
+      - "deep cross"
+      - "wide cross"
+      - "hard cross"
+      - "volley cross"
+      - "cross drop"
+      - "cross kill"
+      - "cross-court nick"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "trickle boast"
+      - "reverse boast"
+      - "volley 2-wall boast"
+
+  # Variant 4 – Any Straight Drive
+  - variant_id: any_straight_drive
+    name: Drop-Drive (any drive)
+    description: >
+      One player plays straight drops from the back of the court; 
+      the other plays straight drives from the front. 
+      Players swap roles, then switch sides, and repeat.
+    # METADATA: gives you information about the variant
+    types: [ drill, conditioned_game ]
+    difficulty_score: 4
+    foundational_shots: [ "deep drive", "straight drive", "hard drive",
+                          "straight drop" ]
+    tactical_shots: [ "straight kill", "straight lob" ]
+    shots:
+      general: [ "drive", "drop", "volley" ]
+      specific: [ "deep drive", "hard drive", "straight drive",
+                  "straight kill",
+                  "straight lob",
+                  "straight drop",
+                  "volley straight drop" ]
+    movement: [ "front", "back", "middle" ]
+    roles:
+      pattern: fixed # A drives, B drops
+      exercises_per_side: 2 # Players change role before changing sides
+      default_sides: [ forehand, backhand ]
+    rules:
+      constraint_text:
+        - "Drive: The second bounce of all drives must land behind the T-line."
+        - "Drop: The second bounce of all drops must land in front of the T-line."
+    allowed_actions:
+      # Relevant Actions
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "kill"
+      - "straight kill"
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "straight drop"
+      - "volley"
+      - "volley straight drop"
+      # --- Thematic Chaos ---
+      - "cross"
+      - "cross lob"
+      - "deep cross"
+      - "wide cross"
+      - "hard cross"
+      - "volley cross"
+      - "cross drop"
+      - "cross kill"
+      - "cross-court nick"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "trickle boast"
+      - "reverse boast"
+      - "volley 2-wall boast"

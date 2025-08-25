@@ -5,4 +5,4 @@ corpus_path: data/processed/balanced_grammar/balanced_500.jsonl
 
 # Specify the retrieval method and where to save the index
 retrieval_method: e5-base-v2
-index_path: indexes/balanced_grammar/e5_index
+index_path: indexes/balanced_grammar/corpus_size_500/e5
