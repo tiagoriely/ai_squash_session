@@ -270,59 +270,59 @@ variants:
       - "cross-court nick"
       - "volley cross-court nick"
 
-#  # Variant 5 – Open Drop
-#  - variant_id: open_drop
-#    name: Boast-Cross-Drive With Open Rally via Counter Drop
-#    description: >
-#      A counter-drop after the initial boast opens the rally up to any shot, turning
-#      it into a full court point.
-#    types: [conditioned_game]
-#    difficulty_score: 7
-#    foundational_shots: [ "2-wall boast", "3-wall boast",
-#                          "hard cross", "cross lob",
-#                          "deep drive", "hard drive", "straight drive",
-#                          "volley hard drive", "volley straight drive" ]
-#    tactical_shots: [ "counter drop", "straight drop" ]
-#    shots:
-#      general: [ "boast", "cross", "drive", "kill", "drop", "lob", "volley" ]
-#      specific: ["deep drive", "hard drive", "straight drive",
-#                 "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
-#                 "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
-#                 "cross-court nick", "volley cross-court nick",
-#                 "volley cross", "volley hard cross", "volley cross lob",
-#                 "counter drop", "cross drop", "straight drop",
-#                 "volley cross drop", "volley straight drop",
-#                 "2-wall boast", "3-wall boast", "trickle boast", "reverse boast",
-#                 "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast",
-#                 "straight lob", "cross lob",
-#                 "volley straight lob", "volley cross lob",
-#                 "straight kill", "cross kill",
-#                 "volley cross kill", "volley straight kill"]
-#    movement: [ "diagonal", "front", "middle", "back", "sideways", "multi-directional" ]
-#    roles:
-#      pattern: alternating # no fixed role
-#      exercises_per_side: 1 # Players do not need to change role before changing sides
-#    rules:
-#      description: >
-#        Each rally begins with a boast. Players should alternate who initiates the rally.
-#        - Base path: follow boast → cross → drive.
-#        - Drop branch: If the boast is returned with a straight counter-drop, the rally becomes 'open' and
-#        is played out until a player wins the point. Any shot is legal during the open rally.
-#      # This sequence represents the grammar:
-#      # Rally -> Boast ( (Cross - Drive Restart) | (CounterDrop OpenRally) )
-#    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
-#                      "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
-#                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
-#                      "cross-court nick", "volley cross-court nick",
-#                      "volley cross", "volley hard cross", "volley cross lob",
-#                      "drop", "counter drop", "cross drop", "straight drop",
-#                      "volley cross drop", "volley straight drop",
-#                      "boast", "2-wall boast", "3-wall boast", "trickle boast", "reverse boast",
-#                      "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast",
-#                      "lob", "straight lob", "cross lob",
-#                      "volley", "volley straight lob", "volley cross lob",
-#                      "kill", "straight kill", "cross kill",
-#                      "volley cross kill", "volley straight kill"]
+  #  # Variant 5 – Open Drop
+  #  - variant_id: open_drop
+  #    name: Boast-Cross-Drive With Open Rally via Counter Drop
+  #    description: >
+  #      A counter-drop after the initial boast opens the rally up to any shot, turning
+  #      it into a full court point.
+  #    types: [conditioned_game]
+  #    difficulty_score: 7
+  #    foundational_shots: [ "2-wall boast", "3-wall boast",
+  #                          "hard cross", "cross lob",
+  #                          "deep drive", "hard drive", "straight drive",
+  #                          "volley hard drive", "volley straight drive" ]
+  #    tactical_shots: [ "counter drop", "straight drop" ]
+  #    shots:
+  #      general: [ "boast", "cross", "drive", "kill", "drop", "lob", "volley" ]
+  #      specific: ["deep drive", "hard drive", "straight drive",
+  #                 "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+  #                 "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
+  #                 "cross-court nick", "volley cross-court nick",
+  #                 "volley cross", "volley hard cross", "volley cross lob",
+  #                 "counter drop", "cross drop", "straight drop",
+  #                 "volley cross drop", "volley straight drop",
+  #                 "2-wall boast", "3-wall boast", "trickle boast", "reverse boast",
+  #                 "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast",
+  #                 "straight lob", "cross lob",
+  #                 "volley straight lob", "volley cross lob",
+  #                 "straight kill", "cross kill",
+  #                 "volley cross kill", "volley straight kill"]
+  #    movement: [ "diagonal", "front", "middle", "back", "sideways", "multi-directional" ]
+  #    roles:
+  #      pattern: alternating # no fixed role
+  #      exercises_per_side: 1 # Players do not need to change role before changing sides
+  #    rules:
+  #      description: >
+  #        Each rally begins with a boast. Players should alternate who initiates the rally.
+  #        - Base path: follow boast → cross → drive.
+  #        - Drop branch: If the boast is returned with a straight counter-drop, the rally becomes 'open' and
+  #        is played out until a player wins the point. Any shot is legal during the open rally.
+  #      # This sequence represents the grammar:
+  #      # Rally -> Boast ( (Cross - Drive Restart) | (CounterDrop OpenRally) )
+  #    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+  #                      "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+  #                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross",
+  #                      "cross-court nick", "volley cross-court nick",
+  #                      "volley cross", "volley hard cross", "volley cross lob",
+  #                      "drop", "counter drop", "cross drop", "straight drop",
+  #                      "volley cross drop", "volley straight drop",
+  #                      "boast", "2-wall boast", "3-wall boast", "trickle boast", "reverse boast",
+  #                      "volley 2-wall boast", "volley 3-wall boast", "volley reverse boast",
+  #                      "lob", "straight lob", "cross lob",
+  #                      "volley", "volley straight lob", "volley cross lob",
+  #                      "kill", "straight kill", "cross kill",
+  #                      "volley cross kill", "volley straight kill"]
 
   # Variant 6 – Cross Lob & Volley Straight
   - variant_id: cross_lob_and_volley_straight

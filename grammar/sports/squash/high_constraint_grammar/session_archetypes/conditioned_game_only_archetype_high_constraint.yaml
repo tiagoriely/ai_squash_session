@@ -14,6 +14,8 @@ soft_constraints: []
 # It is allowed to use any block type excluding the ones with drills.
 allowed_block_types:
   - same_variant_side_switch
-  - cross_family_action_similarity
+  #- cross_family_action_similarity
   - symmetrical_same_side_variant_progression_pair
-  - symmetrical_cross_family_action_similarity_pair
+  # - symmetrical_cross_family_action_similarity_pair Removed, present in balanced grammar
+  - same_side_variant_progression # Added, not present in balanced
+

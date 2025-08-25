@@ -1,0 +1,13 @@
+block_type_id: "from_drills_to_condition"
+description: "A block that progresses from a drill to a conditioned game from the same family, where the game is at least as complex as the drill."
+rules:
+  block_count: 1
+  exercise_count: 2
+  # HARD CONSTRAINT: The block must contain a drill followed by a conditioned game.
+  allowed_sequences:
+    - [drill, conditioned_game]
+  requires_same_family: true
+  # HARD CONSTRAINT: The complexity of the conditioned game must be greater than or equal to the drill's complexity.
+  # Complexity is measured by the number of 'allowed_actions'.
+  enforce_complexity_progression: true
+  requires_same_side: true

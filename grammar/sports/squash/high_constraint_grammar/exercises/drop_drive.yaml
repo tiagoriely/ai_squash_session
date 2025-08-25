@@ -6,76 +6,154 @@ category: straight
 base_description: A role-based straight-line pattern that combines drops and/or volley drops from
   the back and/or middle court with straight drives from the front.
 
-# Defining parameters that can be applied to the variants of the exercise below
-# This eliminates the need for separate forehand/backhand entries.
-parameters:
-  - name: shotSide
-    description: The side of the court the exercise is focused on.
-    options: [forehand, backhand]
-
 # All variation of this exercise
 variants:
-  # Variant 1 – Deep Only
-  - variant_id: deep_only
-    name: Drop-Drive (Deep Only)
-    description: >
-      One player plays straight drops from the back of the court; 
-      the other plays straight drives from the front. 
-      Players swap roles, then switch sides, and repeat.
-    # METADATA: gives you information about the variant
+  # Variant 1, Part A: Deep Only - Forehand - Drill
+  - variant_id: deep_only_forehand_drill
+    name: "Drop-Drive (Deep Only - Forehand Drill)"
+    description: "A drill on the forehand side where one player plays straight drops from the back; the other plays straight drives from the front."
+    shotSide: [forehand]
     types: [drill]
     difficulty_score: 5
-    foundational_shots: ["deep drive", "straight drive", "hard drive",
-                         "straight drop"]
+    foundational_shots: ["straight drop", "deep drive", "straight drive"]
     tactical_shots: []
     shots:
-      general: ["drive", "drop", "volley"]
-      specific: ["deep drive", "hard drive", "straight drive",
-                 "straight lob",
-                 "straight drop",
-                 "volley straight drop"]
+      general: ["drop", "drive"]
+      specific: ["straight drop", "deep drive", "straight drive"]
     movement: ["front", "back", "middle"]
     roles:
       pattern: fixed # A drives, B drops
       exercises_per_side: 2 # Players change role before changing sides
-      default_sides: [forehand, backhand]
     rules:
       sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
-        - "Drive: all drives first bounces must land behind T-line."
-        - "Drop: all drops second bounces must land in front of T-line."
+        - "Drive: all drives' first bounces must land behind the T-line."
+        - "Drop: all drops' second bounces must land in front of the T-line."
       constraint_formal:
         - "FOR ALL shot(drive) REQUIRE location.bounce[1] > t_line"
         - "FOR ALL shot(drop) REQUIRE location.bounce[2] < t_line"
-    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
-                      "straight lob",
-                      "drop", "straight drop",
-                      "volley straight drop"]
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "drop"
+      - "straight drop"
 
-  # Variant 2 – Volley drop Deep Only
-  - variant_id: volley_drop_deep_only
-    name: Volley Straight Drop - Drive (Deep Only)
-    description: >
-      One player plays volley straight drops from the service box; 
-      the other plays straight drives from the front. 
-      Players swap roles, then switch sides, and repeat.
-    # METADATA: gives you information about the variant
+  # Variant 1, Part B: Deep Only - Backhand - Drill
+  - variant_id: deep_only_backhand_drill
+    name: "Drop-Drive (Deep Only - Backhand Drill)"
+    description: "A drill on the backhand side where one player plays straight drops from the back; the other plays straight drives from the front."
+    shotSide: [backhand]
     types: [drill]
-    difficulty_score: 6
-    foundational_shots: ["deep drive", "straight drive", "hard drive",
-                         "volley straight drop"]
+    difficulty_score: 5
+    foundational_shots: ["straight drop", "deep drive", "straight drive"]
     tactical_shots: []
     shots:
-      general: ["drive", "drop", "volley"]
-      specific: ["deep drive", "hard drive", "straight drive",
-                 "straight lob",
-                 "straight drop",
-                 "volley straight drop"]
+      general: ["drop", "drive"]
+      specific: ["straight drop", "deep drive", "straight drive"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Drive: all drives' first bounces must land behind the T-line."
+        - "Drop: all drops' second bounces must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(drive) REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "drop"
+      - "straight drop"
+
+  # Variant 1, Part C: Deep Only - Forehand - Conditioned Game
+  - variant_id: deep_only_forehand_cg
+    name: "Drop-Drive (Deep Only - Forehand Conditioned Game)"
+    description: "A conditioned game on the forehand side where one player plays straight drops from the back; the other plays straight drives from the front."
+    shotSide: [forehand]
+    types: [conditioned_game]
+    difficulty_score: 5
+    foundational_shots: ["straight drop", "deep drive", "straight drive"]
+    tactical_shots: []
+    shots:
+      general: ["drop", "drive"]
+      specific: ["straight drop", "deep drive", "straight drive"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Drive: all drives' first bounces must land behind the T-line."
+        - "Drop: all drops' second bounces must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(drive) REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "drop"
+      - "straight drop"
+
+  # Variant 1, Part D: Deep Only - Backhand - Conditioned Game
+  - variant_id: deep_only_backhand_cg
+    name: "Drop-Drive (Deep Only - Backhand Conditioned Game)"
+    description: "A conditioned game on the backhand side where one player plays straight drops from the back; the other plays straight drives from the front."
+    shotSide: [backhand]
+    types: [conditioned_game]
+    difficulty_score: 5
+    foundational_shots: ["straight drop", "deep drive", "straight drive"]
+    tactical_shots: []
+    shots:
+      general: ["drop", "drive"]
+      specific: ["straight drop", "deep drive", "straight drive"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Drive: all drives' first bounces must land behind the T-line."
+        - "Drop: all drops' second bounces must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(drive) REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "drop"
+      - "straight drop"
+
+  # -------------
+
+  # Variant 2, Part A: Volley Drop Deep Only - Forehand - Drill
+  - variant_id: volley_drop_deep_only_forehand_drill
+    name: "Volley Drop - Drive (Deep Only - Forehand Drill)"
+    description: "A drill on the forehand side where one player plays volley straight drops; the other plays straight drives from the front."
+    shotSide: [forehand]
+    types: [drill]
+    difficulty_score: 6
+    foundational_shots: ["volley straight drop", "deep drive", "straight drive"]
+    tactical_shots: []
+    shots:
+      general: ["volley", "drop", "drive"]
+      specific: ["volley straight drop", "deep drive", "straight drive"]
     movement: ["front", "back", "middle"]
     roles:
       pattern: fixed # A drives, B drops
-      exercises_per_side: 2 # Players change role before changing sides
-      default_sides: [forehand, backhand]
+      exercises_per_side: 2
     rules:
       sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
@@ -84,34 +162,124 @@ variants:
       constraint_formal:
         - "FOR ALL shot(drive) REQUIRE location.bounce[1] > t_line"
         - "FOR ALL shot(volley_straight_drop) REQUIRE location.bounce[2] < t_line"
-    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
-                      "straight lob",
-                      "drop", "straight drop",
-                      "volley straight drop"]
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "volley straight drop"
 
-  # Variant 3 – Volley drop & Straight Lob
-  - variant_id: volley_drop_straight_lob
-    name: Volley Straight Drop - Straight Lob
-    description: >
-      One player plays volley straight drops (above the head) from the service box; 
-      the other plays straight lobs from the front. 
-      Players swap roles, then switch sides, and repeat.
-    # METADATA: gives you information about the variant
+  # Variant 2, Part B: Volley Drop Deep Only - Backhand - Drill
+  - variant_id: volley_drop_deep_only_backhand_drill
+    name: "Volley Drop - Drive (Deep Only - Backhand Drill)"
+    description: "A drill on the backhand side where one player plays volley straight drops; the other plays straight drives from the front."
+    shotSide: [backhand]
     types: [drill]
     difficulty_score: 6
-    foundational_shots: ["straight lob",
-                         "volley straight drop"]
+    foundational_shots: ["volley straight drop", "deep drive", "straight drive"]
     tactical_shots: []
     shots:
-      general: ["drive", "drop", "volley"]
-      specific: ["straight lob",
-                 "straight drop",
-                 "volley straight drop"]
+      general: ["volley", "drop", "drive"]
+      specific: ["volley straight drop", "deep drive", "straight drive"]
     movement: ["front", "back", "middle"]
     roles:
-      pattern: fixed # A straight lobs, B volley drops
-      exercises_per_side: 2 # Players change role before changing sides
-      default_sides: [forehand, backhand]
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Drive: The first bounce of all drives must land behind the T-line."
+        - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(drive) REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(volley_straight_drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "volley straight drop"
+
+  # Variant 2, Part C: Volley Drop Deep Only - Forehand - Conditioned Game
+  - variant_id: volley_drop_deep_only_forehand_cg
+    name: "Volley Drop - Drive (Deep Only - Forehand Conditioned Game)"
+    description: "A conditioned game on the forehand side where one player plays volley straight drops; the other plays straight drives from the front."
+    shotSide: [forehand]
+    types: [conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["volley straight drop", "deep drive", "straight drive"]
+    tactical_shots: []
+    shots:
+      general: ["volley", "drop", "drive"]
+      specific: ["volley straight drop", "deep drive", "straight drive"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Drive: The first bounce of all drives must land behind the T-line."
+        - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(drive) REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(volley_straight_drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "volley straight drop"
+
+  # Variant 2, Part D: Volley Drop Deep Only - Backhand - Conditioned Game
+  - variant_id: volley_drop_deep_only_backhand_cg
+    name: "Volley Drop - Drive (Deep Only - Backhand Conditioned Game)"
+    description: "A conditioned game on the backhand side where one player plays volley straight drops; the other plays straight drives from the front."
+    shotSide: [backhand]
+    types: [conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["volley straight drop", "deep drive", "straight drive"]
+    tactical_shots: []
+    shots:
+      general: ["volley", "drop", "drive"]
+      specific: ["volley straight drop", "deep drive", "straight drive"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Drive: The first bounce of all drives must land behind the T-line."
+        - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(drive) REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(volley_straight_drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "volley straight drop"
+
+  # ---------
+
+  # Variant 3, Part A: Volley Drop & Straight Lob - Forehand - Drill
+  - variant_id: volley_drop_straight_lob_forehand_drill
+    name: "Volley Drop - Straight Lob (Forehand Drill)"
+    description: "A drill on the forehand side where one player plays volley straight drops; the other plays straight lobs from the front."
+    shotSide: [forehand]
+    types: [drill]
+    difficulty_score: 6
+    foundational_shots: ["volley straight drop", "straight lob"]
+    tactical_shots: []
+    shots:
+      general: ["volley", "drop", "lob"]
+      specific: ["volley straight drop", "straight lob"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed # A lobs, B drops
+      exercises_per_side: 2
     rules:
       sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
       constraint_text:
@@ -120,45 +288,246 @@ variants:
       constraint_formal:
         - "FOR ALL shot(straight_lob) REQUIRE height_on_front_wall > service_line AND REQUIRE location.bounce[1] > t_line"
         - "FOR ALL shot(volley_straight_drop) REQUIRE location.bounce[2] < t_line"
-    allowed_actions: ["lob", "straight lob",
-                      "drop", "straight drop",
-                      "volley straight drop"]
+    allowed_actions:
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "volley straight drop"
 
-  # Variant 4 – Any Straight Drive
-  - variant_id: any_straight_drive
-    name: Drop-Drive (any drive)
-    description: >
-      One player plays straight drops from the back of the court; 
-      the other plays straight drives from the front. 
-      Players swap roles, then switch sides, and repeat.
-    # METADATA: gives you information about the variant
-    types: [ drill ]
-    difficulty_score: 4
-    foundational_shots: [ "deep drive", "straight drive", "hard drive",
-                          "straight drop" ]
-    tactical_shots: [ "straight kill", "straight lob" ]
+  # Variant 3, Part B: Volley Drop & Straight Lob - Backhand - Drill
+  - variant_id: volley_drop_straight_lob_backhand_drill
+    name: "Volley Drop - Straight Lob (Backhand Drill)"
+    description: "A drill on the backhand side where one player plays volley straight drops; the other plays straight lobs from the front."
+    shotSide: [backhand]
+    types: [drill]
+    difficulty_score: 6
+    foundational_shots: ["volley straight drop", "straight lob"]
+    tactical_shots: []
     shots:
-      general: [ "drive", "drop", "volley" ]
-      specific: [ "deep drive", "hard drive", "straight drive",
-                  "straight kill",
-                  "straight lob",
-                  "straight drop",
-                  "volley straight drop" ]
-    movement: [ "front", "back", "middle" ]
+      general: ["volley", "drop", "lob"]
+      specific: ["volley straight drop", "straight lob"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
+        - "Volley Drop: The second bounce must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(straight_lob) REQUIRE height_on_front_wall > service_line AND REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(volley_straight_drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "volley straight drop"
+
+  # Variant 3, Part C: Volley Drop & Straight Lob - Forehand - Conditioned Game
+  - variant_id: volley_drop_straight_lob_forehand_cg
+    name: "Volley Drop - Straight Lob (Forehand Conditioned Game)"
+    description: "A conditioned game on the forehand side where one player plays volley straight drops; the other plays straight lobs from the front."
+    shotSide: [forehand]
+    types: [conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["volley straight drop", "straight lob"]
+    tactical_shots: []
+    shots:
+      general: ["volley", "drop", "lob"]
+      specific: ["volley straight drop", "straight lob"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
+        - "Volley Drop: The second bounce must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(straight_lob) REQUIRE height_on_front_wall > service_line AND REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(volley_straight_drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "volley straight drop"
+
+  # Variant 3, Part D: Volley Drop & Straight Lob - Backhand - Conditioned Game
+  - variant_id: volley_drop_straight_lob_backhand_cg
+    name: "Volley Drop - Straight Lob (Backhand Conditioned Game)"
+    description: "A conditioned game on the backhand side where one player plays volley straight drops; the other plays straight lobs from the front."
+    shotSide: [backhand]
+    types: [conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["volley straight drop", "straight lob"]
+    tactical_shots: []
+    shots:
+      general: ["volley", "drop", "lob"]
+      specific: ["volley straight drop", "straight lob"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
+        - "Volley Drop: The second bounce must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(straight_lob) REQUIRE height_on_front_wall > service_line AND REQUIRE location.bounce[1] > t_line"
+        - "FOR ALL shot(volley_straight_drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "volley straight drop"
+
+
+
+  # --------------------------------------
+
+  # Variant 4, Part A: Any Straight Drive - Forehand - Drill
+  - variant_id: any_straight_drive_forehand_drill
+    name: "Drop - Any Straight Drive (Forehand Drill)"
+    description: "A drill on the forehand side where one player drops, and the other can reply with any straight drive, kill, or lob."
+    shotSide: [forehand]
+    types: [drill]
+    difficulty_score: 4
+    foundational_shots: ["straight drop", "straight drive"]
+    tactical_shots: ["straight kill", "straight lob"]
+    shots:
+      general: ["drop", "drive", "kill", "lob"]
+      specific: ["straight drop", "straight drive", "straight kill", "straight lob"]
+    movement: ["front", "back", "middle"]
     roles:
       pattern: fixed # A drives, B drops
-      exercises_per_side: 2 # Players change role before changing sides
-      default_sides: [ forehand, backhand ]
+      exercises_per_side: 2
     rules:
-      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "drop (B) -> (straight drive | straight kill | straight lob) (A) -> restart pattern (continuous until role swap)"
       constraint_text:
-        - "Drive: The second bounce of all drives must land behind the T-line."
-        - "Drop: The second bounce of all drops must land in front of the T-line."
+        - "The second bounce of all returning shots (drives/lobs) must land behind the T-line."
+        - "The second bounce of all drops must land in front of the T-line."
       constraint_formal:
-        - "FOR ALL shot(drive) REQUIRE location.bounce[2] > t_line"
+        - "FOR ALL shot(straight_drive, straight_lob) REQUIRE location.bounce[2] > t_line"
         - "FOR ALL shot(drop) REQUIRE location.bounce[2] < t_line"
-    allowed_actions: [ "drive", "deep drive", "hard drive", "straight drive",
-                       "kill", "straight kill",
-                       "lob", "straight lob",
-                       "drop", "straight drop",
-                       "volley", "volley straight drop" ]
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "kill"
+      - "straight kill"
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "straight drop"
+
+  # Variant 4, Part B: Any Straight Drive - Backhand - Drill
+  - variant_id: any_straight_drive_backhand_drill
+    name: "Drop - Any Straight Drive (Backhand Drill)"
+    description: "A drill on the backhand side where one player drops, and the other can reply with any straight drive, kill, or lob."
+    shotSide: [backhand]
+    types: [drill]
+    difficulty_score: 4
+    foundational_shots: ["straight drop", "straight drive"]
+    tactical_shots: ["straight kill", "straight lob"]
+    shots:
+      general: ["drop", "drive", "kill", "lob"]
+      specific: ["straight drop", "straight drive", "straight kill", "straight lob"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "drop (B) -> (straight drive | straight kill | straight lob) (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "The second bounce of all returning shots (drives/lobs) must land behind the T-line."
+        - "The second bounce of all drops must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(straight_drive, straight_lob) REQUIRE location.bounce[2] > t_line"
+        - "FOR ALL shot(drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "kill"
+      - "straight kill"
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "straight drop"
+
+  # Variant 4, Part C: Any Straight Drive - Forehand - Conditioned Game
+  - variant_id: any_straight_drive_forehand_cg
+    name: "Drop - Any Straight Drive (Forehand Conditioned Game)"
+    description: "A conditioned game on the forehand side where one player drops, and the other can reply with any straight drive, kill, or lob."
+    shotSide: [forehand]
+    types: [conditioned_game]
+    difficulty_score: 4
+    foundational_shots: ["straight drop", "straight drive"]
+    tactical_shots: ["straight kill", "straight lob"]
+    shots:
+      general: ["drop", "drive", "kill", "lob"]
+      specific: ["straight drop", "straight drive", "straight kill", "straight lob"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "drop (B) -> (straight drive | straight kill | straight lob) (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "The second bounce of all returning shots (drives/lobs) must land behind the T-line."
+        - "The second bounce of all drops must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(straight_drive, straight_lob) REQUIRE location.bounce[2] > t_line"
+        - "FOR ALL shot(drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "kill"
+      - "straight kill"
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "straight drop"
+
+  # Variant 4, Part D: Any Straight Drive - Backhand - Conditioned Game
+  - variant_id: any_straight_drive_backhand_cg
+    name: "Drop - Any Straight Drive (Backhand Conditioned Game)"
+    description: "A conditioned game on the backhand side where one player drops, and the other can reply with any straight drive, kill, or lob."
+    shotSide: [backhand]
+    types: [conditioned_game]
+    difficulty_score: 4
+    foundational_shots: ["straight drop", "straight drive"]
+    tactical_shots: ["straight kill", "straight lob"]
+    shots:
+      general: ["drop", "drive", "kill", "lob"]
+      specific: ["straight drop", "straight drive", "straight kill", "straight lob"]
+    movement: ["front", "back", "middle"]
+    roles:
+      pattern: fixed
+      exercises_per_side: 2
+    rules:
+      sequence: "drop (B) -> (straight drive | straight kill | straight lob) (A) -> restart pattern (continuous until role swap)"
+      constraint_text:
+        - "The second bounce of all returning shots (drives/lobs) must land behind the T-line."
+        - "The second bounce of all drops must land in front of the T-line."
+      constraint_formal:
+        - "FOR ALL shot(straight_drive, straight_lob) REQUIRE location.bounce[2] > t_line"
+        - "FOR ALL shot(drop) REQUIRE location.bounce[2] < t_line"
+    allowed_actions:
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "kill"
+      - "straight kill"
+      - "lob"
+      - "straight lob"
+      - "drop"
+      - "straight drop"

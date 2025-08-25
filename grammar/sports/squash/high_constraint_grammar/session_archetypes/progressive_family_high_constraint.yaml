@@ -1,0 +1,31 @@
+archetype_name: "Progressive Family Only (High-Constraint)"
+structure_category: "mix"
+
+
+description: "Master a single skill or combinations of skills by progressing through its variants from simple to complex."
+
+# --- HARD CONSTRAINTS ---
+# These are non-negotiable rules that filter the available options.
+hard_constraints:
+  # The planner will randomly pick one family for the whole session.
+  - type: focus_on_single_family
+  # The planner must not use the same variant twice.
+  - type: require_distinct_variants
+  - type: prefer_complexity_progression
+  - type: prevent_variant_repetition
+
+# --- SOFT CONSTRAINTS ---
+# These are preferences that guide choices and ordering without strict filtering.
+# This is where you can test the impact on RAG.
+#soft_constraints:
+#  - type: prefer_complexity_progression
+# The planner should TRY to order exercises from fewest to most allowed_actions.
+# It doesn't have to be a strict sequence.
+
+# --- COMPOSITION ---
+# Defines which smaller building blocks this archetype is allowed to use.
+allowed_block_types:
+  #- same_variant_side_switch
+  - symmetrical_same_side_variant_progression_pair
+  - symmetrical_from_drills_to_condition_pair  # Removed for more predictability
+

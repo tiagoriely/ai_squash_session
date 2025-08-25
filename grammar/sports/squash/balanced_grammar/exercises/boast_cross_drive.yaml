@@ -224,7 +224,7 @@ variants:
                           "volley hard drive", "volley straight drive" ]
     tactical_shots: []
     shots:
-      general: [ "boast", "cross", "drive", "drop", "lob", "volley" ]
+      general: [ "boast", "cross", "drive", "lob", "volley" ]
       specific: ["volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
                  "cross lob",
                  "2-wall boast", "3-wall boast",

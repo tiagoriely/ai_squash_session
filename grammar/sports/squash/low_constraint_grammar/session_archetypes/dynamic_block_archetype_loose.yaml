@@ -1,0 +1,23 @@
+archetype_name: "Dynamic Block Session"
+structure_category: "mix"
+
+description: >
+  A session built with high variety, where each activity block is constructed
+  independently by randomly selecting a block_type rule. This archetype does not
+  follow a single theme for the whole session.
+
+# This archetype has no session-wide constraints; its logic is at the block level.
+hard_constraints:
+  - type: prefer_complexity_progression
+
+soft_constraints: []
+
+# It is allowed to use any block type as long symmetrical or same side only.
+allowed_block_types:
+  - same_variant_side_switch
+  - same_side_variant_progression # added not present in balanced
+  - from_drills_to_condition # added, not present in balanced
+  - cross_family_action_similarity # added, not present in balanced
+  - symmetrical_same_side_variant_progression_pair
+  - symmetrical_from_drills_to_condition_pair
+  - symmetrical_cross_family_action_similarity_pair
