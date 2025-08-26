@@ -43,8 +43,10 @@ variants:
       constraint_text:
         - "Drive: all drives first bounces must land behind T-line."
         - "Drop: all drops second bounces must land in front of T-line."
+      sequence: "open rally -> restart"
     allowed_actions:
       # Relevant Actions
+      - "open rally"
       - "drive"
       - "deep drive"
       - "hard drive"
@@ -98,8 +100,10 @@ variants:
       constraint_text:
         - "Drive: The first bounce of all drives must land behind the T-line."
         - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
+      sequence: "open rally -> restart"
     allowed_actions:
       # Relevant Actions
+      - "open rally"
       - "drive"
       - "deep drive"
       - "hard drive"
@@ -152,8 +156,10 @@ variants:
       constraint_text:
         - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
         - "Volley Drop: The second bounce must land in front of the T-line."
+      sequence: "open rally -> restart"
     allowed_actions:
       # Relevant Actions
+      - "open rally"
       - "lob"
       - "straight lob"
       - "drop"
@@ -205,8 +211,10 @@ variants:
       constraint_text:
         - "Drive: The second bounce of all drives must land behind the T-line."
         - "Drop: The second bounce of all drops must land in front of the T-line."
+      sequence: "open rally -> restart"
     allowed_actions:
       # Relevant Actions
+      - "open rally"
       - "drive"
       - "deep drive"
       - "hard drive"

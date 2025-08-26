@@ -117,6 +117,19 @@ class MetadataExtractor:
         classified_shots = self.shot_analyser.classify_shots(session_plan)
         exercise_sequences = self.sequence_analyser.extract_sequences(all_exercises)
 
+        # --- ADDED TO ADD VARIANT_ID TO ALL GRAMMARS ---
+        # Directly extract variant and family IDs from the plan to guarantee they are always present.
+        exercises_used = []
+        for exercise_tuple in all_exercises:
+            details = exercise_tuple[0]
+            # We only care about activity blocks, not warmups, for this list.
+            if "warmup" not in details.get("types", []):
+                exercises_used.append({
+                    "family_id": details.get("family_id"),
+                    "variant_id": details.get("variant_id")
+                })
+        # --- DELETE IF NOT HELPING ---
+
         primary_shots = classified_shots.get("primary", [])
         secondary_shots = classified_shots.get("secondary", [])
         all_specific_shots = sorted(primary_shots + secondary_shots)
@@ -140,6 +153,7 @@ class MetadataExtractor:
             "shots_specific_secondary": secondary_shots,
             "movement": self._extract_movement(all_exercises),
             "rest_minutes": base_meta.get("rest_minutes", 1.5),
-            "exercise_sequences": exercise_sequences
+            "exercise_sequences": exercise_sequences,
+            "exercises_used": exercises_used
         }
         return final_meta

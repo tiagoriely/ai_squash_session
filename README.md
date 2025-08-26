@@ -129,3 +129,9 @@ $ python3 rag/pipelines/generation/run_generation.py rag/configs/retrieval/faiss
 | **Sync upstream** | `cd third_party/flashrag && git fetch origin && git merge origin/main` ➜ commit new submodule SHA |
 
 Happy coding! 🚀
+
+
+python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering \
+  evaluation/corpus_analysis/embeddings/embed_size_500/high_constraint_500.npy \
+  evaluation/corpus_analysis/visualisations/corpus_size_500/high_constraint_clusters_500.png \
+  --eps 0.4 --min_samples 6

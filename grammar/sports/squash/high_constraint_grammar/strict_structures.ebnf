@@ -1,0 +1,16 @@
+// Import and ignore whitespace globally
+%import common.WS
+%ignore WS
+
+// The top-level rule must be one of these exact structures
+session: session_3_activity | session_4_activity | session_5_activity | session_6_activity
+
+// Rule definitions for fixed-length sessions
+session_3_activity: WARMUP_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK
+session_4_activity: WARMUP_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK
+session_5_activity: WARMUP_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK
+session_6_activity: WARMUP_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK ACTIVITY_BLOCK
+
+// Terminal definitions
+WARMUP_BLOCK: "WARMUP_BLOCK"
+ACTIVITY_BLOCK: "ACTIVITY_BLOCK"

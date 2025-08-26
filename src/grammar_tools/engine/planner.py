@@ -386,9 +386,18 @@ class Planner:
 
         if context.get('must_use_family_id'):
             candidate_variants = [v for v in candidate_variants if v.get('family_id') == context['must_use_family_id']]
+
         if side:
-            candidate_variants = [v for v in candidate_variants if any(
-                p.get('name') == 'shotSide' and side in p.get('options', []) for p in v.get('family_parameters', []))]
+            def _variant_supports_side(variant, target_side):
+                # 1. Check for high-constraint `shotSide` key directly on the variant.
+                if target_side in variant.get("shotSide", []):
+                    return True
+                # 2. Fallback to check balanced `family_parameters` for compatibility.
+                if any(p.get('name') == 'shotSide' and target_side in p.get('options', []) for p in
+                       variant.get('family_parameters', [])):
+                    return True
+                return False
+
         used_variants = context.get("used_variants")
         if used_variants is not None:
             key_func = lambda v: (v['variant_id'], side) if side else (v['variant_id'],)

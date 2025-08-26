@@ -39,45 +39,47 @@ variants:
     rules:
       # For the human coach and the RAG's semantic understanding
       constraint_text: "All shots excluding the boast must land behind the T-line."
+      sequence: "open rally -> restart"
     allowed_actions:
     # Relevant Actions
-  - "drive"
-  - "deep drive"
-  - "hard drive"
-  - "straight drive"
-  - "volley drive"
-  - "volley deep drive"
-  - "volley hard drive"
-  - "volley straight drive"
-  - "boast"
-  - "2-wall boast"
-  - "3-wall boast"
-  - "volley 2-wall boast"
-  - "volley 3-wall boast"
-  - "cross"
-  - "cross lob"
-  - "deep cross"
-  - "wide cross"
-  - "cross down the middle"
-  - "hard cross"
-  # --- Thematic Chaos ---
-  - "drop"
-  - "counter drop"
-  - "cross drop"
-  - "straight drop"
-  - "volley drop"
-  - "volley cross drop"
-  - "volley straight drop"
-  - "kill"
-  - "cross kill"
-  - "straight kill"
-  - "volley cross kill"
-  - "volley straight kill"
-  - "cross-court nick"
-  - "volley cross-court nick"
-  - "trickle boast"
-  - "reverse boast"
-  - "volley reverse boast"
+      - "open rally"
+      - "drive"
+      - "deep drive"
+      - "hard drive"
+      - "straight drive"
+      - "volley drive"
+      - "volley deep drive"
+      - "volley hard drive"
+      - "volley straight drive"
+      - "boast"
+      - "2-wall boast"
+      - "3-wall boast"
+      - "volley 2-wall boast"
+      - "volley 3-wall boast"
+      - "cross"
+      - "cross lob"
+      - "deep cross"
+      - "wide cross"
+      - "cross down the middle"
+      - "hard cross"
+      # --- Thematic Chaos ---
+      - "drop"
+      - "counter drop"
+      - "cross drop"
+      - "straight drop"
+      - "volley drop"
+      - "volley cross drop"
+      - "volley straight drop"
+      - "kill"
+      - "cross kill"
+      - "straight kill"
+      - "volley cross kill"
+      - "volley straight kill"
+      - "cross-court nick"
+      - "volley cross-court nick"
+      - "trickle boast"
+      - "reverse boast"
+      - "volley reverse boast"
 
   # Variant 2 – Kills Allowed
   - variant_id: kills_allowed
@@ -106,9 +108,11 @@ variants:
     rules:
       # IMPORTANT SECTION SOFT/HARD CONSTRAINT
       constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
+      sequence: "open rally -> restart"
       # For the grammar-based generator's validation and enforcement (using PEG)
     allowed_actions:
       # Relevant Actions
+      - "open rally"
       - "drive"
       - "deep drive"
       - "hard drive"
@@ -168,8 +172,10 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
       constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
+      sequence: "open rally -> restart"
     allowed_actions:
       # Relevant Actions
+      - "open rally"
       - "drive"
       - "deep drive"
       - "hard drive"
@@ -232,8 +238,10 @@ variants:
       constraint_text:
         - "All cross-court shots and drives in the main sequence must have their first bounce land behind the T-line."
         - "The optional extra drive may be used a maximum of one time per rally."
+      sequence: "open rally -> restart"
     allowed_actions:
       # Relevant Actions
+      - "open rally"
       - "drive"
       - "deep drive"
       - "hard drive"
@@ -351,8 +359,11 @@ variants:
         Each rally begins with a boast. Players should alternate who initiates the rally.
         and follow the pattern boast → cross lob → volley drive.
       constraint_text: "All cross lob shots and volley drives must have their first bounce land behind the T-line."
+      sequence: "open rally -> restart"
     allowed_actions:
       # Relevant Actions
+      - "open rally"
+      - "open rally"
       - "volley drive"
       - "volley deep drive"
       - "volley hard drive"

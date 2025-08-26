@@ -1,7 +1,7 @@
 target_duration_minutes: 60
 total_duration_rules:
   # SOFT CONSTRAINT: Total time cannot exceed the target_duration_minutes.
-  soft_max_overshoot: 3
+  soft_max_overshoot: 5
   # SOFT CONSTRAINT: Total time can be up to 5 minutes less than the target.
   soft_min_undershoot: 10
 variation_name: "6-Block Variation (12 exercises)"

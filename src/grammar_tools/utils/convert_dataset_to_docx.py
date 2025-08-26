@@ -23,7 +23,7 @@ def create_session_docx(session_data: dict, output_dir: Path):
 
     try:
         # Extract metadata for the document
-        session_id = session_data.get("session_id", "unknown_session")
+        session_id = session_data.get("id", "unknown_session")
         meta = session_data.get("meta", {})
         focus = meta.get("family_focus", "General")
         duration = meta.get("duration", "N/A")
@@ -38,7 +38,7 @@ def create_session_docx(session_data: dict, output_dir: Path):
         # Fitness
 
 
-        text_content = session_data.get("text", "")
+        text_content = session_data.get("contents", "")
 
         # --- Document Creation ---
         doc = Document()

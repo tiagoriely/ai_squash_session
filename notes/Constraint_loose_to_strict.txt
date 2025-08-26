@@ -1,0 +1,19 @@
+Now we need to think of what we generate for the corpus analysis. We have been on all sorts of loose to strict constraints. We defined 3 big categories of constraints: exercises, archetypes & blocks, and structures.
+
+
+
+Context-free grammar (EBNF) and PEG was enforced
+
+Many other constraints where enforced:
+
+1)exercise: same as sequence or general allowed actions, rules with or without sequence (peg) and context_formal (peg), general or specialised variants, 2 types or only one type of shotside, ...
+
+2) structure loose or strict ebnf, duration from less picky to picky, one subdirctory mix structure for loose
+
+
+
+3) archetype and blocks: expanding or reducing allowed blocks in archetypes, keeping some constaints everywhere, reducing similary threshold, require_action_similarty in blocks reduced or augmented
+
+
+Problem faced:
+- deleting sequence had an impact

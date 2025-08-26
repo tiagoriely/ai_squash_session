@@ -1,0 +1,51 @@
+target_duration_minutes: 45
+total_duration_rules:
+  # HARD CONSTRAINT: Total time cannot exceed the target_duration_minutes.
+  soft_max_overshoot: 8 # Balanced grammar: 3
+  # SOFT CONSTRAINT: Total time can be up to 5 minutes less than the target.
+  soft_min_undershoot: 10 # Balanced grammar: 5
+variation_name: "6-Block Variation (12 exercises)"
+default_rest_minutes: 1.5
+
+completion_rules:
+  # HARD CONSTRAINT: All block placeholders in this structure must be filled.
+  require_all_blocks_filled: true
+
+blocks:
+  - block_name: "Warm-up"
+    exercises:
+      # SOFT CONSTRAINT: Each exercise duration can vary by +/- 1 minute.
+      - exercise_placeholder: "Warm-up Exercise 1"
+        duration_minutes: { target: 3, variance: 1 }
+      - exercise_placeholder: "Warm-up Exercise 2"
+        duration_minutes: { target: 3, variance: 1 }
+  - block_name: "Activity Block 1"
+    exercises:
+      - exercise_placeholder: "Exercise 1a"
+        duration_minutes: { target: 3, variance: 1 }
+      - exercise_placeholder: "Exercise 1b"
+        duration_minutes: { target: 3, variance: 1 }
+  - block_name: "Activity Block 2"
+    exercises:
+      - exercise_placeholder: "Exercise 2a"
+        duration_minutes: { target: 3, variance: 1 }
+      - exercise_placeholder: "Exercise 2b"
+        duration_minutes: { target: 3, variance: 1 }
+  - block_name: "Activity Block 3"
+    exercises:
+      - exercise_placeholder: "Exercise 3a"
+        duration_minutes: { target: 3, variance: 1 }
+      - exercise_placeholder: "Exercise 3b"
+        duration_minutes: { target: 3, variance: 1 }
+  - block_name: "Activity Block 4"
+    exercises:
+      - exercise_placeholder: "Exercise 4a"
+        duration_minutes: { target: 3, variance: 1 }
+      - exercise_placeholder: "Exercise 4b"
+        duration_minutes: { target: 3, variance: 1 }
+  - block_name: "Activity Block 5"
+    exercises:
+      - exercise_placeholder: "Exercise 5a"
+        duration_minutes: { target: 3, variance: 1 }
+      - exercise_placeholder: "Exercise 5b"
+        duration_minutes: { target: 3, variance: 1 }

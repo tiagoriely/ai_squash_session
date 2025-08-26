@@ -1,0 +1,43 @@
+# configs/synthetic_dataset_creation/high_constraint_run.yaml
+
+# Tells the loader which grammar "world" to use.
+grammar_profile: "high_constraint_grammar"
+ebnf_file: "strict_structures.ebnf"
+
+# This entire block will be passed to the Planner
+planner_config:
+  name: "High-Constraint Grammar"
+
+  # A lower threshold is fine; we expect fewer unique structures.
+  plan_deduplication_threshold: 0.85
+  # Enforce a progressive sequence of points, adding another layer of constraint.
+  enforce_plan_points_progression: false
+
+# High-level run params
+num: 500
+outfile: data/processed/high_constraint_grammar/high_constraint_500.jsonl
+seed: 43
+
+# Controls JSON output formatting
+json_indent: false
+
+# Exhaustion / attempts - Increased to account for higher failure/duplication rate.
+max_attempts_multiplier: 100.0
+consecutive_dup_limit: 5000
+
+# Exact dedup (hash)
+dedup_by: plan
+
+# Jaccard near-dup
+jaccard_dedup: true
+jaccard_ngram: 2
+# Lower threshold: Texts can be LESS similar and still be flagged as duplicates.
+jaccard_threshold: 0.80
+jaccard_window: 500
+
+# Semantic near-dup
+semantic_dedup: true
+# Lower threshold: Sessions can be LESS semantically similar and still be flagged as duplicates.
+semantic_threshold: 0.88
+semantic_model: sentence-transformers/all-MiniLM-L6-v2
+semantic_device: null

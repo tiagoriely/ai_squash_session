@@ -46,10 +46,10 @@ def validate_session_structure(session_plan: Dict[str, Any], ebnf_grammar_path: 
 
     try:
         grammar_text = ebnf_grammar_path.read_text()
-        parser = Lark(grammar_text, start='session')  # 'session' is our top-level rule
+        parser = Lark(grammar_text, start='session')
     except Exception as e:
-        print(f"⚠️  Error loading EBNF grammar: {e}. Skipping validation.")
-        return True
+        print(f"❌ FATAL: Error loading EBNF grammar from {ebnf_grammar_path}.")
+        raise e
 
     session_string = _convert_session_to_string(session_plan)
 

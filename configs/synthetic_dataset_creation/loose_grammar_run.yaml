@@ -1,0 +1,43 @@
+# configs/synthetic_dataset_creation/loose_grammar_run.yaml
+
+# Tells the loader which grammar "world" to use.
+grammar_profile: "loose_grammar"
+ebnf_file: "loose_structures.ebnf"
+
+# This entire block will be passed to the Planner
+planner_config:
+  name: "Loose Grammar"
+
+  # A slightly higher threshold to allow for more structural variation before discarding.
+  plan_deduplication_threshold: 0.95
+  # This remains false to allow for maximum randomness in session flow.
+  enforce_plan_points_progression: false
+
+# High-level run params
+num: 500
+outfile: data/processed/loose_grammar/loose_500.jsonl
+seed: 43
+
+# Controls JSON output formatting
+json_indent: false  # false if you want to convert to docx
+
+# Exhaustion / attempts
+max_attempts_multiplier: 50.0
+consecutive_dup_limit: 2500
+
+# Exact dedup (hash)
+dedup_by: plan
+
+# Jaccard near-dup
+jaccard_dedup: true
+jaccard_ngram: 2
+# Higher threshold: Texts must be MORE similar to be considered duplicates, capturing more variety.
+jaccard_threshold: 0.92
+jaccard_window: 500
+
+# Semantic near-dup
+semantic_dedup: true
+# Higher threshold: Sessions must be MORE semantically similar to be duplicates, capturing more variety.
+semantic_threshold: 0.96
+semantic_model: sentence-transformers/all-MiniLM-L6-v2
+semantic_device: null

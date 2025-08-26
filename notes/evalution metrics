@@ -1,0 +1,29 @@
+1. DIVERSITY (coverage, DBSCAN, Entropy
+- Lexical Diversity (vocabulary size)
+- Structural Diversity (Combinatorial Variety)
+- Content Similarity (uniqueness of sessions)
+
+    1a) lexical Diversity
+        Unique Exercise Variants & Families: how many different types of 'exercises' and 'exercises families" the planner was able to use
+            limited measurement: counting the unique variant_id and family_id in meta section (not fair as high constaint grammar has subvariant (more variants) as more precise"
+
+        ***Library coverage*** = (number of unique variants) / (total variant in the grammar type)
+
+        ***entropy of variant distribution*** => (see ML course)
+        high entropy means low predictability and thus, highly diverse
+
+        -> expecting less variants in strict grammar
+
+    1b) Structural Diversity
+        Archetype & Block Type Distribution: measures the variety of strategies (archetypes) and tactics (block types) used to build sessions
+            counting the occurrences of each archetypes and each block_type_id used across the corpus
+        Intra-Session Family Diversity: how often sessions mix exercises from different skill families
+            counting number of unique family_id in each session, then calculate average number of families per session for each corpus
+         -> the average lowest should be high-constraint
+
+    1c) Content Similarity
+        Inter-Session Jaccard Similarity: measure the textual similarity between pairs of sessions in a corpus
+            using the jaccard similarity definition in the grammar
+
+
+

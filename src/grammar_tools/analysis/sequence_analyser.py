@@ -28,21 +28,27 @@ class SequenceAnalyser:
             A list of dictionaries, where each dictionary contains the identity
             and sequence information for a single exercise.
         """
-        extracted_data = []
-        for exercise_tuple in all_exercises:
-            details = exercise_tuple[0]
 
-            # The loader adds sequence_ast, and the original rules dict is also available
-            ast = details.get("sequence_ast")
-            raw_dsl = (details.get("rules") or {}).get("sequence")
+        def extract_sequences(self, all_exercises: ...):
+            extracted_data = []
+            for exercise_tuple in all_exercises:
+                details = exercise_tuple[0]
 
-            # We only add an entry if a sequence was defined for the exercise
-            if ast and raw_dsl:
-                extracted_data.append({
+                # Always record the exercise's identity.
+                record = {
                     "exercise_family_id": details.get("family_id"),
                     "exercise_variant_id": details.get("variant_id"),
-                    "sequence_dsl": raw_dsl,
-                    "sequence_ast": ast
-                })
+                    "sequence_dsl": None,  # Default to None
+                    "sequence_ast": None  # Default to None
+                }
 
-        return extracted_data
+                # Conditionally add sequence info if it exists.
+                ast = details.get("sequence_ast")
+                raw_dsl = (details.get("rules") or {}).get("sequence")
+                if ast and raw_dsl:
+                    record["sequence_dsl"] = raw_dsl
+                    record["sequence_ast"] = ast
+
+                extracted_data.append(record)
+
+            return extracted_data
