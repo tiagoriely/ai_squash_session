@@ -6,29 +6,45 @@ strict:     data/processed/high_constraint_grammar/high_constraint_500.jsonl \
 
 # Statistics
 
-## Diversity
-
-1. Lexical Diversity
-### Grammar 1 - loose
-python -m evaluation.corpus_analysis.diversity.lexical_metrics \
+## DIVERSITY
+### Diversity 1 - loose 
+python -m evaluation.corpus_analysis.statistics.measure_diversity \
   data/processed/loose_grammar/loose_500.jsonl \
   loose_grammar
-### Grammar 2 - balanced
-python -m evaluation.corpus_analysis.diversity.lexical_metrics \
+### Diversity 2 - balanced
+python -m evaluation.corpus_analysis.statistics.measure_diversity \
   data/processed/balanced_grammar/balanced_500.jsonl \
   balanced_grammar
-### Grammar 3 -strict
-python -m evaluation.corpus_analysis.diversity.lexical_metrics \
+### Diversity 3 -strict
+python -m evaluation.corpus_analysis.statistics.measure_diversity \
   data/processed/high_constraint_grammar/high_constraint_500.jsonl \
   high_constraint_grammar
 
-# Clustering
+## Structure
+### Structure 1 - loose
+python -m evaluation.corpus_analysis.statistics.measure_structure data/processed/loose_grammar/loose_500.jsonl
+### Structure 2 - balanced
+python -m evaluation.corpus_analysis.statistics.measure_structure data/processed/balanced_grammar/balanced_500.jsonl
+### Structure 3 - strict
+python -m evaluation.corpus_analysis.statistics.measure_structure data/processed/high_constraint_grammar/high_constraint_500.jsonl
+
+# Reliability
+## Reliability 1 - loose
+python -m evaluation.corpus_analysis.statistics.measure_reliability data/processed/loose_grammar/loose_500.jsonl loose_grammar
+
+## Reliability 2 - balanced
+python -m evaluation.corpus_analysis.statistics.measure_reliability data/processed/balanced_grammar/balanced_500.jsonl balanced_grammar
+
+## Reliability 3 Strict
+python -m evaluation.corpus_analysis.statistics.measure_reliability data/processed/high_constraint_grammar/high_constraint_500.jsonl high_constraint_grammar
+
+# CLUSTERING
 1. run Embedding
 2. then run DBSCAN
 
 
 ## Loose Grammar DBSCAN
-python -m evaluation.corpus_analysis.embedding.embed_corpus data/processed/loose_grammar/loose_500.jsonl evaluation/corpus_analysis/embeddings/embed_size_500/loose_500.npy
+python -m evaluation.corpus_analysis.embeddings.embed_corpus data/processed/loose_grammar/loose_500.jsonl evaluation/corpus_analysis/embeddings/embed_size_500/loose_500.npy
 
 
 python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering \
@@ -37,7 +53,7 @@ python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering \
   --eps 0.4 --min_samples 6
 
 ## Balanced Grammar DBSCAN
-python -m evaluation.corpus_analysis.embedding.embed_corpus data/processed/balanced_grammar/balanced_500.jsonl evaluation/corpus_analysis/embeddings/embed_size_500/balanced_500.npy
+python -m evaluation.corpus_analysis.embeddings.embed_corpus data/processed/balanced_grammar/balanced_500.jsonl evaluation/corpus_analysis/embeddings/embed_size_500/balanced_500.npy
 
 python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering \
   evaluation/corpus_analysis/embeddings/embed_size_500/balanced_500.npy \
@@ -45,7 +61,7 @@ python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering \
   --eps 0.4 --min_samples 6
 
 ## Strict Gammar DBSCAN
-python -m evaluation.corpus_analysis.embedding.embed_corpus \             
+python -m evaluation.corpus_analysis.embeddings.embed_corpus \             
   data/processed/high_constraint_grammar/high_constraint_500.jsonl \            
   evaluation/corpus_analysis/embeddings/embed_size_500/high_constraint_500.npy  
 

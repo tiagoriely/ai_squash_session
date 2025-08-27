@@ -126,7 +126,9 @@ class MetadataExtractor:
             if "warmup" not in details.get("types", []):
                 exercises_used.append({
                     "family_id": details.get("family_id"),
-                    "variant_id": details.get("variant_id")
+                    "variant_id": details.get("variant_id"),
+                    "types": details.get("types", []),
+                    "shotSide": details.get("shotSide", [])
                 })
         # --- DELETE IF NOT HELPING ---
 

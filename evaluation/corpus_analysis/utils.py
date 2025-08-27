@@ -46,3 +46,21 @@ def count_total_variants(grammar_profile: str) -> int:
             if doc and "variants" in doc:
                 total_variants += len(doc["variants"])
     return total_variants
+
+# Checking inside the Grammars
+def load_exercise_library(grammar_profile: str) -> dict:
+    """Loads all exercise variants from a grammar profile into a dictionary."""
+    grammar_path = Path(f"grammar/sports/squash/{grammar_profile}/exercises")
+    if not grammar_path.is_dir():
+        raise FileNotFoundError(f"Grammar exercise directory not found at: {grammar_path}")
+
+    library = {}
+    for yaml_file in grammar_path.glob("*.yaml"):
+        with open(yaml_file, "r", encoding="utf-8") as f:
+            doc = yaml.load(f)
+            if doc and "variants" in doc:
+                for variant in doc["variants"]:
+                    if variant_id := variant.get("variant_id"):
+                        library[variant_id] = variant
+    print(f"📚 Loaded {len(library)} total variants from {grammar_profile} library.")
+    return library
