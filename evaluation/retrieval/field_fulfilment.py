@@ -15,7 +15,7 @@ coverage_k(ranked_docs, user, k=5)
 from __future__ import annotations
 from typing import Mapping, Sequence, Any
 
-from rag.pipelines.retrieval.field_retrieval.field_matcher import (
+from rag_old.pipelines.retrieval.field_retrieval.field_matcher import (
     clean_and_standardise_value,
 )
 

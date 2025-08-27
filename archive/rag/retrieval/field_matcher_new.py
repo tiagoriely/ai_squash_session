@@ -46,7 +46,7 @@ def clean_and_standardise_value(field: str, value_str: str | list):
 
 # --- START: USER DESIRES DELEGATION ---
 # Delegate prompt parsing to user_desires.py so we have a single source of truth.
-from rag.pipelines.retrieval.field_retrieval.user_desires import (
+from rag_old.pipelines.retrieval.field_retrieval.user_desires import (
     parse_user_prompt as _ud_parse_user_prompt,
 )
 

@@ -1,7 +1,7 @@
 # tests/test_user_desires_shots.py
 import pytest
 
-from rag.pipelines.retrieval.field_retrieval.user_desires import parse_shots
+from rag_old.pipelines.retrieval.field_retrieval.user_desires import parse_shots
 
 # Helper to normalize the function output into two sets
 def _extract_sets(out):

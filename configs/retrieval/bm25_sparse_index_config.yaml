@@ -6,3 +6,6 @@ corpus_path: data/processed/balanced_grammar/balanced_500.jsonl
 # Specify the retrieval method and where to save the index
 retrieval_method: bm25
 index_path: indexes/balanced_grammar/corpus_size_500
+
+
+

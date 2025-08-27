@@ -1,32 +1,43 @@
-# Create Sparse Retriever Index
- python -m flashrag.retriever \
-  --retrieval_method bm25 \
-  --corpus_path data/processed/balanced_grammar/balanced_500.jsonl \
-  --save_dir indexes/balanced_grammar/corpus_size_500
 
-# Create Dense Retriever Index
-$ export TOKENIZERS_PARALLELISM=false  #might be needed if running locally
-$ export OMP_NUM_THREADS=1 #might be needed if running locally
-$ python3 -m flashrag.retriever.index_builder \
-    --retrieval_method e5-base-v2 \
-    --model_path intfloat/e5-base-v2 \
-    --corpus_path data/processed/balanced_grammar/balanced_500.jsonl \
-    --save_dir indexes/balanced_grammar/corpus_size_500/e5 \
-    --faiss_type Flat \
-    --batch_size 8
-$
+# 1. Build Indexes
+```bash
+$ python3 scripts/01_build_indexes.py \
+    --semantic-build-config configs/indexing/build_semantic_index.yaml \
+    --sparse-build-config configs/indexing/build_sparse_index.yaml
+```
 
 
-# GENERATOR
-## run generator with retriever config
-python3 -m rag.pipelines.generation.run_generation_with_random_prompt rag/configs/retrieval/faiss_rerank.yaml
 
-# RETRIEVER
-## run field retriever with corpus
- python3 -m rag.pipelines.retrieval.field_retrieval.run_field_retrieval --corpus squash_new 
- 
 
-python3 -m flashrag.retriever \ 
-  --retrieval_method bm25 \
-  --corpus_path data/processed/balanced_grammar/balanced_500.jsonl \
-  --save_dir indexes/balanced_grammar/corpus_size_500
+
+# 2. Run Experiment
+## test semantic-only strategy
+
+with gpt
+```bash
+$ python scripts/02_run_experiment.py \
+    --query "A 60-minute solo practice for an intermediate player to improve drop shots." \
+    --retrieval-strategy semantic_only \
+    --semantic-config configs/retrieval/semantic_retriever.yaml \
+    --output-path data/results/semantic_only_results.jsonl
+```
+
+with ollama
+```bash
+$ python scripts/02_run_experiment.py \
+    --query "A 60-minute session for an intermediate player to improve drop shots." \
+    --retrieval-strategy semantic_only \
+    --semantic-config configs/retrieval/semantic_retriever.yaml \
+    --output-path data/results/semantic_only_results.jsonl \
+    --llm-model llama3
+```
+
+## test hybrid RRF strategy
+```bash
+$ python scripts/02_run_experiment.py \
+    --query "A 60-minute solo practice for an intermediate player to improve drop shots." \
+    --retrieval-strategy hybrid_rrf \
+    --semantic-config configs/retrieval/semantic_retriever.yaml \
+    --field-config configs/retrieval/raw_squash_field_retrieval_config.yaml \
+    --output-path data/results/rrf_results.jsonl
+```

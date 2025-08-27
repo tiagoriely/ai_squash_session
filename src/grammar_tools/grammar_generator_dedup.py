@@ -63,7 +63,11 @@ def merge_config_with_args(parser: argparse.ArgumentParser, args: argparse.Names
     defaults_ns = parser.parse_args([])
     args_d, defaults_d = vars(args).copy(), vars(defaults_ns)
     for k, v in cfg.items():
+        # If key is a standard argument and is at its default, overwrite it
         if k in args_d and args_d[k] == defaults_d.get(k):
+            args_d[k] = v
+        # If key from config does NOT exist as a command-line argument, add it
+        elif k not in args_d:
             args_d[k] = v
     return argparse.Namespace(**args_d)
 
@@ -315,6 +319,12 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Dictionary of settings to pass to the Planner.",
     )
 
+    parser.add_argument(
+        "--log-skips",
+        action="store_true",
+        help="Enable writing a .skips.csv log file."
+    )
+
     return parser
 
 
@@ -337,6 +347,12 @@ def main() -> None:
     if args.seed is not None:
         random.seed(args.seed)
 
+    # Dynamically create the output file path if a template is used
+    if hasattr(args, 'outfile_template') and hasattr(args, 'num'):
+        template = getattr(args, 'outfile_template')
+        if '{num}' in template:
+            args.outfile = Path(template.format(num=args.num))
+
     mult = args.max_attempts_multiplier
     if not (mult > 0 and mult < 1e6):
         print("⚠️  Invalid --max-attempts-multiplier; falling back to 10.0")
@@ -352,6 +368,10 @@ def main() -> None:
     accepted_ids: list[str] = []
 
     def log_skip(reason: str, score: float = -1.0, match_idx: int = -1):
+
+        if not args.log_skips:
+            return
+
         match_id = accepted_ids[match_idx] if (0 <= match_idx < len(accepted_ids)) else ""
         header = ["attempt", "reason", "score", "match_idx", "match_session_id"]
         row = [attempts, reason, f"{score:.4f}" if score >= 0 else "", match_idx, match_id]

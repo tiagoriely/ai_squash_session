@@ -92,33 +92,40 @@ def calculate_progression_scores(corpus: List[Dict], exercise_library: Dict) -> 
 
 # --- Main Analysis Orchestrator ---
 
-def analyse_reliability_metrics(corpus_path: Path, grammar_profile: str):
+def analyse_reliability_metrics(corpus_path: Path, grammar_profile: str) -> dict:
     """Orchestrates the reliability analysis for a given corpus."""
     corpus = load_corpus(corpus_path)
     exercise_library = load_exercise_library(grammar_profile)
     if not corpus:
-        return
+        return {}
 
     adherence_rates = check_archetype_adherence(corpus)
     progression_scores = calculate_progression_scores(corpus, exercise_library)
 
-    print("\n--- Reliability Analysis Report ---")
-    print(f"Corpus: {corpus_path.parent.name}")
+    # print("\n--- Reliability Analysis Report ---")
+    # print(f"Corpus: {corpus_path.parent.name}")
+    #
+    # print("\n[Archetype Constraint Adherence]")
+    # if not adherence_rates:
+    #     print("  - No applicable archetype constraints found to check.")
+    # for name, rate in adherence_rates.items():
+    #     print(f"  - {name}: {rate:.2f}%")
+    #
+    # print("\n[Difficulty Progression Score]")
+    # if not progression_scores:
+    #     print("  - No sessions with sufficient length to calculate progression.")
+    # else:
+    #     print(f"  - Average Progression Score: {np.mean(progression_scores):.2f}")
+    #     print("    (1.0 = perfectly non-decreasing difficulty)")
 
-    print("\n[Archetype Constraint Adherence]")
-    if not adherence_rates:
-        print("  - No applicable archetype constraints found to check.")
-    for name, rate in adherence_rates.items():
-        print(f"  - {name}: {rate:.2f}%")
+    # print("-----------------------------------")
 
-    print("\n[Difficulty Progression Score]")
-    if not progression_scores:
-        print("  - No sessions with sufficient length to calculate progression.")
-    else:
-        print(f"  - Average Progression Score: {np.mean(progression_scores):.2f}")
-        print("    (1.0 = perfectly non-decreasing difficulty)")
+    return {
+        "adherence_rates_percent": adherence_rates,
+        "avg_progression_score": np.mean(progression_scores) if progression_scores else 0.0
+    }
 
-    print("-----------------------------------")
+
 
 
 if __name__ == "__main__":

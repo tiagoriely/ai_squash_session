@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 
 # --- Your RAG Components ---
 # MODIFIED: Import the RRF search function
-from rag.pipelines.retrieval.hybrid_retrieval.hybrid_retriever_rrf import hybrid_search_rrf
+from rag_old.pipelines.retrieval.hybrid_retrieval.hybrid_retriever_rrf import hybrid_search_rrf
 from third_party.flashrag.flashrag.retriever.retriever import DenseRetriever
 from openai import OpenAI
 

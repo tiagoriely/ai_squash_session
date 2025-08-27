@@ -1,5 +1,5 @@
 import pytest
-from rag.pipelines.retrieval.field_retrieval.user_desires import parse_participants
+from rag_old.pipelines.retrieval.field_retrieval.user_desires import parse_participants
 
 @pytest.mark.parametrize(
     "text,expected",

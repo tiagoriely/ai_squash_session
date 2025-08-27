@@ -17,7 +17,7 @@ venv/
 
 # Ignore datasets and indices (optional, if large)
 data/processed/my_kb.jsonl
-rag/indexes/
+rag_old/indexes/
 finetuning/data/finetune_splits/*.jsonl
 
 # MacOS files

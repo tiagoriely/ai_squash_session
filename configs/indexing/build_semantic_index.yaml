@@ -1,0 +1,24 @@
+# configs/indexing/build_semantic_index.yaml
+# Configuration for FlashRAG's index_builder script.
+
+# --- Template Variables ---
+corpus_size: 500
+grammar_type: "balanced"
+
+# --- Index Builder Parameters ---
+# These keys map directly to the command-line arguments.
+
+# Maps to --retrieval_method
+retrieval_method: "e5-base-v2"
+
+# Maps to --model_path
+model_path: "intfloat/e5-base-v2"
+
+# Maps to --faiss_type
+faiss_type: "Flat"
+
+# Maps to --corpus_path (using our variables)
+corpus_path: "data/processed/{grammar_type}_grammar/{grammar_type}_{corpus_size}.jsonl"
+
+# Maps to --save_dir (using our variables)
+save_dir: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/e5/"

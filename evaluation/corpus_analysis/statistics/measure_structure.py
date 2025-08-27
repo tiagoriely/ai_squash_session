@@ -91,35 +91,43 @@ def analyse_family_transitions(corpus: List[Dict]) -> Dict[str, Any]:
 
 # --- Main Analysis Orchestrator ---
 
-def analyse_structure_metrics(corpus_path: Path):
+def analyse_structure_metrics(corpus_path: Path) -> dict:
     """Orchestrates the structural analysis for a given corpus."""
     corpus = load_corpus(corpus_path)
     if not corpus:
-        return
+        return {}
 
     archetype_counts, structure_counts = calculate_distributions(corpus)
     transition_analysis = analyse_family_transitions(corpus)
 
+
     # --- Print Report ---
-    print("\n--- Structural Analysis Report ---")
-    print(f"Corpus: {corpus_path.parent.name}")
+    # print("\n--- Structural Analysis Report ---")
+    # print(f"Corpus: {corpus_path.parent.name}")
+    #
+    # print("\n[Archetype Distribution]")
+    # for archetype, count in archetype_counts.most_common():
+    #     print(f"  - {archetype}: {count} sessions ({count / len(corpus) * 100:.1f}%)")
+    #
+    # print("\n[Session Structure Distribution]")
+    # for structure, count in structure_counts.most_common():
+    #     print(f"  - {structure}: {count} sessions ({count / len(corpus) * 100:.1f}%)")
+    #
+    # print("\n[Exercise Family Transition Analysis]")
+    # print(f"  - Transition Entropy: {transition_analysis['transition_entropy']:.4f} bits")
+    # print("    (Lower entropy means more predictable session flow)")
+    # print("\n  - Top 5 Most Probable Transitions:")
+    # for current, next_fam, prob in transition_analysis['top_transitions']:
+    #     print(f"    - P({next_fam.split('.')[-1]} | {current.split('.')[-1]}): {prob:.2f}")
+    #
+    # print("----------------------------------")
 
-    print("\n[Archetype Distribution]")
-    for archetype, count in archetype_counts.most_common():
-        print(f"  - {archetype}: {count} sessions ({count / len(corpus) * 100:.1f}%)")
-
-    print("\n[Session Structure Distribution]")
-    for structure, count in structure_counts.most_common():
-        print(f"  - {structure}: {count} sessions ({count / len(corpus) * 100:.1f}%)")
-
-    print("\n[Exercise Family Transition Analysis]")
-    print(f"  - Transition Entropy: {transition_analysis['transition_entropy']:.4f} bits")
-    print("    (Lower entropy means more predictable session flow)")
-    print("\n  - Top 5 Most Probable Transitions:")
-    for current, next_fam, prob in transition_analysis['top_transitions']:
-        print(f"    - P({next_fam.split('.')[-1]} | {current.split('.')[-1]}): {prob:.2f}")
-
-    print("----------------------------------")
+    # Return results as a dictionary
+    return {
+        "archetype_distribution": dict(archetype_counts),
+        "structure_distribution": dict(structure_counts),
+        "transition_entropy_bits": transition_analysis['transition_entropy']
+    }
 
 
 if __name__ == "__main__":

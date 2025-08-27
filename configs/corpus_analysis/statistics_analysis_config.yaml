@@ -1,0 +1,20 @@
+# The base directory where the processed datasets are stored.
+input_data_dir: "data/processed"
+
+# The location for all output reports and visualisations.
+output_dir: "evaluation/corpus_analysis/visualisations"
+
+# Common corpus size for this analysis run.
+corpus_size: 500
+
+# Template for the output filename. The script will replace {corpus_size}.
+report_filename_template: "full_analysis_report_{corpus_size}.csv"
+
+# List of grammar profiles to analyse. They will all use the corpus_size above.
+grammar_profiles:
+  - name: "loose_grammar"
+    adjective: "loose"
+  - name: "balanced_grammar"
+    adjective: "balanced"
+  - name: "high_constraint_grammar"
+    adjective: "high_constraint"

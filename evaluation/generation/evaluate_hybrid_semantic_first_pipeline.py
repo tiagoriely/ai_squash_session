@@ -27,7 +27,7 @@ import torch
 torch.set_num_threads(1)
 
 # --- Your RAG Components ---
-from rag.pipelines.retrieval.hybrid_retrieval.hybrid_retriever_semantic_then_field import hybrid_search
+from rag_old.pipelines.retrieval.hybrid_retrieval.hybrid_retriever_semantic_then_field import hybrid_search
 from openai import OpenAI
 
 # --- CONFIGURATION ---

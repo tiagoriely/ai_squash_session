@@ -62,13 +62,13 @@ def calculate_intra_session_family_diversity(corpus: List[dict]) -> dict:
 
 # --- Main Analysis Orchestrator ---
 
-def analyse_diversity_metrics(corpus_path: Path, grammar_profile: str):
+def analyse_diversity_metrics(corpus_path: Path, grammar_profile: str) -> dict:
     """
     Orchestrates the statistical diversity analysis for a given corpus.
     """
     corpus = load_corpus(corpus_path)
     if not corpus:
-        return
+        return {}
 
     all_variants_used = [
         exercise.get("variant_id")
@@ -87,25 +87,36 @@ def analyse_diversity_metrics(corpus_path: Path, grammar_profile: str):
     # Structural
     family_diversity = calculate_intra_session_family_diversity(corpus)
 
-    # --- Print Combined Report ---
-    print("\n--- Statistical Diversity Report ---")
-    print(f"Corpus: {corpus_path.parent.name}")
+    # # --- Print Combined Report ---
+    # print("\n--- Statistical Diversity Report ---")
+    # print(f"Corpus: {corpus_path.parent.name}")
+    #
+    # print(f"\n[Lexical Diversity]")
+    # print(f"  - Coverage: {library_coverage:.2f}% ({unique_variants_used} of {total_variants_defined} variants used)")
+    # print(f"  - Shannon Entropy: {entropy:.4f} bits")
+    #
+    # print(f"\n[Structural Diversity]")
+    # print(f"  - Avg. Unique Families per Session: {family_diversity['mean']:.2f} (std: {family_diversity['std']:.2f})")
+    #
+    # print("------------------------------------")
 
-    print(f"\n[Lexical Diversity]")
-    print(f"  - Coverage: {library_coverage:.2f}% ({unique_variants_used} of {total_variants_defined} variants used)")
-    print(f"  - Shannon Entropy: {entropy:.4f} bits")
-
-    print(f"\n[Structural Diversity]")
-    print(f"  - Avg. Unique Families per Session: {family_diversity['mean']:.2f} (std: {family_diversity['std']:.2f})")
-
-    print("------------------------------------")
+    # Return results as a dictionary
+    return {
+        "library_coverage_percent": library_coverage,
+        "unique_variants_used": unique_variants_used,
+        "total_variants_defined": total_variants_defined,
+        "variant_entropy_bits": entropy,
+        "avg_families_per_session": family_diversity['mean'],
+        "std_families_per_session": family_diversity['std']
+    }
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Analyze the lexical diversity of a generated corpus.")
+    parser = argparse.ArgumentParser(description="Analyse the statistical diversity of a generated corpus.")
     parser.add_argument("corpus_path", type=Path, help="Path to the .jsonl corpus file.")
     parser.add_argument("grammar_profile", type=str,
                         help="Name of the grammar profile (e.g., 'high_constraint_grammar').")
+
     args = parser.parse_args()
 
     analyse_diversity_metrics(args.corpus_path, args.grammar_profile)

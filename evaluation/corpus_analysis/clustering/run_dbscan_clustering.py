@@ -6,6 +6,7 @@ import seaborn as sns
 from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
 import umap.umap_ as umap
+import yaml
 
 
 def run_clustering_analysis(embedding_path: Path, output_path: Path, eps: float, min_samples: int):
@@ -71,13 +72,26 @@ def run_clustering_analysis(embedding_path: Path, output_path: Path, eps: float,
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Run DBSCAN clustering on session embeddings.")
-    parser.add_argument("embedding_path", type=Path, help="Path to the .npy embedding file.")
-    parser.add_argument("output_path", type=Path, help="Path to save the output plot (.png).")
-    parser.add_argument("--eps", type=float, default=0.5,
-                        help="DBSCAN 'eps' parameter (the max distance between two samples).")
-    parser.add_argument("--min_samples", type=int, default=5,
-                        help="DBSCAN 'min_samples' parameter (the number of samples in a neighbourhood).")
+    parser = argparse.ArgumentParser(description="Run DBSCAN clustering on session embeddings from a config file.")
+    parser.add_argument("--config", type=Path, required=True, help="Path to the clustering_config.yaml file.")
     args = parser.parse_args()
 
-    run_clustering_analysis(args.embedding_path, args.output_path, args.eps, args.min_samples)
+    with open(args.config, 'r') as f:
+        config = yaml.safe_load(f)
+
+    embedding_base_dir = Path(config.get('embedding_dir', 'evaluation/corpus_analysis/embeddings'))
+    output_base_dir = Path(config.get('output_dir', 'evaluation/corpus_analysis/visualisations'))
+
+    for task in config.get('clustering_tasks', []):
+        print(f"\n--- Running Clustering Task: {task['name']} ---")
+
+        embedding_path = embedding_base_dir / task['embedding_file']
+        output_path = output_base_dir / task['output_file']
+        params = task.get('dbscan_params', {})
+
+        run_clustering_analysis(
+            embedding_path=embedding_path,
+            output_path=output_path,
+            eps=params.get('eps', 0.5),
+            min_samples=params.get('min_samples', 5)
+        )

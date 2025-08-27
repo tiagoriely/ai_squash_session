@@ -1,0 +1,14 @@
+# configs/retrieval/sparse_retriever.yaml
+# Configuration for the SparseRetriever (BM25)
+
+# --- Template Variables ---
+corpus_size: 500
+grammar_type: "balanced"
+
+# --- Core Paths (using variables) ---
+index_path: "indexes/{grammar_type}_grammar/bm25_index/corpus_size_{corpus_size}/bm25_index_{corpus_size}.pkl"
+
+# --- BM25 Parameters ---
+# These are the standard tuning parameters for the BM25 algorithm.
+k1: 1.5
+b: 0.75

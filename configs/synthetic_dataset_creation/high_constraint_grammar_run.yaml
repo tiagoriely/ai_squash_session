@@ -14,9 +14,10 @@ planner_config:
   enforce_plan_points_progression: false
 
 # High-level run params
-num: 500
-outfile: data/processed/high_constraint_grammar/high_constraint_500.jsonl
+num: 100
+outfile_template: "data/processed/high_constraint_grammar/high_constraint_{num}.jsonl"
 seed: 43
+log_skips: false
 
 # Controls JSON output formatting
 json_indent: false

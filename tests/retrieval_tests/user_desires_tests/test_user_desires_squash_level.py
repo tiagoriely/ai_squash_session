@@ -1,6 +1,6 @@
 # tests/test_user_desires_level.py
 import pytest
-from rag.pipelines.retrieval.field_retrieval.user_desires import parse_squash_level
+from rag_old.pipelines.retrieval.field_retrieval.user_desires import parse_squash_level
 
 
 @pytest.mark.parametrize(

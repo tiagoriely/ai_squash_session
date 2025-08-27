@@ -1,11 +1,21 @@
+# Run all analysis
+
+## Statistics
+python -m evaluation.corpus_analysis.run_all_analyses --config configs/corpus_analysis/statistics_analysis_config.yaml
+
+## DBSCAN
+python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering --config configs/corpus_analysis/clustering_config.yaml
+
+
+
+
 # Path to grammars
-loose:      data/processed/loose_grammar/loose_500.jsonl \
-balanced:   data/processed/balanced_grammar/balanced_500.jsonl \
-strict:     data/processed/high_constraint_grammar/high_constraint_500.jsonl \
+loose:      data/processed/loose_grammar/loose_{size}.jsonl \
+balanced:   data/processed/balanced_grammar/balanced_{size}.jsonl \
+strict:     data/processed/high_constraint_grammar/high_constraint_{size}.jsonl \
   high_constraint_grammar
 
 # Statistics
-
 ## DIVERSITY
 ### Diversity 1 - loose 
 python -m evaluation.corpus_analysis.statistics.measure_diversity \

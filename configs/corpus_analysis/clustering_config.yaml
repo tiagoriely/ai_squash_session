@@ -1,0 +1,27 @@
+# Base directories for input and output.
+embedding_dir: "evaluation/corpus_analysis/embeddings"
+output_dir: "evaluation/corpus_analysis/visualisations"
+
+# List of clustering tasks to run.
+clustering_tasks:
+  - name: "loose_grammar_500"
+    embedding_file: "embed_size_500/loose_500.npy"
+    output_file: "corpus_size_500/loose_clusters.png"
+    # DBSCAN parameters tuned for the expected low density of the loose grammar
+    dbscan_params:
+      eps: 0.5
+      min_samples: 5
+
+  - name: "balanced_grammar_500"
+    embedding_file: "embed_size_500/balanced_500.npy"
+    output_file: "corpus_size_500/balanced_clusters.png"
+    dbscan_params:
+      eps: 0.3
+      min_samples: 5
+
+  - name: "high_constraint_grammar_500"
+    embedding_file: "embed_size_500/high_constraint_500.npy"
+    output_file: "corpus_size_500/high_constraint_clusters.png"
+    dbscan_params:
+      eps: 0.4
+      min_samples: 6
