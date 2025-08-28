@@ -1,0 +1,91 @@
+
+
+Sparse:
+issues:
+- scores always negative (happens if a word appears in more than half of the documents in my corpus, IDF volaue becomes negative)
+- retriever cannot find any good match but I know there are many in the corpus (too many is probably the problem)
+- highly specialised corpus with a lot of similar words (e.g. boast happens 10k+ times)
+- your queries are short and your session documents are long
+
+
+Solution 1 (not making a huge difference)- tuning BM25 parameters
+    • k1 (Term Frequency Saturation): Controls how much the score increases with each additional appearance of a query term
+    in a document. A lower k1 value reduces the impact of very high-frequency terms. Given your corpus has terms
+    repeated thousands of times,
+    ***lowering k1 (e.g., to 1.0 - 1.2) is a good idea***
+    • b (Document Length Normalization): Controls how much longer documents are penalized compared to shorter ones.
+    A higher b value ***(closer to 1.0, e.g., 0.85)*** increases this penalty. Since your queries are short and your session
+    documents are long, a stronger penalty for length could help.
+
+
+    just helped a little bit
+
+ Solution 2 (not great, minimal useful but not making a difference) - stop words
+ - Using the "minimal" stop word list for the meta-index strategy (always good to have)
+
+ - a bit less negative with standard words but hard to guess which one to add in the list
+ - using common words in the list as stop words just led to most scores = 0 and sometimes some negative (could not tell which session was the best at all)
+
+
+ Solution 3 (good, but not on its own) - sparsing metadata
+ FIRST POSITIVE SCORES!!!
+ however limited as it looks as standalone words so words like "counter drop" are not caught properly
+ 🚀 Running pipeline for query: 'A need a 45min session to improve my counter drop'
+
+
+
+
+-------------------------------------
+Tokenized Query: ['need', '45min', 'session', 'improve', 'counter', 'drop']
+
+Max score found: 1.3731
+
+Min score found: -1.8160
+
+Number of docs with score > 0: 57
+
+Total documents: 500
+
+-------------------------------------
+
+[DEBUG] top76: id=session_077, score=1.3731
+
+[DEBUG] top165: id=session_166, score=1.3511
+
+[DEBUG] top237: id=session_238, score=1.3403
+
+[DEBUG] top463: id=session_464, score=1.2570
+
+[DEBUG] top347: id=session_348, score=0.4493
+
+[DEBUG] top64: id=session_065, score=0.4011
+
+[DEBUG] top319: id=session_320, score=0.3827
+
+[DEBUG] top186: id=session_187, score=0.3804
+
+[DEBUG] top208: id=session_209, score=0.3804
+
+[DEBUG] top230: id=session_231, score=0.3804
+--- ✅ Experiment Complete ---
+Top retrieved doc ID: session_077
+
+
+
+
+My Analysis:
+The only problem is that it's actually not retrieving the appropriate sessions:
+and I think this is where 2/3/n-gram is going to help.
+
+Here is my process of thing:
+
+1) the query: 'A need a 45min session to improve my counter drop'
+2) Tokenized Query: ['need', '45min', 'session', 'improve', 'counter', 'drop']
+3) the most important word here was "counter drop" but it its separated into "drop" and "counter"
+4) so the sparse retriever found sessions with drops, in this case the straight drop, but actually the straight drop is not a counter drop in this case, therefore this session is actually not finding a good session, it's practicing another "drop"
+5) however if "counter drop" was seen as one one then it would have found more appropriate sessions:
+
+like session80:
+
+Solution 4
+

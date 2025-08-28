@@ -17,3 +17,8 @@ Many other constraints where enforced:
 
 Problem faced:
 - deleting sequence had an impact
+
+
+
+
+

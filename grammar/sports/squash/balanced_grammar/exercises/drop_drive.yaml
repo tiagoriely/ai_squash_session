@@ -16,7 +16,7 @@ parameters:
 # All variation of this exercise
 variants:
   # Variant 1 – Deep Only
-  - variant_id: deep_only
+  - variant_id: deep_onlyD
     name: Drop-Drive (Deep Only)
     description: >
       One player plays straight drops from the back of the court; 

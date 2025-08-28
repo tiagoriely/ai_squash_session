@@ -28,7 +28,7 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     # Principle 2: DSL hard Rules (same as the balanced grammar)
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> backhand cross (opponent) -> forehand drive (initiating player) -> restart pattern with next boast"
       # For the human coach and the RAG's semantic understanding
       constraint_text: "All shots excluding the boast must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
@@ -60,7 +60,7 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     # Principle 2: DSL hard Rules (same as the balanced grammar)
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> forehand cross (opponent) -> backhand drive (initiating player) -> restart pattern with next boast"
       # For the human coach and the RAG's semantic understanding
       constraint_text: "All shots excluding the boast must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
@@ -93,7 +93,7 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     # Principle 2: DSL hard Rules (same as the balanced grammar)
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> backhand cross (opponent) -> forehand drive (initiating player) -> restart pattern with next boast"
       # For the human coach and the RAG's semantic understanding
       constraint_text: "All shots excluding the boast must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
@@ -125,7 +125,7 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     # Principle 2: DSL hard Rules (same as the balanced grammar)
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> forehand cross (opponent) -> backhand drive (initiating player) -> restart pattern with next boast"
       # For the human coach and the RAG's semantic understanding
       constraint_text: "All shots excluding the boast must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
@@ -164,7 +164,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> (cross | cross kill) (opponent) -> (drive | straight kill) (initiating player) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> (backhand cross (opponent) | backhand cross kill (opponent)) -> (forehand drive (initiating player) | forehand straight kill (initiating player)) -> restart pattern with next boast"
       # IMPORTANT SECTION SOFT/HARD CONSTRAINT
       constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
@@ -193,7 +193,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> (cross | cross kill) (opponent) -> (drive | straight kill) (initiating player) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> (forehand cross (opponent) | forehand cross kill (opponent) ) -> ( backhand drive (initiating player) | backhand straight kill (initiating player)) -> restart pattern with next boast"
       # IMPORTANT SECTION SOFT/HARD CONSTRAINT
       constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
@@ -222,7 +222,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> (cross | cross kill) (opponent) -> (drive | straight kill) (initiating player) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> (backhand cross (opponent) | backhand cross kill (opponent)) -> (forehand drive (initiating player) | forehand straight kill (initiating player)) -> restart pattern with next boast"
       # IMPORTANT SECTION SOFT/HARD CONSTRAINT
       constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
@@ -251,7 +251,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> (cross | cross kill) (opponent) -> (drive | straight kill) (initiating player) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> (forehand cross (opponent) | forehand cross kill (opponent) ) -> ( backhand drive (initiating player) | backhand straight kill (initiating player)) -> restart pattern with next boast"
       # IMPORTANT SECTION SOFT/HARD CONSTRAINT
       constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)
@@ -282,7 +282,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> ( backhand straight drop (initiating player) | backhand straight drop (opponent) | backhand counter drop (initiating player) | backhand counter drop (opponent) )* -> backhand cross (whoever chooses) -> forehand drive (opponent of cross) -> restart pattern with next boast"
       constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
       constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
     allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
@@ -308,7 +308,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> ( forehand straight drop (initiating player) | forehand straight drop (opponent) | forehand counter drop (initiating player) | forehand counter drop (opponent) )* -> forehand cross (whoever chooses) -> backhand drive (opponent of cross) -> restart pattern with next boast"
       constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
       constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
     allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
@@ -334,7 +334,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> ( backhand straight drop (initiating player) | backhand straight drop (opponent) | backhand counter drop (initiating player) | backhand counter drop (opponent) )* -> backhand cross (whoever chooses) -> forehand drive (opponent of cross) -> restart pattern with next boast"
       constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
       constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
     allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
@@ -342,7 +342,7 @@ variants:
                       "cross", "deep cross", "hard cross",
                       "drop", "counter drop", "straight drop"]
 
-  # Variant 3 - Part B: Counter Drops - Backhand - Conditioned Game
+  # Variant 3 - Part D: Counter Drops - Backhand - Conditioned Game
   - variant_id: counter_drop_backhand_conditioned_game
     name: Boast-Cross-Drive With Counter Drops (Backhand Conditioned Game)
     description: >
@@ -360,7 +360,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> ( straight drop (initiating player) | straight drop (opponent) | counter drop (initiating player) | counter drop (opponent) )* -> cross (whoever chooses) -> drive (opponent of cross) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> ( forehand straight drop (initiating player) | forehand straight drop (opponent) | forehand counter drop (initiating player) | forehand counter drop (opponent) )* -> forehand cross (whoever chooses) -> backhand drive (opponent of cross) -> restart pattern with next boast"
       constraint_text: "Cross & Drive: Every cross-court shot and the subsequent drive first bounces must land behind the T-line."
       constraint_formal: "FOR ALL shot(cross, drive) REQUIRE location.bounce[1] > t_line"
     allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
@@ -397,7 +397,7 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     # Principle 2: DSL hard Rules (same as the balanced grammar)
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> optional: (straight drive | deep drive | hard drive) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> backhand cross (opponent) -> forehand drive (initiating player) -> optional: (forehand straight drive | forehand deep drive | forehand hard drive) -> restart pattern with next boast"
       constraint_text:
         - "All cross-court shots and drives must have their first bounce land behind the T-line."
         - "The optional extra drive may be used a maximum of one time per rally."
@@ -434,7 +434,7 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     # Principle 2: DSL hard Rules (same as the balanced grammar)
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> optional: (straight drive | deep drive | hard drive) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> forehand cross (opponent) -> backhand drive (initiating player) -> optional: (backhand straight drive | backhand deep drive | backhand hard drive) -> restart pattern with next boast"
       constraint_text:
         - "All cross-court shots and drives must have their first bounce land behind the T-line."
         - "The optional extra drive may be used a maximum of one time per rally."
@@ -471,7 +471,7 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     # Principle 2: DSL hard Rules (same as the balanced grammar)
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> optional: (straight drive | deep drive | hard drive) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> backhand cross (opponent) -> forehand drive (initiating player) -> optional: (forehand straight drive | forehand deep drive | forehand hard drive) -> restart pattern with next boast"
       constraint_text:
         - "All cross-court shots and drives must have their first bounce land behind the T-line."
         - "The optional extra drive may be used a maximum of one time per rally."
@@ -507,7 +507,7 @@ variants:
       exercises_per_side: 1 # Players do not need to change role before changing sides
     # Principle 2: DSL hard Rules (same as the balanced grammar)
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> optional: (straight drive | deep drive | hard drive) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> forehand cross (opponent) -> backhand drive (initiating player) -> optional: (backhand straight drive | backhand deep drive | backhand hard drive) -> restart pattern with next boast"
       constraint_text:
         - "All cross-court shots and drives must have their first bounce land behind the T-line."
         - "The optional extra drive may be used a maximum of one time per rally."
@@ -609,7 +609,7 @@ variants:
       description: >
         Each rally begins with a boast. Players should alternate who initiates the rally.
         and follow the pattern boast → cross lob → volley drive.
-      sequence: "boast (initiating player) -> cross lob (opponent) -> volley drive (initiating player) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> backhand cross lob (opponent) -> forehand volley drive (initiating player) -> restart pattern with next boast"
       constraint_text: "All cross lob shots and volley drives must have their first bounce land behind the T-line."
       constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
 
@@ -643,7 +643,7 @@ variants:
       description: >
         Each rally begins with a boast. Players should alternate who initiates the rally.
         and follow the pattern boast → cross lob → volley drive.
-      sequence: "boast (initiating player) -> cross lob (opponent) -> volley drive (initiating player) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> forehand cross lob (opponent) -> backhand volley drive (initiating player) -> restart pattern with next boast"
       constraint_text: "All cross lob shots and volley drives must have their first bounce land behind the T-line."
       constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
 
@@ -677,7 +677,7 @@ variants:
       description: >
         Each rally begins with a boast. Players should alternate who initiates the rally.
         and follow the pattern boast → cross lob → volley drive.
-      sequence: "boast (initiating player) -> cross lob (opponent) -> volley drive (initiating player) -> restart pattern with next boast"
+      sequence: "forehand boast (initiating player) -> backhand cross lob (opponent) -> forehand volley drive (initiating player) -> restart pattern with next boast"
       constraint_text: "All cross lob shots and volley drives must have their first bounce land behind the T-line."
       constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
 
@@ -711,7 +711,7 @@ variants:
       description: >
         Each rally begins with a boast. Players should alternate who initiates the rally.
         and follow the pattern boast → cross lob → volley drive.
-      sequence: "boast (initiating player) -> cross lob (opponent) -> volley drive (initiating player) -> restart pattern with next boast"
+      sequence: "backhand boast (initiating player) -> forehand cross lob (opponent) -> backhand volley drive (initiating player) -> restart pattern with next boast"
       constraint_text: "All cross lob shots and volley drives must have their first bounce land behind the T-line."
       constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
 

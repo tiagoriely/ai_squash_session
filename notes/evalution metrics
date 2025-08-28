@@ -30,6 +30,9 @@
 
 
     Clustering with DBSCAN does (Diversity and Structure)
+    In the context of your DBSCAN analysis, "noise" or "outliers" are sessions that are semantically unique and do not
+    fit into any of the common, thematic clusters. A higher percentage of noise is not a sign of an error, but a
+    measure of how many unique, one-off sessions were generated.
 
 
 

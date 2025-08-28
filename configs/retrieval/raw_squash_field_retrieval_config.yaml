@@ -204,6 +204,7 @@ GENERAL_SHOT_TYPES:
     - "volley cross-court nick"
     - "volley hard cross"
   kill:
+    - "kill"
     - "straight kill"
     - "volley straight kill"
     - "cross kill"

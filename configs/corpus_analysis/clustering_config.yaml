@@ -1,27 +1,30 @@
+# The size of the corpus to be analysed. This value will be used for all placeholders.
+corpus_size: 500
+
 # Base directories for input and output.
 embedding_dir: "evaluation/corpus_analysis/embeddings"
 output_dir: "evaluation/corpus_analysis/visualisations"
 
 # List of clustering tasks to run.
+# The placeholder {corpus_size} will be replaced by the value from above.
 clustering_tasks:
-  - name: "loose_grammar_500"
-    embedding_file: "embed_size_500/loose_500.npy"
-    output_file: "corpus_size_500/loose_clusters.png"
-    # DBSCAN parameters tuned for the expected low density of the loose grammar
+  - name: "loose_grammar_{corpus_size}"
+    embedding_file: "embed_size_{corpus_size}/loose_{corpus_size}.npy"
+    output_file: "loose_clusters_{corpus_size}.png"
     dbscan_params:
       eps: 0.5
       min_samples: 5
 
-  - name: "balanced_grammar_500"
-    embedding_file: "embed_size_500/balanced_500.npy"
-    output_file: "corpus_size_500/balanced_clusters.png"
+  - name: "balanced_grammar_{corpus_size}"
+    embedding_file: "embed_size_{corpus_size}/balanced_{corpus_size}.npy"
+    output_file: "balanced_clusters_{corpus_size}.png"
     dbscan_params:
       eps: 0.3
       min_samples: 5
 
-  - name: "high_constraint_grammar_500"
-    embedding_file: "embed_size_500/high_constraint_500.npy"
-    output_file: "corpus_size_500/high_constraint_clusters.png"
+  - name: "high_constraint_grammar_{corpus_size}"
+    embedding_file: "embed_size_{corpus_size}/high_constraint_{corpus_size}.npy"
+    output_file: "high_constraint_clusters_{corpus_size}.png"
     dbscan_params:
       eps: 0.4
       min_samples: 6

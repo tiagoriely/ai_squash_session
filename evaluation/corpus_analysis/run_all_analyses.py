@@ -63,18 +63,21 @@ if __name__ == "__main__":
     with open(args.config, 'r') as f:
         config = yaml.safe_load(f)
 
-    # --- Read new config structure ---
+    # --- config reading ---
     corpus_size = config['corpus_size']
-    filename_template = config['report_filename_template']
-
-    # Construct paths from the config file
     input_dir = Path(config['input_data_dir'])
-    output_dir = Path(config['output_dir'])
-
-    # Dynamically create the output filename
-    report_filename = filename_template.format(corpus_size=corpus_size)
-    output_csv = output_dir / report_filename
-
+    # Get the BASE output directory, not the final one.
+    output_base_dir = Path(config['output_dir'])
     profiles = config['grammar_profiles']
 
-    run_full_analysis(profiles, corpus_size, input_dir, output_csv)
+    # This ensures all results for a given size are co-located.
+    run_output_dir = output_base_dir / f"corpus_size_{corpus_size}"
+
+    # Define the final output file path within that shared directory.
+    output_csv_path = run_output_dir / f"stats_analysis_report_{corpus_size}.csv"
+
+    print(f"Starting full analysis for corpus size: {corpus_size}")
+    print(f"➡️  Analysis report will be saved to: {output_csv_path}")
+
+    # Pass the correctly constructed path to the main function ---
+    run_full_analysis(profiles, corpus_size, input_dir, output_csv_path)

@@ -17,15 +17,15 @@ class Generator:
             system_prompt (str): The system prompt to guide the model's behaviour.
         """
         # comment out for direct open ai
-        # self.client = OpenAI()
+        self.client = OpenAI()
 
-        # comment out to use ollama
-        # Point the client to the local Ollama server
-        self.client = OpenAI(
-            base_url='http://localhost:11434/v1',
-            api_key='ollama',  # required but ignored
-        )
-        # --- end of ollama ---
+        # comment out to use ollama need 16GB+ RAM
+        # # Point the client to the local Ollama server
+        # self.client = OpenAI(
+        #     base_url='http://localhost:11434/v1',
+        #     api_key='ollama',  # required but ignored
+        # )
+        # # --- end of ollama ---
 
         self.model = model
         self.system_prompt = system_prompt

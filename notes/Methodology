@@ -1,0 +1,40 @@
+
+Grammar Creation
+
+
+
+Corpus Generation
+    * check 0 - yaml formatting check *
+        - used yamllint .
+        - run test to double check if python code working properly
+
+    Step 1 - building each balanced grammar (most realistic) and generating it
+    * check: initial creation
+        - step by step generation, testing all archetypes, session structures, individually, metadata creation*
+        - generating by sets of 10/20/50 and checking sessions
+
+    Step 2 - reducing or increasing constraints to build the other grammars
+        - keep common generator for all grammars
+        - generated loose grammar first, when happy tackled high constraint
+        - when building the grammars I separated constraints into three categories:
+            i. exercises constraints (high level constraints)
+            iii. archetypes and block activity constraints (mid level constraints)
+            ii. structure constraints (low level constraints)
+        - Enforced rules checks signalling errors during generation if nots respected
+            eg. PEGs (sequence, contraints_formal), ebnf (structures), duration
+
+    Step 3
+    * check 1 - ebnf/peg passes and human review *
+        a. solve ebnf/peg error messages to align with rules
+        b. creating 1 session indented json output (session) and look if all field make sense
+    * check 2 - human readable files check *
+        creating 20 sessions convert into docx for better visual and see if the number of activity blocks, the variants used, and see if I missed anything in the json file
+
+    * check 3 - diversity, structure, reliability automatic metrics*
+        - test DBSCAN for visuals *******individually***change to all?**
+            - visual results are exports
+        - run statistics for all grammars (entropy, coverage, etc..)
+            - results are exports with the size indicator e.g. full_analysis_report_500.csv
+
+
+    # DBSCAN parameters tuned for the expected low density of the loose grammar

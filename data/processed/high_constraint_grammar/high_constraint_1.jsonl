@@ -1,0 +1,493 @@
+{
+ "id": "session_001",
+ "meta": {
+  "session_type": "drill",
+  "archetype": "Drill Only (High-Constraint)",
+  "structure_id": "structure_45min_6blocks",
+  "duration": 45,
+  "shotSide": [
+   "forehand",
+   "backhand"
+  ],
+  "participants": 2,
+  "applicable_squash_levels": [
+   "intermediate",
+   "advanced",
+   "professional"
+  ],
+  "recommended_squash_level": "intermediate",
+  "shots_general": [
+   "boast",
+   "cross",
+   "drive",
+   "drop",
+   "kill",
+   "lob",
+   "volley"
+  ],
+  "shots_specific_primary": [
+   "2-wall boast",
+   "deep cross",
+   "deep drive",
+   "hard drive",
+   "straight drive",
+   "straight kill",
+   "volley straight drop"
+  ],
+  "shots_specific_secondary": [
+   "cross kill",
+   "straight drop",
+   "straight lob"
+  ],
+  "movement": [
+   "back",
+   "diagonal",
+   "front",
+   "middle"
+  ],
+  "rest_minutes": 1.5,
+  "exercise_sequences": [
+   {
+    "exercise_family_id": "squash.family.warmup",
+    "exercise_variant_id": "compound_boast_drive_drop_drive_and_2_shots",
+    "sequence_dsl": null,
+    "sequence_ast": null
+   },
+   {
+    "exercise_family_id": "squash.family.warmup",
+    "exercise_variant_id": "compound_boast_drive_and_2_shots",
+    "sequence_dsl": null,
+    "sequence_ast": null
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "volley_drop_straight_lob_backhand_drill",
+    "sequence_dsl": "backhand volley straight drop (B) -> backhand straight lob (A) -> restart pattern (continuous until role swap)",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "backhand volley straight drop",
+      "actor": "B"
+     },
+     {
+      "type": "Action",
+      "name": "backhand straight lob",
+      "actor": "A"
+     },
+     {
+      "type": "Restart",
+      "text": "pattern (continuous until role swap)"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "any_straight_drive_backhand_drill",
+    "sequence_dsl": "backhand drop (B) -> (backhand straight drive (A) | backhand straight kill (A) | backhand straight lob (A)) -> restart pattern (continuous until role swap)",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "backhand drop",
+      "actor": "B"
+     },
+     {
+      "type": "Choice",
+      "options": [
+       {
+        "type": "Action",
+        "name": "backhand straight drive",
+        "actor": "A"
+       },
+       {
+        "type": "Action",
+        "name": "backhand straight kill",
+        "actor": "A"
+       },
+       {
+        "type": "Action",
+        "name": "backhand straight lob",
+        "actor": "A"
+       }
+      ]
+     },
+     {
+      "type": "Restart",
+      "text": "pattern (continuous until role swap)"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "volley_drop_deep_only_forehand_drill",
+    "sequence_dsl": "forehand volley straight drop (B) -> forehand drive (A) -> restart pattern (continuous until role swap)",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "forehand volley straight drop",
+      "actor": "B"
+     },
+     {
+      "type": "Action",
+      "name": "forehand drive",
+      "actor": "A"
+     },
+     {
+      "type": "Restart",
+      "text": "pattern (continuous until role swap)"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.pattern.diagonal.boast_cross_drive",
+    "exercise_variant_id": "kills_allowed_forehand_drill",
+    "sequence_dsl": "forehand boast (initiating player) -> (backhand cross (opponent) | backhand cross kill (opponent)) -> (forehand drive (initiating player) | forehand straight kill (initiating player)) -> restart pattern with next boast",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "forehand boast",
+      "actor": "initiating player"
+     },
+     {
+      "type": "Choice",
+      "options": [
+       {
+        "type": "Action",
+        "name": "backhand cross",
+        "actor": "opponent"
+       },
+       {
+        "type": "Action",
+        "name": "backhand cross kill",
+        "actor": "opponent"
+       }
+      ]
+     },
+     {
+      "type": "Choice",
+      "options": [
+       {
+        "type": "Action",
+        "name": "forehand drive",
+        "actor": "initiating player"
+       },
+       {
+        "type": "Action",
+        "name": "forehand straight kill",
+        "actor": "initiating player"
+       }
+      ]
+     },
+     {
+      "type": "Restart",
+      "text": "pattern with next boast"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "volley_drop_deep_only_forehand_drill",
+    "sequence_dsl": "forehand volley straight drop (B) -> forehand drive (A) -> restart pattern (continuous until role swap)",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "forehand volley straight drop",
+      "actor": "B"
+     },
+     {
+      "type": "Action",
+      "name": "forehand drive",
+      "actor": "A"
+     },
+     {
+      "type": "Restart",
+      "text": "pattern (continuous until role swap)"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.pattern.diagonal.boast_cross_drive",
+    "exercise_variant_id": "kills_allowed_forehand_drill",
+    "sequence_dsl": "forehand boast (initiating player) -> (backhand cross (opponent) | backhand cross kill (opponent)) -> (forehand drive (initiating player) | forehand straight kill (initiating player)) -> restart pattern with next boast",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "forehand boast",
+      "actor": "initiating player"
+     },
+     {
+      "type": "Choice",
+      "options": [
+       {
+        "type": "Action",
+        "name": "backhand cross",
+        "actor": "opponent"
+       },
+       {
+        "type": "Action",
+        "name": "backhand cross kill",
+        "actor": "opponent"
+       }
+      ]
+     },
+     {
+      "type": "Choice",
+      "options": [
+       {
+        "type": "Action",
+        "name": "forehand drive",
+        "actor": "initiating player"
+       },
+       {
+        "type": "Action",
+        "name": "forehand straight kill",
+        "actor": "initiating player"
+       }
+      ]
+     },
+     {
+      "type": "Restart",
+      "text": "pattern with next boast"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "volley_drop_deep_only_forehand_drill",
+    "sequence_dsl": "forehand volley straight drop (B) -> forehand drive (A) -> restart pattern (continuous until role swap)",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "forehand volley straight drop",
+      "actor": "B"
+     },
+     {
+      "type": "Action",
+      "name": "forehand drive",
+      "actor": "A"
+     },
+     {
+      "type": "Restart",
+      "text": "pattern (continuous until role swap)"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.pattern.diagonal.boast_cross_drive",
+    "exercise_variant_id": "extra_drive_forehand_drill",
+    "sequence_dsl": "forehand boast (initiating player) -> backhand cross (opponent) -> forehand drive (initiating player) -> optional: (forehand straight drive | forehand deep drive | forehand hard drive) -> restart pattern with next boast",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "forehand boast",
+      "actor": "initiating player"
+     },
+     {
+      "type": "Action",
+      "name": "backhand cross",
+      "actor": "opponent"
+     },
+     {
+      "type": "Action",
+      "name": "forehand drive",
+      "actor": "initiating player"
+     },
+     {
+      "type": "Optional",
+      "body": {
+       "type": "Choice",
+       "options": [
+        {
+         "type": "Action",
+         "name": "forehand straight drive"
+        },
+        {
+         "type": "Action",
+         "name": "forehand deep drive"
+        },
+        {
+         "type": "Action",
+         "name": "forehand hard drive"
+        }
+       ]
+      }
+     },
+     {
+      "type": "Restart",
+      "text": "pattern with next boast"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "volley_drop_deep_only_forehand_drill",
+    "sequence_dsl": "forehand volley straight drop (B) -> forehand drive (A) -> restart pattern (continuous until role swap)",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "forehand volley straight drop",
+      "actor": "B"
+     },
+     {
+      "type": "Action",
+      "name": "forehand drive",
+      "actor": "A"
+     },
+     {
+      "type": "Restart",
+      "text": "pattern (continuous until role swap)"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.pattern.diagonal.boast_cross_drive",
+    "exercise_variant_id": "extra_drive_forehand_drill",
+    "sequence_dsl": "forehand boast (initiating player) -> backhand cross (opponent) -> forehand drive (initiating player) -> optional: (forehand straight drive | forehand deep drive | forehand hard drive) -> restart pattern with next boast",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "forehand boast",
+      "actor": "initiating player"
+     },
+     {
+      "type": "Action",
+      "name": "backhand cross",
+      "actor": "opponent"
+     },
+     {
+      "type": "Action",
+      "name": "forehand drive",
+      "actor": "initiating player"
+     },
+     {
+      "type": "Optional",
+      "body": {
+       "type": "Choice",
+       "options": [
+        {
+         "type": "Action",
+         "name": "forehand straight drive"
+        },
+        {
+         "type": "Action",
+         "name": "forehand deep drive"
+        },
+        {
+         "type": "Action",
+         "name": "forehand hard drive"
+        }
+       ]
+      }
+     },
+     {
+      "type": "Restart",
+      "text": "pattern with next boast"
+     }
+    ]
+   }
+  ],
+  "exercises_used": [
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "volley_drop_straight_lob_backhand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "any_straight_drive_backhand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "volley_drop_deep_only_forehand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "backhand"
+    ]
+   },
+   {
+    "family_id": "squash.family.pattern.diagonal.boast_cross_drive",
+    "variant_id": "kills_allowed_forehand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "backhand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "volley_drop_deep_only_forehand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.pattern.diagonal.boast_cross_drive",
+    "variant_id": "kills_allowed_forehand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "volley_drop_deep_only_forehand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.pattern.diagonal.boast_cross_drive",
+    "variant_id": "extra_drive_forehand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "volley_drop_deep_only_forehand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "backhand"
+    ]
+   },
+   {
+    "family_id": "squash.family.pattern.diagonal.boast_cross_drive",
+    "variant_id": "extra_drive_forehand_drill",
+    "types": [
+     "drill"
+    ],
+    "shotSide": [
+     "backhand"
+    ]
+   }
+  ]
+ },
+ "contents": "Duration: 45 min\nSession Focus: Drill Only (High-Constraint) (Archetype: Drill Only (High-Constraint))\n-------------------------------------------------------------------------------\n### Warm-up ###\n• 3 min: Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n• 3 min: Drill: Warmup: Compound Boast-Drive + 2 shots\n\n### Activity Block 1 ###\n• 3 min: Drill: Drop-Drive: Volley Drop - Straight Lob (Backhand Drill) (Forehand)\n  (Rule: Straight Lob: Must be hit above the service line on the front wall,...)\n• 3 min: Drill: Drop-Drive: Drop - Any Straight Drive (Backhand Drill) (Forehand)\n  (Rule: The second bounce of all returning shots (drives/lobs) must land...)\n• Rest: 1.5 min\n\n### Activity Block 2 ###\n• 3 min: Drill: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Drill) (Backhand)\n  (Rule: Drive: The first bounce of all drives must land behind the T-line....)\n• 3 min: Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Drill) (Backhand)\n  (Rule: For the cross-court and drive shots, the second bounce of the ball...)\n• Rest: 1.5 min\n\n### Activity Block 3 ###\n• 3 min: Drill: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Drill) (Forehand)\n  (Rule: Drive: The first bounce of all drives must land behind the T-line....)\n• 3 min: Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Drill) (Forehand)\n  (Rule: For the cross-court and drive shots, the second bounce of the ball...)\n• Rest: 1.5 min\n\n### Activity Block 4 ###\n• 3 min: Drill: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Drill) (Forehand)\n  (Rule: Drive: The first bounce of all drives must land behind the T-line....)\n• 3 min: Drill: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Forehand Drill) (Forehand)\n  (Rule: All cross-court shots and drives must have their first bounce land...)\n• Rest: 1.5 min\n\n### Activity Block 5 ###\n• 3 min: Drill: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Drill) (Backhand)\n  (Rule: Drive: The first bounce of all drives must land behind the T-line....)\n• 3 min: Drill: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Forehand Drill) (Backhand)\n  (Rule: All cross-court shots and drives must have their first bounce land...)\n• Rest: 1.5 min\n\n-------------------------------------------------------------------------------\nEnd of session.",
+ "hash": "9b92418765666be20953c088919b083e3a93d259c6956cc67ab60a0241ff07a3"
+}

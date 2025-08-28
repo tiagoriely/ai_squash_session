@@ -25,6 +25,6 @@ hard_constraints:
 # --- COMPOSITION ---
 # Defines which smaller building blocks this archetype is allowed to use.
 allowed_block_types:
-  - same_variant_side_switch
+  #- same_variant_side_switch inconsistent
   - symmetrical_same_side_variant_progression_pair
   - symmetrical_from_drills_to_condition_pair

@@ -9,7 +9,7 @@ base_description: A role-based straight-line pattern that combines drops and/or 
 # All variation of this exercise
 variants:
   # Variant 1, Part A: Deep Only - Forehand - Drill
-  - variant_id: deep_only_forehand_drill
+  - variant_id: deep_onlyD_forehand_drill
     name: "Drop-Drive (Deep Only - Forehand Drill)"
     description: "A drill on the forehand side where one player plays straight drops from the back; the other plays straight drives from the front."
     shotSide: [forehand]
@@ -25,7 +25,7 @@ variants:
       pattern: fixed # A drives, B drops
       exercises_per_side: 2 # Players change role before changing sides
     rules:
-      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "forehand drop (B) -> forehand drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Drive: all drives' first bounces must land behind the T-line."
         - "Drop: all drops' second bounces must land in front of the T-line."
@@ -41,7 +41,7 @@ variants:
       - "straight drop"
 
   # Variant 1, Part B: Deep Only - Backhand - Drill
-  - variant_id: deep_only_backhand_drill
+  - variant_id: deep_onlyD_backhand_drill
     name: "Drop-Drive (Deep Only - Backhand Drill)"
     description: "A drill on the backhand side where one player plays straight drops from the back; the other plays straight drives from the front."
     shotSide: [backhand]
@@ -57,7 +57,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "backhand drop (B) -> backhand drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Drive: all drives' first bounces must land behind the T-line."
         - "Drop: all drops' second bounces must land in front of the T-line."
@@ -73,7 +73,7 @@ variants:
       - "straight drop"
 
   # Variant 1, Part C: Deep Only - Forehand - Conditioned Game
-  - variant_id: deep_only_forehand_cg
+  - variant_id: deep_onlyD_forehand_cg
     name: "Drop-Drive (Deep Only - Forehand Conditioned Game)"
     description: "A conditioned game on the forehand side where one player plays straight drops from the back; the other plays straight drives from the front."
     shotSide: [forehand]
@@ -89,7 +89,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "forehand drop (B) -> forehand drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Drive: all drives' first bounces must land behind the T-line."
         - "Drop: all drops' second bounces must land in front of the T-line."
@@ -105,7 +105,7 @@ variants:
       - "straight drop"
 
   # Variant 1, Part D: Deep Only - Backhand - Conditioned Game
-  - variant_id: deep_only_backhand_cg
+  - variant_id: deep_onlyD_backhand_cg
     name: "Drop-Drive (Deep Only - Backhand Conditioned Game)"
     description: "A conditioned game on the backhand side where one player plays straight drops from the back; the other plays straight drives from the front."
     shotSide: [backhand]
@@ -121,7 +121,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "backhand drop (B) -> backhand drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Drive: all drives' first bounces must land behind the T-line."
         - "Drop: all drops' second bounces must land in front of the T-line."
@@ -155,7 +155,7 @@ variants:
       pattern: fixed # A drives, B drops
       exercises_per_side: 2
     rules:
-      sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "forehand volley straight drop (B) -> forehand drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Drive: The first bounce of all drives must land behind the T-line."
         - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
@@ -186,7 +186,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "backhand volley straight drop (B) -> backhand drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Drive: The first bounce of all drives must land behind the T-line."
         - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
@@ -217,7 +217,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "forehand volley straight drop (B) -> forehand drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Drive: The first bounce of all drives must land behind the T-line."
         - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
@@ -248,7 +248,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "volley straight drop (B) -> drive (A) -> restart pattern (continuous until role swap)"
+      sequence: "backhand volley straight drop (B) -> backhand drive (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Drive: The first bounce of all drives must land behind the T-line."
         - "Volley Drop: The second bounce of all volley drops must land in front of the T-line."
@@ -281,7 +281,7 @@ variants:
       pattern: fixed # A lobs, B drops
       exercises_per_side: 2
     rules:
-      sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
+      sequence: "forehand volley straight drop (B) -> forehand straight lob (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
         - "Volley Drop: The second bounce must land in front of the T-line."
@@ -311,7 +311,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
+      sequence: "backhand volley straight drop (B) -> backhand straight lob (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
         - "Volley Drop: The second bounce must land in front of the T-line."
@@ -341,7 +341,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
+      sequence: "forehand volley straight drop (B) -> forehand straight lob (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
         - "Volley Drop: The second bounce must land in front of the T-line."
@@ -371,7 +371,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "volley straight drop (B) -> straight lob (A) -> restart pattern (continuous until role swap)"
+      sequence: "backhand volley straight drop (B) -> backhand straight lob (A) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "Straight Lob: Must be hit above the service line on the front wall, and its first bounce must land behind the T-line."
         - "Volley Drop: The second bounce must land in front of the T-line."
@@ -405,7 +405,7 @@ variants:
       pattern: fixed # A drives, B drops
       exercises_per_side: 2
     rules:
-      sequence: "drop (B) -> (straight drive | straight kill | straight lob) (A) -> restart pattern (continuous until role swap)"
+      sequence: "forehand drop (B) -> (forehand straight drive (A)| forehand straight kill (A) | forehand straight lob (A)) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "The second bounce of all returning shots (drives/lobs) must land behind the T-line."
         - "The second bounce of all drops must land in front of the T-line."
@@ -441,7 +441,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "drop (B) -> (straight drive | straight kill | straight lob) (A) -> restart pattern (continuous until role swap)"
+      sequence: "backhand drop (B) -> (backhand straight drive (A) | backhand straight kill (A) | backhand straight lob (A)) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "The second bounce of all returning shots (drives/lobs) must land behind the T-line."
         - "The second bounce of all drops must land in front of the T-line."
@@ -477,7 +477,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "drop (B) -> (straight drive | straight kill | straight lob) (A) -> restart pattern (continuous until role swap)"
+      sequence: "forehand drop (B) -> (forehand straight drive (A)| forehand straight kill (A) | forehand straight lob (A)) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "The second bounce of all returning shots (drives/lobs) must land behind the T-line."
         - "The second bounce of all drops must land in front of the T-line."
@@ -513,7 +513,7 @@ variants:
       pattern: fixed
       exercises_per_side: 2
     rules:
-      sequence: "drop (B) -> (straight drive | straight kill | straight lob) (A) -> restart pattern (continuous until role swap)"
+      sequence: "backhand drop (B) -> (backhand straight drive (A) | backhand straight kill (A) | backhand straight lob (A)) -> restart pattern (continuous until role swap)"
       constraint_text:
         - "The second bounce of all returning shots (drives/lobs) must land behind the T-line."
         - "The second bounce of all drops must land in front of the T-line."

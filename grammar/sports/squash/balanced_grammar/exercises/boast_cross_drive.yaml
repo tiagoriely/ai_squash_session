@@ -73,7 +73,7 @@ variants:
       pattern: alternating # no fixed role
       exercises_per_side: 1 # Players do not need to change role before changing sides
     rules:
-      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      sequence: "boast (initiating player) -> ( cross (opponent) | cross kill (opponent) ) -> ( drive (initiating player) | straight kill (initiating player) ) -> restart pattern with next boast"
       # IMPORTANT SECTION SOFT/HARD CONSTRAINT
       constraint_text: "For the cross-court and drive shots, the second bounce of the ball must land behind the T-line."
       # For the grammar-based generator's validation and enforcement (using PEG)

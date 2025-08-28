@@ -1,14 +1,27 @@
-# configs/retrieval/sparse_retriever.yaml
-# Configuration for the SparseRetriever (BM25)
+# --- Experiment Details ---
+#query: "I need a 60-minute practice for an intermediate player to improve my counter drops."
+query: "A need a 45min session to improve my counter drop"
+retrieval_strategy: "sparse_only"
 
 # --- Template Variables ---
-corpus_size: 500
-grammar_type: "balanced"
+template_vars:
+  corpus_size: 500
+  grammar_type: "balanced"
+  # Used to generate the output filename
+  strategy_name: "sparse_only"
 
-# --- Core Paths (using variables) ---
-index_path: "indexes/{grammar_type}_grammar/bm25_index/corpus_size_{corpus_size}/bm25_index_{corpus_size}.pkl"
+# --- Core Paths ---
+paths:
+  corpus: "data/processed/{grammar_type}_grammar/{grammar_type}_{corpus_size}.jsonl"
+  output: "data/results/{strategy_name}_{grammar_type}_{corpus_size}_results.jsonl"
+  prompt_template_dir: "prompts/rag"
 
-# --- BM25 Parameters ---
-# These are the standard tuning parameters for the BM25 algorithm.
-k1: 1.5
-b: 0.75
+# --- Model & Pipeline Parameters ---
+llm_model: "gpt-4o"
+top_k: 10
+
+# --- Sparse Retriever Parameters (BM25) ---
+sparse_params:
+  index_path: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/bm25/bm25_index.pkl"
+  k1: 1.2
+  b: 0.85

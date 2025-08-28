@@ -16,39 +16,28 @@ class SequenceAnalyser:
     def extract_sequences(self, all_exercises: List[Tuple[Dict[str, Any], Any, str, float]]) -> List[Dict[str, Any]]:
         """
         Iterates through all exercises in a plan and extracts their sequence data.
-
         The necessary data (sequence_ast and the raw sequence string) is expected
         to be present on the exercise details dictionary, as populated by the loader.
-
-        Args:
-            all_exercises: A list of exercise tuples from a session plan.
-                           Each tuple contains (details, value, mode, duration).
-
-        Returns:
-            A list of dictionaries, where each dictionary contains the identity
-            and sequence information for a single exercise.
         """
+        extracted_data = []
+        for exercise_tuple in all_exercises:
+            details = exercise_tuple[0]
 
-        def extract_sequences(self, all_exercises: ...):
-            extracted_data = []
-            for exercise_tuple in all_exercises:
-                details = exercise_tuple[0]
+            # Always record the exercise's identity.
+            record = {
+                "exercise_family_id": details.get("family_id"),
+                "exercise_variant_id": details.get("variant_id"),
+                "sequence_dsl": None,  # Default to None
+                "sequence_ast": None   # Default to None
+            }
 
-                # Always record the exercise's identity.
-                record = {
-                    "exercise_family_id": details.get("family_id"),
-                    "exercise_variant_id": details.get("variant_id"),
-                    "sequence_dsl": None,  # Default to None
-                    "sequence_ast": None  # Default to None
-                }
+            # Conditionally add sequence info if it exists for balanced/high-constraint.
+            ast = details.get("sequence_ast")
+            raw_dsl = (details.get("rules") or {}).get("sequence")
+            if ast and raw_dsl:
+                record["sequence_dsl"] = raw_dsl
+                record["sequence_ast"] = ast
 
-                # Conditionally add sequence info if it exists.
-                ast = details.get("sequence_ast")
-                raw_dsl = (details.get("rules") or {}).get("sequence")
-                if ast and raw_dsl:
-                    record["sequence_dsl"] = raw_dsl
-                    record["sequence_ast"] = ast
+            extracted_data.append(record)
 
-                extracted_data.append(record)
-
-            return extracted_data
+        return extracted_data

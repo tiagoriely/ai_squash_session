@@ -10,33 +10,46 @@ from pathlib import Path
 import torch
 import faiss
 import numpy as np
-from rank_bm25 import BM25Okapi
 from transformers import AutoTokenizer, AutoModel
 from tqdm import tqdm
+from typing import List
+import re
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+
+from rank_bm25 import BM25Okapi
+
+from rag.utils import load_and_format_config, advanced_tokenizer
 
 
-# --- Helper Function ---
-def load_and_format_config(config_path: str) -> dict:
-    with open(config_path, 'r', encoding='utf-8') as f:
-        config = yaml.safe_load(f)
 
-    def _format_values(obj, context):
-        if isinstance(obj, dict): return {k: _format_values(v, context) for k, v in obj.items()}
-        if isinstance(obj, list): return [_format_values(elem, context) for elem in obj]
-        if isinstance(obj, str):
-            try:
-                return obj.format(**context)
-            except KeyError:
-                return obj
-        return obj
-
-    return _format_values(config, config)
-
-
+# --- Helper Functions ---
 def average_pool(last_hidden_states: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
     last_hidden = last_hidden_states.masked_fill(~attention_mask[..., None].bool(), 0.0)
     return last_hidden.sum(dim=1) / attention_mask.sum(dim=1)[..., None]
 
+
+def serialize_metadata(meta: dict) -> str:
+    """
+    Converts a metadata dictionary into a single space-separated string
+    with phrase-aware serialization.
+    """
+    from rag.utils import replace_phrases, SQUASH_PHRASES  # Add imports
+
+    all_values = []
+    for value in meta.values():
+        if isinstance(value, list):
+            # Join list items with space, then apply phrase replacement
+            list_str = " ".join([str(item) for item in value])
+            list_str = replace_phrases(list_str, SQUASH_PHRASES)  # Apply phrase replacement
+            all_values.append(list_str)
+        elif value is not None:
+            # Convert other values to string and apply phrase replacement
+            value_str = str(value)
+            value_str = replace_phrases(value_str, SQUASH_PHRASES)  # Apply phrase replacement
+            all_values.append(value_str)
+    return " ".join(all_values)
 
 # --- Main Execution ---
 if __name__ == "__main__":
@@ -100,21 +113,24 @@ if __name__ == "__main__":
 
     # 2. --- Build Sparse BM25 Index (using Python) ---
     print("\n--- Building Sparse (BM25) Index ---")
-    # --- USE NEW CONFIG FOR PATHS ---
+
+    # --- CONFIG FOR PATHS ---
     bm25_index_path = Path(sparse_build_config['index_path'])
-    corpus_path = Path(sparse_build_config['corpus_path'])
 
     if bm25_index_path.exists() and not args.force:
         print(f"✅ BM25 index already exists at: {bm25_index_path}. Skipping.")
     else:
         bm25_index_path.parent.mkdir(parents=True, exist_ok=True)
-        print(f"   - Loading corpus from: {corpus_path}")
-        with open(corpus_path, "r", encoding="utf-8") as f:
-            corpus = [json.loads(line) for line in f]
+        print("   - Serializing and tokenizing metadata for the corpus...")
+        tokenized_corpus = [advanced_tokenizer(serialize_metadata(doc['meta'])) for doc in tqdm(corpus)]
 
-        tokenized_corpus = [doc['contents'].split(" ") for doc in corpus]
-        bm25 = BM25Okapi(tokenized_corpus)
+        # Get k1 and b from the config, with sensible defaults
+        k1 = sparse_build_config.get('k1', 1.2)
+        b = sparse_build_config.get('b', 0.85)
+        print(f"   - Initializing BM25 with k1={k1} and b={b}")
 
+        # Pass the parameters to the BM25 constructor
+        bm25 = BM25Okapi(tokenized_corpus, k1=k1, b=b)
         with open(bm25_index_path, "wb") as f:
             pickle.dump(bm25, f)
         print(f"✅ BM25 index built and saved to {bm25_index_path}")

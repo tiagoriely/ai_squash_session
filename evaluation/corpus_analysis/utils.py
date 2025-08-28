@@ -33,19 +33,26 @@ def load_corpus(filepath: Path) -> List[Dict]:
     print(f"✅ Loaded {len(corpus)} sessions from {filepath.name}")
     return corpus
 
+
 def count_total_variants(grammar_profile: str) -> int:
-    """Counts the total number of variants defined in a grammar's exercise files."""
+    """
+    Counts the total number of UNIQUE variants defined in a grammar's exercise files.
+    """
     grammar_path = Path(f"grammar/sports/squash/{grammar_profile}/exercises")
     if not grammar_path.is_dir():
         raise FileNotFoundError(f"Grammar exercise directory not found at: {grammar_path}")
 
-    total_variants = 0
+    # Use a set to only store unique variant IDs, preventing duplicates.
+    unique_variant_ids = set()
     for yaml_file in grammar_path.glob("*.yaml"):
         with open(yaml_file, "r", encoding="utf-8") as f:
             doc = yaml.load(f)
             if doc and "variants" in doc:
-                total_variants += len(doc["variants"])
-    return total_variants
+                for variant in doc["variants"]:
+                    if variant_id := variant.get("variant_id"):
+                        unique_variant_ids.add(variant_id)
+
+    return len(unique_variant_ids)
 
 # Checking inside the Grammars
 def load_exercise_library(grammar_profile: str) -> dict:

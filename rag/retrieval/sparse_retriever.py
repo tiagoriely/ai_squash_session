@@ -1,10 +1,14 @@
 # rag/retrieval/sparse_retriever.py
 
 import pickle
+import re
 from pathlib import Path
 from typing import List, Dict
+import numpy as np
 
-# Note the import from the renamed base_retriever.py
+# to use stemming and stop word removal
+from ..utils import advanced_tokenizer
+
 from .base_retriever import BaseRetriever
 
 
@@ -35,6 +39,7 @@ class SparseRetriever(BaseRetriever):
         with open(index_path, "rb") as f:
             self.bm25 = pickle.load(f)
 
+
     def search(self, query: str, top_k: int) -> List[Dict]:
         """
         Performs a sparse search using the loaded BM25 index.
@@ -47,10 +52,26 @@ class SparseRetriever(BaseRetriever):
             List[Dict]: A ranked list of documents with their BM25 scores.
         """
         # 1. Tokenize the query in the same way the corpus was tokenized
-        tokenized_query = query.lower().split(" ")
+        tokenized_query = advanced_tokenizer(query)
 
         # 2. Get the BM25 scores for all documents in the corpus
         doc_scores = self.bm25.get_scores(tokenized_query)
+
+        # --- START: DEBUGGING BLOCK ---
+        print("\n--- 🕵️  SPARSE RETRIEVER DEBUG 🕵️  ---")
+        print(f"   [DEBUG] Tokenized Query: {tokenized_query}")
+        if len(doc_scores) > 0:
+            scores_np = np.array(doc_scores)
+            print(f"   [DEBUG] Max score found: {scores_np.max():.4f}")
+            print(f"   [DEBUG] Min score found: {scores_np.min():.4f}")
+            print(f"   [DEBUG] Number of docs with score > 0: {np.sum(scores_np > 0)}")
+            print(f"   [DEBUG] Total documents: {len(doc_scores)}")
+        else:
+            print("   [DEBUG] doc_scores array is empty!")
+        print("-------------------------------------\n")
+
+
+        # --- END: DEBUGGING BLOCK ---
 
         # 3. Combine scores with their original document indices
         indexed_scores = list(enumerate(doc_scores))
@@ -61,10 +82,13 @@ class SparseRetriever(BaseRetriever):
         # 5. Map the indices back to the full documents from the knowledge base
         results = []
         for index, score in top_n_indices:
-            # Only return documents with a score greater than 0
-            if score > 0:
-                doc = self.kb[index].copy()  # Use .copy() to avoid modifying the original KB dict
-                doc['sparse_score'] = score
-                results.append(doc)
+            # Return top documents regardless of score (BM25 scores can be negative)
+            doc = self.kb[index].copy()  # Use .copy() to avoid modifying the original KB dict
+            doc['sparse_score'] = score
+            results.append(doc)
+
+        for index, score in top_n_indices[:100]:
+            print(
+                f"[DEBUG] top{index}: id={self.kb[index].get('id') or self.kb[index].get('session_id')}, score={score:.4f}")
 
         return results

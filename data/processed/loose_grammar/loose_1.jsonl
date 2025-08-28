@@ -1,0 +1,262 @@
+{
+ "id": "session_001",
+ "meta": {
+  "session_type": "mix(conditioned_game, drill)",
+  "archetype": "Progressive Family Only",
+  "structure_id": "structure_60min_5blocks",
+  "duration": 60,
+  "shotSide": [
+   "forehand",
+   "backhand"
+  ],
+  "participants": 2,
+  "applicable_squash_levels": [
+   "intermediate",
+   "advanced",
+   "professional"
+  ],
+  "recommended_squash_level": "intermediate",
+  "shots_general": [
+   "drive",
+   "drop",
+   "kill",
+   "lob",
+   "volley"
+  ],
+  "shots_specific_primary": [
+   "deep drive",
+   "hard drive",
+   "straight drive",
+   "straight kill",
+   "straight lob"
+  ],
+  "shots_specific_secondary": [
+   "straight drop",
+   "volley straight drop"
+  ],
+  "movement": [
+   "back",
+   "front",
+   "middle"
+  ],
+  "rest_minutes": 1.5,
+  "exercise_sequences": [
+   {
+    "exercise_family_id": "squash.family.warmup",
+    "exercise_variant_id": "compound_boast_drive_drop_drive_and_2_shots",
+    "sequence_dsl": null,
+    "sequence_ast": null
+   },
+   {
+    "exercise_family_id": "squash.family.warmup",
+    "exercise_variant_id": "compound_boast_cross_boast_drive_and_2_shots",
+    "sequence_dsl": null,
+    "sequence_ast": null
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "volley_drop_deep_only",
+    "sequence_dsl": "open rally -> restart",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "open rally"
+     },
+     {
+      "type": "Restart"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "deep_only",
+    "sequence_dsl": "open rally -> restart",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "open rally"
+     },
+     {
+      "type": "Restart"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "volley_drop_deep_only",
+    "sequence_dsl": "open rally -> restart",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "open rally"
+     },
+     {
+      "type": "Restart"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "deep_only",
+    "sequence_dsl": "open rally -> restart",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "open rally"
+     },
+     {
+      "type": "Restart"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "any_straight_drive",
+    "sequence_dsl": "open rally -> restart",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "open rally"
+     },
+     {
+      "type": "Restart"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "any_straight_drive",
+    "sequence_dsl": "open rally -> restart",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "open rally"
+     },
+     {
+      "type": "Restart"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "any_straight_drive",
+    "sequence_dsl": "open rally -> restart",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "open rally"
+     },
+     {
+      "type": "Restart"
+     }
+    ]
+   },
+   {
+    "exercise_family_id": "squash.family.role.straight.drop_drive",
+    "exercise_variant_id": "any_straight_drive",
+    "sequence_dsl": "open rally -> restart",
+    "sequence_ast": [
+     {
+      "type": "Action",
+      "name": "open rally"
+     },
+     {
+      "type": "Restart"
+     }
+    ]
+   }
+  ],
+  "exercises_used": [
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "volley_drop_deep_only",
+    "types": [
+     "drill",
+     "conditioned_game"
+    ],
+    "shotSide": [
+     "backhand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "deep_only",
+    "types": [
+     "drill",
+     "conditioned_game"
+    ],
+    "shotSide": [
+     "backhand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "volley_drop_deep_only",
+    "types": [
+     "drill",
+     "conditioned_game"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "deep_only",
+    "types": [
+     "drill",
+     "conditioned_game"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "any_straight_drive",
+    "types": [
+     "drill",
+     "conditioned_game"
+    ],
+    "shotSide": [
+     "backhand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "any_straight_drive",
+    "types": [
+     "drill",
+     "conditioned_game"
+    ],
+    "shotSide": [
+     "backhand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "any_straight_drive",
+    "types": [
+     "drill",
+     "conditioned_game"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   },
+   {
+    "family_id": "squash.family.role.straight.drop_drive",
+    "variant_id": "any_straight_drive",
+    "types": [
+     "drill",
+     "conditioned_game"
+    ],
+    "shotSide": [
+     "forehand"
+    ]
+   }
+  ]
+ },
+ "contents": "Duration: 60 min\nSession Focus: Progressive Family Only (Archetype: Progressive Family Only)\n-------------------------------------------------------------------------------\n### Warm-up ###\n• 3 min: Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n• 3 min: Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n### Activity Block 1 ###\n• 3 min: Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n  (Rule: Drive: The first bounce of all drives must land behind the T-line....)\n• 9 pts: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n  (Rule: Drive: all drives first bounces must land behind T-line. Drop: all...)\n• Rest: 1.5 min\n\n### Activity Block 2 ###\n• 3 min: Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n  (Rule: Drive: The first bounce of all drives must land behind the T-line....)\n• 9 pts: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n  (Rule: Drive: all drives first bounces must land behind T-line. Drop: all...)\n• Rest: 1.5 min\n\n### Activity Block 3 ###\n• 3 min: Drill: Drop-Drive: Drop-Drive (any drive) (Backhand)\n  (Rule: Drive: The second bounce of all drives must land behind the T-line....)\n• 11 pts: Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Backhand)\n  (Rule: Drive: The second bounce of all drives must land behind the T-line....)\n• Rest: 1.5 min\n\n### Activity Block 4 ###\n• 3 min: Drill: Drop-Drive: Drop-Drive (any drive) (Forehand)\n  (Rule: Drive: The second bounce of all drives must land behind the T-line....)\n• 11 pts: Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Forehand)\n  (Rule: Drive: The second bounce of all drives must land behind the T-line....)\n• Rest: 1.5 min\n\n-------------------------------------------------------------------------------\nEnd of session.",
+ "hash": "d9385d9e95a4bdca0abd37f054fbb0b6364d496140b3b64a72e4fb52a695d2d5"
+}
