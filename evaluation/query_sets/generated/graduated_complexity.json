@@ -1,0 +1,22 @@
+[
+  {
+    "query_id": "complex_01",
+    "type": "graduated_complexity",
+    "text": "a conditioned game session"
+  },
+  {
+    "query_id": "complex_02",
+    "type": "graduated_complexity",
+    "text": "a 45-minute conditioned game session"
+  },
+  {
+    "query_id": "complex_03",
+    "type": "graduated_complexity",
+    "text": "a 45-minute conditioned game session for an advanced player"
+  },
+  {
+    "query_id": "complex_04",
+    "type": "graduated_complexity",
+    "text": "a 45-minute conditioned game session for an advanced player focusing on volley drops"
+  }
+]

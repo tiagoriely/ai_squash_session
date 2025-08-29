@@ -1,0 +1,16 @@
+# This config controls the generation of "golden" queries.
+
+# --- Template Variables ---
+# The corpus size to use.
+corpus_size: 500
+
+# --- Paths (using template variables) ---
+# Path to the input corpus file.
+corpus_path: "data/processed/{grammar_type}_grammar/{grammar_type}_{corpus_size}.jsonl"
+
+# The structured output path for the generated query set.
+query_set_path: "evaluation/query_sets/generated/{grammar_type}_grammar/corpus_size_{corpus_size}/golden_set.json"
+
+# --- Generator Parameters ---
+# The number of random sessions to sample from the corpus.
+num_samples: 5

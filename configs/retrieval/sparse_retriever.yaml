@@ -1,3 +1,5 @@
+# configs/retrieval/sparse_retriever.yaml
+
 # --- Experiment Details ---
 #query: "I need a 60-minute practice for an intermediate player to improve my counter drops."
 query: "A need a 45min session to improve my counter drop"
@@ -18,10 +20,10 @@ paths:
 
 # --- Model & Pipeline Parameters ---
 llm_model: "gpt-4o"
-top_k: 10
+top_k: 30
 
 # --- Sparse Retriever Parameters (BM25) ---
 sparse_params:
-  index_path: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/bm25/bm25_index.pkl"
+  index_path: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/bm25/bm25_index_{grammar_type}.pkl"
   k1: 1.2
   b: 0.85

@@ -1,0 +1,12 @@
+[
+  {
+    "query_id": "under_spec_01",
+    "type": "under_specified",
+    "text": "generate a squash session"
+  },
+  {
+    "query_id": "under_spec_02",
+    "type": "under_specified",
+    "text": "a drill for squash"
+  }
+]

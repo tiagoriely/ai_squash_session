@@ -6,14 +6,14 @@ corpus_size: 500
 grammar_type: "balanced" # Use quotes if the string might be interpreted as a boolean/number
 
 # --- Core Paths (using variables) ---
-index_path: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/e5/e5-base-v2_Flat.index"
+index_path: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/e5/e5-base-v2_Flat_{grammar_type}.index"
 corpus_path: "data/processed/{grammar_type}_grammar/{grammar_type}_{corpus_size}.jsonl"
 retrieval_model_path: "intfloat/e5-base-v2"
 
 
 # --- Retrieval Parameters ---
 retrieval_method:            e5-base-v2
-retrieval_topk:              100      # How many candidates to fetch before reranking
+retrieval_topk:              10      # How many candidates to fetch before reranking
 retrieval_batch_size:        32
 retrieval_query_max_length:  64
 retrieval_pooling_method:    mean
@@ -22,7 +22,7 @@ use_sentence_transformer:    false
 faiss_gpu:                   false
 
 # --- Reranker Settings (handled internally by FlashRAG's DenseRetriever) ---
-use_reranker:                true
+use_reranker:                false
 rerank_model_name:           e5-base-v2
 rerank_model_path:           intfloat/e5-base-v2
 rerank_pooling_method:       mean

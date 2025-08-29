@@ -1,0 +1,15 @@
+# evaluation/query_sets/out_of_distribution_keywords.yaml
+other_sports:
+  - "a drill to improve my tennis serve"
+  - "how to practice a badminton drop shot"
+  - "a good warm-up for playing padel"
+
+non_existent_shots:
+  - "a session focusing on the volley cross"
+  - "practice the 3-step ghosting"
+  - "a solo to practice cross drops"
+
+unrelated_topics:
+  - "what is the best squash racket for a beginner"
+  - "rules of a tie-break in squash"
+  - "who is currently the best squash player"

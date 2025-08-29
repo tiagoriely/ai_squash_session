@@ -71,8 +71,11 @@ if __name__ == "__main__":
 
     # 1. --- Build Dense FAISS Index (Self-Contained) ---
     print("\n--- Building Dense (FAISS) Index ---")
-    faiss_index_path = Path(semantic_build_config[
-                                'save_dir']) / f"{semantic_build_config['retrieval_method']}_{semantic_build_config['faiss_type']}.index"
+    # Get the corpus size from the config to use in the filename
+    grammar_type = semantic_build_config['grammar_type']
+    # Construct unique filename
+    faiss_filename = f"{semantic_build_config['retrieval_method']}_{semantic_build_config['faiss_type']}_{grammar_type}.index"
+    faiss_index_path = Path(semantic_build_config['save_dir']) / faiss_filename
 
     if faiss_index_path.exists() and not args.force:
         print(f"✅ FAISS index already exists at: {faiss_index_path}. Skipping.")

@@ -1,0 +1,47 @@
+[
+  {
+    "query_id": "ood_01",
+    "type": "out_of_distribution",
+    "text": "a drill to improve my tennis serve"
+  },
+  {
+    "query_id": "ood_02",
+    "type": "out_of_distribution",
+    "text": "how to practice a badminton drop shot"
+  },
+  {
+    "query_id": "ood_03",
+    "type": "out_of_distribution",
+    "text": "a good warm-up for playing padel"
+  },
+  {
+    "query_id": "ood_04",
+    "type": "out_of_distribution",
+    "text": "a session focusing on the volley cross"
+  },
+  {
+    "query_id": "ood_05",
+    "type": "out_of_distribution",
+    "text": "practice the 3-step ghosting"
+  },
+  {
+    "query_id": "ood_06",
+    "type": "out_of_distribution",
+    "text": "a solo to practice cross drops"
+  },
+  {
+    "query_id": "ood_07",
+    "type": "out_of_distribution",
+    "text": "what is the best squash racket for a beginner"
+  },
+  {
+    "query_id": "ood_08",
+    "type": "out_of_distribution",
+    "text": "rules of a tie-break in squash"
+  },
+  {
+    "query_id": "ood_09",
+    "type": "out_of_distribution",
+    "text": "who is currently the best squash player"
+  }
+]

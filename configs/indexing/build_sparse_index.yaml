@@ -3,7 +3,7 @@
 
 # --- Template Variables ---
 corpus_size: 500
-grammar_type: "balanced"
+grammar_type: "high_constraint"
 
 # --- Builder Parameters ---
 
@@ -11,4 +11,4 @@ grammar_type: "balanced"
 corpus_path: "data/processed/{grammar_type}_grammar/{grammar_type}_{corpus_size}.jsonl"
 
 # Path where the final BM25 index object will be saved
-index_path: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/bm25/bm25_index.pkl"
+index_path: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/bm25/bm25_index_{grammar_type}.pkl"

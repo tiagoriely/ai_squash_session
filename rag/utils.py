@@ -8,7 +8,22 @@ from nltk.stem import PorterStemmer
 
 
 # --- Config Helper ---
-def load_and_format_config(config_path: str) -> dict:
+import yaml
+
+# --- Config Helper ---
+def load_and_format_config(config_path: str, context: dict | None = None) -> dict:
+    """
+    Loads a YAML config file and formats string values using template variables.
+
+    Args:
+        config_path (str): The path to the YAML configuration file.
+        context (dict | None, optional): An external dictionary of template variables.
+                                         If None, uses the config file itself for context.
+                                         Defaults to None.
+
+    Returns:
+        dict: The loaded and formatted configuration dictionary.
+    """
     with open(config_path, 'r', encoding='utf-8') as f:
         config = yaml.safe_load(f)
 
@@ -22,7 +37,10 @@ def load_and_format_config(config_path: str) -> dict:
                 return obj
         return obj
 
-    return _format_values(config, config)
+    # Use the provided external context if it exists, otherwise default to the old behavior.
+    formatting_context = context if context is not None else config
+
+    return _format_values(config, formatting_context)
 
 
 # --- PHRASE TOKENIZATION HELPERS ---

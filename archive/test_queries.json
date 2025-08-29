@@ -1,0 +1,32 @@
+[
+  {
+    "query_id": "vague_01",
+    "type": "vague",
+    "text": "a good session for improving fitness"
+  },
+  {
+    "query_id": "vague_02",
+    "type": "vague",
+    "text": "a drill to practice my backhand"
+  },
+  {
+    "query_id": "specific_01",
+    "type": "specific",
+    "text": "a 45-minute solo drill focusing on backhand volley drops and cross-court drives"
+  },
+  {
+    "query_id": "specific_02",
+    "type": "specific",
+    "text": "a two-player session for an advanced player that includes a conditioned game of 'boast and drive'"
+  },
+  {
+    "query_id": "metadata_01",
+    "type": "metadata",
+    "text": "show me a session that lasts more than 60 minutes"
+  },
+  {
+    "query_id": "metadata_02",
+    "type": "metadata",
+    "text": "any solo practice sessions available"
+  }
+]

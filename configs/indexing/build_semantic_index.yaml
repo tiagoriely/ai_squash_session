@@ -3,7 +3,7 @@
 
 # --- Template Variables ---
 corpus_size: 500
-grammar_type: "balanced"
+grammar_type: "high_constraint"
 
 # --- Index Builder Parameters ---
 # These keys map directly to the command-line arguments.

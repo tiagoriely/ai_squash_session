@@ -6,6 +6,7 @@ import yaml
 from pathlib import Path
 from collections import defaultdict
 from typing import Optional, Set, Dict
+from nltk.stem import PorterStemmer
 
 # Load configuration from the central YAML file instead of a Python file.
 _CONFIG_PATH = Path(__file__).parent.parent.parent / 'configs' / 'retrieval' / 'raw_squash_field_retrieval_config.yaml'
@@ -557,6 +558,12 @@ def parse_shots(text: str) -> dict:
     if not text:
         return {"shots_general": set(), "shots_specific": set()}
 
+    # Setup the stemmer
+    stemmer = PorterStemmer()
+    # Create a mapping from a stemmed general shot to its original canonical form
+    # e.g., {'boast': 'boast', 'drive': 'drive'}
+    stemmed_general_map = {stemmer.stem(g): g for g in _GENERAL_SHOTS}
+
     # 0) Expand coordinated forms first (adds both specifics + implied generals)
     generals: Set[str] = set()
     specifics: Set[str] = set()
@@ -565,9 +572,15 @@ def parse_shots(text: str) -> dict:
     specifics |= s2
 
     # 1) Direct general mentions (allow simple plural 's')
-    for g, pat in _GENERAL_PATTERNS.items():
-        if pat.search(text):
-            generals.add(g)
+    # Tokenize and stem the input text once
+    words_in_text = re.findall(r'\b\w+\b', text.lower())
+    stemmed_text_words = [stemmer.stem(word) for word in words_in_text]
+
+    # Check for matches
+    for stemmed_word in stemmed_text_words:
+        if stemmed_word in stemmed_general_map:
+            # If a stemmed word matches, add the original canonical word
+            generals.add(stemmed_general_map[stemmed_word])
 
     # 2) Specific phrases (hyphen/space tolerant, allow plural head)
     for phrase_norm, pat in _PHRASE_PATTERNS.items():

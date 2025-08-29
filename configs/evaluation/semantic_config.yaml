@@ -1,0 +1,4 @@
+# configs/evaluation/semantic_config.yaml
+retrieval_top_k: 100
+embedding_model_path: "e5-base-v2" # Or your actual model
+index_path: "{index_path}" # Placeholder for the dynamic path

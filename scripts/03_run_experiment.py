@@ -1,3 +1,5 @@
+# scripts/03_run_experiment.py
+
 """
 Main script for running RAG pipeline experiments.
 

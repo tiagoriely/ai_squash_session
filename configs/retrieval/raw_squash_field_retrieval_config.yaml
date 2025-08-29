@@ -84,6 +84,10 @@ SYNONYM_MAP:
   shots:
     drive: "drive"
     cross: "cross"
+    cross-court drives: "cross"
+    cross-court drive: "cross"
+    "cross court drives": "cross"
+    "cross court drive": "cross"
     drop: "drop"
     drops: "drop"
     counter drop: "drop"
