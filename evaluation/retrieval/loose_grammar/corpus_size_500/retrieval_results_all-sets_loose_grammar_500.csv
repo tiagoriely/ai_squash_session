@@ -1,0 +1,382 @@
+query_id,query_type,query_text,retriever_name,rank,document_id,score
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,1,session_362,0.8249175548553467
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,2,session_258,0.8233165740966797
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,3,session_052,0.8227073550224304
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,4,session_241,0.8217981457710266
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,5,session_437,0.8214787840843201
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,6,session_480,0.821151614189148
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,7,session_125,0.8209877014160156
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,8,session_388,0.8207150101661682
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,9,session_137,0.8199261426925659
+ood_01,out_of_distribution,a drill to improve my tennis serve,semantic_e5_loose_grammar,10,session_461,0.8198595643043518
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,1,session_020,-1.2697510911552883
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,2,session_201,-1.2697510911552883
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,3,session_276,-1.2697510911552883
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,4,session_285,-1.2697510911552883
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,5,session_413,-1.2697510911552883
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,6,session_132,-1.270609740821446
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,7,session_023,-1.2714695525707325
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,8,session_220,-1.2714695525707325
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,9,session_278,-1.2714695525707325
+ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_loose_grammar,10,session_152,-1.272330528763863
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,1,session_010,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,2,session_012,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,3,session_026,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,4,session_031,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,5,session_033,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,6,session_052,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,7,session_059,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,8,session_062,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,9,session_067,5.0
+ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_loose_grammar,10,session_069,5.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,1,session_052,0.7940306663513184
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,2,session_093,0.7930868268013
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,3,session_139,0.7927565574645996
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,4,session_496,0.7927225232124329
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,5,session_035,0.7926202416419983
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,6,session_291,0.7925205826759338
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,7,session_366,0.7923513054847717
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,8,session_440,0.7922696471214294
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,9,session_115,0.792253851890564
+ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_loose_grammar,10,session_278,0.7921849489212036
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,1,session_001,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,2,session_003,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,3,session_124,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,4,session_141,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,5,session_168,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,6,session_173,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,7,session_195,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,8,session_212,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,9,session_216,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_loose_grammar,10,session_217,0.0
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,1,session_015,3.2949999999999995
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,2,session_304,3.2949999999999995
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,3,session_299,3.085
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,4,session_038,3.01
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,5,session_081,3.01
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,6,session_257,3.01
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,7,session_358,3.01
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,8,session_364,3.01
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,9,session_367,3.01
+ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_loose_grammar,10,session_369,3.01
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,1,session_323,0.805896520614624
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,2,session_417,0.8058681488037109
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,3,session_085,0.80579674243927
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,4,session_236,0.8054184913635254
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,5,session_348,0.805389404296875
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,6,session_119,0.8053439855575562
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,7,session_133,0.8051919937133789
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,8,session_490,0.8051670789718628
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,9,session_185,0.80515456199646
+ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_loose_grammar,10,session_048,0.8049669861793518
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,1,session_001,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,2,session_002,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,3,session_003,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,4,session_004,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,5,session_005,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,6,session_006,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,7,session_007,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,8,session_008,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,9,session_009,0.0
+ood_03,out_of_distribution,a good warm-up for playing padel,sparse_bm25_loose_grammar,10,session_010,0.0
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,1,session_130,0.8243260979652405
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,2,session_144,0.8226636648178101
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,3,session_141,0.822234034538269
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,4,session_334,0.8219354152679443
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,5,session_405,0.8218432664871216
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,6,session_158,0.821800172328949
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,7,session_437,0.8216575384140015
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,8,session_303,0.8214291930198669
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,9,session_138,0.8213794231414795
+ood_04,out_of_distribution,a session focusing on the volley cross,semantic_e5_loose_grammar,10,session_418,0.821248471736908
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,1,session_232,1.5006526927568615
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,2,session_457,1.5006526927568615
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,3,session_006,1.495276674798895
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,4,session_017,1.4793772754815508
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,5,session_165,1.4793772754815508
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,6,session_129,1.3701133219464794
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,7,session_385,1.3634001150097905
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,8,session_005,1.3414902445607972
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,9,session_092,1.3414902445607972
+ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_loose_grammar,10,session_144,1.3414902445607972
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,1,session_085,3.33875
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,2,session_108,3.33875
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,3,session_323,3.290178571428571
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,4,session_363,3.290178571428571
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,5,session_436,3.290178571428571
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,6,session_022,3.2581249999999997
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,7,session_180,3.210178571428571
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,8,session_014,3.2000892857142857
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,9,session_165,3.2000892857142857
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_loose_grammar,10,session_219,3.2000892857142857
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,1,session_361,0.7744907140731812
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,2,session_362,0.7709075808525085
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,3,session_099,0.7704977989196777
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,4,session_255,0.7703673243522644
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,5,session_476,0.7702520489692688
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,6,session_385,0.7701843976974487
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,7,session_248,0.7700176239013672
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,8,session_271,0.7698053121566772
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,9,session_447,0.7696002125740051
+ood_05,out_of_distribution,practice the 3-step ghosting,semantic_e5_loose_grammar,10,session_172,0.7690417170524597
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,1,session_001,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,2,session_002,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,3,session_003,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,4,session_004,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,5,session_005,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,6,session_006,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,7,session_007,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,8,session_008,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,9,session_009,0.0
+ood_05,out_of_distribution,practice the 3-step ghosting,sparse_bm25_loose_grammar,10,session_010,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,1,session_484,0.7950332760810852
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,2,session_377,0.7948061227798462
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,3,session_155,0.7934568524360657
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,4,session_199,0.7929573655128479
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,5,session_496,0.7927103638648987
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,6,session_371,0.7926443219184875
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,7,session_320,0.7925586700439453
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,8,session_198,0.7919961214065552
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,9,session_445,0.7917394042015076
+ood_06,out_of_distribution,a solo to practice cross drops,semantic_e5_loose_grammar,10,session_230,0.7916642427444458
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,1,session_001,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,2,session_002,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,3,session_003,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,4,session_004,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,5,session_005,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,6,session_006,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,7,session_007,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,8,session_008,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,9,session_009,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_loose_grammar,10,session_010,0.0
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,1,session_015,2.754090909090909
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,2,session_304,2.754090909090909
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,3,session_085,2.649090909090909
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,4,session_108,2.649090909090909
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,5,session_115,2.610909090909091
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,6,session_180,2.5848051948051944
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,7,session_039,2.5673051948051944
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,8,session_104,2.5673051948051944
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,9,session_122,2.5673051948051944
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_loose_grammar,10,session_306,2.5673051948051944
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,1,session_185,0.776032567024231
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,2,session_084,0.7758546471595764
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,3,session_052,0.7746387124061584
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,4,session_437,0.77321857213974
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,5,session_137,0.7731593251228333
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,6,session_258,0.772972047328949
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,7,session_237,0.7729647159576416
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,8,session_373,0.7728082537651062
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,9,session_015,0.7726570963859558
+ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_loose_grammar,10,session_291,0.7726035714149475
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,1,session_367,7.087147793970171
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,2,session_017,-1.4149656933494534
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,3,session_165,-1.4149656933494534
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,4,session_326,-1.4153920449348316
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,5,session_020,-1.4162455193693089
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,6,session_201,-1.4162455193693089
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,7,session_276,-1.4162455193693089
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,8,session_285,-1.4162455193693089
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,9,session_413,-1.4162455193693089
+ood_07,out_of_distribution,what is the best squash racket for a beginner,sparse_bm25_loose_grammar,10,session_132,-1.416672642683616
+ood_07,out_of_distribution,what is the best squash racket for a beginner,field_metadata_loose_grammar,1,session_367,2.0
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,1,session_360,0.7817258834838867
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,2,session_323,0.7812803387641907
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,3,session_132,0.7807955741882324
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,4,session_275,0.7805459499359131
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,5,session_348,0.7800423502922058
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,6,session_048,0.7797269821166992
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,7,session_417,0.7792870998382568
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,8,session_029,0.7782770991325378
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,9,session_184,0.7781541347503662
+ood_08,out_of_distribution,rules of a tie-break in squash,semantic_e5_loose_grammar,10,session_052,0.7777249813079834
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,1,session_017,-1.4149656933494534
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,2,session_165,-1.4149656933494534
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,3,session_326,-1.4153920449348316
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,4,session_020,-1.4162455193693089
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,5,session_201,-1.4162455193693089
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,6,session_276,-1.4162455193693089
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,7,session_285,-1.4162455193693089
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,8,session_413,-1.4162455193693089
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,9,session_132,-1.416672642683616
+ood_08,out_of_distribution,rules of a tie-break in squash,sparse_bm25_loose_grammar,10,session_023,-1.4171000237065758
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,1,session_415,0.7252309322357178
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,2,session_237,0.7235672473907471
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,3,session_428,0.7228122353553772
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,4,session_135,0.7223411202430725
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,5,session_132,0.722154438495636
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,6,session_084,0.7219082713127136
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,7,session_373,0.7215960025787354
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,8,session_048,0.7213026285171509
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,9,session_360,0.7212687134742737
+ood_09,out_of_distribution,who is currently the best squash player,semantic_e5_loose_grammar,10,session_323,0.7211685180664062
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,1,session_017,-1.4149656933494534
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,2,session_165,-1.4149656933494534
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,3,session_326,-1.4153920449348316
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,4,session_020,-1.4162455193693089
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,5,session_201,-1.4162455193693089
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,6,session_276,-1.4162455193693089
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,7,session_285,-1.4162455193693089
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,8,session_413,-1.4162455193693089
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,9,session_132,-1.416672642683616
+ood_09,out_of_distribution,who is currently the best squash player,sparse_bm25_loose_grammar,10,session_023,-1.4171000237065758
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,1,session_194,0.8197275400161743
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,2,session_279,0.8196333646774292
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,3,session_415,0.8196167945861816
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,4,session_151,0.8195556402206421
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,5,session_294,0.8195446729660034
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,6,session_373,0.8191767334938049
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,7,session_084,0.8190460205078125
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,8,session_447,0.8189699053764343
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,9,session_321,0.8189301490783691
+under_spec_01,under_specified,generate a squash session,semantic_e5_loose_grammar,10,session_224,0.8187037706375122
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,1,session_232,0.08226897739501493
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,2,session_457,0.08226897739501493
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,3,session_006,0.07774901212739982
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,4,session_017,0.06441158213209741
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,5,session_165,0.06441158213209741
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,6,session_129,-0.06280950821842946
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,7,session_385,-0.0685866625620919
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,8,session_005,-0.08738517090652498
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,9,session_092,-0.08738517090652498
+under_spec_01,under_specified,generate a squash session,sparse_bm25_loose_grammar,10,session_144,-0.08738517090652498
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,1,session_229,0.8099366426467896
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,2,session_052,0.8095687627792358
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,3,session_437,0.8080036640167236
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,4,session_349,0.8076276779174805
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,5,session_241,0.8075333833694458
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,6,session_258,0.8074451684951782
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,7,session_072,0.8073686361312866
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,8,session_453,0.8068006038665771
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,9,session_282,0.8066616654396057
+under_spec_02,under_specified,a drill for squash,semantic_e5_loose_grammar,10,session_498,0.8064127564430237
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,1,session_020,-2.6859966105245974
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,2,session_201,-2.6859966105245974
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,3,session_276,-2.6859966105245974
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,4,session_285,-2.6859966105245974
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,5,session_413,-2.6859966105245974
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,6,session_132,-2.687282383505062
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,7,session_023,-2.6885695762773083
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,8,session_220,-2.6885695762773083
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,9,session_278,-2.6885695762773083
+under_spec_02,under_specified,a drill for squash,sparse_bm25_loose_grammar,10,session_152,-2.6898581914353583
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,1,session_010,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,2,session_012,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,3,session_026,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,4,session_031,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,5,session_033,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,6,session_052,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,7,session_059,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,8,session_062,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,9,session_067,5.0
+under_spec_02,under_specified,a drill for squash,field_metadata_loose_grammar,10,session_069,5.0
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,1,session_192,0.8530684113502502
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,2,session_279,0.8522920608520508
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,3,session_470,0.8520207405090332
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,4,session_428,0.851540207862854
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,5,session_467,0.8507158756256104
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,6,session_184,0.8501715660095215
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,7,session_061,0.8499599099159241
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,8,session_382,0.8498756885528564
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,9,session_108,0.8497264385223389
+complex_01,graduated_complexity,a conditioned game session,semantic_e5_loose_grammar,10,session_323,0.8496412634849548
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,1,session_253,3.6502347341106103
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,2,session_387,3.6502347341106103
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,3,session_417,3.61036155228118
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,4,session_119,3.584259880045243
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,5,session_236,3.584259880045243
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,6,session_348,3.584259880045243
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,7,session_360,3.584259880045243
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,8,session_490,3.577793326254335
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,9,session_024,3.5713500637493
+complex_01,graduated_complexity,a conditioned game session,sparse_bm25_loose_grammar,10,session_048,3.5713500637493
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,1,session_085,0.8641899824142456
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,2,session_275,0.8641623258590698
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,3,session_152,0.864065408706665
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,4,session_024,0.8635736703872681
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,5,session_323,0.8634366989135742
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,6,session_119,0.8632841110229492
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,7,session_061,0.8631017804145813
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,8,session_018,0.8621480464935303
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,9,session_075,0.8619289994239807
+complex_02,graduated_complexity,a 45-minute conditioned game session,semantic_e5_loose_grammar,10,session_363,0.8613266348838806
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,1,session_253,3.6502347341106103
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,2,session_387,3.6502347341106103
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,3,session_417,3.61036155228118
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,4,session_119,3.584259880045243
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,5,session_236,3.584259880045243
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,6,session_348,3.584259880045243
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,7,session_360,3.584259880045243
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,8,session_490,3.577793326254335
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,9,session_024,3.5713500637493
+complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_loose_grammar,10,session_048,3.5713500637493
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,1,session_003,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,2,session_005,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,3,session_006,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,4,session_009,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,5,session_010,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,6,session_011,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,7,session_012,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,8,session_015,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,9,session_017,3.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_loose_grammar,10,session_018,3.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,1,session_061,0.8513947129249573
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,2,session_075,0.8499588966369629
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,3,session_024,0.8499580025672913
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,4,session_275,0.849601149559021
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,5,session_119,0.8490644693374634
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,6,session_152,0.849046528339386
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,7,session_161,0.8482141494750977
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,8,session_221,0.8479719758033752
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,9,session_323,0.8476632237434387
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_loose_grammar,10,session_127,0.8476076722145081
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,1,session_253,2.785597914396529
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,2,session_387,2.785597914396529
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,3,session_024,2.7253987794798356
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,4,session_048,2.7253987794798356
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,5,session_127,2.7253987794798356
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,6,session_323,2.7253987794798356
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,7,session_363,2.7253987794798356
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,8,session_152,2.710753359338497
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,9,session_275,2.710753359338497
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_loose_grammar,10,session_023,2.7059064677714044
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,1,session_005,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,2,session_006,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,3,session_009,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,4,session_012,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,5,session_015,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,6,session_018,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,7,session_019,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,8,session_022,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,9,session_027,5.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_loose_grammar,10,session_031,5.0
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,1,session_061,0.8540037870407104
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,2,session_075,0.8539844751358032
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,3,session_152,0.8539325594902039
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,4,session_275,0.8536729216575623
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,5,session_024,0.8534328937530518
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,6,session_119,0.8532430529594421
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,7,session_085,0.8531137704849243
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,8,session_363,0.8525658845901489
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,9,session_221,0.8523796796798706
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_loose_grammar,10,session_161,0.8522923588752747
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,1,session_253,2.785597914396529
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,2,session_387,2.785597914396529
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,3,session_024,2.7253987794798356
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,4,session_048,2.7253987794798356
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,5,session_127,2.7253987794798356
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,6,session_323,2.7253987794798356
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,7,session_363,2.7253987794798356
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,8,session_152,2.710753359338497
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,9,session_275,2.710753359338497
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_loose_grammar,10,session_023,2.7059064677714044
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,1,session_298,8.263043478260869
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,2,session_138,8.230501672240802
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,3,session_348,8.21304347826087
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,4,session_360,8.21304347826087
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,5,session_417,8.128043478260869
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,6,session_022,8.093043478260869
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,7,session_059,8.00636645962733
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,8,session_060,8.00636645962733
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,9,session_391,8.00636645962733
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_loose_grammar,10,session_276,8.001366459627329

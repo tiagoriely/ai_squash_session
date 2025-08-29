@@ -7,9 +7,9 @@ $ python3 -m evaluation.query_sets.generators.03_generate_complexity
 
 ⚠️ Pick the number of queries and the grammar type and size in config file
 ```bash
-$ python3 -m evaluation.query_sets.generators.02_generate_golden_set balanced_grammar
+$ python3 -m evaluation.query_sets.generators.02_generate_golden_set <grammar_type>
 ```
-
+python3 -m evaluation.query_sets.generators.02_generate_golden_set loose_grammar
 
 # Evaluate Retrievers
 

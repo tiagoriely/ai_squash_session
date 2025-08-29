@@ -104,3 +104,68 @@ Retriever Optimisation and Evaluation
         -3) expectation: high scores but not distinguishable
             vague questions(s) "generate a squash session"
         -4) then trying to have simple to complex questions using low to high number of combinations of metadata fields
+
+
+Balanced 500:
+    ## High-Level Conclusion 💡
+    No single retriever is sufficient on its own. Your results clearly show that each retriever has distinct and complementary strengths and weaknesses. The semantic retriever is good for general understanding but is unreliable. The sparse and field retrievers are brilliant with specifics but struggle with vague queries. This provides a powerful justification for using a hybrid fusion strategy.
+
+    ## Semantic Retriever (e5)
+    This retriever is good at finding the general "topical neighborhood" of a query but is not precise or trustworthy.
+
+    Strengths:
+        It performs reasonably well on vague, under-specified queries where keyword-based methods would fail.
+
+    Weaknesses:
+        Not Robust:
+            It fails catastrophically on irrelevant, out-of-distribution queries, returning high-confidence scores for things that should be rejected. This makes it prone to "hallucinating" relevance.
+
+        Low Discriminatory Power:
+            The scores it assigns to the top 10-30 documents are extremely close together. It cannot confidently distinguish the single best result from other good ones.
+
+        Insensitive to Detail: Its performance does not improve when more specific metadata is added to a query.
+
+    ## Sparse Retriever (BM25)
+    This retriever is a surprisingly powerful and reliable "keyword specialist."
+    Strengths:
+        Excellent with Specifics:
+            Its performance improves dramatically as queries become more detailed and keyword-rich. It thrives on specific constraints.
+        Robust and Trustworthy:
+            It correctly returns very low or zero scores for irrelevant queries, making it highly reliable at rejecting bad inputs.
+
+    Weaknesses:
+        It fails on vague queries that lack strong, unique keywords.
+
+    ## Field Metadata Retriever
+    This retriever is a high-precision tool for structured queries but can be easily misled.
+    Strengths:
+        Superb with Structured Queries:
+            It is the best performer for complex queries that contain multiple, specific metadata constraints (like duration, level, and participants).
+    Weaknesses:
+        Brittle and Not Robust:
+            Like the semantic retriever, it fails on irrelevant queries if the parser accidentally extracts a valid keyword from the wrong context (e.g., finding "drop" in "badminton drop shot").
+
+
+        ## Establishing a Relevance Threshold
+            By analyzing how each retriever scores irrelevant ("out-of-distribution") and low-information ("under-specified") queries, you can define a score below which the results should be considered untrustworthy.
+
+        ### Field Retriever Analysis
+            Your analysis here is spot on.
+
+            Observation:
+                Irrelevant, out-of-context queries still produce scores, but they tend to stay below a certain level (you noted ~4.0). Meanwhile, even the vaguest relevant query scores a 5.0.
+
+            Conclusion:
+                You can propose a threshold. For instance, any result from the field_retriever with a score below 3.0 could be flagged as a low-confidence match, likely stemming from an accidental keyword match in an otherwise irrelevant query.
+
+            Implication:
+                This is a powerful mechanism for reliability. If the top-scoring document from the field retriever is below this threshold, the system could decide not to use it as context, or even ask the user for clarification.
+
+        ### Semantic Retriever Analysis
+            This is an equally important finding that directly addresses the semantic retriever's main weakness.
+            Observation:
+                Its primary failure is returning high scores for everything. However, you've found that even for queries from a similar domain (other racket sports), there is a floor to the scores (you noted a minimum of 0.721).
+            Conclusion:
+                You can establish a baseline. Although the scores are clustered, anything below a certain threshold (e.g., 0.70) is almost certainly not a useful document.
+            Implication:
+                This threshold acts as a filter to combat the retriever's tendency to "hallucinate" relevance. It allows you to discard the lowest-scoring results, which are most likely to be noise, before they ever reach the generator.

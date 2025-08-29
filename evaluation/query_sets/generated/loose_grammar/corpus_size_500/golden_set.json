@@ -1,0 +1,32 @@
+[
+  {
+    "query_id": "golden_01",
+    "type": "golden_query",
+    "text": "A -minute session for   players, focusing on .",
+    "target_session_id": "session_329"
+  },
+  {
+    "query_id": "golden_02",
+    "type": "golden_query",
+    "text": "A -minute session for   players, focusing on .",
+    "target_session_id": "session_473"
+  },
+  {
+    "query_id": "golden_03",
+    "type": "golden_query",
+    "text": "A -minute session for   players, focusing on .",
+    "target_session_id": "session_472"
+  },
+  {
+    "query_id": "golden_04",
+    "type": "golden_query",
+    "text": "A -minute session for   players, focusing on .",
+    "target_session_id": "session_482"
+  },
+  {
+    "query_id": "golden_05",
+    "type": "golden_query",
+    "text": "A -minute session for   players, focusing on .",
+    "target_session_id": "session_455"
+  }
+]
