@@ -69,5 +69,5 @@ $ python3 scripts/01_build_indexes.py \
 ```bash
 $ python scripts/03_run_experiment.py --config configs/retrieval/sparse_retriever.yaml
 ```
-
+python scripts/03_run_experiment.py --config configs/retrieval/semantic_retriever.yaml
 

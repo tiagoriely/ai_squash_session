@@ -1,0 +1,5 @@
+# Configuration for the DOCX conversion script
+paths:
+  input_file: "data/results/sparse_only_balanced_500_results.jsonl"
+  output_dir: "data/generated_sessions"
+

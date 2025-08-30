@@ -1,0 +1,45 @@
+# configs/retrieval/semantic_retriever.yaml
+# Configuration for the SemanticRetriever (FlashRAG e5-base-v2 wrapper)
+
+# --- Template Variables ---
+template_vars:
+  corpus_size: 500
+  grammar_type: "balanced"
+
+# --- Core Paths ---
+paths:
+  # The key here must be 'corpus', not 'corpus_path'
+  corpus: "data/processed/{grammar_type}_grammar/{grammar_type}_{corpus_size}.jsonl"
+
+  # Add these paths, as the script also requires them in config mode
+  output: "output/semantic_gen_results.jsonl"
+  prompt_template_dir: "prompts/rag"
+
+# --- Retrieval Parameters ---
+retrieval_strategy:        semantic_only
+retrieval_method:            e5-base-v2
+retrieval_topk:              10      # How many candidates to fetch before reranking
+retrieval_batch_size:        32
+retrieval_query_max_length:  64
+retrieval_pooling_method:    mean
+retrieval_use_fp16:          false
+use_sentence_transformer:    false
+faiss_gpu:                   false
+
+# --- Reranker Settings (handled internally by FlashRAG's DenseRetriever) ---
+use_reranker:                false
+rerank_model_name:           e5-base-v2
+rerank_model_path:           intfloat/e5-base-v2
+rerank_pooling_method:       mean
+rerank_topk:                 20
+rerank_batch_size:           32
+rerank_max_length:           256
+rerank_use_fp16:             false
+
+device:                      cpu
+
+# --- Cache flags required by FlashRAG, even if disabled ---
+instruction:           null
+save_retrieval_cache:  false
+use_retrieval_cache:   false
+retrieval_cache_path:  null
