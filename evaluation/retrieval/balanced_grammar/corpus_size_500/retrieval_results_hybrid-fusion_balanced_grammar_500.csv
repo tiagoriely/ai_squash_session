@@ -1,0 +1,151 @@
+query_id,query_type,query_text,retriever_name,rank,document_id,score
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,1,session_108,0.007377049180327869
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,2,session_005,0.007377049180327869
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,3,session_170,0.007258064516129033
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,4,session_013,0.007258064516129033
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,5,session_392,0.007142857142857143
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,6,session_014,0.007142857142857143
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,7,session_073,0.00703125
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,8,session_016,0.00703125
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,9,session_195,0.006923076923076923
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,10,session_021,0.006923076923076923
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,1,session_084,0.007377049180327869
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,2,session_248,0.007377049180327869
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,3,session_120,0.007258064516129033
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,4,session_377,0.007258064516129033
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,5,session_121,0.007142857142857143
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,6,session_065,0.007142857142857143
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,7,session_147,0.00703125
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,8,session_465,0.00703125
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,9,session_157,0.006923076923076923
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,10,session_022,0.006923076923076923
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,1,session_197,0.009836065573770493
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,2,session_472,0.009677419354838708
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,3,session_070,0.009523809523809523
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,4,session_202,0.009375
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,5,session_033,0.009230769230769232
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,6,session_390,0.00909090909090909
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,7,session_079,0.008955223880597014
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,8,session_222,0.008823529411764706
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,9,session_161,0.008695652173913044
+ood_03,out_of_distribution,a good warm-up for playing padel,hybrid_fusion_balanced_grammar,10,session_210,0.00857142857142857
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,1,session_240,0.00823055028462998
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,2,session_063,0.007377049180327869
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,3,session_141,0.007377049180327869
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,4,session_081,0.007258064516129033
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,5,session_358,0.007258064516129033
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,6,session_090,0.007142857142857143
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,7,session_388,0.007142857142857143
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,8,session_087,0.0070503048780487815
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,9,session_419,0.00703125
+ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,10,session_204,0.00703125
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,1,session_003,0.01199813258636788
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,2,session_214,0.009836065573770493
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,3,session_266,0.009677419354838708
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,4,session_116,0.009523809523809523
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,5,session_454,0.009375
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,6,session_381,0.009230769230769232
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,7,session_181,0.00909090909090909
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,8,session_482,0.008955223880597014
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,9,session_358,0.008695652173913044
+ood_05,out_of_distribution,practice the 3-step ghosting,hybrid_fusion_balanced_grammar,10,session_251,0.00857142857142857
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,1,session_001,0.007377049180327869
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,2,session_002,0.007258064516129033
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,3,session_003,0.007142857142857143
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,4,session_004,0.00703125
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,5,session_005,0.006923076923076923
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,6,session_006,0.006818181818181819
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,7,session_007,0.006716417910447761
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,8,session_008,0.006617647058823529
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,9,session_009,0.006521739130434783
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,10,session_010,0.0064285714285714285
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,1,session_108,0.007377049180327869
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,2,session_170,0.007258064516129033
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,3,session_073,0.007142857142857143
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,4,session_182,0.00703125
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,5,session_286,0.006923076923076923
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,6,session_416,0.006818181818181819
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,7,session_392,0.006716417910447761
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,8,session_473,0.006617647058823529
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,9,session_265,0.006521739130434783
+ood_07,out_of_distribution,what is the best squash racket for a beginner,hybrid_fusion_balanced_grammar,10,session_395,0.0064285714285714285
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,1,session_204,0.009836065573770493
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,2,session_222,0.009677419354838708
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,3,session_033,0.009523809523809523
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,4,session_273,0.009375
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,5,session_197,0.009230769230769232
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,6,session_050,0.00909090909090909
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,7,session_202,0.008955223880597014
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,8,session_412,0.008823529411764706
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,9,session_274,0.008695652173913044
+ood_08,out_of_distribution,rules of a tie-break in squash,hybrid_fusion_balanced_grammar,10,session_216,0.00857142857142857
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,1,session_446,0.012191901408450704
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,2,session_050,0.011680726800778715
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,3,session_274,0.009836065573770493
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,4,session_070,0.009677419354838708
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,5,session_472,0.009523809523809523
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,6,session_079,0.009230769230769232
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,7,session_105,0.00909090909090909
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,8,session_134,0.008955223880597014
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,9,session_352,0.008823529411764706
+ood_09,out_of_distribution,who is currently the best squash player,hybrid_fusion_balanced_grammar,10,session_498,0.00857142857142857
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,1,session_454,0.009836065573770493
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,2,session_079,0.009677419354838708
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,3,session_025,0.009523809523809523
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,4,session_275,0.009375
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,5,session_435,0.009230769230769232
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,6,session_193,0.00909090909090909
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,7,session_070,0.008955223880597014
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,8,session_464,0.008823529411764706
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,9,session_050,0.008695652173913044
+under_spec_01,under_specified,generate a squash session,hybrid_fusion_balanced_grammar,10,session_446,0.00857142857142857
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,1,session_005,0.012509457755359396
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,2,session_061,0.011868686868686869
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,3,session_013,0.011797235023041473
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,4,session_478,0.009836065573770493
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,5,session_422,0.009677419354838708
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,6,session_417,0.009523809523809523
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,7,session_348,0.009375
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,8,session_362,0.008955223880597014
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,9,session_363,0.008823529411764706
+under_spec_02,under_specified,a drill for squash,hybrid_fusion_balanced_grammar,10,session_489,0.008695652173913044
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,1,session_248,0.011526232114467409
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,2,session_139,0.009836065573770493
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,3,session_236,0.009677419354838708
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,4,session_274,0.009523809523809523
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,5,session_399,0.009375
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,6,session_125,0.009230769230769232
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,7,session_460,0.00909090909090909
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,8,session_467,0.008955223880597014
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,9,session_184,0.008695652173913044
+complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,10,session_305,0.00857142857142857
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,1,session_011,0.01364889705882353
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,2,session_059,0.013108552631578948
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,3,session_033,0.012771739130434782
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,4,session_027,0.012197802197802199
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,5,session_062,0.011043360433604337
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,6,session_004,0.008915510718789408
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,7,session_377,0.008847637415621987
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,8,session_488,0.008351648351648353
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,9,session_185,0.00806791569086651
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,10,session_474,0.007765151515151515
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,1,session_011,0.012767857142857143
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,2,session_033,0.012173202614379085
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,3,session_059,0.008132798573975045
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,4,session_185,0.007751685148945423
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,5,session_474,0.007449275362318841
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,6,session_377,0.007377049180327869
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,7,session_005,0.007377049180327869
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,8,session_276,0.007258064516129033
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,9,session_006,0.007258064516129033
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,10,session_127,0.007142857142857143
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,1,session_033,0.012932604735883424
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,2,session_011,0.012883064516129033
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,3,session_222,0.012692307692307694
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,4,session_273,0.01251438434982739
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,5,session_197,0.01077882960413081
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,6,session_059,0.008132798573975045
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,7,session_185,0.007751685148945423
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,8,session_377,0.007377049180327869
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,9,session_276,0.007258064516129033
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,10,session_127,0.007142857142857143

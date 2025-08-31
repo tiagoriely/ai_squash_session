@@ -1,0 +1,51 @@
+# configs/experiments/dissertation_experiment_config.yaml
+#
+# This is the main control file for running a full experimental suite.
+# The orchestrator script will iterate through every combination of grammar_type and corpus_size.
+
+# A unique name for this experiment run. Used for the output filename.
+experiment_name_template: "dissertation_run_{strategy}_v1"
+
+# --- Iteration Parameters ---
+# The script will run the full pipeline for each combination of these values.
+grammar_types:
+  - "loose_grammar"
+  - "balanced_grammar"
+  - "high_constraint_grammar"
+
+corpus_sizes:
+  - 2
+#  - 100
+#  - 500
+#  - 1000
+  # - 5000 # You can uncomment this for the full run
+
+# --- RAG Pipeline Configuration ---
+retrieval_strategy: "sparse_only" # Options: semantic_only, sparse_only, field_only, hybrid_rrf
+llm_model: "gpt-4o"
+top_k: 10 # Number of documents to retrieve for the final context
+rrf_k: 60 # Constant for Reciprocal Rank Fusion (only used if strategy is 'hybrid_rrf')
+
+
+# --- Path Templates ---
+# The orchestrator will fill in {grammar_type} and {corpus_size} dynamically.
+paths:
+  # Location of the corpora to be tested
+  corpus_template: "data/processed/{grammar_type}/{grammar_type_short}_{corpus_size}.jsonl"
+
+  # List of query sets to run against each pipeline configuration
+  query_sets:
+    - "evaluation/query_sets/generated/graduated_complexity.json"
+    - "evaluation/query_sets/generated/out_of_distribution.json"
+    - "evaluation/query_sets/generated/under_specified.json"
+    # You can also add the golden sets here if needed, but they are grammar-specific.
+    # - "evaluation/query_sets/generated/{grammar_type}/{corpus_size}/golden_set.json"
+
+  # Where to save the final collated results
+  output_dir: "experiment/results"
+
+  # Paths to the configuration files for each retriever component
+  retriever_configs:
+    semantic: "configs/retrieval/semantic_retriever.yaml"
+    sparse: "configs/retrieval/sparse_retriever.yaml"
+    field: "configs/retrieval/raw_squash_field_retrieval_config.yaml"

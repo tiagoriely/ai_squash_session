@@ -1,0 +1,21 @@
+You are an AI fact-checker. Your task is to assess the **FAITHFULNESS** of a generated session plan. You must verify if every piece of information in the plan is directly supported by the provided context documents.
+
+**CRITICAL INSTRUCTIONS:**
+- You must ONLY use the provided "Context Documents". Do not use any external knowledge.
+- An exercise is "supported" only if its exact name appears in the context.
+- A rule or detail is "supported" only if the context contains that information.
+
+**Context Documents:**
+{context}
+
+**Generated Session Plan:**
+{generated_plan}
+
+**INSTRUCTIONS:**
+1.  Decompose the "Generated Session Plan" into a list of individual claims (each exercise, each rule, each duration is a claim).
+2.  For each claim, verify if it is supported by the "Context Documents".
+3.  Calculate the faithfulness score as (Number of Supported Claims) / (Total Number of Claims).
+4.  Provide a brief reasoning for your score.
+5.  Finally, provide a JSON object with the final score and reasoning. **YOU MUST ONLY OUTPUT THE JSON OBJECT, WITH NO OTHER TEXT OR MARKDOWN TAGS AROUND IT.**
+
+**Final Output (JSON Only):**

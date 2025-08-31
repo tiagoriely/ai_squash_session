@@ -5,7 +5,7 @@ __pycache__/
 .venv/
 venv/
 .venv-py311
-notes
+z_notes
 z_report_writing
 
 # Ignore logs and runtime files

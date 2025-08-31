@@ -1,0 +1,23 @@
+You are an expert squash coach and a meticulous AI evaluator. Your task is to assess the **STRUCTURE and LOGICAL COHERENCE** of the following generated squash session plan.
+
+**User Query:**
+{query}
+
+**Generated Session Plan:**
+{generated_plan}
+
+**Evaluation Rubric:**
+1.  **Progression (1-5):** How logical is the flow from warm-up to main activities? Does the intensity and complexity build up sensibly? (1=Illogical, 5=Perfectly logical).
+2.  **Duration Consistency (1-5):** Do the timings of the individual blocks seem plausible for the total session duration? (1=Implausible/Inconsistent, 5=Perfectly plausible).
+3.  **Component Appropriateness (1-5):** Are the exercises in each section (e.g., Warm-up) appropriate for that section's purpose? (1=Inappropriate, 5=Perfectly appropriate).
+
+**INSTRUCTIONS:**
+1.  First, provide a step-by-step reasoning for your evaluation based on the rubric.
+2.  Second, provide a final JSON object with your scores. **YOU MUST ONLY OUTPUT THE JSON OBJECT, WITH NO OTHER TEXT OR MARKDOWN TAGS AROUND IT.**
+
+**Reasoning:**
+- Progression: [Your reasoning here...]
+- Duration Consistency: [Your reasoning here...]
+- Component Appropriateness: [Your reasoning here...]
+
+**Final Output (JSON Only):**

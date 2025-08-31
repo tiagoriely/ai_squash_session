@@ -41,24 +41,22 @@ class RAGPipeline:
     def run(self, query: str, top_k: int = 10) -> Dict:
         """
         Executes the full RAG pipeline for a given user query.
-
-        Args:
-            query (str): The user's query.
-            top_k (int): The number of documents to retrieve from each retriever.
-
-        Returns:
-            Dict: A dictionary containing the final answer and the retrieved documents.
         """
         # 1. --- RETRIEVAL ---
-        # Get ranked lists from all retrievers
-        all_ranked_lists = [r.search(query, top_k=top_k) for r in self.retrievers]
+        # Store results in a dictionary mapping retriever names to their docs
+        all_ranked_lists_map = {
+            # Using a simple name for the key
+            r.__class__.__name__.replace("Retriever", "").lower(): r.search(query, top_k=top_k)
+            for r in self.retrievers
+        }
 
         # 2. --- FUSION ---
-        # If there are multiple retrievers, fuse their results. Otherwise, use the single list.
-        if len(all_ranked_lists) > 1:
-            fused_docs = self.fusion_strategy(ranked_lists=all_ranked_lists)
+        if len(self.retrievers) > 1 and self.fusion_strategy:
+            # Pass both the results map AND the original query to the fusion strategy
+            fused_docs = self.fusion_strategy(ranked_lists_map=all_ranked_lists_map, query=query)
         else:
-            fused_docs = all_ranked_lists[0]
+            # Get the single list from the dictionary
+            fused_docs = next(iter(all_ranked_lists_map.values()))
 
         # Ensure we only pass the top_k fused documents to the context
         final_docs = fused_docs[:top_k]

@@ -15,7 +15,7 @@ planner_config:
   # Add any other planner-specific rules for this profile here
 
 # High-level run params
-num: 500
+num: 2
 outfile_template: "data/processed/balanced_grammar/balanced_{num}.jsonl"
 seed: 43
 log_skips: false

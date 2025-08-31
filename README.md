@@ -19,6 +19,8 @@
 
 ```
 
+
+
 # Prerequisites
 ```bash
 $ pip install -e .
@@ -27,6 +29,9 @@ $ pip install requirements.txt
 
 # Useful to check errors in yaml files of grammars
 $ yamllint .
+$ ps aux | grep python
+$ kill -9 <12345>
+
 
 
 # 1. Create Corpuses
@@ -69,5 +74,13 @@ $ python3 scripts/01_build_indexes.py \
 ```bash
 $ python scripts/03_run_experiment.py --config configs/retrieval/sparse_retriever.yaml
 ```
-python scripts/03_run_experiment.py --config configs/retrieval/semantic_retriever.yaml
 
+
+
+
+
+
+python evaluation/evaluate_results.py \
+  --input-file experiment/results/YOUR_EXPERIMENT_OUTPUT.jsonl \
+  --output-file evaluation/results/YOUR_EXPERIMENT_OUTPUT_evaluated.jsonl \
+  --grammar-dir grammar/sports/squash/
