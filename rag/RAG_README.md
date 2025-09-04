@@ -39,3 +39,7 @@ python scripts/02_run_experiment.py \
     --sparse-config configs/retrieval/sparse_retriever.yaml \
     --field-config configs/retrieval/raw_squash_field_retrieval_config.yaml \
     --output-path data/results/sparse_only_results.jsonl
+
+
+python scripts/05_run_full_experiment.py 
+    --config configs/experiments/dissertation_experiment_config.yaml

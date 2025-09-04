@@ -12,11 +12,22 @@ from rag.utils import load_and_format_config
 
 def load_knowledge_base(corpus_path: str) -> list[dict]:
     """Loads the corpus from a JSONL file."""
+    """Loads the corpus from a JSONL file and transforms it to the canonical format."""
     if not os.path.exists(corpus_path):
         raise FileNotFoundError(f"Knowledge base not found at: {corpus_path}")
-    print(f"Loading knowledge base from: {corpus_path}")
+    print(f"Loading and adapting knowledge base from: {corpus_path}")
+
+    adapter = SquashNewCorpusAdapter()
+    knowledge_base = []
     with open(corpus_path, "r", encoding="utf-8") as f:
-        return [json.loads(line) for line in f]
+        for line in f:
+            raw_doc = json.loads(line)
+            # Transform each document as it's loaded
+            transformed_doc = adapter.transform(raw_doc)
+            knowledge_base.append(transformed_doc)
+
+    print(f"   - Knowledge base loaded and adapted ({len(knowledge_base)} docs).")
+    return knowledge_base
 
 
 def load_all_query_sets(project_root: Path, grammar_type: str, corpus_size: int) -> list[dict]:
@@ -72,26 +83,26 @@ def initialise_retrievers(grammar_type: str, knowledge_base: list[dict], project
     semantic_retriever = SemanticRetriever(config=semantic_config_raw)
 
     sparse_config_raw = load_and_format_config(str(sparse_config_path), template_context)
-    sparse_config_raw['sparse_params']['index_path'] = str(project_root / sparse_config_raw['sparse_params']['index_path'])
+    sparse_config_raw['sparse_params']['index_path'] = str(
+        project_root / sparse_config_raw['sparse_params']['index_path'])
+
     sparse_retriever = SparseRetriever(
+        # This now correctly receives the already-adapted knowledge_base
         knowledge_base=knowledge_base,
         config=sparse_config_raw['sparse_params']
     )
 
-    print("   - Creating canonical knowledge base for FieldRetriever...")
-    adapter = SquashNewCorpusAdapter()
-    canonical_kb = [adapter.transform(doc) for doc in knowledge_base]
-
+    # The knowledge_base is already canonical, so we pass it directly
     field_retriever = FieldRetriever(
-        knowledge_base=canonical_kb,
+        knowledge_base=knowledge_base,
         config_path=str(field_config_path)
     )
 
-
     retrievers = {
-            'semantic_e5': semantic_retriever,
-            'sparse_bm25': sparse_retriever,
-            'field_metadata': field_retriever
-        }
+        'semantic_e5': semantic_retriever,
+        'sparse_bm25': sparse_retriever,
+        'field_metadata': field_retriever
+    }
 
+    print("   - All retriever objects initialised successfully.")
     return retrievers

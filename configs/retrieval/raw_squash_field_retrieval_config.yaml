@@ -1,11 +1,17 @@
-#configs/squash_field_retrieval_config.yaml
-
 SYNONYM_MAP:
   type:
+    ghosting routine: "ghosting"
+    drill routine: "drill"
+    solo routine: "solo"
     drill: "drill"
-    routine: "drill"
     conditioned game: "conditioned game"
-    game: "mix"
+    conditioned-game: "conditioned game"
+#    conditioned_game: "conditioned game"
+#    mix(conditioned_game, drill): "mix"
+#    mix(conditioned game, drill): "mix"
+#    mix(drill, conditioned_game): "mix"
+#    mix(drill, conditioned game): "mix"
+    mix session: "mix"
     solo practice: "solo practice"
     solo: "solo practice"
     by myself: "solo practice"
@@ -310,34 +316,51 @@ FIELD_SCORING_CONFIG:
   type:
     method: "_score_exact_match_field"
     base_weight: 5.0
-  participants:
-    method: "_score_exact_match_field"
-    base_weight: 3.0
   squashLevel:
-    method: "_score_exact_match_field"
-    base_weight: 2.0
-  intensity:
-    method: "_score_inferred_categorical_match_field"
-    base_weight: 1.0
-    secondary_match_multiplier: 0.5
-    field_name_for_secondary_standardisation: "intensity"
+    method: "_score_squash_level_hybrid_field"
+    base_weight: 4.0
   duration:
     method: "_score_numerical_range_field"
     base_weight: 3.0
     tolerance: 10
   shots:
-    method: "_score_hierarchical_boost_field"
-    base_weight: 1.0
+    method: "_score_hierarchical_boost_field_with_hybrid_stem"
+    base_weight: 3.0
     primary_boost_weight: 6.0
-    secondary_boost_weight: 3.0
+    secondary_boost_weight: 4.0
     field_name_for_standardisation: "shots"
     general_to_specific_map_name: "GENERAL_SHOT_TYPES"
+
+
+  # --- Modifier Fields (Score < 3.0) ---
+  participants:
+    method: "_score_exact_match_field"
+    base_weight: 2.5
   shotSide:
     method: "_score_list_overlap_field"
-    base_weight: 1.0
+    base_weight: 1.5
   movement:
     method: "_score_list_overlap_field"
+    base_weight: 1.5
+  intensity:
+    method: "_score_inferred_categorical_match_field"
     base_weight: 1.0
+    secondary_match_multiplier: 0.5
+    field_name_for_secondary_standardisation: "intensity"
   fitness:
     method: "_score_exact_match_field"
     base_weight: 0.5
+
+NEGATIVE_KEYWORDS:
+  # List of words that strongly suggest the query is out of scope.
+  # Use lowercase.
+  sports:
+    - "tennis"
+    - "badminton"
+    - "padel"
+    - "pickleball"
+    - "racquetball"
+    - "racketball"
+    - "hardball"
+    - "table tennis"
+    - "ping pong"

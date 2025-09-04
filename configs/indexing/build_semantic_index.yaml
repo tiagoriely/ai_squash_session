@@ -2,8 +2,8 @@
 # Configuration for FlashRAG's index_builder script.
 
 # --- Template Variables ---
-corpus_size: 2
-grammar_type: "loose"
+corpus_size: 10
+grammar_type: "balanced"
 
 # --- Index Builder Parameters ---
 # These keys map directly to the command-line arguments.

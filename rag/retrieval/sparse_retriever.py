@@ -57,21 +57,6 @@ class SparseRetriever(BaseRetriever):
         # 2. Get the BM25 scores for all documents in the corpus
         doc_scores = self.bm25.get_scores(tokenized_query)
 
-        # --- START: DEBUGGING BLOCK ---
-        print("\n--- 🕵️  SPARSE RETRIEVER DEBUG 🕵️  ---")
-        print(f"   [DEBUG] Tokenized Query: {tokenized_query}")
-        if len(doc_scores) > 0:
-            scores_np = np.array(doc_scores)
-            print(f"   [DEBUG] Max score found: {scores_np.max():.4f}")
-            print(f"   [DEBUG] Min score found: {scores_np.min():.4f}")
-            print(f"   [DEBUG] Number of docs with score > 0: {np.sum(scores_np > 0)}")
-            print(f"   [DEBUG] Total documents: {len(doc_scores)}")
-        else:
-            print("   [DEBUG] doc_scores array is empty!")
-        print("-------------------------------------\n")
-
-
-        # --- END: DEBUGGING BLOCK ---
 
         # 3. Combine scores with their original document indices
         indexed_scores = list(enumerate(doc_scores))

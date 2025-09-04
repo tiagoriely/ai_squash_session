@@ -1,6 +1,6 @@
 # tests/test_user_desires_duration.py
 import pytest
-from rag_old.pipelines.retrieval.field_retrieval.user_desires import parse_duration
+from rag.parsers.user_query_parser import parse_duration
 
 @pytest.mark.parametrize(
     "text,expected",

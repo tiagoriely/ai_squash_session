@@ -12,6 +12,7 @@ class SquashNewCorpusAdapter(BaseAdapter):
             "participants": meta.get("participants"),
             "duration": meta.get("duration"),
             "squashLevel": meta.get("recommended_squash_level"),
+            "applicable_squash_levels": meta.get("applicable_squash_levels", []),
             "intensity": meta.get("intensity"), # This key may not exist in the new corpus
             "primaryShots": meta.get("shots_specific_primary", []),
             "secondaryShots": meta.get("shots_specific_secondary", []),

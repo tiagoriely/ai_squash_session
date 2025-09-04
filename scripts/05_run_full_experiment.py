@@ -30,7 +30,7 @@ from rag.pipeline import RAGPipeline
 from rag.retrieval.semantic_retriever import SemanticRetriever
 from rag.retrieval.sparse_retriever import SparseRetriever
 from rag.retrieval.field_retriever import FieldRetriever
-from rag.retrieval_fusion import reciprocal_rank_fusion
+from rag.retrieval_fusion.strategies import _rrf
 from rag.generation.generator import Generator
 from rag.generation.prompt_constructor import DynamicPromptConstructor
 from rag.utils import load_and_format_config
@@ -184,7 +184,7 @@ def main(config_path: str):
             retrievers = initialise_retrievers(config, context, knowledge_base, project_root)
 
             # D. Configure the fusion strategy
-            fusion_strategy = reciprocal_rank_fusion if config['retrieval_strategy'] == 'hybrid_rrf' else None
+            fusion_strategy = _rrf if config['retrieval_strategy'] == 'hybrid_rrf' else None
 
             # E. Build the RAG pipeline for this configuration
             pipeline = RAGPipeline(
@@ -198,15 +198,11 @@ def main(config_path: str):
             print(f"   - Processing {len(queries)} queries...")
             for query_info in tqdm(queries, desc=current_run_desc, unit="query"):
                 try:
-                    run_params = {
-                        'query': query_info['text'],
-                        'top_k': config['top_k']
-                    }
-
-                    if config['retrieval_strategy'] == 'hybrid_rrf':
-                        run_params['fusion_k'] = config.get('rrf_k')
-
-                    result = pipeline.run(**run_params)
+                    result = pipeline.run(
+                        query=query_info['text'],
+                        top_k=config['top_k'],
+                        fusion_k=config.get('rrf_k')  # Pass fusion_k if it exists
+                    )
 
                     # G. Format and store the result
                     output_entry = {

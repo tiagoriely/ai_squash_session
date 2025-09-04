@@ -2,8 +2,8 @@
 # Configuration for the self-contained sparse (BM25) index builder.
 
 # --- Template Variables ---
-corpus_size: 2
-grammar_type: "loose"
+corpus_size: 10
+grammar_type: "balanced"
 
 # --- Builder Parameters ---
 

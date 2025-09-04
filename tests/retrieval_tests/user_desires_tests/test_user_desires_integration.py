@@ -1,5 +1,5 @@
 import pytest
-from rag_old.pipelines.retrieval.field_retrieval.user_desires import parse_user_prompt
+from rag.parsers.user_query_parser import parse_user_prompt
 
 def _subset(container_list, subset_list):
     c = set(container_list or [])

@@ -14,14 +14,14 @@ grammar_types:
   - "high_constraint_grammar"
 
 corpus_sizes:
-  - 2
+  - 500
 #  - 100
 #  - 500
 #  - 1000
   # - 5000 # You can uncomment this for the full run
 
 # --- RAG Pipeline Configuration ---
-retrieval_strategy: "sparse_only" # Options: semantic_only, sparse_only, field_only, hybrid_rrf
+retrieval_strategy: "query_aware_fusion" # Options: semantic_only, sparse_only, field_only, query_aware_fusion
 llm_model: "gpt-4o"
 top_k: 10 # Number of documents to retrieve for the final context
 rrf_k: 60 # Constant for Reciprocal Rank Fusion (only used if strategy is 'hybrid_rrf')
@@ -39,10 +39,10 @@ paths:
     - "evaluation/query_sets/generated/out_of_distribution.json"
     - "evaluation/query_sets/generated/under_specified.json"
     # You can also add the golden sets here if needed, but they are grammar-specific.
-    # - "evaluation/query_sets/generated/{grammar_type}/{corpus_size}/golden_set.json"
+    - "evaluation/query_sets/generated/{grammar_type}/corpus_size_{corpus_size}/golden_set.json"
 
   # Where to save the final collated results
-  output_dir: "experiment/results"
+  output_dir: "experiments/results/corpus_{corpus_size}"
 
   # Paths to the configuration files for each retriever component
   retriever_configs:

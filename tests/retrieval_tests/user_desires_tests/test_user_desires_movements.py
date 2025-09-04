@@ -1,7 +1,6 @@
 # tests/retrieval_tests/user_desires_tests/test_user_desires_movement.py
 import pytest
-from rag_old.pipelines.retrieval.field_retrieval.user_desires import parse_movement
-
+from rag.parsers.user_query_parser import parse_movement
 @pytest.mark.parametrize(
     "text,expected_subset",
     [

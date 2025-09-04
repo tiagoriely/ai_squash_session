@@ -50,6 +50,14 @@ class RAGPipeline:
             for r in self.retrievers
         }
 
+        # --- DEBUG START ---
+        print("\n" + "=" * 50)
+        print(f"DEBUG PIPELINE: Query -> '{query}'")
+        print("--- Individual Retriever Results ---")
+        for name, docs in all_ranked_lists_map.items():
+            print(f"  - Retriever '{name}': Found {len(docs)} documents.")
+        print("=" * 50 + "\n")
+
         # 2. --- FUSION ---
         if len(self.retrievers) > 1 and self.fusion_strategy:
             # Pass both the results map AND the original query to the fusion strategy

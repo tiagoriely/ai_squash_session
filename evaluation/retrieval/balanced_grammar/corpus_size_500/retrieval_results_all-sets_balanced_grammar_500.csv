@@ -19,26 +19,16 @@ ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_balanc
 ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_balanced_grammar,8,session_265,-1.1967133026036367
 ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_balanced_grammar,9,session_204,-1.1967990201703946
 ood_01,out_of_distribution,a drill to improve my tennis serve,sparse_bm25_balanced_grammar,10,session_431,-1.2000873045569946
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,1,session_005,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,2,session_013,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,3,session_014,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,4,session_016,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,5,session_021,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,6,session_030,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,7,session_039,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,8,session_040,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,9,session_042,5.0
-ood_01,out_of_distribution,a drill to improve my tennis serve,field_metadata_balanced_grammar,10,session_043,5.0
 ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,1,session_108,0.007377049180327869
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,2,session_005,0.007377049180327869
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,3,session_170,0.007258064516129033
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,4,session_013,0.007258064516129033
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,5,session_392,0.007142857142857143
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,6,session_014,0.007142857142857143
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,7,session_073,0.00703125
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,8,session_016,0.00703125
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,9,session_195,0.006923076923076923
-ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,10,session_021,0.006923076923076923
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,2,session_170,0.007258064516129033
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,3,session_392,0.007142857142857143
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,4,session_073,0.00703125
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,5,session_195,0.006923076923076923
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,6,session_004,0.006818181818181819
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,7,session_473,0.006716417910447761
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,8,session_265,0.006617647058823529
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,9,session_204,0.006521739130434783
+ood_01,out_of_distribution,a drill to improve my tennis serve,hybrid_fusion_balanced_grammar,10,session_431,0.0064285714285714285
 ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_balanced_grammar,1,session_489,0.7967614531517029
 ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_balanced_grammar,2,session_251,0.7954072952270508
 ood_02,out_of_distribution,how to practice a badminton drop shot,semantic_e5_balanced_grammar,3,session_349,0.7944818139076233
@@ -59,26 +49,16 @@ ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_bal
 ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_balanced_grammar,8,session_195,0.0
 ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_balanced_grammar,9,session_197,0.0
 ood_02,out_of_distribution,how to practice a badminton drop shot,sparse_bm25_balanced_grammar,10,session_218,0.0
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,1,session_248,3.65
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,2,session_377,3.65
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,3,session_065,3.162087912087912
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,4,session_465,3.162087912087912
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,5,session_022,3.085
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,6,session_178,3.085
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,7,session_019,3.01
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,8,session_044,3.01
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,9,session_050,3.01
-ood_02,out_of_distribution,how to practice a badminton drop shot,field_metadata_balanced_grammar,10,session_177,3.01
 ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,1,session_084,0.007377049180327869
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,2,session_248,0.007377049180327869
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,3,session_120,0.007258064516129033
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,4,session_377,0.007258064516129033
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,5,session_121,0.007142857142857143
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,6,session_065,0.007142857142857143
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,7,session_147,0.00703125
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,8,session_465,0.00703125
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,9,session_157,0.006923076923076923
-ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,10,session_022,0.006923076923076923
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,2,session_120,0.007258064516129033
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,3,session_121,0.007142857142857143
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,4,session_147,0.00703125
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,5,session_157,0.006923076923076923
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,6,session_161,0.006818181818181819
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,7,session_171,0.006716417910447761
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,8,session_195,0.006617647058823529
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,9,session_197,0.006521739130434783
+ood_02,out_of_distribution,how to practice a badminton drop shot,hybrid_fusion_balanced_grammar,10,session_218,0.0064285714285714285
 ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_balanced_grammar,1,session_197,0.8106447458267212
 ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_balanced_grammar,2,session_472,0.8070545196533203
 ood_03,out_of_distribution,a good warm-up for playing padel,semantic_e5_balanced_grammar,3,session_070,0.8057041168212891
@@ -129,16 +109,16 @@ ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_ba
 ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_balanced_grammar,8,session_240,1.3479979222980392
 ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_balanced_grammar,9,session_414,1.332433352817665
 ood_04,out_of_distribution,a session focusing on the volley cross,sparse_bm25_balanced_grammar,10,session_461,1.332433352817665
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,1,session_141,3.33875
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,2,session_358,3.33875
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,3,session_388,3.33875
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,4,session_204,3.290178571428571
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,5,session_266,3.290178571428571
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,6,session_125,3.2121347402597404
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,7,session_105,3.210178571428571
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,8,session_334,3.210178571428571
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,9,session_052,3.2000892857142857
-ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,10,session_389,3.2000892857142857
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,1,session_141,5.369999999999999
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,2,session_358,5.369999999999999
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,3,session_388,5.369999999999999
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,4,session_204,5.2785714285714285
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,5,session_266,5.2785714285714285
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,6,session_147,5.253749999999999
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,7,session_171,5.253749999999999
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,8,session_322,5.253749999999999
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,9,session_473,5.253749999999999
+ood_04,out_of_distribution,a session focusing on the volley cross,field_metadata_balanced_grammar,10,session_125,5.199188311688312
 ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,1,session_240,0.00823055028462998
 ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,2,session_063,0.007377049180327869
 ood_04,out_of_distribution,a session focusing on the volley cross,hybrid_fusion_balanced_grammar,3,session_141,0.007377049180327869
@@ -199,26 +179,26 @@ ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_balanced_g
 ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_balanced_grammar,8,session_008,0.0
 ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_balanced_grammar,9,session_009,0.0
 ood_06,out_of_distribution,a solo to practice cross drops,sparse_bm25_balanced_grammar,10,session_010,0.0
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,1,session_141,2.649090909090909
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,2,session_358,2.649090909090909
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,3,session_388,2.649090909090909
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,4,session_409,2.610909090909091
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,5,session_500,2.610909090909091
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,6,session_065,2.590959040959041
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,7,session_465,2.590959040959041
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,8,session_105,2.5848051948051944
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,9,session_334,2.5848051948051944
-ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,10,session_490,2.5673051948051944
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,1,session_001,0.007377049180327869
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,2,session_002,0.007258064516129033
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,3,session_003,0.007142857142857143
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,4,session_004,0.00703125
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,5,session_005,0.006923076923076923
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,6,session_006,0.006818181818181819
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,7,session_007,0.006716417910447761
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,8,session_008,0.006617647058823529
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,9,session_009,0.006521739130434783
-ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,10,session_010,0.0064285714285714285
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,1,session_141,4.494545454545454
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,2,session_358,4.494545454545454
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,3,session_388,4.494545454545454
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,4,session_490,4.485324675324675
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,5,session_025,4.484848484848484
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,6,session_440,4.484848484848484
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,7,session_409,4.447272727272727
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,8,session_500,4.447272727272727
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,9,session_116,4.441991341991342
+ood_06,out_of_distribution,a solo to practice cross drops,field_metadata_balanced_grammar,10,session_065,4.436863136863137
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,1,session_005,0.012619279454722493
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,2,session_025,0.012217194570135747
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,3,session_001,0.007377049180327869
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,4,session_141,0.007377049180327869
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,5,session_002,0.007258064516129033
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,6,session_358,0.007258064516129033
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,7,session_003,0.007142857142857143
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,8,session_388,0.007142857142857143
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,9,session_004,0.00703125
+ood_06,out_of_distribution,a solo to practice cross drops,hybrid_fusion_balanced_grammar,10,session_490,0.00703125
 ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_balanced_grammar,1,session_070,0.7756314277648926
 ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_balanced_grammar,2,session_375,0.7744369506835938
 ood_07,out_of_distribution,what is the best squash racket for a beginner,semantic_e5_balanced_grammar,3,session_344,0.7739697098731995
@@ -399,6 +379,16 @@ complex_01,graduated_complexity,a conditioned game session,sparse_bm25_balanced_
 complex_01,graduated_complexity,a conditioned game session,sparse_bm25_balanced_grammar,8,session_011,3.739190549488936
 complex_01,graduated_complexity,a conditioned game session,sparse_bm25_balanced_grammar,9,session_033,3.728363847265334
 complex_01,graduated_complexity,a conditioned game session,sparse_bm25_balanced_grammar,10,session_185,3.7211808101848343
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,1,session_004,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,2,session_009,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,3,session_011,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,4,session_012,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,5,session_015,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,6,session_018,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,7,session_027,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,8,session_029,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,9,session_032,5.0
+complex_01,graduated_complexity,a conditioned game session,field_metadata_balanced_grammar,10,session_033,5.0
 complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,1,session_248,0.011526232114467409
 complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,2,session_139,0.009836065573770493
 complex_01,graduated_complexity,a conditioned game session,hybrid_fusion_balanced_grammar,3,session_236,0.009677419354838708
@@ -429,26 +419,26 @@ complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25
 complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_balanced_grammar,8,session_011,3.739190549488936
 complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_balanced_grammar,9,session_033,3.728363847265334
 complex_02,graduated_complexity,a 45-minute conditioned game session,sparse_bm25_balanced_grammar,10,session_185,3.7211808101848343
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,1,session_004,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,2,session_005,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,3,session_006,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,4,session_011,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,5,session_013,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,6,session_014,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,7,session_016,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,8,session_019,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,9,session_021,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,10,session_027,3.0
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,1,session_011,0.01364889705882353
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,2,session_059,0.013108552631578948
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,3,session_033,0.012771739130434782
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,4,session_027,0.012197802197802199
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,5,session_062,0.011043360433604337
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,6,session_004,0.008915510718789408
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,7,session_377,0.008847637415621987
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,8,session_488,0.008351648351648353
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,9,session_185,0.00806791569086651
-complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,10,session_474,0.007765151515151515
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,1,session_004,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,2,session_011,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,3,session_027,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,4,session_033,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,5,session_047,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,6,session_059,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,7,session_062,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,8,session_072,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,9,session_089,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,field_metadata_balanced_grammar,10,session_108,8.0
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,1,session_059,0.014301734449760767
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,2,session_185,0.013988968322445457
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,3,session_011,0.013875711574952562
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,4,session_377,0.013847637415621988
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,5,session_033,0.013552989130434782
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,6,session_127,0.013480885311871228
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,7,session_027,0.012912087912087911
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,8,session_276,0.012552182163187856
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,9,session_222,0.012305986696230599
+complex_02,graduated_complexity,a 45-minute conditioned game session,hybrid_fusion_balanced_grammar,10,session_062,0.012271973466003318
 complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_balanced_grammar,1,session_236,0.8532540798187256
 complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_balanced_grammar,2,session_203,0.8529176712036133
 complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,semantic_e5_balanced_grammar,3,session_185,0.8523659706115723
@@ -469,26 +459,26 @@ complex_03,graduated_complexity,a 45-minute conditioned game session for an adva
 complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_balanced_grammar,8,session_059,2.680437497873029
 complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_balanced_grammar,9,session_446,2.680437497873029
 complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,sparse_bm25_balanced_grammar,10,session_044,2.673127893932886
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,1,session_005,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,2,session_006,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,3,session_011,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,4,session_013,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,5,session_014,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,6,session_016,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,7,session_021,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,8,session_033,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,9,session_039,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,10,session_040,5.0
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,1,session_011,0.012767857142857143
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,2,session_033,0.012173202614379085
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,3,session_059,0.008132798573975045
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,4,session_185,0.007751685148945423
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,5,session_474,0.007449275362318841
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,6,session_377,0.007377049180327869
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,7,session_005,0.007377049180327869
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,8,session_276,0.007258064516129033
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,9,session_006,0.007258064516129033
-complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,10,session_127,0.007142857142857143
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,1,session_011,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,2,session_033,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,3,session_047,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,4,session_072,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,5,session_089,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,6,session_108,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,7,session_141,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,8,session_161,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,9,session_169,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,field_metadata_balanced_grammar,10,session_170,12.0
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,1,session_059,0.013489941431117902
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,2,session_011,0.013002049180327869
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,3,session_185,0.012924098942048871
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,4,session_033,0.012813620071684588
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,5,session_127,0.012375415282392027
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,6,session_004,0.012222718671152228
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,7,session_222,0.012019230769230768
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,8,session_273,0.01177728361272665
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,9,session_197,0.011695171026156942
+complex_03,graduated_complexity,a 45-minute conditioned game session for an advanced player,hybrid_fusion_balanced_grammar,10,session_027,0.011342739378566901
 complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_balanced_grammar,1,session_236,0.8569933176040649
 complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_balanced_grammar,2,session_203,0.8557100892066956
 complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,semantic_e5_balanced_grammar,3,session_185,0.8556456565856934
@@ -509,23 +499,23 @@ complex_04,graduated_complexity,a 45-minute conditioned game session for an adva
 complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_balanced_grammar,8,session_059,2.680437497873029
 complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_balanced_grammar,9,session_446,2.680437497873029
 complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,sparse_bm25_balanced_grammar,10,session_044,2.673127893932886
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,1,session_033,8.21304347826087
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,2,session_011,8.128043478260869
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,3,session_013,8.128043478260869
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,4,session_104,8.128043478260869
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,5,session_222,8.128043478260869
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,6,session_273,8.128043478260869
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,7,session_014,8.093043478260869
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,8,session_109,8.093043478260869
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,9,session_369,8.00636645962733
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,10,session_141,7.974347826086956
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,1,session_033,0.012932604735883424
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,2,session_011,0.012883064516129033
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,3,session_222,0.012692307692307694
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,4,session_273,0.01251438434982739
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,5,session_197,0.01077882960413081
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,6,session_059,0.008132798573975045
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,7,session_185,0.007751685148945423
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,8,session_377,0.007377049180327869
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,9,session_276,0.007258064516129033
-complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,10,session_127,0.007142857142857143
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,1,session_033,17.234782608695653
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,2,session_011,17.129782608695653
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,3,session_222,17.129782608695653
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,4,session_273,17.129782608695653
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,5,session_141,16.815652173913044
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,6,session_411,16.643115942028984
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,7,session_479,16.63478260869565
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,8,session_392,16.591925465838507
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,9,session_072,16.557340485601355
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,field_metadata_balanced_grammar,10,session_108,16.51304347826087
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,1,session_185,0.01310882800608828
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,2,session_377,0.012932604735883424
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,3,session_033,0.012932604735883424
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,4,session_222,0.012912087912087911
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,5,session_011,0.012883064516129033
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,6,session_273,0.01272745253164557
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,7,session_202,0.011375198728139906
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,8,session_027,0.011342739378566901
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,9,session_474,0.011232558139534884
+complex_04,graduated_complexity,a 45-minute conditioned game session for an advanced player focusing on volley drops,hybrid_fusion_balanced_grammar,10,session_197,0.011053345388788428

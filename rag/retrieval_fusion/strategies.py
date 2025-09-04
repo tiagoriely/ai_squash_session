@@ -1,7 +1,7 @@
 from collections import defaultdict
 from typing import List, Dict
 
-# Import your user query parser to analyze the query
+# Import your user query parser to analyse the query
 from rag.parsers.user_query_parser import parse_user_prompt
 
 
@@ -57,7 +57,7 @@ def query_aware_fusion(ranked_lists_map: Dict[str, List[Dict]], query: str) -> L
     Fuses ranked lists using a dynamic, query-aware strategy.
 
     1. Applies reliability thresholds to filter results.
-    2. Analyzes the query to determine if it's "vague" or "specific".
+    2. Analyses the query to determine if it's "vague" or "specific".
     3. Sets dynamic weights for RRF based on the query type.
     4. Fuses the filtered lists using weighted RRF.
     """
@@ -66,14 +66,14 @@ def query_aware_fusion(ranked_lists_map: Dict[str, List[Dict]], query: str) -> L
     thresholded_lists = {}
     for retriever_name, docs in ranked_lists_map.items():
         if 'semantic' in retriever_name:
-            thresholded_lists[retriever_name] = [doc for doc in docs if doc.get('semantic_score', 0) >= 0.70]
+            thresholded_lists[retriever_name] = [doc for doc in docs if doc.get('semantic_score', 0) >= 0.40]
         elif 'field' in retriever_name:
-            thresholded_lists[retriever_name] = [doc for doc in docs if doc.get('field_score', 0) >= 3.0]
+            thresholded_lists[retriever_name] = [doc for doc in docs if doc.get('field_score', 0) >= 1.0]
         else:
             # No threshold for the sparse retriever as it's already robust
             thresholded_lists[retriever_name] = docs
 
-    # 2. Analyze the Query
+    # 2. Analyse the Query
     # (Note: Assumes your parser can be called without the config/durations for this check)
     parsed_desires = parse_user_prompt(query)
     # Define "specific" as a query where key metadata is extracted
@@ -82,14 +82,14 @@ def query_aware_fusion(ranked_lists_map: Dict[str, List[Dict]], query: str) -> L
 
     # 3. Set Dynamic Weights
     if is_specific:
-        print("   -> Query identified as SPECIFIC. Prioritizing sparse and field retrievers.")
+        print("   -> Query identified as SPECIFIC. Prioritising sparse and field retrievers.")
         weights = {
             'semantic_e5': 0.1,
             'sparse_bm25': 0.45,
             'field_metadata': 0.45
         }
     else:
-        print("   -> Query identified as VAGUE. Prioritizing semantic retriever.")
+        print("   -> Query identified as VAGUE. Prioritising semantic retriever.")
         weights = {
             'semantic_e5': 0.6,
             'sparse_bm25': 0.2,

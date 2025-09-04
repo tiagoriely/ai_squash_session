@@ -1,4 +1,4 @@
-# rag/pipelines/retrieval/field_retrieval/user_desires.py
+#rag/parsers/user_query_parser.py
 from __future__ import annotations
 
 import re
@@ -221,7 +221,7 @@ def parse_participants(text: str) -> Optional[int]:
     """
     t = _norm(text)
 
-    # Add a check for just a plain number, for the dialogue manager
+    # check for just a plain number, for the dialogue manager
     if t.isdigit():
         num = int(t)
         if 1 <= num <= 4:  # Or whatever range is reasonable
@@ -235,17 +235,20 @@ def parse_participants(text: str) -> Optional[int]:
     candidates: Set[int] = set()
     words = "|".join(map(re.escape, _WORD_NUM.keys()))
 
-    # Numeric before 'players'
-    for m in re.finditer(r"\b(\d{1,2})\s*players?\b", t):
+    # Numeric before 'players', allowing for adjectives in between (e.g., "2 advanced players")
+    for m in re.finditer(r"\b(\d{1,2})(?:\s+\w+)*?\s*players?\b", t):
         candidates.add(int(m.group(1)))
 
-    # Hyphenated numeric: '3-player', '3-players'
-    for m in re.finditer(r"\b(\d{1,2})\s*-\s*players?\b", t):
-        candidates.add(int(m.group(1)))
-
-    # Word before 'players': 'two players'
-    for m in re.finditer(rf"\b({words})\s*players?\b", t):
+    # Word before 'players', allowing for adjectives (e.g., "two intermediate players")
+    for m in re.finditer(rf"\b({words})(?:\s+\w+)*?\s*players?\b", t):
         candidates.add(_WORD_NUM[m.group(1)])
+
+    # 'for two players' / 'for 2 advanced players'
+    for m in re.finditer(rf"\bfor\s+({words}|\d{{1,2}})(?:\s+\w+)*?\s*players?\b", t):
+        token = m.group(1)
+        n = _to_number(token)
+        if n is not None:
+            candidates.add(n)
 
     # Hyphenated word: 'four-player'
     for m in re.finditer(rf"\b({words})\s*-\s*players?\b", t):
@@ -284,22 +287,31 @@ def parse_type(text: str) -> Optional[str]:
     t = _norm(text)
     type_map = SYNONYM_MAP.get("type", {}) or {}
 
-    # Build reverse index: synonym -> canonical
-    syn2canon = {syn.lower(): canon for syn, canon in type_map.items()}
+    # Sort synonyms by length (descending) to match specific phrases first.
+    # e.g., 'conditioned game' will be checked before 'game'.
+    sorted_synonyms = sorted(type_map.keys(), key=len, reverse=True)
 
-    found: Set[str] = set()
-    for syn, canon in syn2canon.items():
+    found_canonicals = set()
+    for syn in sorted_synonyms:
         pat = _plural_aware_pattern(syn)
         if pat.search(t):
-            found.add(canon)
+            # Once a synonym is found, add its canonical form.
+            # To prevent sub-string matches (like 'game' in 'conditioned game'),
+            # we can remove the matched text from the search string for subsequent iterations.
+            canonical_form = type_map[syn]
+            found_canonicals.add(canonical_form)
+            t = pat.sub('', t)  # Remove the found phrase to avoid re-matching
 
-    # If explicit 'mix' phrasing OR multiple types present → 'mix'
-    if re.search(r"\bmix\b", t) or len(found) >= 2:
+    # If explicit 'mix' phrasing was in the original text OR multiple types present → 'mix'
+    if re.search(r"\bmix\b", _norm(text)) or len(found_canonicals) >= 2:
         return "mix"
 
-    if len(found) == 1:
-        return next(iter(found))
+    if len(found_canonicals) == 1:
+        return next(iter(found_canonicals))
+
     return None
+
+
 
 
 # ---------- level ----------

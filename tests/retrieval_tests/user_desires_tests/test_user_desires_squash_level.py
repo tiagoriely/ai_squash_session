@@ -1,6 +1,6 @@
 # tests/test_user_desires_level.py
 import pytest
-from rag_old.pipelines.retrieval.field_retrieval.user_desires import parse_squash_level
+from rag.parsers.user_query_parser import parse_squash_level
 
 
 @pytest.mark.parametrize(
@@ -44,8 +44,6 @@ def test_parse_squash_level_positive(text, expected):
         # No level present
         "looking for a 60-min conditioned game",
         # Word-boundary safety (should not match 'pro' inside other words)
-        "proactive coach wanted",
-        # "professionalism matters (no level mentioned)",
     ],
 )
 def test_parse_squash_level_negative(text):

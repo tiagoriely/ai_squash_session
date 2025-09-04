@@ -3,10 +3,12 @@
 import json
 import argparse
 import yaml
+import re
 from pathlib import Path
 from tqdm import tqdm
 from collections import defaultdict
 from typing import List, Dict, Any
+
 
 # Import metric functions and the LLM evaluator class
 from metrics.structure_metrics import calculate_psa, calculate_pda, calculate_stc
@@ -14,12 +16,15 @@ from metrics.diversity_metrics import calculate_ipv, calculate_ipsd
 from metrics.reliability_metrics import calculate_mas, calculate_pca
 from evaluators.llm_judge import LlmEvaluator
 
-# It's good practice to handle potential import errors if run standalone
 try:
     from sentence_transformers import SentenceTransformer
 except ImportError:
     print("Warning: sentence-transformers not found. IPSD metric will not be available.")
     SentenceTransformer = None
+
+# Load environment
+from dotenv import load_dotenv
+load_dotenv()
 
 
 def load_results(file_path: Path) -> List[Dict[str, Any]]:
@@ -30,6 +35,13 @@ def load_results(file_path: Path) -> List[Dict[str, Any]]:
 
 def save_results(file_path: Path, results: List[Dict[str, Any]]):
     """Saves a list of dictionaries to a JSONL file."""
+
+    # Get the parent directory of the output file
+    output_dir = file_path.parent
+    # Create the directory if it doesn't exist, including any parent folders.
+    # exist_ok=True prevents an error if the directory already exists.
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     with open(file_path, 'w', encoding='utf-8') as f:
         for result in results:
             f.write(json.dumps(result, ensure_ascii=False) + '\n')
@@ -154,7 +166,7 @@ def main(args):
             # Assign the same score to all items in the group
             for res in query_group:
                 if 'evaluation_scores' in res:
-                    res['evaluation_scores']['ipsd_score'] = ipsd_score
+                    res['evaluation_scores']['ipsd_score'] = float(ipsd_score)
 
     # --- 4. SAVE ENRICHED RESULTS ---
     save_results(args.output_file, results)

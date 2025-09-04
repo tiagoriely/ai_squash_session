@@ -7,7 +7,7 @@ retrieval_strategy: "sparse_only"
 
 # --- Template Variables ---
 template_vars:
-  corpus_size: 500
+  corpus_size: 10
   grammar_type: "balanced"
   # Used to generate the output filename
   strategy_name: "sparse_only"

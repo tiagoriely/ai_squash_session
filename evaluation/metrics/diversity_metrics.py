@@ -38,7 +38,7 @@ def calculate_ipv(generated_plan_text: str) -> int:
 
 def calculate_ipsd(
         list_of_plan_texts: List[str],
-        embedding_model: Any,  # Expects a SentenceTransformer model instance
+        embedding_model: any,  # Expects a SentenceTransformer model instance
 ) -> float:
     """
     Calculates Inter-Plan Semantic Distance (IPSD).
