@@ -54,30 +54,28 @@ python -m evaluation.corpus_analysis.statistics.measure_reliability data/process
 
 
 ## Loose Grammar DBSCAN
-python -m evaluation.corpus_analysis.embeddings.embed_corpus data/processed/loose_grammar/loose_500.jsonl evaluation/corpus_analysis/embeddings/embed_size_500/loose_500.npy
+python -m evaluation.corpus_analysis.embeddings.embed_corpus data/processed/loose_grammar/loose_100.jsonl evaluation/corpus_analysis/embeddings/embed_size_100/loose_100.npy
 
 
 python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering \
-  evaluation/corpus_analysis/embeddings/embed_size_500/loose_500.npy \
-  evaluation/corpus_analysis/visualisations/corpus_size_500/loose_clusters_500.png \
+  evaluation/corpus_analysis/embeddings/embed_size_100/loose_100.npy \
+  evaluation/corpus_analysis/visualisations/corpus_size_100/loose_clusters_100.png \
   --eps 0.4 --min_samples 6
 
 ## Balanced Grammar DBSCAN
-python -m evaluation.corpus_analysis.embeddings.embed_corpus data/processed/balanced_grammar/balanced_500.jsonl evaluation/corpus_analysis/embeddings/embed_size_500/balanced_500.npy
+python -m evaluation.corpus_analysis.embeddings.embed_corpus data/processed/balanced_grammar/balanced_100.jsonl evaluation/corpus_analysis/embeddings/embed_size_100/balanced_100.npy
 
 python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering \
-  evaluation/corpus_analysis/embeddings/embed_size_500/balanced_500.npy \
-  evaluation/corpus_analysis/visualisations/corpus_size_500/balanced_clusters_500.png \
+  evaluation/corpus_analysis/embeddings/embed_size_100/balanced_100.npy \
+  evaluation/corpus_analysis/visualisations/corpus_size_100/balanced_clusters_100.png \
   --eps 0.4 --min_samples 6
 
 ## Strict Gammar DBSCAN
-python -m evaluation.corpus_analysis.embeddings.embed_corpus \             
-  data/processed/high_constraint_grammar/high_constraint_500.jsonl \            
-  evaluation/corpus_analysis/embeddings/embed_size_500/high_constraint_500.npy  
+python -m evaluation.corpus_analysis.embeddings.embed_corpus data/processed/high_constraint_grammar/high_constraint_100.jsonl evaluation/corpus_analysis/embeddings/embed_size_100/high_constraint_100.npy  
 
 python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering \
-  evaluation/corpus_analysis/embeddings/embed_size_500/high_constraint_500.npy \
-  evaluation/corpus_analysis/visualisations/corpus_size_500/high_constraint_clusters_500.png \
+  evaluation/corpus_analysis/embeddings/embed_size_100/high_constraint_100.npy \
+  evaluation/corpus_analysis/visualisations/corpus_size_100/high_constraint_clusters_100.png \
   --eps 0.4 --min_samples 6
 
 

@@ -14,7 +14,7 @@ planner_config:
   enforce_plan_points_progression: false
 
 # High-level run params
-num: 2
+num: 100
 outfile_template: "data/processed/loose_grammar/loose_{num}.jsonl"
 seed: 43
 log_skips: false

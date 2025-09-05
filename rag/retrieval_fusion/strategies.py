@@ -85,34 +85,44 @@ def standard_unweighted_rrf(ranked_lists_map: Dict[str, List[Dict]]) -> List[Dic
 
 # --- HYBRID STRATEGY 3: Dynamic Query-Aware RRF ---
 
-def dynamic_query_aware_rrf(ranked_lists_map: Dict[str, List[Dict]], query: str) -> List[Dict]:
+def dynamic_query_aware_rrf(
+        ranked_lists_map: Dict[str, List[Dict]],
+        query: str,
+        field_scoring_config: Dict
+) -> List[Dict]:
     """
     Hybrid Strategy 3: Fuses lists using a dynamic, query-aware strategy.
-    It analyses the query and adjusts weights to leverage the best retriever.
+    It calculates a "specificity score" based on the query and field weights
+    to dynamically adjust the fusion strategy.
     """
 
-    # 1. Analyse the Query to determine if it's "vague" or "specific".
+    # 1. Parse the query to see which fields the user mentioned
     parsed_desires = parse_user_prompt(query)
-    specific_keys = {'duration', 'participants', 'squashLevel', 'shots', 'shotSide', 'movement'}
-    is_specific = any(key in parsed_desires for key in specific_keys)
 
-    # 2. Set Dynamic Weights based on the query type.
-    if is_specific:
-        print("   -> Query identified as SPECIFIC. Applying precision-focused weights.")
+    # 2. Calculate the specificity score by summing the base_weights of found fields
+    specificity_score = 0.0
+    for field_name in parsed_desires.keys():
+        # Look up the base_weight for each field in the config
+        specificity_score += field_scoring_config.get(field_name, {}).get('base_weight', 0)
 
+    # 3. Define the threshold for what constitutes a "specific" query
+    specificity_threshold = 5.5
+
+    # 4. Set Dynamic Weights based on the score
+    if specificity_score > specificity_threshold:
+        print(f"   -> Query identified as SPECIFIC (Score: {specificity_score:.2f}). Prioritising Field & Sparse.")
         weights = {
-            'field_metadata': 0.5,  # High weight as it excels at specific queries
-            'sparse_bm25': 0.3,  # Complements with lexical matching
-            'semantic_e5': 0.2  # Semantic check to ensure relevance
+            'field_metadata': 0.6, # 0.5
+            'sparse_bm25': 0.25, # 0.3
+            'semantic_e5': 0.15 # 0.1
         }
     else:  # Query is VAGUE
-        print("   -> Query identified as VAGUE. Applying balanced, flexible weights.")
-
+        print(f"   -> Query identified as VAGUE (Score: {specificity_score:.2f}). Using balanced, flexible weights.")
         weights = {
-            'field_metadata': 0.1,  # Low weight as few fields will match
-            'sparse_bm25': 0.5,  # Primary signal for finding relevant keyword matches
-            'semantic_e5': 0.4  # Strong semantic signal to understand the general intent
+            'field_metadata': 0.55,
+            'sparse_bm25': 0.35,
+            'semantic_e5': 0.1
         }
 
-    # 3. Fuse using the dynamically chosen weights
+    # 5. Fuse using the dynamically chosen weights
     return _rrf(ranked_lists_map, weights)

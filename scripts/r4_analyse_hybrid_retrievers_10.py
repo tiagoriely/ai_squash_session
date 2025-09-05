@@ -64,11 +64,12 @@ def get_all_retrievers() -> Dict[str, Any]:
 
 
 def analyse_hybrid_strategy(
-        standalone_results: Dict[str, List[Dict]],
-        query_text: str,
-        query_id: str,
-        query_type: str,
-        strategy_name: str
+    standalone_results: Dict[str, List[Dict]],
+    query_text: str,
+    query_id: str,
+    query_type: str,
+    strategy_name: str,
+    field_scoring_config: Dict
 ) -> Dict:
     """Applies a specific hybrid strategy and calculates its performance metrics."""
     print("-" * 40)
@@ -88,7 +89,7 @@ def analyse_hybrid_strategy(
 
     elif strategy_name == 'dynamic_query_aware_rrf':
         # Your advanced, query-aware dynamic weighting strategy
-        fused_results = dynamic_query_aware_rrf(standalone_results, query_text)
+        fused_results = dynamic_query_aware_rrf(standalone_results, query_text, field_scoring_config)
 
     # --- Calculate metrics for the fused list ---
     scores = np.array([doc.get('fusion_score', 0.0) for doc in fused_results])
@@ -111,6 +112,12 @@ def analyse_hybrid_strategy(
 
 if __name__ == "__main__":
     retrievers = get_all_retrievers()
+
+    # Load field scoring
+    field_config_path = PROJECT_ROOT / "configs/retrieval/raw_squash_field_retrieval_config.yaml"
+    with open(field_config_path, "r", encoding="utf-8") as f:
+        # Load the specific dictionary needed by the fusion strategy
+        field_scoring_config = yaml.safe_load(f).get("FIELD_SCORING_CONFIG", {})
 
     high_relevance_complex_1 = [
         {"query_id": "complex_01_cg", "text": "a 45-minute conditioned game session"},
@@ -215,7 +222,8 @@ if __name__ == "__main__":
                     query_text=query['text'],
                     query_id=query['query_id'],
                     query_type=query_type,
-                    strategy_name=strategy
+                    strategy_name=strategy,
+                    field_scoring_config=field_scoring_config
                 )
                 all_hybrid_results.append(row_data)
 

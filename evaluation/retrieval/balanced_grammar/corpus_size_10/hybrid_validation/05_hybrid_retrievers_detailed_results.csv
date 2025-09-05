@@ -1,0 +1,1021 @@
+query_id,query_type,strategy_name,rank,doc_id,fusion_score
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,1,session_004,0.01639344262295082
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,2,session_007,0.016129032258064516
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,3,session_005,0.01556284511508392
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,4,session_009,0.015185234541577823
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,5,session_010,0.00625
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,6,session_003,0.006240981240981241
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,7,session_002,0.0062271062271062275
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,8,session_001,0.0059307359307359305
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,9,session_006,0.005850383631713555
+complex_01_cg,Complexity Type 1 (Relevant),Static Weighted RRF,10,session_008,0.0058290707587382775
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,1,session_004,0.04918032786885246
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,2,session_007,0.04838709677419355
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,3,session_005,0.04618300439195962
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,4,session_009,0.04483608742004264
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,5,session_002,0.03125763125763126
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,6,session_010,0.03125
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,7,session_003,0.031024531024531024
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,8,session_001,0.029437229437229435
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,9,session_006,0.02919863597612958
+complex_01_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,10,session_008,0.02919863597612958
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,1,session_004,0.01639344262295082
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,2,session_007,0.016129032258064516
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,3,session_005,0.01556284511508392
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,4,session_009,0.015185234541577823
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,5,session_010,0.00625
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,6,session_003,0.006240981240981241
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,7,session_002,0.0062271062271062275
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,8,session_001,0.0059307359307359305
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,9,session_006,0.005850383631713555
+complex_01_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,10,session_008,0.0058290707587382775
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,1,session_004,0.01639344262295082
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,2,session_007,0.016129032258064516
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,3,session_005,0.015406162464985992
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,4,session_002,0.015318015318015318
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,5,session_001,0.015136025557829582
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,6,session_009,0.015089285714285713
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,7,session_003,0.015064510652745947
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,8,session_008,0.014922162286394116
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,9,session_010,0.014785370879120878
+complex_02_cg,Complexity Type 1 (Relevant),Static Weighted RRF,10,session_006,0.014722336931941086
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,1,session_004,0.04918032786885246
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,2,session_007,0.04838709677419355
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,3,session_002,0.04640914640914641
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,4,session_003,0.045730413377472204
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,5,session_010,0.04529532967032967
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,6,session_005,0.045284780578898225
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,7,session_008,0.04504312675751676
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,8,session_001,0.04480274214213215
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,9,session_006,0.04456964190903192
+complex_02_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,10,session_009,0.04419642857142857
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,1,session_004,0.01639344262295082
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,2,session_007,0.016129032258064516
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,3,session_005,0.015406162464985992
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,4,session_002,0.015318015318015318
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,5,session_001,0.015136025557829582
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,6,session_009,0.015089285714285713
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,7,session_003,0.015064510652745947
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,8,session_008,0.014922162286394116
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,9,session_010,0.014785370879120878
+complex_02_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,10,session_006,0.014722336931941086
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,1,session_004,0.01639344262295082
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,2,session_007,0.016129032258064516
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,3,session_005,0.015406162464985992
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,4,session_002,0.015318015318015318
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,5,session_001,0.015136025557829582
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,6,session_009,0.015089285714285713
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,7,session_003,0.015064510652745947
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,8,session_008,0.014922162286394116
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,9,session_010,0.014785370879120878
+complex_03_cg,Complexity Type 1 (Relevant),Static Weighted RRF,10,session_006,0.014722336931941086
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,1,session_004,0.04918032786885246
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,2,session_007,0.04838709677419355
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,3,session_002,0.04640914640914641
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,4,session_003,0.045730413377472204
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,5,session_010,0.04529532967032967
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,6,session_005,0.045284780578898225
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,7,session_008,0.04504312675751676
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,8,session_001,0.04480274214213215
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,9,session_006,0.04456964190903192
+complex_03_cg,Complexity Type 1 (Relevant),Standard Unweighted RRF,10,session_009,0.04419642857142857
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,1,session_004,0.01639344262295082
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,2,session_007,0.016129032258064516
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,3,session_005,0.015406162464985992
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,4,session_002,0.015318015318015318
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,5,session_001,0.015136025557829582
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,6,session_009,0.015089285714285713
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,7,session_003,0.015064510652745947
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,8,session_008,0.014922162286394116
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,9,session_010,0.014785370879120878
+complex_03_cg,Complexity Type 1 (Relevant),Dynamic Query-Aware RRF,10,session_006,0.014722336931941086
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,1,session_003,0.016041525018256904
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,2,session_002,0.015953365630784984
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,3,session_001,0.01578526343473306
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,4,session_010,0.0155041195363776
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,5,session_007,0.015202119061918425
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,6,session_008,0.015197707636566334
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,7,session_006,0.015185234541577823
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,8,session_004,0.0060491071428571425
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,9,session_005,0.006020066889632107
+complex_21_mix,Complexity Type 2 (Relevant),Static Weighted RRF,10,session_009,0.0059372256365232655
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,1,session_003,0.04839549075403121
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,2,session_002,0.04738666351569577
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,3,session_010,0.04715356328259554
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,4,session_007,0.046470330908794336
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,5,session_001,0.04625084012740715
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,6,session_008,0.04550236900780379
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,7,session_006,0.04483608742004264
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,8,session_004,0.029910714285714284
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,9,session_005,0.029877369007803793
+complex_21_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,10,session_009,0.029631255487269532
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,1,session_003,0.016041525018256904
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,2,session_002,0.015953365630784984
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,3,session_001,0.01578526343473306
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,4,session_010,0.0155041195363776
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,5,session_007,0.015202119061918425
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,6,session_008,0.015197707636566334
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,7,session_006,0.015185234541577823
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,8,session_004,0.0060491071428571425
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,9,session_005,0.006020066889632107
+complex_21_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,10,session_009,0.0059372256365232655
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,1,session_003,0.016086065573770493
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,2,session_010,0.01564269064269064
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,3,session_002,0.015582059938403222
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,4,session_006,0.015454730279208455
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,5,session_008,0.01527331247527601
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,6,session_001,0.01525974025974026
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,7,session_007,0.015145583557621727
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,8,session_004,0.014807692307692308
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,9,session_005,0.006241217798594848
+complex_22_mix,Complexity Type 2 (Relevant),Static Weighted RRF,10,session_009,0.006206171107994389
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,1,session_003,0.047643442622950824
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,2,session_002,0.04642338900734423
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,3,session_010,0.04640914640914641
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,4,session_007,0.046244188891607536
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,5,session_001,0.046176046176046176
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,6,session_008,0.04600640126586831
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,7,session_006,0.04512062889671997
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,8,session_004,0.04479638009049774
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,9,session_005,0.030679156908665108
+complex_22_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,10,session_009,0.030621785881252923
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,1,session_003,0.016086065573770493
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,2,session_010,0.01564269064269064
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,3,session_002,0.015582059938403222
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,4,session_006,0.015454730279208455
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,5,session_008,0.01527331247527601
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,6,session_001,0.01525974025974026
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,7,session_007,0.015145583557621727
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,8,session_004,0.014807692307692308
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,9,session_005,0.006241217798594848
+complex_22_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,10,session_009,0.006206171107994389
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,1,session_003,0.01596769436164928
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,2,session_010,0.0157997557997558
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,3,session_002,0.0156799853372434
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,4,session_006,0.015454730279208455
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,5,session_001,0.015318015318015318
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,6,session_008,0.01527331247527601
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,7,session_007,0.015145583557621727
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,8,session_009,0.014843702270644537
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,9,session_005,0.014744759316770186
+complex_23_mix,Complexity Type 2 (Relevant),Static Weighted RRF,10,session_004,0.014738805970149253
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,1,session_003,0.047169957774465976
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,2,session_010,0.04713064713064713
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,3,session_002,0.04690554740957967
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,4,session_001,0.04640914640914641
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,5,session_007,0.046244188891607536
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,6,session_008,0.04600640126586831
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,7,session_009,0.045171910531853515
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,8,session_006,0.04512062889671997
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,9,session_005,0.04440346790890269
+complex_23_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,10,session_004,0.04433713784021071
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,1,session_003,0.01596769436164928
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,2,session_010,0.0157997557997558
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,3,session_002,0.0156799853372434
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,4,session_006,0.015454730279208455
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,5,session_001,0.015318015318015318
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,6,session_008,0.01527331247527601
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,7,session_007,0.015145583557621727
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,8,session_009,0.014843702270644537
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,9,session_005,0.014744759316770186
+complex_23_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,10,session_004,0.014738805970149253
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,1,session_003,0.01614806954202446
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,2,session_010,0.015716454946113106
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,3,session_002,0.015553977272727271
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,4,session_008,0.01551459293394777
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,5,session_006,0.015282805429864255
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,6,session_001,0.01525974025974026
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,7,session_007,0.015090710862274932
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,8,session_009,0.014901823281907433
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,9,session_005,0.014812646370023419
+complex_24_mix,Complexity Type 2 (Relevant),Static Weighted RRF,10,session_004,0.014685523787711062
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,1,session_003,0.047891458495966696
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,2,session_010,0.04643902077700826
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,3,session_002,0.04640151515151515
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,4,session_008,0.04628776241679467
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,5,session_001,0.046176046176046176
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,6,session_007,0.04602469811022035
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,7,session_006,0.04547511312217195
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,8,session_009,0.04511453950444133
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,9,session_005,0.04496487119437939
+complex_24_mix,Complexity Type 2 (Relevant),Standard Unweighted RRF,10,session_004,0.04412400911045794
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,1,session_003,0.01614806954202446
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,2,session_010,0.015716454946113106
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,3,session_002,0.015553977272727271
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,4,session_008,0.01551459293394777
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,5,session_006,0.015282805429864255
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,6,session_001,0.01525974025974026
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,7,session_007,0.015090710862274932
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,8,session_009,0.014901823281907433
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,9,session_005,0.014812646370023419
+complex_24_mix,Complexity Type 2 (Relevant),Dynamic Query-Aware RRF,10,session_004,0.014685523787711062
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,1,session_001,0.01604268574828133
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,2,session_005,0.015931636669341588
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,3,session_002,0.01583581349206349
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,4,session_003,0.015712166625886956
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,5,session_004,0.01521978021978022
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,6,session_006,0.01499616541796944
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,7,session_010,0.014876413908671973
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,8,session_007,0.014837576821773484
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,9,session_008,0.014827670198514189
+ooc_01,Relevant (Outside Corpus),Static Weighted RRF,10,session_009,0.014686435584051291
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,1,session_001,0.04814747488101534
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,2,session_002,0.047371031746031744
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,3,session_003,0.046943815757279184
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,4,session_005,0.04692957315908136
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,5,session_010,0.04556626169529395
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,6,session_008,0.04507165184914545
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,7,session_004,0.045054945054945054
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,8,session_009,0.04490750016696721
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,9,session_006,0.04456964190903192
+ooc_01,Relevant (Outside Corpus),Standard Unweighted RRF,10,session_007,0.044337137840210705
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,1,session_001,0.015979062004230566
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,2,session_005,0.015857885284114793
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,3,session_002,0.015848214285714285
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,4,session_003,0.015823992231465623
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,5,session_004,0.015274725274725277
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,6,session_010,0.015017455662616953
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,7,session_006,0.0150064892926671
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,8,session_007,0.014826602282704127
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,9,session_008,0.014748000649535176
+ooc_01,Relevant (Outside Corpus),Dynamic Query-Aware RRF,10,session_009,0.014583917718560076
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,1,session_009,0.015759624154078434
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,2,session_001,0.01573104315039799
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,3,session_002,0.015650946275946275
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,4,session_005,0.015646300115348316
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,5,session_003,0.015471987029364078
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,6,session_004,0.015203041443850266
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,7,session_007,0.015013433257918552
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,8,session_010,0.014876413908671973
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,9,session_006,0.014860480207657364
+ooc_02,Relevant (Outside Corpus),Static Weighted RRF,10,session_008,0.014753075143100718
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,1,session_001,0.04715356328259554
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,2,session_009,0.04701522850420374
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,3,session_002,0.04688263125763126
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,4,session_003,0.04606377229328049
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,5,session_007,0.045715497737556565
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,6,session_005,0.04560453004299347
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,7,session_010,0.04556626169529395
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,8,session_004,0.04548239750445633
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,9,session_008,0.04507165184914545
+ooc_02,Relevant (Outside Corpus),Standard Unweighted RRF,10,session_006,0.04434349989184512
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,1,session_009,0.015759624154078434
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,2,session_001,0.01573104315039799
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,3,session_002,0.015650946275946275
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,4,session_005,0.015646300115348316
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,5,session_003,0.015471987029364078
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,6,session_004,0.015203041443850266
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,7,session_007,0.015013433257918552
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,8,session_010,0.014876413908671973
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,9,session_006,0.014860480207657364
+ooc_02,Relevant (Outside Corpus),Dynamic Query-Aware RRF,10,session_008,0.014753075143100718
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,1,session_009,0.015759624154078434
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,2,session_001,0.01573104315039799
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,3,session_002,0.015650946275946275
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,4,session_005,0.015646300115348316
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,5,session_003,0.015471987029364078
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,6,session_004,0.015203041443850266
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,7,session_007,0.015013433257918552
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,8,session_010,0.014876413908671973
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,9,session_006,0.014860480207657364
+ooc_03,Relevant (Outside Corpus),Static Weighted RRF,10,session_008,0.014753075143100718
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,1,session_001,0.04715356328259554
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,2,session_009,0.04701522850420374
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,3,session_002,0.04688263125763126
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,4,session_003,0.04606377229328049
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,5,session_007,0.045715497737556565
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,6,session_005,0.04560453004299347
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,7,session_010,0.04556626169529395
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,8,session_004,0.04548239750445633
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,9,session_008,0.04507165184914545
+ooc_03,Relevant (Outside Corpus),Standard Unweighted RRF,10,session_006,0.04434349989184512
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,1,session_009,0.015759624154078434
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,2,session_001,0.01573104315039799
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,3,session_002,0.015650946275946275
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,4,session_005,0.015646300115348316
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,5,session_003,0.015471987029364078
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,6,session_004,0.015203041443850266
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,7,session_007,0.015013433257918552
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,8,session_010,0.014876413908671973
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,9,session_006,0.014860480207657364
+ooc_03,Relevant (Outside Corpus),Dynamic Query-Aware RRF,10,session_008,0.014753075143100718
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,1,session_003,0.006427270361696592
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,2,session_002,0.00641321044546851
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,3,session_001,0.006371087928464978
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,4,session_006,0.006131628787878788
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,5,session_005,0.006052036199095023
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,6,session_004,0.0060491071428571425
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,7,session_010,0.005990783410138248
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,8,session_009,0.005930880713489409
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,9,session_008,0.0059152765583845475
+ooc_05,Relevant (Outside Corpus),Static Weighted RRF,10,session_007,0.00590525632706035
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,1,session_003,0.032266458495966696
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,2,session_002,0.03200204813108039
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,3,session_001,0.031544957774465976
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,4,session_006,0.030776515151515152
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,5,session_010,0.0304147465437788
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,6,session_005,0.030090497737556562
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,7,session_004,0.029910714285714284
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,8,session_009,0.029877369007803793
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,9,session_008,0.029631255487269532
+ooc_05,Relevant (Outside Corpus),Standard Unweighted RRF,10,session_007,0.029418126757516764
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,1,session_001,0.007252856433184302
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,2,session_002,0.007232462877624168
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,3,session_003,0.007194899817850637
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,4,session_004,0.006897321428571428
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,5,session_006,0.006865530303030302
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,6,session_005,0.006855203619909502
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,7,session_007,0.006673155959333765
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,8,session_008,0.006639596136962247
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,9,session_010,0.006612903225806451
+ooc_05,Relevant (Outside Corpus),Dynamic Query-Aware RRF,10,session_009,0.0066109253065774806
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,1,session_001,0.01611953001057641
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,2,session_005,0.015888101772865516
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,3,session_002,0.015794873558474906
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,4,session_003,0.015517167011732228
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,5,session_004,0.015279876373626374
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,6,session_006,0.01525974025974026
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,7,session_007,0.015145583557621727
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,8,session_008,0.014919354838709677
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,9,session_009,0.014626532887402453
+ooc_06,Relevant (Outside Corpus),Static Weighted RRF,10,session_010,0.014415584415584413
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,1,session_001,0.04814747488101534
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,2,session_002,0.04692742126540875
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,3,session_005,0.04648394036050739
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,4,session_007,0.046244188891607536
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,5,session_006,0.046176046176046176
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,6,session_003,0.04599076949620428
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,7,session_008,0.04554079696394687
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,8,session_004,0.04529532967032967
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,9,session_009,0.0443701226309922
+ooc_06,Relevant (Outside Corpus),Standard Unweighted RRF,10,session_010,0.04372294372294372
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,1,session_001,0.01611953001057641
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,2,session_005,0.015888101772865516
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,3,session_002,0.015794873558474906
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,4,session_003,0.015517167011732228
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,5,session_004,0.015279876373626374
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,6,session_006,0.01525974025974026
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,7,session_007,0.015145583557621727
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,8,session_008,0.014919354838709677
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,9,session_009,0.014626532887402453
+ooc_06,Relevant (Outside Corpus),Dynamic Query-Aware RRF,10,session_010,0.014415584415584413
+duration_01,Relevant (Other Duration),Static Weighted RRF,1,session_005,0.015840206360519974
+duration_01,Relevant (Other Duration),Static Weighted RRF,2,session_002,0.015687003968253968
+duration_01,Relevant (Other Duration),Static Weighted RRF,3,session_001,0.0156359418767507
+duration_01,Relevant (Other Duration),Static Weighted RRF,4,session_009,0.015556540233959587
+duration_01,Relevant (Other Duration),Static Weighted RRF,5,session_003,0.01540683678382282
+duration_01,Relevant (Other Duration),Static Weighted RRF,6,session_008,0.015151515151515152
+duration_01,Relevant (Other Duration),Static Weighted RRF,7,session_010,0.0151288056206089
+duration_01,Relevant (Other Duration),Static Weighted RRF,8,session_007,0.015050096961861667
+duration_01,Relevant (Other Duration),Static Weighted RRF,9,session_006,0.014780611990216144
+duration_01,Relevant (Other Duration),Static Weighted RRF,10,session_004,0.014728785738825056
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,1,session_003,0.04718343765045739
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,2,session_002,0.04712301587301587
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,3,session_010,0.047072599531615925
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,4,session_005,0.0467592121191551
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,5,session_001,0.04620389822595705
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,6,session_009,0.045799361928394185
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,7,session_008,0.045454545454545456
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,8,session_006,0.04480274214213215
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,9,session_007,0.04437621202327085
+duration_01,Relevant (Other Duration),Standard Unweighted RRF,10,session_004,0.04412400911045794
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,1,session_005,0.015840206360519974
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,2,session_002,0.015687003968253968
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,3,session_001,0.0156359418767507
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,4,session_009,0.015556540233959587
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,5,session_003,0.01540683678382282
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,6,session_008,0.015151515151515152
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,7,session_010,0.0151288056206089
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,8,session_007,0.015050096961861667
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,9,session_006,0.014780611990216144
+duration_01,Relevant (Other Duration),Dynamic Query-Aware RRF,10,session_004,0.014728785738825056
+duration_02,Relevant (Other Duration),Static Weighted RRF,1,session_005,0.016327340031729243
+duration_02,Relevant (Other Duration),Static Weighted RRF,2,session_001,0.01583581349206349
+duration_02,Relevant (Other Duration),Static Weighted RRF,3,session_009,0.015773244781783678
+duration_02,Relevant (Other Duration),Static Weighted RRF,4,session_007,0.01560185715923421
+duration_02,Relevant (Other Duration),Static Weighted RRF,5,session_002,0.015336791831357048
+duration_02,Relevant (Other Duration),Static Weighted RRF,6,session_008,0.015203204755443562
+duration_02,Relevant (Other Duration),Static Weighted RRF,7,session_003,0.01506735623353819
+duration_02,Relevant (Other Duration),Static Weighted RRF,8,session_010,0.014725274725274724
+duration_02,Relevant (Other Duration),Static Weighted RRF,9,session_006,0.014557646549859398
+duration_02,Relevant (Other Duration),Static Weighted RRF,10,session_004,0.01453781512605042
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,1,session_005,0.048915917503966164
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,2,session_001,0.047371031746031744
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,3,session_009,0.04696394686907021
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,4,session_007,0.04692957315908136
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,5,session_008,0.045949904158859384
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,6,session_002,0.04526926877470356
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,7,session_003,0.04525625548726954
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,8,session_010,0.045054945054945054
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,9,session_006,0.04391088038070517
+duration_02,Relevant (Other Duration),Standard Unweighted RRF,10,session_004,0.04327731092436975
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,1,session_005,0.016327340031729243
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,2,session_001,0.01583581349206349
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,3,session_009,0.015773244781783678
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,4,session_007,0.01560185715923421
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,5,session_002,0.015336791831357048
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,6,session_008,0.015203204755443562
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,7,session_003,0.01506735623353819
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,8,session_010,0.014725274725274724
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,9,session_006,0.014557646549859398
+duration_02,Relevant (Other Duration),Dynamic Query-Aware RRF,10,session_004,0.01453781512605042
+duration_03,Relevant (Other Duration),Static Weighted RRF,1,session_005,0.016026425250795204
+duration_03,Relevant (Other Duration),Static Weighted RRF,2,session_009,0.016003024193548387
+duration_03,Relevant (Other Duration),Static Weighted RRF,3,session_003,0.015730869462212745
+duration_03,Relevant (Other Duration),Static Weighted RRF,4,session_010,0.015395894428152493
+duration_03,Relevant (Other Duration),Static Weighted RRF,5,session_004,0.015305880713489409
+duration_03,Relevant (Other Duration),Static Weighted RRF,6,session_002,0.015259466889275895
+duration_03,Relevant (Other Duration),Static Weighted RRF,7,session_006,0.015081152862482785
+duration_03,Relevant (Other Duration),Static Weighted RRF,8,session_008,0.014864483342744213
+duration_03,Relevant (Other Duration),Static Weighted RRF,9,session_001,0.014761332417582417
+duration_03,Relevant (Other Duration),Static Weighted RRF,10,session_007,0.01453781512605042
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,1,session_009,0.04788306451612903
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,2,session_005,0.047712258380229994
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,3,session_003,0.046671404880360104
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,4,session_010,0.04643206256109482
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,5,session_002,0.04602469811022035
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,6,session_008,0.04551728464771943
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,7,session_004,0.04550236900780379
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,8,session_001,0.04529532967032967
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,9,session_006,0.044583251360744966
+duration_03,Relevant (Other Duration),Standard Unweighted RRF,10,session_007,0.04327731092436975
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,1,session_005,0.016026425250795204
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,2,session_009,0.016003024193548387
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,3,session_003,0.015730869462212745
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,4,session_010,0.015395894428152493
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,5,session_004,0.015305880713489409
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,6,session_002,0.015259466889275895
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,7,session_006,0.015081152862482785
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,8,session_008,0.014864483342744213
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,9,session_001,0.014761332417582417
+duration_03,Relevant (Other Duration),Dynamic Query-Aware RRF,10,session_007,0.01453781512605042
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,1,session_005,0.01597155255544841
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,2,session_004,0.015873015873015872
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,3,session_009,0.015828117477130477
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,4,session_002,0.01521978021978022
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,5,session_006,0.015185234541577823
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,6,session_003,0.015057847496706193
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,7,session_007,0.015035386924075274
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,8,session_010,0.01481729055258467
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,9,session_001,0.0064060529634300135
+shotside_01,Relevant (Single Shotside),Static Weighted RRF,10,session_008,0.0063049853372434015
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,1,session_004,0.047619047619047616
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,2,session_005,0.047492767598842814
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,3,session_009,0.04718343765045739
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,4,session_003,0.04526926877470356
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,5,session_002,0.045054945054945054
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,6,session_007,0.04504312675751677
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,7,session_006,0.04483608742004264
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,8,session_010,0.044563279857397504
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,9,session_001,0.03177805800756621
+shotside_01,Relevant (Single Shotside),Standard Unweighted RRF,10,session_008,0.03128054740957967
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,1,session_005,0.01597155255544841
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,2,session_004,0.015873015873015872
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,3,session_009,0.015828117477130477
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,4,session_002,0.01521978021978022
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,5,session_006,0.015185234541577823
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,6,session_003,0.015057847496706193
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,7,session_007,0.015035386924075274
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,8,session_010,0.01481729055258467
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,9,session_001,0.0064060529634300135
+shotside_01,Relevant (Single Shotside),Dynamic Query-Aware RRF,10,session_008,0.0063049853372434015
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,1,session_007,0.016327340031729243
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,2,session_004,0.01619513484928609
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,3,session_001,0.015490747929606625
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,4,session_008,0.015327380952380952
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,5,session_002,0.015279876373626374
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,6,session_006,0.015099475687710981
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,7,session_010,0.015040183696900113
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,8,session_003,0.015040106951871659
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,9,session_005,0.014600908500973394
+shotside_02,Relevant (Single Shotside),Static Weighted RRF,10,session_009,0.014565189712248534
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,1,session_007,0.048915917503966164
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,2,session_004,0.048651507139079855
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,3,session_001,0.04599076949620428
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,4,session_006,0.04596351361057244
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,5,session_008,0.045783730158730156
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,6,session_002,0.04529532967032967
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,7,session_010,0.045235361653272105
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,8,session_003,0.045008912655971484
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,9,session_009,0.04414311179017061
+shotside_02,Relevant (Single Shotside),Standard Unweighted RRF,10,session_005,0.04391088038070517
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,1,session_007,0.016327340031729243
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,2,session_004,0.01619513484928609
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,3,session_001,0.015490747929606625
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,4,session_008,0.015327380952380952
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,5,session_002,0.015279876373626374
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,6,session_006,0.015099475687710981
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,7,session_010,0.015040183696900113
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,8,session_003,0.015040106951871659
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,9,session_005,0.014600908500973394
+shotside_02,Relevant (Single Shotside),Dynamic Query-Aware RRF,10,session_009,0.014565189712248534
+vague_01,Vague But Relevant,Static Weighted RRF,1,session_010,0.0064912744579587525
+vague_01,Vague But Relevant,Static Weighted RRF,2,session_003,0.006479313036690085
+vague_01,Vague But Relevant,Static Weighted RRF,3,session_002,0.006387608806963645
+vague_01,Vague But Relevant,Static Weighted RRF,4,session_001,0.006153846153846154
+vague_01,Vague But Relevant,Static Weighted RRF,5,session_007,0.006131628787878788
+vague_01,Vague But Relevant,Static Weighted RRF,6,session_004,0.0061121323529411764
+vague_01,Vague But Relevant,Static Weighted RRF,7,session_008,0.0059152765583845475
+vague_01,Vague But Relevant,Static Weighted RRF,8,session_009,0.005895915678524374
+vague_01,Vague But Relevant,Static Weighted RRF,9,session_006,0.0058742004264392324
+vague_01,Vague But Relevant,Static Weighted RRF,10,session_005,0.005745341614906832
+vague_01,Vague But Relevant,Standard Unweighted RRF,1,session_010,0.03252247488101534
+vague_01,Vague But Relevant,Standard Unweighted RRF,2,session_003,0.032266458495966696
+vague_01,Vague But Relevant,Standard Unweighted RRF,3,session_002,0.03200204813108039
+vague_01,Vague But Relevant,Standard Unweighted RRF,4,session_007,0.030776515151515152
+vague_01,Vague But Relevant,Standard Unweighted RRF,5,session_001,0.03076923076923077
+vague_01,Vague But Relevant,Standard Unweighted RRF,6,session_004,0.030330882352941176
+vague_01,Vague But Relevant,Standard Unweighted RRF,7,session_009,0.02964426877470356
+vague_01,Vague But Relevant,Standard Unweighted RRF,8,session_008,0.029631255487269532
+vague_01,Vague But Relevant,Standard Unweighted RRF,9,session_006,0.029211087420042643
+vague_01,Vague But Relevant,Standard Unweighted RRF,10,session_005,0.02877846790890269
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,1,session_003,0.0073250065053343735
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,2,session_010,0.007284505552617663
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,3,session_002,0.007168458781362006
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,4,session_004,0.006939338235294117
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,5,session_001,0.006923076923076923
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,6,session_007,0.006865530303030302
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,7,session_006,0.006652452025586353
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,8,session_008,0.006639596136962247
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,9,session_009,0.006587615283267457
+vague_01,Vague But Relevant,Dynamic Query-Aware RRF,10,session_005,0.00644927536231884
+vague_02,Vague But Relevant,Static Weighted RRF,1,session_001,0.015918270373010218
+vague_02,Vague But Relevant,Static Weighted RRF,2,session_003,0.01578821044546851
+vague_02,Vague But Relevant,Static Weighted RRF,3,session_002,0.01573775183150183
+vague_02,Vague But Relevant,Static Weighted RRF,4,session_008,0.015668202764976956
+vague_02,Vague But Relevant,Static Weighted RRF,5,session_004,0.015315729047072332
+vague_02,Vague But Relevant,Static Weighted RRF,6,session_007,0.015015829941203075
+vague_02,Vague But Relevant,Static Weighted RRF,7,session_010,0.015007656142167012
+vague_02,Vague But Relevant,Static Weighted RRF,8,session_005,0.014910236822001528
+vague_02,Vague But Relevant,Static Weighted RRF,9,session_009,0.014728785738825056
+vague_02,Vague But Relevant,Static Weighted RRF,10,session_006,0.006304243008678882
+vague_02,Vague But Relevant,Standard Unweighted RRF,1,session_003,0.04762704813108039
+vague_02,Vague But Relevant,Standard Unweighted RRF,2,session_001,0.04727963886909005
+vague_02,Vague But Relevant,Standard Unweighted RRF,3,session_002,0.04688263125763126
+vague_02,Vague But Relevant,Standard Unweighted RRF,4,session_008,0.046543778801843315
+vague_02,Vague But Relevant,Standard Unweighted RRF,5,session_010,0.04599076949620428
+vague_02,Vague But Relevant,Standard Unweighted RRF,6,session_004,0.04569460390355913
+vague_02,Vague But Relevant,Standard Unweighted RRF,7,session_007,0.045228403437358664
+vague_02,Vague But Relevant,Standard Unweighted RRF,8,session_005,0.044143111790170615
+vague_02,Vague But Relevant,Standard Unweighted RRF,9,session_009,0.04412400911045794
+vague_02,Vague But Relevant,Standard Unweighted RRF,10,session_006,0.031099324975891997
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,1,session_003,0.01582621287762417
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,2,session_002,0.01573737026862027
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,3,session_001,0.015728201473033974
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,4,session_008,0.015483870967741935
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,5,session_004,0.015338691159586684
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,6,session_010,0.01508907004830918
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,7,session_007,0.015027137042062415
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,8,session_005,0.014908963585434174
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,9,session_009,0.014761391253451415
+vague_02,Vague But Relevant,Dynamic Query-Aware RRF,10,session_006,0.007208293153326904
+vague_03,Vague But Relevant,Static Weighted RRF,1,session_003,0.006517715494447383
+vague_03,Vague But Relevant,Static Weighted RRF,2,session_002,0.006427270361696592
+vague_03,Vague But Relevant,Static Weighted RRF,3,session_010,0.00641321044546851
+vague_03,Vague But Relevant,Static Weighted RRF,4,session_001,0.006178977272727273
+vague_03,Vague But Relevant,Static Weighted RRF,5,session_009,0.0060955710955710955
+vague_03,Vague But Relevant,Static Weighted RRF,6,session_008,0.0060849598163031
+vague_03,Vague But Relevant,Static Weighted RRF,7,session_005,0.006075093283582089
+vague_03,Vague But Relevant,Static Weighted RRF,8,session_007,0.005850383631713555
+vague_03,Vague But Relevant,Static Weighted RRF,9,session_006,0.0058290707587382775
+vague_03,Vague But Relevant,Static Weighted RRF,10,session_004,0.005714285714285713
+vague_03,Vague But Relevant,Standard Unweighted RRF,1,session_003,0.03252247488101534
+vague_03,Vague But Relevant,Standard Unweighted RRF,2,session_002,0.032266458495966696
+vague_03,Vague But Relevant,Standard Unweighted RRF,3,session_010,0.03200204813108039
+vague_03,Vague But Relevant,Standard Unweighted RRF,4,session_001,0.030776515151515152
+vague_03,Vague But Relevant,Standard Unweighted RRF,5,session_005,0.03055037313432836
+vague_03,Vague But Relevant,Standard Unweighted RRF,6,session_009,0.030536130536130537
+vague_03,Vague But Relevant,Standard Unweighted RRF,7,session_008,0.030309988518943745
+vague_03,Vague But Relevant,Standard Unweighted RRF,8,session_007,0.02919863597612958
+vague_03,Vague But Relevant,Standard Unweighted RRF,9,session_006,0.02919863597612958
+vague_03,Vague But Relevant,Standard Unweighted RRF,10,session_004,0.02857142857142857
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,1,session_003,0.007350608143839238
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,2,session_010,0.007232462877624168
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,3,session_002,0.007194899817850637
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,4,session_001,0.006983901515151515
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,5,session_008,0.00687715269804822
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,6,session_009,0.006841491841491841
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,7,session_005,0.006786380597014925
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,8,session_007,0.006596334185848252
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,9,session_006,0.006543052003410059
+vague_03,Vague But Relevant,Dynamic Query-Aware RRF,10,session_004,0.006428571428571428
+vague_04,Vague But Relevant,Static Weighted RRF,1,session_005,0.015918270373010218
+vague_04,Vague But Relevant,Static Weighted RRF,2,session_009,0.015773244781783678
+vague_04,Vague But Relevant,Static Weighted RRF,3,session_001,0.006349206349206349
+vague_04,Vague But Relevant,Static Weighted RRF,4,session_004,0.0062722736992159665
+vague_04,Vague But Relevant,Static Weighted RRF,5,session_007,0.0061751152073732715
+vague_04,Vague But Relevant,Static Weighted RRF,6,session_002,0.0061121323529411764
+vague_04,Vague But Relevant,Static Weighted RRF,7,session_006,0.0060849598163031
+vague_04,Vague But Relevant,Static Weighted RRF,8,session_010,0.006075093283582089
+vague_04,Vague But Relevant,Static Weighted RRF,9,session_008,0.006060606060606061
+vague_04,Vague But Relevant,Static Weighted RRF,10,session_003,0.005879120879120879
+vague_04,Vague But Relevant,Standard Unweighted RRF,1,session_005,0.04727963886909005
+vague_04,Vague But Relevant,Standard Unweighted RRF,2,session_009,0.04696394686907021
+vague_04,Vague But Relevant,Standard Unweighted RRF,3,session_001,0.031746031746031744
+vague_04,Vague But Relevant,Standard Unweighted RRF,4,session_004,0.030886196246139225
+vague_04,Vague But Relevant,Standard Unweighted RRF,5,session_010,0.03055037313432836
+vague_04,Vague But Relevant,Standard Unweighted RRF,6,session_007,0.0304147465437788
+vague_04,Vague But Relevant,Standard Unweighted RRF,7,session_002,0.030330882352941176
+vague_04,Vague But Relevant,Standard Unweighted RRF,8,session_006,0.030309988518943745
+vague_04,Vague But Relevant,Standard Unweighted RRF,9,session_008,0.030303030303030304
+vague_04,Vague But Relevant,Standard Unweighted RRF,10,session_003,0.02967032967032967
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,1,session_005,0.015728201473033974
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,2,session_009,0.01563092979127135
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,3,session_004,0.007186980280351627
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,4,session_001,0.007142857142857142
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,5,session_007,0.007073732718894009
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,6,session_002,0.006939338235294117
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,7,session_006,0.00687715269804822
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,8,session_008,0.006818181818181818
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,9,session_010,0.006786380597014925
+vague_04,Vague But Relevant,Dynamic Query-Aware RRF,10,session_003,0.006538461538461538
+vague_05,Vague But Relevant,Static Weighted RRF,1,session_004,0.016353781068217874
+vague_05,Vague But Relevant,Static Weighted RRF,2,session_007,0.01616869381279746
+vague_05,Vague But Relevant,Static Weighted RRF,3,session_010,0.00625
+vague_05,Vague But Relevant,Static Weighted RRF,4,session_003,0.006240981240981241
+vague_05,Vague But Relevant,Static Weighted RRF,5,session_002,0.0062271062271062275
+vague_05,Vague But Relevant,Static Weighted RRF,6,session_001,0.005993761140819964
+vague_05,Vague But Relevant,Static Weighted RRF,7,session_008,0.005930880713489409
+vague_05,Vague But Relevant,Static Weighted RRF,8,session_006,0.0059152765583845475
+vague_05,Vague But Relevant,Static Weighted RRF,9,session_005,0.0058742004264392324
+vague_05,Vague But Relevant,Static Weighted RRF,10,session_009,0.005745341614906832
+vague_05,Vague But Relevant,Standard Unweighted RRF,1,session_004,0.04891591750396616
+vague_05,Vague But Relevant,Standard Unweighted RRF,2,session_007,0.048651507139079855
+vague_05,Vague But Relevant,Standard Unweighted RRF,3,session_002,0.03125763125763126
+vague_05,Vague But Relevant,Standard Unweighted RRF,4,session_010,0.03125
+vague_05,Vague But Relevant,Standard Unweighted RRF,5,session_003,0.031024531024531024
+vague_05,Vague But Relevant,Standard Unweighted RRF,6,session_008,0.029877369007803793
+vague_05,Vague But Relevant,Standard Unweighted RRF,7,session_001,0.029857397504456328
+vague_05,Vague But Relevant,Standard Unweighted RRF,8,session_006,0.029631255487269532
+vague_05,Vague But Relevant,Standard Unweighted RRF,9,session_005,0.029211087420042643
+vague_05,Vague But Relevant,Standard Unweighted RRF,10,session_009,0.02877846790890269
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,1,session_004,0.01636700158646219
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,2,session_007,0.016155473294553146
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,3,session_003,0.00707070707070707
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,4,session_010,0.007031249999999999
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,5,session_002,0.006971916971916972
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,6,session_001,0.00677361853832442
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,7,session_005,0.006652452025586353
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,8,session_006,0.006639596136962247
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,9,session_008,0.0066109253065774806
+vague_05,Vague But Relevant,Dynamic Query-Aware RRF,10,session_009,0.00644927536231884
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,1,session_004,0.0064060529634300135
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,2,session_001,0.006387608806963645
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,3,session_007,0.0061751152073732715
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,4,session_008,0.006131628787878788
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,5,session_006,0.006118881118881119
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,6,session_005,0.006082204799239725
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,7,session_002,0.0060801630434782605
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,8,session_009,0.006057422969187674
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,9,session_010,0.0059372256365232655
+other_sport_01,Out-of-Scope (Other Sport),Static Weighted RRF,10,session_003,0.005810234541577825
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,1,session_001,0.03200204813108039
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,2,session_004,0.03177805800756621
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,3,session_005,0.030886196246139225
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,4,session_008,0.030776515151515152
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,5,session_009,0.03057889822595705
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,6,session_006,0.030536130536130537
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,7,session_007,0.0304147465437788
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,8,session_002,0.030117753623188408
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,9,session_010,0.029631255487269532
+other_sport_01,Out-of-Scope (Other Sport),Standard Unweighted RRF,10,session_003,0.029211087420042643
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,1,session_004,0.0064060529634300135
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,2,session_001,0.006387608806963645
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,3,session_007,0.0061751152073732715
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,4,session_008,0.006131628787878788
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,5,session_006,0.006118881118881119
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,6,session_005,0.006082204799239725
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,7,session_002,0.0060801630434782605
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,8,session_009,0.006057422969187674
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,9,session_010,0.0059372256365232655
+other_sport_01,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,10,session_003,0.005810234541577825
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,1,session_001,0.006376008064516129
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,2,session_005,0.006365266393442624
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,3,session_009,0.006304243008678882
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,4,session_010,0.0062070599384032215
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,5,session_008,0.006168831168831169
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,6,session_007,0.006153846153846154
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,7,session_006,0.006042543244506779
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,8,session_004,0.0058742004264392324
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,9,session_002,0.005850383631713555
+other_sport_02,Out-of-Scope (Other Sport),Static Weighted RRF,10,session_003,0.005844155844155844
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,1,session_005,0.032018442622950824
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,2,session_001,0.031754032258064516
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,3,session_009,0.031099324975891997
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,4,session_008,0.031024531024531024
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,5,session_010,0.030798389007344232
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,6,session_007,0.03076923076923077
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,7,session_006,0.030621785881252923
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,8,session_003,0.029437229437229435
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,9,session_004,0.029211087420042643
+other_sport_02,Out-of-Scope (Other Sport),Standard Unweighted RRF,10,session_002,0.02919863597612958
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,1,session_009,0.007208293153326904
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,2,session_001,0.007207661290322581
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,3,session_005,0.007108094262295082
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,4,session_010,0.0070480928689883905
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,5,session_007,0.006923076923076923
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,6,session_008,0.006890331890331889
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,7,session_006,0.006685366993922393
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,8,session_004,0.006652452025586353
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,9,session_002,0.006596334185848252
+other_sport_02,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,10,session_003,0.006515151515151515
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,1,session_001,0.006517715494447383
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,2,session_004,0.006287202380952381
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,3,session_003,0.006240981240981241
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,4,session_002,0.006238140417457305
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,5,session_008,0.006135486981677917
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,6,session_006,0.0060955710955710955
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,7,session_007,0.006075093283582089
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,8,session_005,0.005989010989010989
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,9,session_010,0.005810234541577825
+other_sport_03,Out-of-Scope (Other Sport),Static Weighted RRF,10,session_009,0.005797101449275362
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,1,session_001,0.03252247488101534
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,2,session_004,0.03149801587301587
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,3,session_008,0.031099324975891997
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,4,session_003,0.031024531024531024
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,5,session_002,0.030834914611005692
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,6,session_007,0.03055037313432836
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,7,session_006,0.030536130536130537
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,8,session_005,0.02967032967032967
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,9,session_010,0.029211087420042643
+other_sport_03,Out-of-Scope (Other Sport),Standard Unweighted RRF,10,session_009,0.028985507246376812
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,1,session_001,0.007350608143839238
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,2,session_002,0.007115749525616698
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,3,session_003,0.00707070707070707
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,4,session_004,0.0070560515873015865
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,5,session_006,0.006841491841491841
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,6,session_005,0.006813186813186813
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,7,session_008,0.006786403085824494
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,8,session_007,0.006786380597014925
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,9,session_009,0.006521739130434782
+other_sport_03,Out-of-Scope (Other Sport),Dynamic Query-Aware RRF,10,session_010,0.006492537313432835
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,1,session_001,0.00641321044546851
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,2,session_004,0.0063371666258869586
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,3,session_007,0.006240981240981241
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,4,session_006,0.006153846153846154
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,5,session_008,0.006131628787878788
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,6,session_009,0.006095825426944972
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,7,session_005,0.006082204799239725
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,8,session_002,0.0060491071428571425
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,9,session_010,0.00590525632706035
+squash_other_01,Out-of-Scope (Informational),Static Weighted RRF,10,session_003,0.005777310924369748
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,1,session_001,0.03200204813108039
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,2,session_004,0.03131881575727918
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,3,session_007,0.031024531024531024
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,4,session_005,0.030886196246139225
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,5,session_009,0.030834914611005692
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,6,session_008,0.030776515151515152
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,7,session_006,0.03076923076923077
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,8,session_002,0.029910714285714284
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,9,session_010,0.029418126757516764
+squash_other_01,Out-of-Scope (Informational),Standard Unweighted RRF,10,session_003,0.028991596638655463
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,1,session_001,0.007232462877624168
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,2,session_004,0.007230242231465622
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,3,session_007,0.00707070707070707
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,4,session_006,0.006923076923076923
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,5,session_002,0.006897321428571428
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,6,session_008,0.006865530303030302
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,7,session_009,0.006759962049335863
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,8,session_005,0.006711808030411024
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,9,session_010,0.006673155959333765
+squash_other_01,Out-of-Scope (Informational),Dynamic Query-Aware RRF,10,session_003,0.006470588235294117
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,1,session_004,0.006479313036690085
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,2,session_001,0.006451612903225806
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,3,session_008,0.006246895181321412
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,4,session_006,0.006189903846153847
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,5,session_007,0.0061421670117322285
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,6,session_002,0.0060491071428571425
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,7,session_010,0.0059372256365232655
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,8,session_005,0.005930880713489409
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,9,session_009,0.0059152765583845475
+squash_other_02,Out-of-Scope (Informational),Static Weighted RRF,10,session_003,0.005844155844155844
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,1,session_004,0.032266458495966696
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,2,session_001,0.03225806451612903
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,3,session_008,0.031544957774465976
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,4,session_006,0.031009615384615385
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,5,session_007,0.03036576949620428
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,6,session_002,0.029910714285714284
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,7,session_005,0.029877369007803793
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,8,session_010,0.029631255487269532
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,9,session_009,0.029631255487269532
+squash_other_02,Out-of-Scope (Informational),Standard Unweighted RRF,10,session_003,0.029437229437229435
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,1,session_004,0.0073250065053343735
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,2,session_001,0.007258064516129032
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,3,session_007,0.0070048309178743955
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,4,session_006,0.006947115384615385
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,5,session_008,0.006942374565325385
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,6,session_002,0.006897321428571428
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,7,session_010,0.006694468832309042
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,8,session_009,0.006639596136962247
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,9,session_005,0.0066109253065774806
+squash_other_02,Out-of-Scope (Informational),Dynamic Query-Aware RRF,10,session_003,0.006515151515151515
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,1,session_005,0.006349206349206349
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,2,session_003,0.006271064034665382
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,3,session_006,0.00625
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,4,session_004,0.006241217798594848
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,5,session_001,0.006190359677024713
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,6,session_010,0.006060606060606061
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,7,session_007,0.006052036199095023
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,8,session_008,0.006042543244506779
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,9,session_009,0.005879120879120879
+squash_other_03,Out-of-Scope (Informational),Static Weighted RRF,10,session_002,0.005850383631713555
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,1,session_005,0.031746031746031744
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,2,session_001,0.03131881575727918
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,3,session_006,0.03125
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,4,session_003,0.031054405392392875
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,5,session_004,0.030679156908665108
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,6,session_008,0.030621785881252923
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,7,session_010,0.030303030303030304
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,8,session_007,0.030090497737556562
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,9,session_009,0.02967032967032967
+squash_other_03,Out-of-Scope (Informational),Standard Unweighted RRF,10,session_002,0.02919863597612958
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,1,session_004,0.007166276346604215
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,2,session_005,0.007142857142857142
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,3,session_003,0.007137698603755416
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,4,session_006,0.007031249999999999
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,5,session_001,0.006863224859310007
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,6,session_007,0.006855203619909502
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,7,session_010,0.006818181818181818
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,8,session_008,0.006685366993922393
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,9,session_002,0.006596334185848252
+squash_other_03,Out-of-Scope (Informational),Dynamic Query-Aware RRF,10,session_009,0.006538461538461538
+random_01,Random (non-Relevant),Static Weighted RRF,1,session_001,0.006517715494447383
+random_01,Random (non-Relevant),Static Weighted RRF,2,session_004,0.006287202380952381
+random_01,Random (non-Relevant),Static Weighted RRF,3,session_002,0.006271064034665382
+random_01,Random (non-Relevant),Static Weighted RRF,4,session_003,0.006240981240981241
+random_01,Random (non-Relevant),Static Weighted RRF,5,session_008,0.006135486981677917
+random_01,Random (non-Relevant),Static Weighted RRF,6,session_006,0.006131628787878788
+random_01,Random (non-Relevant),Static Weighted RRF,7,session_007,0.006039035591274397
+random_01,Random (non-Relevant),Static Weighted RRF,8,session_005,0.005989010989010989
+random_01,Random (non-Relevant),Static Weighted RRF,9,session_009,0.005797101449275362
+random_01,Random (non-Relevant),Static Weighted RRF,10,session_010,0.005777310924369748
+random_01,Random (non-Relevant),Standard Unweighted RRF,1,session_001,0.03252247488101534
+random_01,Random (non-Relevant),Standard Unweighted RRF,2,session_004,0.03149801587301587
+random_01,Random (non-Relevant),Standard Unweighted RRF,3,session_008,0.031099324975891997
+random_01,Random (non-Relevant),Standard Unweighted RRF,4,session_002,0.031054405392392875
+random_01,Random (non-Relevant),Standard Unweighted RRF,5,session_003,0.031024531024531024
+random_01,Random (non-Relevant),Standard Unweighted RRF,6,session_006,0.030776515151515152
+random_01,Random (non-Relevant),Standard Unweighted RRF,7,session_007,0.030309988518943745
+random_01,Random (non-Relevant),Standard Unweighted RRF,8,session_005,0.02967032967032967
+random_01,Random (non-Relevant),Standard Unweighted RRF,9,session_010,0.028991596638655463
+random_01,Random (non-Relevant),Standard Unweighted RRF,10,session_009,0.028985507246376812
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,1,session_001,0.007350608143839238
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,2,session_002,0.007137698603755416
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,3,session_003,0.00707070707070707
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,4,session_004,0.0070560515873015865
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,5,session_006,0.006865530303030302
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,6,session_005,0.006813186813186813
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,7,session_008,0.006786403085824494
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,8,session_007,0.0067623421354764636
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,9,session_009,0.006521739130434782
+random_01,Random (non-Relevant),Dynamic Query-Aware RRF,10,session_010,0.006470588235294117
+random_02,Random (non-Relevant),Static Weighted RRF,1,session_002,0.00641321044546851
+random_02,Random (non-Relevant),Static Weighted RRF,2,session_001,0.0064060529634300135
+random_02,Random (non-Relevant),Static Weighted RRF,3,session_003,0.006387608806963645
+random_02,Random (non-Relevant),Static Weighted RRF,4,session_004,0.006365266393442624
+random_02,Random (non-Relevant),Static Weighted RRF,5,session_005,0.006020066889632107
+random_02,Random (non-Relevant),Static Weighted RRF,6,session_006,0.005993761140819964
+random_02,Random (non-Relevant),Static Weighted RRF,7,session_007,0.0059701492537313425
+random_02,Random (non-Relevant),Static Weighted RRF,8,session_008,0.005949197860962567
+random_02,Random (non-Relevant),Static Weighted RRF,9,session_010,0.005915178571428571
+random_02,Random (non-Relevant),Static Weighted RRF,10,session_009,0.0057660455486542445
+random_02,Random (non-Relevant),Standard Unweighted RRF,1,session_004,0.032018442622950824
+random_02,Random (non-Relevant),Standard Unweighted RRF,2,session_002,0.03200204813108039
+random_02,Random (non-Relevant),Standard Unweighted RRF,3,session_003,0.03200204813108039
+random_02,Random (non-Relevant),Standard Unweighted RRF,4,session_001,0.03177805800756621
+random_02,Random (non-Relevant),Standard Unweighted RRF,5,session_010,0.029910714285714284
+random_02,Random (non-Relevant),Standard Unweighted RRF,6,session_005,0.029877369007803793
+random_02,Random (non-Relevant),Standard Unweighted RRF,7,session_006,0.029857397504456328
+random_02,Random (non-Relevant),Standard Unweighted RRF,8,session_008,0.029857397504456328
+random_02,Random (non-Relevant),Standard Unweighted RRF,9,session_007,0.029850746268656716
+random_02,Random (non-Relevant),Standard Unweighted RRF,10,session_009,0.02877846790890269
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,1,session_001,0.0072761664564943256
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,2,session_002,0.007232462877624168
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,3,session_003,0.007168458781362006
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,4,session_004,0.007108094262295082
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,5,session_005,0.006833890746934225
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,6,session_006,0.00677361853832442
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,7,session_007,0.00671641791044776
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,8,session_008,0.006662210338680927
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,9,session_010,0.006562499999999999
+random_02,Random (non-Relevant),Dynamic Query-Aware RRF,10,session_009,0.00650103519668737
+random_03,Random (non-Relevant),Static Weighted RRF,1,session_002,0.00641321044546851
+random_03,Random (non-Relevant),Static Weighted RRF,2,session_001,0.0064060529634300135
+random_03,Random (non-Relevant),Static Weighted RRF,3,session_003,0.006240981240981241
+random_03,Random (non-Relevant),Static Weighted RRF,4,session_007,0.006190359677024713
+random_03,Random (non-Relevant),Static Weighted RRF,5,session_004,0.0061121323529411764
+random_03,Random (non-Relevant),Static Weighted RRF,6,session_008,0.0060202205882352935
+random_03,Random (non-Relevant),Static Weighted RRF,7,session_005,0.006020066889632107
+random_03,Random (non-Relevant),Static Weighted RRF,8,session_010,0.005990783410138248
+random_03,Random (non-Relevant),Static Weighted RRF,9,session_006,0.0059307359307359305
+random_03,Random (non-Relevant),Static Weighted RRF,10,session_009,0.0058619943759463545
+random_03,Random (non-Relevant),Standard Unweighted RRF,1,session_002,0.03200204813108039
+random_03,Random (non-Relevant),Standard Unweighted RRF,2,session_001,0.03177805800756621
+random_03,Random (non-Relevant),Standard Unweighted RRF,3,session_007,0.03131881575727918
+random_03,Random (non-Relevant),Standard Unweighted RRF,4,session_003,0.031024531024531024
+random_03,Random (non-Relevant),Standard Unweighted RRF,5,session_010,0.0304147465437788
+random_03,Random (non-Relevant),Standard Unweighted RRF,6,session_004,0.030330882352941176
+random_03,Random (non-Relevant),Standard Unweighted RRF,7,session_008,0.030330882352941176
+random_03,Random (non-Relevant),Standard Unweighted RRF,8,session_005,0.029877369007803793
+random_03,Random (non-Relevant),Standard Unweighted RRF,9,session_006,0.029437229437229435
+random_03,Random (non-Relevant),Standard Unweighted RRF,10,session_009,0.029418126757516764
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,1,session_001,0.0072761664564943256
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,2,session_002,0.007232462877624168
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,3,session_003,0.00707070707070707
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,4,session_004,0.006939338235294117
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,5,session_007,0.006863224859310007
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,6,session_005,0.006833890746934225
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,7,session_006,0.006731601731601731
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,8,session_008,0.006709558823529412
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,9,session_010,0.006612903225806451
+random_03,Random (non-Relevant),Dynamic Query-Aware RRF,10,session_009,0.006565001081548777
+random_04,Random (non-Relevant),Static Weighted RRF,1,session_001,0.006557377049180328
+random_04,Random (non-Relevant),Static Weighted RRF,2,session_002,0.0063049853372434015
+random_04,Random (non-Relevant),Static Weighted RRF,3,session_003,0.0062070599384032215
+random_04,Random (non-Relevant),Static Weighted RRF,4,session_006,0.006131628787878788
+random_04,Random (non-Relevant),Static Weighted RRF,5,session_008,0.006095825426944972
+random_04,Random (non-Relevant),Static Weighted RRF,6,session_004,0.0060801630434782605
+random_04,Random (non-Relevant),Static Weighted RRF,7,session_005,0.006052036199095023
+random_04,Random (non-Relevant),Static Weighted RRF,8,session_007,0.006039035591274397
+random_04,Random (non-Relevant),Static Weighted RRF,9,session_009,0.006004140786749482
+random_04,Random (non-Relevant),Static Weighted RRF,10,session_010,0.005714285714285713
+random_04,Random (non-Relevant),Standard Unweighted RRF,1,session_001,0.03278688524590164
+random_04,Random (non-Relevant),Standard Unweighted RRF,2,session_002,0.03128054740957967
+random_04,Random (non-Relevant),Standard Unweighted RRF,3,session_008,0.030834914611005692
+random_04,Random (non-Relevant),Standard Unweighted RRF,4,session_003,0.030798389007344232
+random_04,Random (non-Relevant),Standard Unweighted RRF,5,session_006,0.030776515151515152
+random_04,Random (non-Relevant),Standard Unweighted RRF,6,session_009,0.03036576949620428
+random_04,Random (non-Relevant),Standard Unweighted RRF,7,session_007,0.030309988518943745
+random_04,Random (non-Relevant),Standard Unweighted RRF,8,session_004,0.030117753623188408
+random_04,Random (non-Relevant),Standard Unweighted RRF,9,session_005,0.030090497737556562
+random_04,Random (non-Relevant),Standard Unweighted RRF,10,session_010,0.02857142857142857
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,1,session_001,0.007377049180327869
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,2,session_002,0.007160312805474096
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,3,session_003,0.0070480928689883905
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,4,session_004,0.00691802536231884
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,5,session_006,0.006865530303030302
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,6,session_005,0.006855203619909502
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,7,session_007,0.0067623421354764636
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,8,session_008,0.006759962049335863
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,9,session_009,0.0066597653554175285
+random_04,Random (non-Relevant),Dynamic Query-Aware RRF,10,session_010,0.006428571428571428
+random_05,Random (non-Relevant),Static Weighted RRF,1,session_002,0.00641321044546851
+random_05,Random (non-Relevant),Static Weighted RRF,2,session_001,0.0063371666258869586
+random_05,Random (non-Relevant),Static Weighted RRF,3,session_003,0.006312003968253968
+random_05,Random (non-Relevant),Static Weighted RRF,4,session_007,0.006190359677024713
+random_05,Random (non-Relevant),Static Weighted RRF,5,session_006,0.0060955710955710955
+random_05,Random (non-Relevant),Static Weighted RRF,6,session_004,0.0060801630434782605
+random_05,Random (non-Relevant),Static Weighted RRF,7,session_010,0.005990783410138248
+random_05,Random (non-Relevant),Static Weighted RRF,8,session_005,0.005989010989010989
+random_05,Random (non-Relevant),Static Weighted RRF,9,session_008,0.005949197860962567
+random_05,Random (non-Relevant),Static Weighted RRF,10,session_009,0.0058290707587382775
+random_05,Random (non-Relevant),Standard Unweighted RRF,1,session_002,0.03200204813108039
+random_05,Random (non-Relevant),Standard Unweighted RRF,2,session_003,0.03149801587301587
+random_05,Random (non-Relevant),Standard Unweighted RRF,3,session_001,0.03131881575727918
+random_05,Random (non-Relevant),Standard Unweighted RRF,4,session_007,0.03131881575727918
+random_05,Random (non-Relevant),Standard Unweighted RRF,5,session_006,0.030536130536130537
+random_05,Random (non-Relevant),Standard Unweighted RRF,6,session_010,0.0304147465437788
+random_05,Random (non-Relevant),Standard Unweighted RRF,7,session_004,0.030117753623188408
+random_05,Random (non-Relevant),Standard Unweighted RRF,8,session_008,0.029857397504456328
+random_05,Random (non-Relevant),Standard Unweighted RRF,9,session_005,0.02967032967032967
+random_05,Random (non-Relevant),Standard Unweighted RRF,10,session_009,0.02919863597612958
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,1,session_002,0.007232462877624168
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,2,session_001,0.007230242231465622
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,3,session_003,0.0071180555555555546
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,4,session_004,0.00691802536231884
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,5,session_007,0.006863224859310007
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,6,session_006,0.006841491841491841
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,7,session_005,0.006813186813186813
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,8,session_008,0.006662210338680927
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,9,session_010,0.006612903225806451
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,10,session_009,0.006543052003410059
+random_05,Random (non-Relevant),Static Weighted RRF,1,session_003,0.006427270361696592
+random_05,Random (non-Relevant),Static Weighted RRF,2,session_002,0.006376008064516129
+random_05,Random (non-Relevant),Static Weighted RRF,3,session_001,0.0063371666258869586
+random_05,Random (non-Relevant),Static Weighted RRF,4,session_007,0.006150698122291767
+random_05,Random (non-Relevant),Static Weighted RRF,5,session_004,0.0060801630434782605
+random_05,Random (non-Relevant),Static Weighted RRF,6,session_006,0.005993761140819964
+random_05,Random (non-Relevant),Static Weighted RRF,7,session_005,0.005989010989010989
+random_05,Random (non-Relevant),Static Weighted RRF,8,session_008,0.005984162895927602
+random_05,Random (non-Relevant),Static Weighted RRF,9,session_010,0.005952380952380952
+random_05,Random (non-Relevant),Static Weighted RRF,10,session_009,0.005895915678524374
+random_05,Random (non-Relevant),Standard Unweighted RRF,1,session_003,0.032266458495966696
+random_05,Random (non-Relevant),Standard Unweighted RRF,2,session_002,0.031754032258064516
+random_05,Random (non-Relevant),Standard Unweighted RRF,3,session_001,0.03131881575727918
+random_05,Random (non-Relevant),Standard Unweighted RRF,4,session_007,0.031054405392392875
+random_05,Random (non-Relevant),Standard Unweighted RRF,5,session_010,0.030158730158730156
+random_05,Random (non-Relevant),Standard Unweighted RRF,6,session_004,0.030117753623188408
+random_05,Random (non-Relevant),Standard Unweighted RRF,7,session_008,0.030090497737556562
+random_05,Random (non-Relevant),Standard Unweighted RRF,8,session_006,0.029857397504456328
+random_05,Random (non-Relevant),Standard Unweighted RRF,9,session_005,0.02967032967032967
+random_05,Random (non-Relevant),Standard Unweighted RRF,10,session_009,0.02964426877470356
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,1,session_001,0.007230242231465622
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,2,session_002,0.007207661290322581
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,3,session_003,0.007194899817850637
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,4,session_004,0.00691802536231884
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,5,session_007,0.006836783822821376
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,6,session_005,0.006813186813186813
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,7,session_006,0.00677361853832442
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,8,session_008,0.006685520361990951
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,9,session_009,0.006587615283267457
+random_05,Random (non-Relevant),Dynamic Query-Aware RRF,10,session_010,0.006587301587301586

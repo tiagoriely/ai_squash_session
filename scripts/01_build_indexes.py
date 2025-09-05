@@ -107,7 +107,7 @@ if __name__ == "__main__":
                 inputs = tokenizer(batch, max_length=512, padding=True, truncation=True, return_tensors='pt').to(device)
                 outputs = model(**inputs)
                 embeddings = average_pool(outputs.last_hidden_state, inputs['attention_mask'])
-                embeddings = torch.nn.functional.normalise(embeddings, p=2, dim=1)
+                embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)
                 all_embeddings.append(embeddings.cpu().numpy())
 
         embeddings_np = np.vstack(all_embeddings)
