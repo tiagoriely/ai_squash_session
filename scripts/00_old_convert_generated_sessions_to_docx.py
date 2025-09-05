@@ -16,8 +16,8 @@ def create_session_docx(session_data: dict, output_dir: Path):
     """Creates and saves a single .docx file for a given squash session."""
     try:
         session_id = session_data.get("session_id", "unknown_session")
-        question = session_data.get("query_text", "N/A")
-        text_content = session_data.get("generated_plan", "")
+        question = session_data.get("question", "N/A")
+        text_content = session_data.get("answer", "")
 
         if not text_content:
             print(f"⚠️ Warning: No 'answer' content found for session {session_id}. Skipping.")
@@ -115,7 +115,7 @@ def main():
     print(f"📂 Output directory is '{output_path}'")
 
     successful_conversions = 0
-    # Parsing loop
+    # --- 🔽 ROBUST PARSING LOOP 🔽 ---
     with open(input_path, 'r', encoding='utf-8') as f:
         for i, line in enumerate(f, 1):
             # First, skip any blank lines
@@ -138,7 +138,7 @@ def main():
             except json.JSONDecodeError:
                 # The line was not valid JSON at all
                 print(f"⚠️ Warning: Could not parse line {i} as JSON. Skipping.")
-    # --- Parsing ---
+    # --- END OF ROBUST PARSING LOOP ---
 
     print(f"\n✅ Done! Successfully created {successful_conversions} .docx files.")
 

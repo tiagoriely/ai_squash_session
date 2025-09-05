@@ -98,7 +98,7 @@ if __name__ == "__main__":
     print(answer)
 
     # ------------- write / append ragas-ready row -------------
-    out_path = Path("data/eval_datasetTODAY.json")
+    out_path = Path("archive/data/eval_datasetTODAY.json")
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     current_data = []

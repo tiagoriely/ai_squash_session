@@ -1,5 +1,5 @@
 # Configuration for the DOCX conversion script
 paths:
-  input_file: "data/results/sparse_only_balanced_500_results.jsonl"
-  output_dir: "data/generated_sessions"
+  input_file: "data/generated_sessions/human_evaluation_set_k3_size100.json"
+  output_dir: "experiments/size100"
 
