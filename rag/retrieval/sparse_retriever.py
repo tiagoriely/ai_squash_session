@@ -72,8 +72,8 @@ class SparseRetriever(BaseRetriever):
             doc['sparse_score'] = score
             results.append(doc)
 
-        for index, score in top_n_indices[:100]:
-            print(
-                f"[DEBUG] top{index}: id={self.kb[index].get('id') or self.kb[index].get('session_id')}, score={score:.4f}")
+        # for index, score in top_n_indices[:100]:
+        #     print(
+        #         f"[DEBUG] top{index}: id={self.kb[index].get('id') or self.kb[index].get('session_id')}, score={score:.4f}")
 
         return results

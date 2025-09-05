@@ -30,10 +30,10 @@ def average_pool(last_hidden_states: torch.Tensor, attention_mask: torch.Tensor)
     return last_hidden.sum(dim=1) / attention_mask.sum(dim=1)[..., None]
 
 
-def serialize_metadata(meta: dict) -> str:
+def serialise_metadata(meta: dict) -> str:
     """
     Converts a metadata dictionary into a single space-separated string
-    with phrase-aware serialization.
+    with phrase-aware serialisation.
     """
     from rag.utils import replace_phrases, SQUASH_PHRASES  # Add imports
 
@@ -89,17 +89,25 @@ if __name__ == "__main__":
         model.to(device)
 
         print(f"   - Encoding {len(corpus)} documents (using {device})...")
-        corpus_texts = ["query: " + doc['contents'] for doc in corpus]
+        corpus_texts = ["passage: " + doc['contents'] for doc in corpus]
+
+        # Indexing metadata
+        texts_for_dense_index = []
+        for doc in tqdm(corpus, desc="Preparing Docs for Dense Index"):
+            metadata_str = serialise_metadata(doc['meta'])
+            combined_text = f"passage: {metadata_str}. {doc['contents']}"
+            texts_for_dense_index.append(combined_text)
+
         all_embeddings = []
-        batch_size = 32  # You can adjust this based on your hardware
+        batch_size = 32
         with torch.no_grad():
-            for i in tqdm(range(0, len(corpus_texts), batch_size)):
-                batch = corpus_texts[i:i + batch_size]
+            # Use the new, explicitly named variable here
+            for i in tqdm(range(0, len(texts_for_dense_index), batch_size)):
+                batch = texts_for_dense_index[i:i + batch_size]
                 inputs = tokenizer(batch, max_length=512, padding=True, truncation=True, return_tensors='pt').to(device)
                 outputs = model(**inputs)
                 embeddings = average_pool(outputs.last_hidden_state, inputs['attention_mask'])
-                # Normalize embeddings for E5 models
-                embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)
+                embeddings = torch.nn.functional.normalise(embeddings, p=2, dim=1)
                 all_embeddings.append(embeddings.cpu().numpy())
 
         embeddings_np = np.vstack(all_embeddings)
@@ -124,13 +132,13 @@ if __name__ == "__main__":
         print(f"✅ BM25 index already exists at: {bm25_index_path}. Skipping.")
     else:
         bm25_index_path.parent.mkdir(parents=True, exist_ok=True)
-        print("   - Serializing and tokenizing metadata for the corpus...")
-        tokenized_corpus = [advanced_tokenizer(serialize_metadata(doc['meta'])) for doc in tqdm(corpus)]
+        print("   - Serialising and tokenizing metadata for the corpus...")
+        tokenized_corpus = [advanced_tokenizer(serialise_metadata(doc['meta'])) for doc in tqdm(corpus)]
 
         # Get k1 and b from the config, with sensible defaults
         k1 = sparse_build_config.get('k1', 1.2)
         b = sparse_build_config.get('b', 0.85)
-        print(f"   - Initializing BM25 with k1={k1} and b={b}")
+        print(f"   - Initialising BM25 with k1={k1} and b={b}")
 
         # Pass the parameters to the BM25 constructor
         bm25 = BM25Okapi(tokenized_corpus, k1=k1, b=b)

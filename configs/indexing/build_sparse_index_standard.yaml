@@ -1,0 +1,14 @@
+# configs/indexing/build_sparse_index.yaml
+# Configuration for the self-contained sparse (BM25) index builder.
+
+# --- Template Variables ---
+corpus_size: 10
+grammar_type: "balanced"
+
+# --- Builder Parameters ---
+
+# Path to the source corpus data
+corpus_path: "data/processed/{grammar_type}_grammar/{grammar_type}_{corpus_size}.jsonl"
+
+# Path where the final BM25 index object will be saved
+index_path: "indexes/{grammar_type}_grammar/corpus_size_{corpus_size}/bm25/bm25_index_{grammar_type}_standard.pkl"

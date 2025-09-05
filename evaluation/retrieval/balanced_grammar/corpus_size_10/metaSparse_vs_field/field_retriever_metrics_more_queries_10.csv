@@ -1,0 +1,29 @@
+query_id,query_type,query_text,max_score,min_score,mean_score,std_dev,q25,median,q75,top_1_delta,top_doc_id
+complex_01_cg,Complexity Type 1 (Relevant),a 45-minute conditioned game session,8.0,3.0,4.75,2.0463381929681126,3.0,4.0,5.75,3.0,session_004
+complex_02_cg,Complexity Type 1 (Relevant),a 45-minute conditioned game session for an advanced player,11.0,3.0,5.5,2.692582403567252,3.25,4.0,7.0,2.0,session_004
+complex_03_cg,Complexity Type 1 (Relevant),a 45-minute conditioned game session for an advanced player focusing on volley drops,13.357142857142858,5.357142857142858,7.861428571428573,2.6949995267123135,5.607142857142858,6.357142857142858,9.389285714285714,2.0,session_004
+complex_21_mix,Complexity Type 2 (Relevant),a 60-minute mix session,8.0,3.0,7.285714285714286,1.749635530559413,8.0,8.0,8.0,0.0,session_001
+complex_22_mix,Complexity Type 2 (Relevant),a 60-minute mix session for an intermediate player,12.0,4.0,9.5,2.9154759474226504,7.5,11.0,12.0,0.0,session_003
+complex_23_mix,Complexity Type 2 (Relevant),a 60-minute mix session for an intermediate player focusing on straight lob,14.228571428571428,2.228571428571428,9.830714285714285,4.605156880928073,6.728571428571428,11.728571428571428,13.978571428571428,0.0,session_003
+complex_24_mix,Complexity Type 2 (Relevant),a 60-minute mix session for an intermediate player focusing on forehand straight kill,15.503571428571428,1.275,10.798214285714286,4.924685385682945,8.003571428571428,12.978571428571428,14.672321428571427,0.0,session_003
+ooc_01,Relevant (Outside Corpus),a session focusing on the volley cross,2.4,2.357142857142857,2.361428571428571,0.012857142857142812,2.357142857142857,2.357142857142857,2.357142857142857,0.042857142857142705,session_005
+ooc_02,Relevant (Outside Corpus),a drill session to improve on the cross-court nick,6.2,1.1785714285714286,2.1807142857142856,2.0042914418001865,1.1785714285714286,1.1785714285714286,1.1785714285714286,0.021428571428571352,session_005
+ooc_03,Relevant (Outside Corpus),a drill session to improve on the cross-court nick,6.2,1.1785714285714286,2.1807142857142856,2.0042914418001865,1.1785714285714286,1.1785714285714286,1.1785714285714286,0.021428571428571352,session_005
+ooc_05,Relevant (Outside Corpus),practice the 3-step ghosting,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A
+ooc_06,Relevant (Outside Corpus),a solo to practice cross drops,2.4,2.357142857142857,2.361428571428571,0.012857142857142812,2.357142857142857,2.357142857142857,2.357142857142857,0.042857142857142705,session_005
+duration_01,Relevant (Other Duration),a 90-minute drill session for an advanced player focusing on 2-wall boast,11.25,5.228571428571428,6.830714285714285,2.249199517470106,5.228571428571428,6.228571428571428,6.228571428571428,0.02142857142857224,session_005
+duration_02,Relevant (Other Duration),a 75-minute drill session for a professional player focusing on counter drop,11.25,5.228571428571428,6.830714285714285,2.249199517470106,5.228571428571428,6.228571428571428,6.228571428571428,0.02142857142857224,session_005
+duration_03,Relevant (Other Duration),a 30-minute drill session for a intermediate player on straight drop,7.25,2.228571428571428,5.730714285714285,1.3625233568490427,5.228571428571428,6.228571428571428,6.228571428571428,0.02142857142857224,session_005
+shotside_01,Relevant (Single Shotside),a 45-minute drill only focusing on backhand side,9.275,1.275,3.6781250000000005,3.3699137020664196,1.275,1.3875,5.525,0.0,session_005
+shotside_02,Relevant (Single Shotside),a 60-minute conditioned game only focusing on forehand side,9.275,1.275,4.2924999999999995,2.20734710682303,3.31875,4.275,4.5,3.0,session_007
+vague_01,Vague But Relevant,generate a squash session,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A
+vague_02,Vague But Relevant,generate a session to improve my forehand,1.5,1.275,1.325,0.09354143466934857,1.275,1.275,1.275,0.0,session_001
+vague_03,Vague But Relevant,generate a session to work on my movement to the front,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A
+vague_04,Vague But Relevant,a drill for squash,5.0,5.0,5.0,0.0,5.0,5.0,5.0,0.0,session_005
+vague_05,Vague But Relevant,a conditioned game session,5.0,5.0,5.0,0.0,5.0,5.0,5.0,0.0,session_004
+other_sport_01,Out-of-Scope (Other Sport),a drill to improve my tennis serve,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A
+other_sport_02,Out-of-Scope (Other Sport),how to practice a badminton drop shot,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A
+other_sport_03,Out-of-Scope (Other Sport),a good warm-up for playing padel,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A
+squash_other_01,Out-of-Scope (Informational),what is the best squash racket for a beginner,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A
+squash_other_02,Out-of-Scope (Informational),rules of a tie-break in squash,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A
+squash_other_03,Out-of-Scope (Informational),who is currently the best squash player,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,N/A

@@ -46,7 +46,12 @@ class SemanticRetriever(BaseRetriever):
         # Temporarily set the top_k for this specific search call
         self._retriever.retrieval_top_k = top_k
 
-        docs, scores = self._retriever.search(query, return_score=True)
+        # query/passage optimisation technique
+        prefixed_query = f"query: {query}"
+
+        # Pass the prefixed query to the underlying retriever
+        docs, scores = self._retriever.search(prefixed_query, return_score=True)
+        # docs, scores = self._retriever.search(query, return_score=True)
 
         # Restore the original top_k from the config
         self._retriever.retrieval_top_k = self._retrieval_top_k

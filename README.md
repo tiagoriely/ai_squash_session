@@ -25,6 +25,7 @@
 ```bash
 $ pip install -e .
 $ pip install requirements.txt
+$ pytest -v -s tests/
 ```
 
 # Useful to check errors in yaml files of grammars
@@ -65,8 +66,12 @@ $ python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering --config
 ```bash
 $ python3 scripts/01_build_indexes.py \
     --semantic-build-config configs/indexing/build_semantic_index.yaml \
-    --sparse-build-config configs/indexing/build_sparse_index.yaml
+    --sparse-build-config configs/indexing/build_sparse_index_meta.yaml
 ```
+
+$ python3 scripts/01_build_indexes_standard.py \
+    --semantic-build-config configs/indexing/build_semantic_index.yaml \
+    --sparse-build-config configs/indexing/build_sparse_index_standard.yaml
 
 # 4. Generate Sessions with RAG
 

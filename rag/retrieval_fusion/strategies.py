@@ -1,3 +1,5 @@
+# evaluation/retrieval/strategies.py
+
 from collections import defaultdict
 from typing import List, Dict
 
@@ -5,18 +7,12 @@ from typing import List, Dict
 from rag.parsers.user_query_parser import parse_user_prompt
 
 
-# --- Reciprocal Rank Fusion (RRF) Helper ---
+# --- Core Fusion Logic (Helper Function) ---
+
 def _rrf(ranked_lists: Dict[str, List[Dict]], weights: Dict[str, float], k: int = 60) -> List[Dict]:
     """
     Performs weighted Reciprocal Rank Fusion on multiple ranked lists.
-
-    Args:
-        ranked_lists (Dict[str, List[Dict]]): A dictionary mapping retriever names to their ranked lists.
-        weights (Dict[str, float]): A dictionary mapping retriever names to their fusion weights.
-        k (int): A constant to control the influence of lower-ranked documents.
-
-    Returns:
-        List[Dict]: The final, fused, and re-ranked list of documents.
+    This is the underlying engine for all our hybrid strategies.
     """
     rrf_scores = defaultdict(float)
     doc_inventory = {}
@@ -31,7 +27,7 @@ def _rrf(ranked_lists: Dict[str, List[Dict]], weights: Dict[str, float], k: int 
             if not doc_id:
                 continue
 
-            # Add to the RRF score
+            # Add to the RRF score, scaled by the retriever's weight
             rrf_scores[doc_id] += weight * (1 / (k + rank + 1))
 
             # Keep the document content from its first appearance
@@ -51,52 +47,72 @@ def _rrf(ranked_lists: Dict[str, List[Dict]], weights: Dict[str, float], k: int 
     return final_ranked_list
 
 
-# --- The Main Query-Aware Fusion Strategy ---
-def query_aware_fusion(ranked_lists_map: Dict[str, List[Dict]], query: str) -> List[Dict]:
+# --- HYBRID STRATEGY 1: Static Weights ---
+
+def static_weighted_rrf(ranked_lists_map: Dict[str, List[Dict]]) -> List[Dict]:
     """
-    Fuses ranked lists using a dynamic, query-aware strategy.
+    Hybrid Strategy 1: Fuses lists using a fixed set of weights that
+    prioritises the high-precision Field Retriever.
+    """
+    # These weights are static and applied to all queries.
+    static_weights = {
+        'field_metadata': 0.6,  # Highest weight for the most precise retriever
+        'sparse_bm25': 0.25,  # Medium weight for lexical flexibility
+        'semantic_e5': 0.15  # Lowest weight, used as a semantic booster
+    }
 
-    1. Applies reliability thresholds to filter results.
-    2. Analyses the query to determine if it's "vague" or "specific".
-    3. Sets dynamic weights for RRF based on the query type.
-    4. Fuses the filtered lists using weighted RRF.
+    print("   -> Applying STATIC WEIGHTED RRF strategy.")
+    return _rrf(ranked_lists_map, static_weights)
+
+
+# --- HYBRID STRATEGY 2: Standard Unweighted RRF ---
+
+def standard_unweighted_rrf(ranked_lists_map: Dict[str, List[Dict]]) -> List[Dict]:
+    """
+    Hybrid Strategy 2: Fuses lists using standard RRF where each
+    retriever is treated as an equal expert. This requires no tuning.
+    """
+    # Equal weights make this a standard, unweighted RRF.
+    equal_weights = {
+        'field_metadata': 1.0,
+        'sparse_bm25': 1.0,
+        'semantic_e5': 1.0
+    }
+
+    print("   -> Applying STANDARD UNWEIGHTED RRF strategy.")
+    return _rrf(ranked_lists_map, equal_weights)
+
+
+# --- HYBRID STRATEGY 3: Dynamic Query-Aware RRF ---
+
+def dynamic_query_aware_rrf(ranked_lists_map: Dict[str, List[Dict]], query: str) -> List[Dict]:
+    """
+    Hybrid Strategy 3: Fuses lists using a dynamic, query-aware strategy.
+    It analyses the query and adjusts weights to leverage the best retriever.
     """
 
-    # 1. Apply Reliability Thresholds
-    thresholded_lists = {}
-    for retriever_name, docs in ranked_lists_map.items():
-        if 'semantic' in retriever_name:
-            thresholded_lists[retriever_name] = [doc for doc in docs if doc.get('semantic_score', 0) >= 0.40]
-        elif 'field' in retriever_name:
-            thresholded_lists[retriever_name] = [doc for doc in docs if doc.get('field_score', 0) >= 1.0]
-        else:
-            # No threshold for the sparse retriever as it's already robust
-            thresholded_lists[retriever_name] = docs
-
-    # 2. Analyse the Query
-    # (Note: Assumes your parser can be called without the config/durations for this check)
+    # 1. Analyse the Query to determine if it's "vague" or "specific".
     parsed_desires = parse_user_prompt(query)
-    # Define "specific" as a query where key metadata is extracted
-    specific_keys = {'duration', 'participants', 'squashLevel', 'shots'}
+    specific_keys = {'duration', 'participants', 'squashLevel', 'shots', 'shotSide', 'movement'}
     is_specific = any(key in parsed_desires for key in specific_keys)
 
-    # 3. Set Dynamic Weights
+    # 2. Set Dynamic Weights based on the query type.
     if is_specific:
-        print("   -> Query identified as SPECIFIC. Prioritising sparse and field retrievers.")
+        print("   -> Query identified as SPECIFIC. Applying precision-focused weights.")
+
         weights = {
-            'semantic_e5': 0.1,
-            'sparse_bm25': 0.45,
-            'field_metadata': 0.45
+            'field_metadata': 0.5,  # High weight as it excels at specific queries
+            'sparse_bm25': 0.3,  # Complements with lexical matching
+            'semantic_e5': 0.2  # Semantic check to ensure relevance
         }
-    else:
-        print("   -> Query identified as VAGUE. Prioritising semantic retriever.")
+    else:  # Query is VAGUE
+        print("   -> Query identified as VAGUE. Applying balanced, flexible weights.")
+
         weights = {
-            'semantic_e5': 0.6,
-            'sparse_bm25': 0.2,
-            'field_metadata': 0.2
+            'field_metadata': 0.1,  # Low weight as few fields will match
+            'sparse_bm25': 0.5,  # Primary signal for finding relevant keyword matches
+            'semantic_e5': 0.4  # Strong semantic signal to understand the general intent
         }
 
-    # 4. Fuse using weighted RRF
-    fused_results = _rrf(thresholded_lists, weights)
-
-    return fused_results
+    # 3. Fuse using the dynamically chosen weights
+    return _rrf(ranked_lists_map, weights)
