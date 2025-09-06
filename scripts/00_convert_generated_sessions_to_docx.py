@@ -91,7 +91,7 @@ def create_session_docx(session_data: dict, output_dir: Path):
 def main():
     """Main function to parse config and orchestrate the conversion."""
     parser = argparse.ArgumentParser(
-        description="Convert session answers from a .jsonl file into formatted .docx files using a config file."
+        description="Convert session answers from a JSON file into formatted .docx files."
     )
     parser.add_argument(
         "--config", type=Path, required=True, help="Path to the YAML configuration file for paths."
@@ -114,31 +114,27 @@ def main():
     output_path.mkdir(parents=True, exist_ok=True)
     print(f"📂 Output directory is '{output_path}'")
 
+    try:
+        with open(input_path, 'r', encoding='utf-8') as f:
+            # Load the entire file at once, as it is a standard JSON list
+            all_sessions_data = json.load(f)
+
+        if not isinstance(all_sessions_data, list):
+            print(f"❌ Error: Input file '{input_path}' is not a valid JSON list of session objects.")
+            return
+
+    except json.JSONDecodeError:
+        print(f"❌ Error: Could not parse '{input_path}' as JSON. Please ensure it's a valid JSON file.")
+        return
+
     successful_conversions = 0
-    # Parsing loop
-    with open(input_path, 'r', encoding='utf-8') as f:
-        for i, line in enumerate(f, 1):
-            # First, skip any blank lines
-            if not line.strip():
-                continue
-
-            # Now, try to parse the line
-            try:
-                session_data = json.loads(line)
-
-                # CRITICAL CHECK: Ensure the result is a dictionary
-                if isinstance(session_data, dict):
-                    # Only call the function if it's a dictionary
-                    if create_session_docx(session_data, output_path):
-                        successful_conversions += 1
-                else:
-                    # The line was valid JSON, but not the object we need
-                    print(f"⚠️ Warning: Line {i} is not a JSON object. Skipping.")
-
-            except json.JSONDecodeError:
-                # The line was not valid JSON at all
-                print(f"⚠️ Warning: Could not parse line {i} as JSON. Skipping.")
-    # --- Parsing ---
+    # Loop through the list of session data dictionaries
+    for session_data in all_sessions_data:
+        if isinstance(session_data, dict):
+            if create_session_docx(session_data, output_path):
+                successful_conversions += 1
+        else:
+            print(f"⚠️ Warning: Found an item in the JSON file that is not a dictionary. Skipping.")
 
     print(f"\n✅ Done! Successfully created {successful_conversions} .docx files.")
 

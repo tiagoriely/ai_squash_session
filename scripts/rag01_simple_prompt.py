@@ -1,5 +1,9 @@
 # scripts/run_single_test.py
 
+# Indivual retrievers top_k = 30
+# Query_aware_fusion top_k = 3
+#
+
 import sys
 from pathlib import Path
 import os
@@ -96,7 +100,7 @@ if __name__ == "__main__":
             "text": "a 60-minute mix session for an intermediate player focusing on the forehand straight kill"
         },
         {
-            "query_id": "qualitative_test_03",
+            "query_id": "human_test_03",
             "text": "a session to improve my movement to the front"
         }
     ]

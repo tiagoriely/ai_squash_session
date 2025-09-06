@@ -1,0 +1,157 @@
+# scripts/eval01_diversity_with_selfbleu.py
+
+import yaml
+import json
+from pathlib import Path
+import sys
+import os
+from tqdm import tqdm
+from dotenv import load_dotenv
+import numpy as np
+
+# --- Environment and Path Setup ---
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["NUMEXPR_NUM_THREADS"] = "1"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+sys.path.append(str(PROJECT_ROOT))
+load_dotenv()
+
+# --- Core RAG & Evaluation Component Imports ---
+from rag.retrieval.field_retriever import FieldRetriever
+from rag.retrieval.sparse_retriever import SparseRetriever
+from rag.retrieval.semantic_retriever import SemanticRetriever
+from field_adapters.squash_new_corpus_adapter import SquashNewCorpusAdapter
+from rag.retrieval_fusion.strategies import dynamic_query_aware_rrf
+from rag.generation.generator import Generator
+from rag.utils import load_and_format_config
+from evaluation.utils.SelfBleu import SelfBleu
+
+
+def initialise_components(grammar_type: str, corpus_size: int) -> tuple:
+    """A helper function to set up and initialise all necessary RAG components."""
+    print(f"--- Initialising RAG components for [{grammar_type.upper()}] grammar (size {corpus_size}) ---")
+
+    context = {"grammar_type": grammar_type, "corpus_size": corpus_size}
+
+    # --- 1. Load Corpus (needed by multiple retrievers) ---
+    corpus_path_str = f"data/processed/{grammar_type}_grammar/{grammar_type}_{corpus_size}.jsonl"
+    corpus_path = PROJECT_ROOT / corpus_path_str
+    if not corpus_path.exists():
+        raise FileNotFoundError(f"Corpus file not found at: {corpus_path}")
+    raw_corpus = [json.loads(line) for line in open(corpus_path, 'r', encoding='utf-8')]
+
+    # --- 2. Initialise Retrievers ---
+    # Field Retriever
+    adapter = SquashNewCorpusAdapter()
+    adapted_corpus = [adapter.transform(doc) for doc in raw_corpus]
+    field_config_path = PROJECT_ROOT / "configs/retrieval/raw_squash_field_retrieval_config.yaml"
+    field_retriever = FieldRetriever(knowledge_base=adapted_corpus, config_path=field_config_path)
+
+    # Metadata Sparse Retriever
+    sparse_config_path = PROJECT_ROOT / "configs/retrieval/sparse_retriever.yaml"
+    sparse_config = load_and_format_config(str(sparse_config_path), context)
+    sparse_config['sparse_params']['index_path'] = str(PROJECT_ROOT / sparse_config['sparse_params']['index_path'])
+    sparse_retriever = SparseRetriever(knowledge_base=raw_corpus, config=sparse_config['sparse_params'])
+
+    # Dense Retriever
+    dense_config_path = PROJECT_ROOT / "configs/retrieval/semantic_retriever.yaml"
+    dense_config = load_and_format_config(str(dense_config_path), context)
+    dense_config['corpus_path'] = str(PROJECT_ROOT / dense_config['corpus_path'])
+    dense_config['index_path'] = str(PROJECT_ROOT / dense_config['index_path'])
+    dense_retriever = SemanticRetriever(config=dense_config)
+
+    retrievers = {
+        "field_metadata": field_retriever,
+        "sparse_bm25": sparse_retriever,
+        "semantic_e5": dense_retriever
+    }
+
+    # --- 3. Initialise Generator ---
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError("OPENAI_API_KEY not found in .env file.")
+    generator = Generator(model="gpt-4o")
+
+    print("✅ All components initialised.")
+    return retrievers, generator
+
+
+if __name__ == "__main__":
+    # --- Experiment Parameters ---
+    GRAMMAR = "high_constraint"
+    CORPUS_SIZE = 100
+    RETRIEVAL_TOP_K = 30  # How many docs each standalone retriever fetches
+    CONTEXT_TOP_K = 3  # How many of the fused docs are used for context
+    NUM_GENERATIONS_PER_QUERY = 10  # Number of plans to generate for each query to measure diversity
+    GENERATION_TEMPERATURE = 0.7  # A non-zero temperature is crucial for diverse outputs
+
+    # A small, diverse set of queries for this specific evaluation
+    queries_to_evaluate = [
+        {"query_id": "complex_45_adv_volley",
+         "text": "a 45-minute conditioned game session for an advanced player focusing on volley drops"},
+        {"query_id": "vague_02", "text": "generate a session to improve my forehand"},
+        {"query_id": "ooc_06", "text": "a solo to practice cross drops"}
+    ]
+
+    # --- SETUP ---
+    all_retrievers, llm_generator = initialise_components(GRAMMAR, CORPUS_SIZE)
+    field_cfg_path = PROJECT_ROOT / "configs/retrieval/raw_squash_field_retrieval_config.yaml"
+    with open(field_cfg_path, "r", encoding="utf-8") as f:
+        field_scoring_config = yaml.safe_load(f).get("FIELD_SCORING_CONFIG", {})
+
+
+    query_results = []
+
+    # --- Main Evaluation Loop ---
+    for query_info in queries_to_evaluate:
+        query_id = query_info["query_id"]
+        query_text = query_info["text"]
+
+        print("\n" + "=" * 80)
+        print(f"Processing query: {query_id}")
+
+        # --- STAGE 1: RETRIEVAL & FUSION (Run ONCE per query) ---
+        print("  -> Retrieving and fusing documents...")
+        standalone_results = {name: retriever.search(query=query_text, top_k=RETRIEVAL_TOP_K) for name, retriever in
+                              all_retrievers.items()}
+        fused_documents = dynamic_query_aware_rrf(standalone_results, query_text, field_scoring_config)
+
+        # --- STAGE 2: CONTEXT FORMULATION (Fixed context for all generations) ---
+        context_docs = fused_documents[:CONTEXT_TOP_K]
+        context_str = "\n\n---\n\n".join(
+            [f"Source Document ID: {doc.get('id', 'N/A')}\n\n{doc['contents']}" for doc in context_docs])
+        prompt_template = """You are an expert squash coach AI. Your task is to generate a detailed and coherent squash session plan based ONLY on the information provided in the "CONTEXT" section. Do not add any exercises or information not present in the context. The user's request is: "{query}". Strictly adhere to all constraints mentioned in the request. The final output must be a single, complete, and well-structured session plan.
+
+CONTEXT:
+{context}
+
+FINAL SQUASH SESSION PLAN:"""
+        final_prompt = prompt_template.format(query=query_text, context=context_str)
+
+        # --- STAGE 3: GENERATION ---
+        print(f"  -> Generating {NUM_GENERATIONS_PER_QUERY} plans...")
+        generated_texts = []
+        for _ in tqdm(range(NUM_GENERATIONS_PER_QUERY), desc="  Generations"):
+            plan = llm_generator.generate(final_prompt, temperature=GENERATION_TEMPERATURE)
+            generated_texts.append(plan)
+
+        # --- STAGE 4: EVALUATION (CORRECTED LOGIC) ---
+        print(f"  -> Calculating Self-BLEU score for the generated set...")
+
+        # 1. Instantiate the SelfBleu class with the list of generated texts
+        self_bleu_evaluator = SelfBleu(generated_texts=generated_texts, gram=4)
+
+        # 2. Call its get_score method to calculate the average score
+        avg_self_bleu = self_bleu_evaluator.get_score(is_fast=True)
+
+        print(f"  -> Average Self-BLEU Score for '{query_id}': {avg_self_bleu:.4f} (Lower is more diverse)")
+        query_results.append({'query_id': query_id, 'avg_self_bleu': avg_self_bleu})
+
+    # --- FINAL SUMMARY ---
+    print("\n" + "=" * 80)
+    print("Final Diversity Evaluation Summary")
+    print("=" * 80)
+    final_avg_score = np.mean([res['avg_self_bleu'] for res in query_results])
+    print(f"Overall Average Self-BLEU Score across all queries: {final_avg_score:.4f}")

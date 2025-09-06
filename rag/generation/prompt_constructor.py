@@ -120,7 +120,7 @@ class DynamicPromptConstructor:
         End of session.
         """
 
-    def _analyze_docs(self, retrieved_docs: list[dict]) -> dict:
+    def _analyse_docs(self, retrieved_docs: list[dict]) -> dict:
         """Analyzes metadata from retrieved docs to find common themes."""
         if not retrieved_docs:
             return {}
@@ -142,7 +142,7 @@ class DynamicPromptConstructor:
     def create_prompt(self, query: str, retrieved_docs: list[dict]) -> str:
         """Builds the final prompt dynamically."""
 
-        analysis = self._analyze_docs(retrieved_docs)
+        analysis = self._analyse_docs(retrieved_docs)
 
         # --- New Logic: Infer a Session Focus ---
         # We can create a simple focus based on the query. More advanced logic could go here.
