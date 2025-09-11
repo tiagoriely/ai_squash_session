@@ -2,7 +2,7 @@
 # Configuration for the self-contained sparse (BM25) index builder.
 
 # --- Template Variables ---
-corpus_size: 100
+corpus_size: 499
 grammar_type: "high_constraint"
 
 # --- Builder Parameters ---

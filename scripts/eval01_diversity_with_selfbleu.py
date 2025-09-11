@@ -122,12 +122,18 @@ if __name__ == "__main__":
         context_docs = fused_documents[:CONTEXT_TOP_K]
         context_str = "\n\n---\n\n".join(
             [f"Source Document ID: {doc.get('id', 'N/A')}\n\n{doc['contents']}" for doc in context_docs])
-        prompt_template = """You are an expert squash coach AI. Your task is to generate a detailed and coherent squash session plan based ONLY on the information provided in the "CONTEXT" section. Do not add any exercises or information not present in the context. The user's request is: "{query}". Strictly adhere to all constraints mentioned in the request. The final output must be a single, complete, and well-structured session plan.
 
-CONTEXT:
-{context}
-
-FINAL SQUASH SESSION PLAN:"""
+        prompt_template = """ You are an expert squash coach AI. Your task is to generate a detailed and coherent squash
+        session plan based ONLY on the information provided in the "CONTEXT" section.
+        Do not add any exercises or information not present in the context. 
+        The user's request is: "{query}".  
+        Strictly adhere to all constraints mentioned in the request. The final output must be a single, complete, 
+        and well-structured session plan.
+        
+        CONTEXT:
+        {context}
+        
+        FINAL SQUASH SESSION PLAN:"""
         final_prompt = prompt_template.format(query=query_text, context=context_str)
 
         # --- STAGE 3: GENERATION ---

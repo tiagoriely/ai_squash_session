@@ -2,7 +2,7 @@
 input_data_dir: "data/processed"
 
 # Common corpus size for this analysis run.
-corpus_size: 100
+corpus_size: 50
 
 # The base location for all output reports and visualisations.
 # The script will create a subdirectory like /corpus_size_500 within this.

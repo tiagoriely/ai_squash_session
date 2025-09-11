@@ -1,0 +1,74 @@
+[
+    {
+        "generation_id": "generation_0001",
+        "query_id": "complex_01_cg",
+        "query_text": "a 45-minute conditioned game session",
+        "generated_plan": "Of course! I'm here to help you with all things related to squash. Whether you're looking for tips on improving your technique, strategies for your next match, or advice on equipment, feel free to ask. How can I assist you today?"
+    },
+    {
+        "generation_id": "generation_0002",
+        "query_id": "complex_02_cg",
+        "query_text": "a 45-minute conditioned game session for an advanced player",
+        "generated_plan": "and I'm here to help you improve your squash game! Whether you're a beginner looking to learn the basics or an experienced player aiming to refine your skills, feel free to ask me anything about squash techniques, strategies, training routines, or equipment. Let's get started on enhancing your performance on the court!"
+    },
+    {
+        "generation_id": "generation_0003",
+        "query_id": "complex_03_cg",
+        "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+        "generated_plan": "and I'm here to help you improve your squash game! Whether you're a beginner looking to learn the basics or an advanced player seeking to refine your skills, I can provide tips, drills, and strategies to enhance your performance on the court. Let me know what specific areas you'd like to focus on, and we can get started!"
+    },
+    {
+        "generation_id": "generation_0004",
+        "query_id": "complex_21_mix",
+        "query_text": "a 60-minute mix session",
+        "generated_plan": "Of course! I'm here to help you with all things related to squash. Whether you're looking for tips on improving your technique, strategies for your next match, or advice on fitness and conditioning, feel free to ask. How can I assist you today?"
+    },
+    {
+        "generation_id": "generation_0005",
+        "query_id": "complex_22_mix",
+        "query_text": "a 60-minute mix session for an intermediate player",
+        "generated_plan": "Of course! I'm here to help you with all things related to squash. Whether you're looking for tips on improving your technique, strategies for your next match, or advice on equipment, feel free to ask. How can I assist you today?"
+    },
+    {
+        "generation_id": "generation_0006",
+        "query_id": "complex_23_mix",
+        "query_text": "a 60-minute mix session for an intermediate player focusing on straight lob",
+        "generated_plan": "and I'm here to help you improve your squash game! Whether you're a beginner looking to learn the basics or an advanced player aiming to refine your skills, feel free to ask me anything about techniques, strategies, drills, or equipment. Let's get started on enhancing your squash performance!"
+    },
+    {
+        "generation_id": "generation_0007",
+        "query_id": "complex_24_mix",
+        "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+        "generated_plan": "Of course! I'm here to help you with all things related to squash. Whether you're looking for tips on improving your technique, strategies for your next match, or advice on fitness and conditioning, feel free to ask. How can I assist you today?"
+    },
+    {
+        "generation_id": "generation_0008",
+        "query_id": "ooc_01",
+        "query_text": "a session focusing on the volley cross",
+        "generated_plan": "Of course! I'm here to help you improve your squash game. Whether you're looking for tips on technique, strategy, fitness, or equipment, feel free to ask any questions you have. Let's get started!"
+    },
+    {
+        "generation_id": "generation_0009",
+        "query_id": "ooc_02",
+        "query_text": "a drill session to improve on the cross-court nick",
+        "generated_plan": "Of course! I'm here to help you with all things related to squash. Whether you're looking for tips on improving your technique, strategies for your next match, or advice on fitness and conditioning, feel free to ask. How can I assist you today?"
+    },
+    {
+        "generation_id": "generation_0010",
+        "query_id": "ooc_03",
+        "query_text": "a drill session to improve on the cross-court nick",
+        "generated_plan": "Of course! I'm here to help you with all things related to squash. Whether you're looking for tips on improving your technique, strategies for your next match, or advice on fitness and conditioning, feel free to ask. How can I assist you today?"
+    },
+    {
+        "generation_id": "generation_0011",
+        "query_id": "ooc_05",
+        "query_text": "practice the 3-step ghosting",
+        "generated_plan": "Of course! I'm here to help you with all things related to squash. Whether you're looking for tips on improving your technique, strategies for your next match, or advice on fitness and conditioning, feel free to ask. How can I assist you today?"
+    },
+    {
+        "generation_id": "generation_0012",
+        "query_id": "ooc_06",
+        "query_text": "a solo to practice cross drops",
+        "generated_plan": "Of course! I'm here to help you with all things related to squash. Whether you're looking for tips on improving your technique, strategies for your next match, or advice on fitness and conditioning, feel free to ask. How can I assist you today?"
+    }
+]

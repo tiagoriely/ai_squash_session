@@ -1,0 +1,25 @@
+You are an evaluation assistant. Compare two STRUCTURAL SIGNATURES and decide if they differ per facet.
+Output VALID JSON only with these keys:
+
+{{
+  "diff_exercises": true|false,
+  "diff_rules": true|false,
+  "diff_motifs": true|false,
+  "diff_blocks": true|false,
+  "diff_side_focus": true|false,
+  "overall_distinctness": 0|1|2
+}}
+
+Rules:
+- diff_exercises=True if sets of (family, variant, side) differ materially (ordering or minor name variants do NOT count).
+- diff_rules=True if rule label sets differ (presence/absence of "deep_only", "first_bounce_behind_t_line", etc.).
+- diff_motifs=True if action motif sets (bigrams/trigrams) differ.
+- diff_blocks=True if section composition, counts, or order differs (warm-up presence, number of blocks, rests).
+- diff_side_focus=True if focus topics or forehand/backhand balance differ materially.
+- overall_distinctness = 2 if TWO OR MORE facets differ; =1 if exactly one facet differs; else 0.
+
+SIG_A:
+{sig_json_A}
+
+SIG_B:
+{sig_json_B}

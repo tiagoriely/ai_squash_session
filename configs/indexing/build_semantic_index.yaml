@@ -2,7 +2,7 @@
 # Configuration for FlashRAG's index_builder script.
 
 # --- Template Variables ---
-corpus_size: 100
+corpus_size: 499
 grammar_type: "high_constraint"
 
 # --- Index Builder Parameters ---

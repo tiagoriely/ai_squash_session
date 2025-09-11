@@ -123,11 +123,17 @@ if __name__ == "__main__":
 
             # --- STAGE 3: GENERATION ---
             print("  -> Generating plan...")
-            prompt_template = """You are an expert squash coach AI...
-    CONTEXT:
-    {context}
+            prompt_template = """ You are an expert squash coach AI. Your task is to generate a detailed and coherent squash
+            session plan based ONLY on the information provided in the "CONTEXT" section.
+            Do not add any exercises or information not present in the context. 
+            The user's request is: "{query}".  
+            Strictly adhere to all constraints mentioned in the request. The final output must be a single, complete, 
+            and well-structured session plan.
 
-    FINAL SQUASH SESSION PLAN:"""
+            CONTEXT:
+            {context}
+
+            FINAL SQUASH SESSION PLAN:"""
             final_prompt = prompt_template.format(query=query_text, context=context_str)
             generated_plan = llm_generator.generate(final_prompt, temperature=GENERATION_TEMPERATURE)
 

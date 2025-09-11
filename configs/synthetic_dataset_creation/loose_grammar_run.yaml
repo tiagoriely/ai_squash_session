@@ -9,36 +9,35 @@ planner_config:
   name: "Loose Grammar"
 
   # A slightly higher threshold to allow for more structural variation before discarding.
-  plan_deduplication_threshold: 0.95
+  plan_deduplication_threshold: 0.90
   # This remains false to allow for maximum randomness in session flow.
   enforce_plan_points_progression: false
 
 # High-level run params
-num: 100
+num: 500
 outfile_template: "data/processed/loose_grammar/loose_{num}.jsonl"
 seed: 43
 log_skips: false
 
-# Controls JSON output formatting
-json_indent: false  # false if you want to convert to docx
+# Controls JSON output formatting. Set to a number (e.g., 4) for pretty-printing,
+# or false for compact, single-line output.
+json_indent: false
 
 # Exhaustion / attempts
-max_attempts_multiplier: 50.0
-consecutive_dup_limit: 2500
+max_attempts_multiplier: 100.0
+consecutive_dup_limit: 5000
 
 # Exact dedup (hash)
-dedup_by: plan
+dedup_by: plan     # plan | text | none
 
 # Jaccard near-dup
 jaccard_dedup: true
 jaccard_ngram: 2
-# Higher threshold: Texts must be MORE similar to be considered duplicates, capturing more variety.
-jaccard_threshold: 0.92
+jaccard_threshold: 0.90
 jaccard_window: 500
 
 # Semantic near-dup
 semantic_dedup: true
-# Higher threshold: Sessions must be MORE semantically similar to be duplicates, capturing more variety.
-semantic_threshold: 0.96
+semantic_threshold: 0.95
 semantic_model: sentence-transformers/all-MiniLM-L6-v2
-semantic_device: null
+semantic_device: null  # "cpu" | "cuda" | null for auto

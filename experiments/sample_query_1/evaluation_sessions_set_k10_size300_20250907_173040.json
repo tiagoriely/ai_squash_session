@@ -1,0 +1,722 @@
+[
+  {
+    "case_id": "loose_300_complex_01_cg_k10",
+    "session_id": "generated_session_01",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session",
+    "retrieved_documents_info": [
+      "session_030",
+      "session_019",
+      "session_070",
+      "session_065",
+      "session_150",
+      "session_181",
+      "session_020",
+      "session_221",
+      "session_125",
+      "session_118"
+    ],
+    "generated_plan": "### 45-Minute Conditioned Game Session Plan\n\n#### Warm-up (6 minutes)\n1. **3 min**: Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n2. **3 min**: Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n#### Activity Block 1 (20 minutes)\n1. **9 pts**: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n   - **Rule**: Drive: All drives' first bounces must land behind the T-line. Drop: All drops must be executed with precision.\n2. **9 pts**: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n   - **Rule**: Drive: All drives' first bounces must land behind the T-line. Drop: All drops must be executed with precision.\n3. **Rest**: 1.5 minutes\n\n#### Activity Block 2 (19 minutes)\n1. **9 pts**: Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - **Rule**: All cross lob shots and volley drives must have their first bounce behind the T-line.\n2. **9 pts**: Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - **Rule**: All cross lob shots and volley drives must have their first bounce behind the T-line.\n3. **Rest**: 1.5 minutes\n\n#### End of Session\n\nThis session plan focuses on enhancing players' ability to execute and respond to specific shot sequences under conditioned rules, improving both technical skills and strategic thinking on the court.",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_02_cg_k10",
+    "session_id": "generated_session_02",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "retrieved_documents_info": [
+      "session_030",
+      "session_065",
+      "session_019",
+      "session_070",
+      "session_200",
+      "session_125",
+      "session_150",
+      "session_151",
+      "session_279",
+      "session_118"
+    ],
+    "generated_plan": "**45-Minute Conditioned Game Session for an Advanced Player**\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min**: Compound Boast-Drive-Drop-Drive + 2 shots\n   - Focus on fluid movement and accurate shot execution.\n2. **3 min**: Compound Boast-Cross-Boast-Drive + 2 shots\n   - Emphasize quick transitions and maintaining control.\n\n### Activity Block 1 (20 minutes)\n1. **9 pts**: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n   - **Rule**: All drives must have their first bounce land behind the T-line.\n   - Focus on precision and depth in drives, and soft touch in drops.\n   \n2. **9 pts**: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n   - **Rule**: All drives must have their first bounce land behind the T-line.\n   - Work on backhand control and consistency in shot placement.\n\n3. **Rest**: 1.5 minutes\n\n### Activity Block 2 (18 minutes)\n1. **9 pts**: Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - **Rule**: All cross lob shots and volley drives must have their first bounce land behind the T-line.\n   - Focus on varying shot height and speed, and maintaining pressure on the opponent.\n\n2. **9 pts**: Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - **Rule**: All cross lob shots and volley drives must have their first bounce land behind the T-line.\n   - Emphasize backhand strength and adaptability in shot selection.\n\n3. **Rest**: 1.5 minutes\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_03_cg_k10",
+    "session_id": "generated_session_03",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "retrieved_documents_info": [
+      "session_030",
+      "session_065",
+      "session_070",
+      "session_254",
+      "session_125",
+      "session_019",
+      "session_150",
+      "session_279",
+      "session_151",
+      "session_118"
+    ],
+    "generated_plan": "**45-Minute Conditioned Game Session Plan for Advanced Player Focusing on Volley Drops**\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n### Activity Block 1 (18 minutes)\n1. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - **Rule:** The first bounce of all drives must land behind the T-line. Focus on executing precise volley straight drops.\n2. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - **Rule:** The first bounce of all drives must land behind the T-line. Emphasize control and accuracy in volley straight drops.\n3. **Rest:** 1.5 min\n\n### Activity Block 2 (18 minutes)\n1. **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n   - **Rule:** All drives' first bounces must land behind the T-line. Incorporate volley drops to maintain pressure.\n2. **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n   - **Rule:** All drives' first bounces must land behind the T-line. Focus on integrating volley drops effectively.\n3. **Rest:** 1.5 min\n\n---\n\n**End of Session**\n\nThis session plan is designed to enhance the player's ability to execute volley drops under game-like conditions, focusing on both forehand and backhand sides. The structured warm-up prepares the player physically and mentally, while the conditioned games provide targeted practice in a competitive setting.",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_04_cg_k10",
+    "session_id": "generated_session_04",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "retrieved_documents_info": [
+      "session_070",
+      "session_150",
+      "session_181",
+      "session_221",
+      "session_030",
+      "session_254",
+      "session_125",
+      "session_019",
+      "session_118",
+      "session_087"
+    ],
+    "generated_plan": "### 45-Minute Conditioned Game Session Plan for Intermediate Player Focusing on Backhand Counter Drops\n\n---\n\n#### **Warm-up (6 minutes total)**\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n\n---\n\n#### **Activity Block 1 (18 minutes total)**\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n  - **Rule:** Drive: The first bounce of all drives must land behind the T-line.\n- **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Backhand)\n  - **Rule:** Drive: The second bounce of all drives must land behind the T-line.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 2 (18 minutes total)**\n- **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n  - **Rule:** Drive: All drives' first bounces must land behind the T-line. Drop: All drops must be counter drops.\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n  - **Rule:** Drive: The first bounce of all drives must land behind the T-line.\n- **Rest:** 1.5 min\n\n---\n\n#### **Cool Down (3 minutes)**\n- Light stretching focusing on the arms, legs, and back to aid recovery and flexibility.\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_21_mix_k10",
+    "session_id": "generated_session_05",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session",
+    "retrieved_documents_info": [
+      "session_005",
+      "session_041",
+      "session_018",
+      "session_001",
+      "session_002",
+      "session_060",
+      "session_078",
+      "session_006",
+      "session_009",
+      "session_015"
+    ],
+    "generated_plan": "### 60-Minute Dynamic Block Squash Session Plan\n\n**Session Focus:** Dynamic Block Session  \n**Duration:** 60 minutes\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - **Rule:** All cross lob shots and volley drives must have their first bounce...\n2. **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n   - **Rule:** Drive: all drives first bounces must land behind T-line. Drop: all...\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - **Rule:** All cross lob shots and volley drives must have their first bounce...\n2. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - **Rule:** All cross lob shots and volley drives must have their first bounce...\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (7.5 minutes)\n1. **7 pts:** Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Forehand)\n   - **Rule:** Drive: The second bounce of all drives must land behind the T-line....\n2. **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)\n   - **Rule:** All cross-court shots and drives in the main sequence must have...\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (7.5 minutes)\n1. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - **Rule:** Drive: The first bounce of all drives must land behind the T-line....\n2. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - **Rule:** Drive: The first bounce of all drives must land behind the T-line....\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (7.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)\n   - **Rule:** Straight Lob: Must be hit above the service line on the front wall,...\n2. **11 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - **Rule:** Drive: The first bounce of all drives must land behind the T-line....\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 6 (7.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n   - **Rule:** Straight Lob: Must be hit above the service line on the front wall,...\n2. **11 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - **Rule:** Drive: The first bounce of all drives must land behind the T-line....\n3. **Rest:** 1.5 min\n\n---\n\n**End of session.**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_22_mix_k10",
+    "session_id": "generated_session_06",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "retrieved_documents_info": [
+      "session_039",
+      "session_064",
+      "session_001",
+      "session_126",
+      "session_002",
+      "session_006",
+      "session_009",
+      "session_015",
+      "session_017",
+      "session_165"
+    ],
+    "generated_plan": "### 60-Minute Squash Session Plan for an Intermediate Player\n\n**Session Focus:** Progressive Family Only\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (14.5 minutes)\n1. **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n   - **Rule:** All drives' first bounces must land behind the T-line. Drops must adhere to the specified conditions.\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - **Rule:** The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (14.5 minutes)\n1. **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n   - **Rule:** All drives' first bounces must land behind the T-line. Drops must adhere to the specified conditions.\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - **Rule:** The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (14.5 minutes)\n1. **7 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)\n   - **Rule:** Straight Lob must be hit above the service line on the front wall.\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - **Rule:** The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (14.5 minutes)\n1. **7 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n   - **Rule:** Straight Lob must be hit above the service line on the front wall.\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - **Rule:** The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_23_mix_k10",
+    "session_id": "generated_session_07",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "retrieved_documents_info": [
+      "session_018",
+      "session_078",
+      "session_129",
+      "session_104",
+      "session_023",
+      "session_041",
+      "session_099",
+      "session_115",
+      "session_135",
+      "session_154"
+    ],
+    "generated_plan": "### 60-Minute Squash Session Plan for a Professional Player Focusing on Straight Lob ###\n\n**Session Focus:** Dynamic Block Session  \n**Duration:** 60 minutes\n\n---\n\n### Warm-up (6 minutes) ###\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (7.5 minutes) ###\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n   - *Rule:* Straight Lob: Must be hit above the service line on the front wall.\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)\n   - *Rule:* Straight Lob: Must be hit above the service line on the front wall.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (7.5 minutes) ###\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - *Rule:* The first bounce of all drives must land behind the T-line.\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - *Rule:* The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (7.5 minutes) ###\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce behind the T-line.\n2. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (7.5 minutes) ###\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)\n   - *Rule:* Straight Lob: Must be hit above the service line on the front wall.\n2. **11 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - *Rule:* The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (7.5 minutes) ###\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n   - *Rule:* Straight Lob: Must be hit above the service line on the front wall.\n2. **11 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - *Rule:* The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Cool Down (6 minutes) ###\n1. **3 min:** Light jogging around the court\n2. **3 min:** Stretching focusing on legs, arms, and back\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_24_mix_k10",
+    "session_id": "generated_session_08",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "retrieved_documents_info": [
+      "session_002",
+      "session_006",
+      "session_021",
+      "session_069",
+      "session_100",
+      "session_112",
+      "session_145",
+      "session_001",
+      "session_015",
+      "session_017"
+    ],
+    "generated_plan": "### 60-Minute Squash Session Plan for Intermediate Player: Focus on Forehand Straight Kill\n\n**Session Focus:** Progressive Single ShotSide  \n**Duration:** 60 minutes\n\n---\n\n### Warm-up (6 minutes)\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)\n  - *Focus:* Practice forehand straight kills during the drive phase.\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball...\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n  - *Focus:* Ensure all shots excluding the boast land behind the T-line.\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (7.5 minutes)\n- **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n  - *Focus:* Emphasize deep drives with forehand straight kills.\n  - *Rule:* Drive: all drives first bounces must land behind T-line. Drop: all...\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)\n  - *Focus:* Reinforce forehand straight kills during the drive phase.\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball...\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n  - *Focus:* Maintain depth on all shots excluding the boast.\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (7.5 minutes)\n- **7 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n  - *Focus:* Incorporate forehand straight kills into deep drives.\n  - *Rule:* Drive: The first bounce of all drives must land behind the T-line....\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (7.5 minutes)\n- **11 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)\n  - *Focus:* Utilize forehand straight kills effectively.\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball...\n- **Rest:** 1.5 min\n\n---\n\n### Cool Down (5 minutes)\n- Light stretching focusing on arms, shoulders, and legs to prevent injury and promote recovery.\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_11_drill_k10",
+    "session_id": "generated_session_09",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute drill session",
+    "retrieved_documents_info": [
+      "session_027",
+      "session_062",
+      "session_077",
+      "session_110",
+      "session_094",
+      "session_117",
+      "session_016",
+      "session_024",
+      "session_026",
+      "session_028"
+    ],
+    "generated_plan": "### 60-Minute Squash Drill Session Plan\n\n**Session Focus:** Drill Only  \n**Duration:** 60 minutes\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (10.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce...\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - *Rule:* Drive: The first bounce of all drives must land behind the T-line....\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (10.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce...\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - *Rule:* Drive: The first bounce of all drives must land behind the T-line....\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (10.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n   - *Rule:* Drive: all drives first bounces must land behind T-line. Drop: all...\n2. **3 min:** Drill: Drop-Drive: Drop-Drive (any drive) (Forehand)\n   - *Rule:* Drive: The second bounce of all drives must land behind the T-line....\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (10.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n   - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n2. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce...\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (10.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)\n   - *Rule:* For the cross-court and drive shots, the second bounce of the ball...\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n   - *Rule:* All shots excluding the boast must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Cool Down (1.5 minutes)\n- Light stretching and deep breathing exercises to relax muscles and reduce heart rate.\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_12_drill_k10",
+    "session_id": "generated_session_10",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "retrieved_documents_info": [
+      "session_235",
+      "session_024",
+      "session_026",
+      "session_038",
+      "session_132",
+      "session_016",
+      "session_139",
+      "session_210",
+      "session_027",
+      "session_211"
+    ],
+    "generated_plan": "### 45-Minute Squash Drill Session Plan: Focus on Cross Kill\n\n**Session Focus:** Drill Only  \n**Duration:** 45 minutes\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)  \n   *Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.*\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand)  \n   *Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.*\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)  \n   *Rule: All cross lob shots and volley drives must have their first bounce behind the T-line.*\n2. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)  \n   *Rule: All cross lob shots and volley drives must have their first bounce behind the T-line.*\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)  \n   *Rule: All cross-court shots and drives in the main sequence must have their first bounce behind the T-line.*\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Backhand)  \n   *Rule: All cross-court shots and drives in the main sequence must have their first bounce behind the T-line.*\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand)  \n   *Rule: Cross & Drive: Every cross-court shot and the subsequent drive must have their first bounce behind the T-line.*\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand)  \n   *Rule: Cross & Drive: Every cross-court shot and the subsequent drive must have their first bounce behind the T-line.*\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)  \n   *Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.*\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand)  \n   *Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.*\n3. **Rest:** 1.5 min\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_22_drill_k10",
+    "session_id": "generated_session_11",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "retrieved_documents_info": [
+      "session_110",
+      "session_075",
+      "session_062",
+      "session_094",
+      "session_117",
+      "session_204",
+      "session_038",
+      "session_077",
+      "session_142",
+      "session_116"
+    ],
+    "generated_plan": "### Squash Session Plan: Forehand 2-Wall Boast Focus ###\n\n**Duration:** 45 minutes  \n**Session Focus:** Drill Only (Archetype: Drill Only)\n\n---\n\n### Warm-up (6 minutes) ###\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n\n---\n\n### Activity Block 1 (7.5 minutes) ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand)\n  - *Rule:* Cross & Drive: Every cross-court shot and the subsequent drive must land behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)\n  - *Rule:* All cross-court shots and drives in the main sequence must have their first bounce behind the T-line.\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 2 (7.5 minutes) ###\n- **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n  - *Rule:* Drive: all drives' first bounces must land behind the T-line. Drop: all drops must be tight to the front wall.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n  - *Rule:* All shots excluding the boast must land behind the T-line.\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 3 (7.5 minutes) ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n  - *Rule:* All cross lob shots and volley drives must have their first bounce behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand)\n  - *Rule:* Cross & Drive: Every cross-court shot and the subsequent drive must land behind the T-line.\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 4 (7.5 minutes) ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)\n  - *Rule:* All cross-court shots and drives in the main sequence must have their first bounce behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n  - *Rule:* All shots excluding the boast must land behind the T-line.\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 5 (7.5 minutes) ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand)\n  - *Rule:* Cross & Drive: Every cross-court shot and the subsequent drive must land behind the T-line.\n- **Rest:** 1.5 minutes\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "loose_300_complex_33_drill_k10",
+    "session_id": "generated_session_12",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "retrieved_documents_info": [
+      "session_075",
+      "session_117",
+      "session_188",
+      "session_204",
+      "session_027",
+      "session_077",
+      "session_230",
+      "session_094",
+      "session_123",
+      "session_110"
+    ],
+    "generated_plan": "**Squash Session Plan: Backhand 3-Wall Boast Focus**\n\n**Duration:** 45 minutes  \n**Session Focus:** Drill Only (Professional Level)\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n   - Focus on warming up the backhand with a combination of boasts and drives.\n2. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n   - Incorporate drops to ensure a comprehensive warm-up of the backhand.\n\n---\n\n### Activity Block 1 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand)\n   - Rule: Every cross-court shot and the subsequent drive should be executed with precision, focusing on the backhand.\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Backhand)\n   - Rule: All cross-court shots and drives in the main sequence must have a focus on depth and accuracy.\n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 2 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand)\n   - Rule: Practice the forehand to balance the session, ensuring both sides are equally trained.\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)\n   - Rule: Maintain focus on depth and control, mirroring the backhand drills.\n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 3 (7.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - Rule: The first bounce of all drives must land behind the T-line, emphasizing control.\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - Rule: Focus on the backhand, ensuring the first bounce of all drives lands behind the T-line.\n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 4 (7.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n   - Rule: Ensure all drives' first bounces land behind the T-line, maintaining depth.\n2. **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n   - Rule: Focus on the backhand, ensuring depth and precision in all shots.\n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 5 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Backhand)\n   - Rule: All cross-court shots and drives in the main sequence must have a focus on depth and accuracy.\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Backhand)\n   - Rule: All shots excluding the boast must land behind the T-line, emphasizing control and precision.\n3. **Rest:** 1.5 minutes\n\n---\n\n**End of Session**\n\nThis session plan is designed to enhance the professional player's backhand 3-wall boast through a series of focused drills, ensuring both technical precision and strategic depth.",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_01_cg_k10",
+    "session_id": "generated_session_13",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session",
+    "retrieved_documents_info": [
+      "session_011",
+      "session_033",
+      "session_059",
+      "session_127",
+      "session_222",
+      "session_276",
+      "session_273",
+      "session_027",
+      "session_004",
+      "session_204"
+    ],
+    "generated_plan": "### 45-Minute Conditioned Game Session Plan\n\n**Session Focus:** Conditioned Games Only  \n**Duration:** 45 minutes\n\n---\n\n#### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n#### Activity Block 1 (19 minutes)\n1. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - **Rule:** The first bounce of all drives must land behind the T-line.\n2. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - **Rule:** The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 minutes\n\n---\n\n#### Activity Block 2 (19 minutes)\n1. **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - **Rule:** All cross lob shots and volley drives must have their first bounce behind the T-line.\n2. **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - **Rule:** All cross lob shots and volley drives must have their first bounce behind the T-line.\n3. **Rest:** 1.5 minutes\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_02_cg_k10",
+    "session_id": "generated_session_14",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "retrieved_documents_info": [
+      "session_011",
+      "session_033",
+      "session_222",
+      "session_059",
+      "session_273",
+      "session_197",
+      "session_127",
+      "session_276",
+      "session_141",
+      "session_047"
+    ],
+    "generated_plan": "### 45-Minute Conditioned Game Session for Advanced Player\n\n---\n\n#### **Warm-up (6 minutes total)**\n1. **3 min**: Drill: Warmup: Compound Boast-Drive + 2 shots\n2. **3 min**: Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n#### **Activity Block 1 (15 minutes total)**\n- **7 pts**: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n  - **Rule**: All drives' first bounces must land behind the T-line.\n- **7 pts**: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n  - **Rule**: All drives' first bounces must land behind the T-line.\n- **Rest**: 1.5 min\n\n---\n\n#### **Activity Block 2 (15 minutes total)**\n- **11 pts**: Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Forehand)\n  - **Rule**: The second bounce of all drives must land behind the T-line.\n- **11 pts**: Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Backhand)\n  - **Rule**: The second bounce of all drives must land behind the T-line.\n- **Rest**: 1.5 min\n\n---\n\n#### **Activity Block 3 (9 minutes total)**\n- **7 pts**: Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand)\n  - **Rule**: Every cross-court shot and the subsequent drive must be followed by a counter drop.\n- **7 pts**: Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand)\n  - **Rule**: Every cross-court shot and the subsequent drive must be followed by a counter drop.\n- **Rest**: 1.5 min\n\n---\n\n**End of session.**",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_03_cg_k10",
+    "session_id": "generated_session_15",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "retrieved_documents_info": [
+      "session_011",
+      "session_222",
+      "session_273",
+      "session_033",
+      "session_059",
+      "session_276",
+      "session_127",
+      "session_197",
+      "session_141",
+      "session_185"
+    ],
+    "generated_plan": "### Final Squash Session Plan: 45-Minute Conditioned Game Session for Advanced Player Focusing on Volley Drops ###\n\n**Session Focus:** Conditioned Games Only  \n**Player Level:** Advanced  \n**Shot Focus:** Volley Drops\n\n---\n\n### Warm-up (6 minutes total) ###\n1. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots  \n   - Focus on warming up the body and getting a feel for the court.\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots  \n   - Emphasize smooth transitions and accuracy in shots.\n\n---\n\n### Activity Block 1 (18 minutes total) ###\n1. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)  \n   - **Rule:** The first bounce of all drives must land behind the T-line. Focus on executing precise volley straight drops.\n2. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)  \n   - **Rule:** The first bounce of all drives must land behind the T-line. Continue to refine volley straight drops on the backhand side.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (18 minutes total) ###\n1. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)  \n   - **Rule:** The first bounce of all drives must land behind the T-line. Reinforce the technique and consistency of volley drops.\n2. **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)  \n   - **Rule:** The first bounce of all drives must land behind the T-line. Aim for precision and control in backhand volley drops.\n3. **Rest:** 1.5 min\n\n---\n\n**End of Session**\n\n---\n\n**Notes:**  \n- Focus on maintaining a high level of intensity and concentration throughout the session.  \n- Pay attention to footwork and positioning to enhance the effectiveness of volley drops.  \n- Use the rest periods to hydrate and mentally prepare for the next activity block.",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_04_cg_k10",
+    "session_id": "generated_session_16",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "retrieved_documents_info": [
+      "session_276",
+      "session_059",
+      "session_127",
+      "session_292",
+      "session_248",
+      "session_204",
+      "session_032",
+      "session_044",
+      "session_004",
+      "session_050"
+    ],
+    "generated_plan": "**45-Minute Conditioned Game Session Plan for Intermediate Player: Focus on Backhand Counter Drops**\n\n---\n\n### Warm-up (6 minutes)\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n\n### Activity Block 1 (20 minutes)\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n  - **Rule:** Drive: The first bounce of all drives must land behind the T-line.\n- **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n  - **Rule:** Drive: All drives' first bounces must land behind the T-line. Drop: All drops must be played to the front wall.\n- **Rest:** 1.5 min\n\n### Activity Block 2 (17 minutes)\n- **7 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)\n  - **Rule:** Straight Lob: Must be hit above the service line on the front wall.\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand)\n  - **Rule:** Cross & Drive: Every cross-court shot and the subsequent drive must be played with a counter drop.\n- **Rest:** 1.5 min\n\n---\n\n**End of Session**\n\nThis session is designed to enhance the player's ability to execute backhand counter drops effectively through a series of conditioned games, focusing on both precision and tactical play.",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_21_mix_k10",
+    "session_id": "generated_session_17",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session",
+    "retrieved_documents_info": [
+      "session_003",
+      "session_063",
+      "session_060",
+      "session_001",
+      "session_002",
+      "session_045",
+      "session_007",
+      "session_008",
+      "session_010",
+      "session_017"
+    ],
+    "generated_plan": "**60-Minute Dynamic Block Squash Session Plan**\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min**: Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n2. **3 min**: Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (7.5 minutes)\n1. **3 min**: Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n   - *Rule*: All shots excluding the boast must land behind the T-line.\n2. **3 min**: Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Backhand)\n   - *Rule*: All shots excluding the boast must land behind the T-line.\n3. **Rest**: 1.5 min\n\n---\n\n### Activity Block 2 (7.5 minutes)\n1. **3 min**: Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n   - *Rule*: The first bounce of all drives must land behind the T-line.\n2. **9 pts**: Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Forehand)\n   - *Rule*: The second bounce of all drives must land behind the T-line.\n3. **Rest**: 1.5 min\n\n---\n\n### Activity Block 3 (7.5 minutes)\n1. **3 min**: Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n   - *Rule*: The first bounce of all drives must land behind the T-line.\n2. **9 pts**: Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Backhand)\n   - *Rule*: The second bounce of all drives must land behind the T-line.\n3. **Rest**: 1.5 min\n\n---\n\n### Activity Block 4 (7.5 minutes)\n1. **3 min**: Drill: Drop-Drive: Drop-Drive (any drive) (Forehand)\n   - *Rule*: The second bounce of all drives must land behind the T-line.\n2. **3 min**: Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n   - *Rule*: All shots excluding the boast must land behind the T-line.\n3. **Rest**: 1.5 min\n\n---\n\n### Activity Block 5 (7.5 minutes)\n1. **3 min**: Drill: Drop-Drive: Drop-Drive (any drive) (Backhand)\n   - *Rule*: The second bounce of all drives must land behind the T-line.\n2. **3 min**: Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Backhand)\n   - *Rule*: All shots excluding the boast must land behind the T-line.\n3. **Rest**: 1.5 min\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_22_mix_k10",
+    "session_id": "generated_session_18",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "retrieved_documents_info": [
+      "session_063",
+      "session_003",
+      "session_010",
+      "session_020",
+      "session_150",
+      "session_022",
+      "session_147",
+      "session_024",
+      "session_031",
+      "session_034"
+    ],
+    "generated_plan": "**Final Squash Session Plan: 60-Minute Dynamic Block Session for Intermediate Player**\n\n---\n\n### Warm-up (6 minutes)\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n\n### Activity Block 1 (7.5 minutes)\n- **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n  - *Rule:* Drive: all drives' first bounces must land behind the T-line. Drop: all...\n- **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n  - *Rule:* Drive: all drives' first bounces must land behind the T-line. Drop: all...\n- **Rest:** 1.5 min\n\n### Activity Block 2 (7.5 minutes)\n- **7 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Backhand)\n  - *Rule:* Drive: The first bounce of all drives must land behind the T-line....\n- **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Backhand)\n  - *Rule:* Drive: The second bounce of all drives must land behind the T-line....\n- **Rest:** 1.5 min\n\n### Activity Block 3 (7.5 minutes)\n- **7 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n  - *Rule:* Drive: The first bounce of all drives must land behind the T-line....\n- **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (any drive) (Forehand)\n  - *Rule:* Drive: The second bounce of all drives must land behind the T-line....\n- **Rest:** 1.5 min\n\n### Activity Block 4 (7.5 minutes)\n- **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n  - *Rule:* Drive: all drives' first bounces must land behind the T-line. Drop: all...\n- **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n  - *Rule:* Drive: all drives' first bounces must land behind the T-line. Drop: all...\n- **Rest:** 1.5 min\n\n### Activity Block 5 (7.5 minutes)\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)\n  - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Backhand)\n  - *Rule:* All cross-court shots and drives in the main sequence must have...\n- **Rest:** 1.5 min\n\n### Activity Block 6 (7.5 minutes)\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n  - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)\n  - *Rule:* All cross-court shots and drives in the main sequence must have...\n- **Rest:** 1.5 min\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_23_mix_k10",
+    "session_id": "generated_session_19",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "retrieved_documents_info": [
+      "session_227",
+      "session_157",
+      "session_100",
+      "session_234",
+      "session_077",
+      "session_128",
+      "session_208",
+      "session_198",
+      "session_174",
+      "session_193"
+    ],
+    "generated_plan": "### Final Squash Session Plan: 60-Minute Mix Session for a Professional Player Focusing on Straight Lob ###\n\n**Session Focus:** Dynamic Block Session  \n**Duration:** 60 minutes\n\n---\n\n### Warm-up ###\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n\n---\n\n### Activity Block 1 ###\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n  - *Rule:* All cross lob shots and volley drives must have their first bounce...\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n  - *Rule:* All cross lob shots and volley drives must have their first bounce...\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 ###\n- **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n  - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n- **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)\n  - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 ###\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n  - *Rule:* All cross lob shots and volley drives must have their first bounce...\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n  - *Rule:* All cross lob shots and volley drives must have their first bounce...\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n  - *Rule:* All cross lob shots and volley drives must have their first bounce...\n- **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n  - *Rule:* All cross lob shots and volley drives must have their first bounce...\n- **Rest:** 1.5 min\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_24_mix_k10",
+    "session_id": "generated_session_20",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "retrieved_documents_info": [
+      "session_020",
+      "session_024",
+      "session_035",
+      "session_069",
+      "session_078",
+      "session_132",
+      "session_144",
+      "session_167",
+      "session_215",
+      "session_278"
+    ],
+    "generated_plan": "### 60-Minute Squash Session Plan for Intermediate Player Focusing on Forehand Straight Kill\n\n#### **Warm-up (6 minutes)**\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n#### **Activity Block 1 (12 minutes)**\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)\n  - Focus on maintaining control and precision in cross-court shots and drives.\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)\n  - Emphasize the forehand straight kill shot, ensuring the second bounce of the ball lands short.\n- **Rest:** 1.5 min\n\n#### **Activity Block 2 (12 minutes)**\n- **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)\n  - Concentrate on the accuracy of the straight kill shot, ensuring the first bounce lands deep.\n- **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n  - Practice the forehand kill shot with a focus on depth and control.\n- **Rest:** 1.5 min\n\n#### **Activity Block 3 (12 minutes)**\n- **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n  - Work on transitioning from a straight drop to a powerful forehand kill.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n  - Focus on the forehand kill shot, ensuring all shots land behind the T-line.\n- **Rest:** 1.5 min\n\n#### **Activity Block 4 (12 minutes)**\n- **15 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n  - Incorporate the forehand kill shot into game scenarios, focusing on precision and timing.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)\n  - Emphasize the forehand kill shot, ensuring depth and accuracy.\n- **Rest:** 1.5 min\n\n#### **Cool Down (6 minutes)**\n- **3 min:** Light jogging around the court, focusing on controlled breathing.\n- **3 min:** Stretching exercises, focusing on the arms, shoulders, and legs to prevent injury.\n\n---\n\n**Session Summary:**\nThis session is designed to enhance the intermediate player's proficiency in executing the forehand straight kill shot. Through a combination of drills and conditioned games, the player will focus on precision, control, and timing, integrating the kill shot into various game scenarios.",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_11_drill_k10",
+    "session_id": "generated_session_21",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute drill session",
+    "retrieved_documents_info": [
+      "session_013",
+      "session_014",
+      "session_086",
+      "session_005",
+      "session_016",
+      "session_021",
+      "session_030",
+      "session_039",
+      "session_040",
+      "session_042"
+    ],
+    "generated_plan": "### 60-Minute Squash Drill Session Plan\n\n**Session Focus:** Drill Only  \n**Duration:** 60 minutes\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (10.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce...\n2. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce...\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (10.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n   - *Rule:* Drive: all drives first bounces must land behind T-line. Drop: all...\n2. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce...\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (10.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n   - *Rule:* Drive: all drives first bounces must land behind T-line. Drop: all...\n2. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)\n   - *Rule:* All cross lob shots and volley drives must have their first bounce...\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (10.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Forehand)\n   - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n2. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)\n   - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (10.5 minutes)\n1. **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Forehand)\n   - *Rule:* Drive: all drives first bounces must land behind T-line. Drop: all...\n2. **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only) (Backhand)\n   - *Rule:* Drive: all drives first bounces must land behind T-line. Drop: all...\n3. **Rest:** 1.5 min\n\n---\n\n### Cool Down (1.5 minutes)\n- Light stretching and deep breathing exercises to relax muscles and reduce heart rate.\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_12_drill_k10",
+    "session_id": "generated_session_22",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "retrieved_documents_info": [
+      "session_030",
+      "session_042",
+      "session_094",
+      "session_098",
+      "session_106",
+      "session_121",
+      "session_124",
+      "session_021",
+      "session_143",
+      "session_040"
+    ],
+    "generated_plan": "### Final Squash Session Plan: 45-Minute Drill Session Focusing on the Cross Kill ###\n\n**Session Focus:** Cross Kill  \n**Duration:** 45 minutes  \n**Archetype:** Drill Only  \n\n---\n\n### Warm-up (6 minutes total) ###\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots  \n   - Focus on warming up the body and practicing a variety of shots to get into the rhythm.\n   \n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots  \n   - Emphasize the cross-court shots to prepare for the session's focus on cross kills.\n\n---\n\n### Activity Block 1 (7.5 minutes total) ###\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Focus on executing precise cross-court shots with an opportunity to practice kills.\n\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Practice backhand cross kills, maintaining control and accuracy.\n\n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 2 (7.5 minutes total) ###\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Reinforce forehand cross kills, focusing on timing and execution.\n\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Continue to develop backhand cross kills, ensuring consistency and precision.\n\n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 3 (7.5 minutes total) ###\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Focus on integrating speed and accuracy in forehand cross kills.\n\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Enhance backhand cross kill skills, aiming for effective shot placement.\n\n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 4 (7.5 minutes total) ###\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Consolidate forehand cross kill techniques, focusing on power and control.\n\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Finalize backhand cross kill proficiency, ensuring adaptability in match scenarios.\n\n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 5 (7.5 minutes total) ###\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Review and refine forehand cross kills, emphasizing consistency.\n\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand)  \n   - Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.  \n   - Conclude with backhand cross kills, focusing on technique and execution.\n\n3. **Rest:** 1.5 minutes\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_22_drill_k10",
+    "session_id": "generated_session_23",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "retrieved_documents_info": [
+      "session_013",
+      "session_104",
+      "session_014",
+      "session_039",
+      "session_297",
+      "session_005",
+      "session_016",
+      "session_061",
+      "session_091",
+      "session_099"
+    ],
+    "generated_plan": "### Squash Session Plan: Forehand 2-Wall Boast Focus ###\n\n**Duration:** 45 minutes  \n**Session Focus:** Drill Only (Forehand 2-Wall Boast)\n\n---\n\n### Warm-up (6 minutes) ###\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots  \n  *Focus on warming up the forehand boast and drive movements.*\n  \n- **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots  \n  *Incorporate cross-court shots to engage different angles and footwork.*\n\n---\n\n### Activity Block 1 (7.5 minutes) ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)  \n  *Rule: All cross lob shots and volley drives must have their first bounce...*  \n  *Focus on executing the forehand boast accurately to set up the cross lob and volley drive.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 2 (7.5 minutes) ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Forehand)  \n  *Rule: All cross-court shots and drives in the main sequence must have...*  \n  *Emphasize the forehand boast to initiate the sequence, followed by consistent cross-court shots and drives.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 3 (7.5 minutes) ###\n- **3 min:** Drill: Drop-Drive: Volley Straight Drop - Drive (Deep Only) (Forehand)  \n  *Rule: Drive: The first bounce of all drives must land behind the T-line....*  \n  *Practice the forehand boast to transition into a deep drive, focusing on precision and control.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 4 (7.5 minutes) ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand)  \n  *Rule: All cross lob shots and volley drives must have their first bounce...*  \n  *Reinforce the forehand boast technique, ensuring smooth transitions into cross lob and volley drive.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 5 (7.5 minutes) ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand)  \n  *Rule: All shots excluding the boast must land behind the T-line.*  \n  *Focus on depth and accuracy of the forehand boast, ensuring all subsequent shots land deep.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "balanced_300_complex_33_drill_k10",
+    "session_id": "generated_session_24",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "retrieved_documents_info": [
+      "session_013",
+      "session_014",
+      "session_061",
+      "session_126",
+      "session_259",
+      "session_104",
+      "session_005",
+      "session_016",
+      "session_039",
+      "session_091"
+    ],
+    "generated_plan": "**Squash Session Plan: Backhand 3-Wall Boast Improvement**\n\n**Duration:** 45 minutes  \n**Player Level:** Professional  \n**Session Focus:** Drill Only (Backhand 3-Wall Boast)\n\n---\n\n### Warm-up (6 minutes total)\n1. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots  \n   - Focus on fluid movement and warming up the wrist and arm for boasts.\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots  \n   - Emphasize the transition between boasts and drives, ensuring smooth footwork and positioning.\n\n---\n\n### Activity Block 1 (7.5 minutes total)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)  \n   - Rule: All cross lob shots and volley drives must have their first bounce behind the service box.\n   - Focus on precision and control of the backhand boast to set up the cross lob.\n2. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (7.5 minutes total)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand)  \n   - Rule: Cross & Drive: Every cross-court shot and the subsequent drive must be controlled.\n   - Emphasize the accuracy of the boast to ensure effective setup for counter drops.\n2. **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (7.5 minutes total)\n1. **3 min:** Drill: Drop-Drive: Volley Straight Drop - Straight Lob (Backhand)  \n   - Rule: Straight Lob: Must be hit above the service line on the front wall.\n   - Focus on the transition from a defensive boast to an offensive straight lob.\n2. **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (7.5 minutes total)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand)  \n   - Rule: All cross lob shots and volley drives must have their first bounce behind the service box.\n   - Work on the consistency and depth of the backhand boast.\n2. **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (7.5 minutes total)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Extra Drive (Backhand)  \n   - Rule: All cross-court shots and drives in the main sequence must have their first bounce behind the T-line.\n   - Focus on maintaining control and precision in the backhand boast to set up subsequent shots.\n2. **Rest:** 1.5 min\n\n---\n\n**End of Session**\n\n**Notes:**  \n- Emphasize the importance of footwork and positioning throughout the session.  \n- Encourage the player to focus on the mechanics of the backhand boast, ensuring a smooth and controlled swing.  \n- Use rest periods to discuss technique adjustments and provide feedback.",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_01_cg_k10",
+    "session_id": "generated_session_25",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session",
+    "retrieved_documents_info": [
+      "session_121",
+      "session_140",
+      "session_174",
+      "session_008",
+      "session_143",
+      "session_269",
+      "session_207",
+      "session_033",
+      "session_067",
+      "session_077"
+    ],
+    "generated_plan": "### Final Squash Session Plan: 45-Minute Conditioned Game Session\n\n---\n\n#### **Warm-up (6 minutes total)**\n1. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n\n---\n\n#### **Activity Block 1 (20.5 minutes total)**\n1. **9 pts:** Conditioned Game: Drop-Drive: Volley Drop - Straight Lob (Backhand Conditioned Game) (Forehand)\n   - **Rule:** Straight Lob: Must be hit above the service line on the front wall.\n2. **15 pts:** Conditioned Game: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Conditioned Game) (Forehand)\n   - **Rule:** Drive: The first bounce of all drives must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 2 (18.5 minutes total)**\n1. **7 pts:** Conditioned Game: Drop-Drive: Volley Drop - Drive (Deep Only - Backhand Conditioned Game) (Forehand)\n   - **Rule:** Drive: The first bounce of all drives must land behind the T-line.\n2. **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Conditioned Game) (Forehand)\n   - **Rule:** All shots excluding the boast must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n#### **End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_02_cg_k10",
+    "session_id": "generated_session_26",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "retrieved_documents_info": [
+      "session_140",
+      "session_121",
+      "session_174",
+      "session_008",
+      "session_143",
+      "session_269",
+      "session_207",
+      "session_033",
+      "session_077",
+      "session_201"
+    ],
+    "generated_plan": "### Final Squash Session Plan for an Advanced Player (45 minutes) ###\n\n**Session Focus:** Conditioned Games Only\n\n---\n\n#### Warm-up (6 minutes) ####\n1. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n\n---\n\n#### Activity Block 1 (20 minutes) ####\n1. **9 pts:** Conditioned Game: Drop-Drive: Volley Drop - Straight Lob (Backhand Conditioned Game) (Forehand)\n   - **Rule:** Straight Lob: Must be hit above the service line on the front wall.\n2. **11 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand Conditioned Game) (Forehand)\n   - **Rule:** All cross lob shots and volley drives must have their first bounce land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n#### Activity Block 2 (19 minutes) ####\n1. **9 pts:** Conditioned Game: Drop-Drive: Drop-Drive (Deep Only - Forehand Conditioned Game) (Forehand)\n   - **Rule:** Drive: all drives' first bounces must land behind the T-line. Drop: must be a short drop.\n2. **11 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Conditioned Game) (Forehand)\n   - **Rule:** All shots excluding the boast must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n**End of session.**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_03_cg_k10",
+    "session_id": "generated_session_27",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "retrieved_documents_info": [
+      "session_140",
+      "session_121",
+      "session_269",
+      "session_174",
+      "session_143",
+      "session_207",
+      "session_033",
+      "session_008",
+      "session_201",
+      "session_165"
+    ],
+    "generated_plan": "**45-Minute Conditioned Game Session Plan for Advanced Player Focusing on Volley Drops**\n\n---\n\n### Warm-up (6 minutes total)\n1. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (20 minutes total)\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Drop - Straight Lob (Backhand Conditioned Game)\n  - **Focus:** Backhand\n  - **Rule:** Straight Lob must be hit above the service line on the front wall.\n  \n- **11 pts:** Conditioned Game: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Conditioned Game)\n  - **Focus:** Forehand\n  - **Rule:** The first bounce of all drives must land behind the T-line.\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 2 (19 minutes total)\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Drop - Drive (Deep Only - Backhand Conditioned Game)\n  - **Focus:** Backhand\n  - **Rule:** The first bounce of all drives must land behind the T-line.\n\n- **11 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand Conditioned Game)\n  - **Focus:** Backhand\n  - **Rule:** All cross lob shots and volley drives must have their first bounce land behind the T-line.\n\n- **Rest:** 1.5 minutes\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_04_cg_k10",
+    "session_id": "generated_session_28",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "retrieved_documents_info": [
+      "session_269",
+      "session_121",
+      "session_207",
+      "session_174",
+      "session_008",
+      "session_151",
+      "session_165",
+      "session_140",
+      "session_143",
+      "session_276"
+    ],
+    "generated_plan": "**45-Minute Squash Session Plan for Intermediate Player: Focus on Backhand Counter Drops**\n\n---\n\n### Warm-up (6 minutes total)\n1. **3 min**: Drill: Warmup: Compound Boast-Drive + 2 shots\n   - Focus on warming up the body and preparing for backhand shots.\n2. **3 min**: Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n   - Emphasize smooth transitions between shots, particularly focusing on the backhand drop.\n\n---\n\n### Activity Block 1 (20 minutes total)\n1. **9 pts**: Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand Conditioned Game)\n   - Rule: All cross lob shots and volley drives must have their first bounce...\n   - Focus: Practice backhand counter drops during the volley drive phase.\n\n2. **15 pts**: Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand Conditioned Game)\n   - Rule: Cross & Drive: Every cross-court shot and the subsequent drive...\n   - Focus: Emphasize executing precise backhand counter drops during the rally.\n\n3. **Rest: 1.5 min**\n\n---\n\n### Activity Block 2 (19 minutes total)\n1. **9 pts**: Conditioned Game: Drop-Drive: Drop-Drive (Deep Only - Backhand Conditioned Game)\n   - Rule: Drive: all drives' first bounces must land behind the T-line. Drop:...\n   - Focus: Concentrate on backhand counter drops, ensuring control and accuracy.\n\n2. **9 pts**: Conditioned Game: Drop-Drive: Volley Drop - Drive (Deep Only - Backhand Conditioned Game)\n   - Rule: Drive: The first bounce of all drives must land behind the T-line....\n   - Focus: Reinforce backhand counter drops, maintaining consistency under pressure.\n\n3. **Rest: 1.5 min**\n\n---\n\n**End of Session**\n\n---\n\n**Notes for the Player:**\n- Focus on maintaining a low center of gravity during backhand counter drops to enhance control.\n- Pay attention to footwork and positioning to ensure effective execution of backhand shots.\n- Use the warm-up to mentally prepare for the focus on backhand counter drops throughout the session.",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_21_mix_k10",
+    "session_id": "generated_session_29",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session",
+    "retrieved_documents_info": [
+      "session_032",
+      "session_047",
+      "session_034",
+      "session_029",
+      "session_018",
+      "session_002",
+      "session_005",
+      "session_006",
+      "session_007",
+      "session_009"
+    ],
+    "generated_plan": "### Final Squash Session Plan: 60-Minute Mix Session ###\n\n**Session Focus:** Dynamic Block Session (High Constraint)\n\n---\n\n### Warm-up ###\n- **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n\n### Activity Block 1 ###\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Drop - Drive (Deep Only - Backhand Conditioned Game) (Backhand)\n  - *Rule:* Drive: The first bounce of all drives must land behind the T-line.\n- **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Conditioned Game) (Backhand)\n  - *Rule:* All shots excluding the boast must land behind the T-line.\n- **Rest:** 1.5 min\n\n### Activity Block 2 ###\n- **7 pts:** Conditioned Game: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Conditioned Game) (Backhand)\n  - *Rule:* Drive: The first bounce of all drives must land behind the T-line.\n- **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand Conditioned Game) (Backhand)\n  - *Rule:* Cross & Drive: Every cross-court shot and the subsequent drive must land behind the T-line.\n- **Rest:** 1.5 min\n\n### Activity Block 3 ###\n- **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand Drill) (Forehand)\n  - *Rule:* All cross lob shots and volley drives must have their first bounce land behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Drill) (Forehand)\n  - *Rule:* All shots excluding the boast must land behind the T-line.\n- **Rest:** 1.5 min\n\n### Activity Block 4 ###\n- **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only - Backhand Drill) (Forehand)\n  - *Rule:* Drive: all drives' first bounces must land behind the T-line. Drop: the second bounce must land behind the T-line.\n- **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Backhand Conditioned Game) (Forehand)\n  - *Rule:* All cross-court shots and drives must have their first bounce land behind the T-line.\n- **Rest:** 1.5 min\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_22_mix_k10",
+    "session_id": "generated_session_30",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "retrieved_documents_info": [
+      "session_066",
+      "session_002",
+      "session_103",
+      "session_005",
+      "session_006",
+      "session_010",
+      "session_013",
+      "session_014",
+      "session_157",
+      "session_015"
+    ],
+    "generated_plan": "### Final Squash Session Plan: 60-Minute Mix Session for an Intermediate Player\n\n**Session Focus:** Dynamic Block Session (High Constraint)\n\n---\n\n### Warm-up (6 minutes)\n- **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n\n---\n\n### Activity Block 1 (11.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Forehand Drill)\n  - *Rule:* All cross-court shots and drives must have their first bounce land...\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Conditioned Game)\n  - *Rule:* All shots excluding the boast must land behind the T-line.\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (11.5 minutes)\n- **3 min:** Drill: Drop-Drive: Volley Drop - Straight Lob (Backhand Drill)\n  - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n- **9 pts:** Conditioned Game: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Conditioned Game)\n  - *Rule:* Drive: The first bounce of all drives must land behind the T-line....\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (11.5 minutes)\n- **3 min:** Drill: Drop-Drive: Volley Drop - Straight Lob (Backhand Drill)\n  - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n- **3 min:** Drill: Drop-Drive: Drop-Drive (Deep Only - Backhand Drill)\n  - *Rule:* Drive: all drives' first bounces must land behind the T-line. Drop:...\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (11.5 minutes)\n- **7 pts:** Conditioned Game: Drop-Drive: Drop - Any Straight Drive (Backhand Conditioned Game)\n  - *Rule:* The second bounce of all returning shots (drives/lobs) must land...\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Backhand Drill)\n  - *Rule:* All cross-court shots and drives must have their first bounce land...\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (11.5 minutes)\n- **7 pts:** Conditioned Game: Drop-Drive: Volley Drop - Straight Lob (Backhand Conditioned Game)\n  - *Rule:* Straight Lob: Must be hit above the service line on the front wall,...\n- **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Conditioned Game)\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball...\n- **Rest:** 1.5 min\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_23_mix_k10",
+    "session_id": "generated_session_31",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "retrieved_documents_info": [
+      "session_047",
+      "session_032",
+      "session_149",
+      "session_190",
+      "session_034",
+      "session_106",
+      "session_059",
+      "session_041",
+      "session_023",
+      "session_057"
+    ],
+    "generated_plan": "### Final Squash Session Plan: 60-Minute Mix Session for a Professional Player Focusing on Straight Lob ###\n\n**Session Focus:** Dynamic Block Session (High Constraint)  \n**Duration:** 60 minutes\n\n---\n\n### Warm-up (6 minutes) ###\n1. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n\n---\n\n### Activity Block 1 (15 minutes) ###\n1. **9 pts:** Conditioned Game: Drop-Drive: Volley Drop - Straight Lob (Backhand Conditioned Game)\n   - **Focus:** Straight Lob\n   - **Rule:** Straight Lob must be hit above the service line on the front wall.\n2. **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (15 minutes) ###\n1. **3 min:** Drill: Drop-Drive: Volley Drop - Straight Lob (Backhand Drill)\n   - **Focus:** Straight Lob\n   - **Rule:** Straight Lob must be hit above the service line on the front wall.\n2. **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand Conditioned Game)\n   - **Rule:** Cross & Drive: Every cross-court shot and the subsequent drive must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (15 minutes) ###\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand Drill)\n   - **Focus:** Cross Lob\n   - **Rule:** All cross lob shots and volley drives must have their first bounce land behind the T-line.\n2. **9 pts:** Conditioned Game: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand Conditioned Game)\n   - **Focus:** Cross Lob\n   - **Rule:** All cross lob shots and volley drives must have their first bounce land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (9 minutes) ###\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand Drill)\n   - **Rule:** Cross & Drive: Every cross-court shot and the subsequent drive must land behind the T-line.\n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand Drill)\n   - **Rule:** Cross & Drive: Every cross-court shot and the subsequent drive must land behind the T-line.\n3. **Rest:** 1.5 min\n\n---\n\n**End of Session.**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_24_mix_k10",
+    "session_id": "generated_session_32",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "retrieved_documents_info": [
+      "session_015",
+      "session_010",
+      "session_013",
+      "session_066",
+      "session_103",
+      "session_039",
+      "session_044",
+      "session_052",
+      "session_094",
+      "session_138"
+    ],
+    "generated_plan": "### 60-Minute Squash Session Plan for Intermediate Player: Focus on Forehand Straight Kill\n\n---\n\n#### **Warm-up (6 minutes)**\n- **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n\n---\n\n#### **Activity Block 1 (7.5 minutes)**\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Drill)\n  - *Focus:* Practice forehand straight kills by allowing the second bounce of the ball to land short.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 2 (7.5 minutes)**\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Forehand Drill)\n  - *Focus:* Ensure all cross-court shots and drives have their first bounce land deep, setting up for a potential kill shot.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 3 (7.5 minutes)**\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Conditioned Game)\n  - *Focus:* Incorporate forehand straight kills within the game, aiming for the second bounce to land short.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 4 (7.5 minutes)**\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Drill)\n  - *Focus:* Practice depth control to set up for effective kill shots.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 5 (7.5 minutes)**\n- **7 pts:** Conditioned Game: Drop-Drive: Drop - Any Straight Drive (Forehand Conditioned Game)\n  - *Focus:* Use drop shots to set up forehand straight kills, ensuring the second bounce lands short.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 6 (7.5 minutes)**\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand Drill)\n  - *Focus:* Transition practice to backhand, maintaining focus on forehand kill opportunities.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 7 (7.5 minutes)**\n- **7 pts:** Conditioned Game: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Conditioned Game)\n  - *Focus:* Reinforce depth control and kill shot execution.\n- **Rest:** 1.5 min\n\n---\n\n### **Cool Down (3 minutes)**\n- Light stretching focusing on arms, legs, and back to prevent stiffness and aid recovery.\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_11_drill_k10",
+    "session_id": "generated_session_33",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute drill session",
+    "retrieved_documents_info": [
+      "session_001",
+      "session_035",
+      "session_004",
+      "session_012",
+      "session_016",
+      "session_024",
+      "session_038",
+      "session_048",
+      "session_049",
+      "session_051"
+    ],
+    "generated_plan": "### 60-Minute Squash Drill Session Plan\n\n**Session Focus:** Drill Only (High-Constraint)\n\n---\n\n#### **Warm-up (6 minutes total)**\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n2. **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots\n\n---\n\n#### **Activity Block 1 (10.5 minutes total)**\n- **3 min:** Drill: Drop-Drive: Volley Drop - Straight Lob (Backhand Drill) (Forehand)\n  - *Rule:* Straight Lob: Must be hit above the service line on the front wall.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Drill) (Forehand)\n  - *Rule:* All shots excluding the boast must land behind the T-line.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 2 (10.5 minutes total)**\n- **3 min:** Drill: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Drill) (Backhand)\n  - *Rule:* Drive: The first bounce of all drives must land behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand Drill) (Backhand)\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball must land within the service box.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 3 (10.5 minutes total)**\n- **3 min:** Drill: Drop-Drive: Volley Drop - Drive (Deep Only - Forehand Drill) (Forehand)\n  - *Rule:* Drive: The first bounce of all drives must land behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand Drill) (Forehand)\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball must land within the service box.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 4 (10.5 minutes total)**\n- **3 min:** Drill: Drop-Drive: Drop - Any Straight Drive (Forehand Drill) (Forehand)\n  - *Rule:* The second bounce of all returning shots (drives/lobs) must land behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Drill) (Forehand)\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball must land within the service box.\n- **Rest:** 1.5 min\n\n---\n\n#### **Activity Block 5 (10.5 minutes total)**\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Backhand Drill) (Backhand)\n  - *Rule:* All shots excluding the boast must land behind the T-line.\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Drill) (Backhand)\n  - *Rule:* For the cross-court and drive shots, the second bounce of the ball must land within the service box.\n- **Rest:** 1.5 min\n\n---\n\n**Total Session Duration:** 60 minutes\n\n--- \n\nThis session plan is designed to enhance shot precision and control under high constraints, focusing on both forehand and backhand drills.",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_12_drill_k10",
+    "session_id": "generated_session_34",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "retrieved_documents_info": [
+      "session_038",
+      "session_051",
+      "session_131",
+      "session_137",
+      "session_169",
+      "session_071",
+      "session_075",
+      "session_221",
+      "session_253",
+      "session_085"
+    ],
+    "generated_plan": "### Final Squash Session Plan: Cross Kill Focus\n\n**Duration:** 45 minutes  \n**Session Focus:** Drill Only (High-Constraint)  \n**Shot Focus:** Cross Kill\n\n---\n\n### Warm-up (6 minutes)\n- **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots\n- **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots\n\n---\n\n### Activity Block 1 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand Drill) (Forehand)\n  - **Rule:** For the cross-court and drive shots, the second bounce of the ball must land behind the service box.\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 2 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Drill) (Backhand)\n  - **Rule:** For the cross-court and drive shots, the second bounce of the ball must land behind the service box.\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 3 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand Drill) (Backhand)\n  - **Rule:** For the cross-court and drive shots, the second bounce of the ball must land behind the service box.\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 4 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Forehand Drill) (Forehand)\n  - **Rule:** For the cross-court and drive shots, the second bounce of the ball must land behind the service box.\n- **Rest:** 1.5 min\n\n---\n\n### Activity Block 5 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand Drill) (Forehand)\n  - **Rule:** For the cross-court and drive shots, the second bounce of the ball must land behind the service box.\n- **Rest:** 1.5 min\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_22_drill_k10",
+    "session_id": "generated_session_35",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "retrieved_documents_info": [
+      "session_089",
+      "session_062",
+      "session_186",
+      "session_132",
+      "session_166",
+      "session_156",
+      "session_074",
+      "session_081",
+      "session_096",
+      "session_097"
+    ],
+    "generated_plan": "**Squash Session Plan: Forehand 2-Wall Boast Drill Session**\n\n**Duration:** 45 minutes  \n**Session Focus:** Drill Only (High-Constraint)  \n**Shot Focus:** Forehand 2-Wall Boast\n\n---\n\n### Warm-up (6 minutes)\n1. **3 min:** Drill: Warmup: Compound Boast-Drive-Drop-Drive + 2 shots  \n   - Focus on warming up the forehand and backhand strokes with a combination of boasts, drives, and drops.\n   \n2. **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots  \n   - Continue warming up with a focus on boasts and cross-court shots to prepare for the main drill session.\n\n---\n\n### Activity Block 1 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Forehand Drill) (Forehand)  \n   - Rule: All cross-court shots and drives must have their first bounce land in the designated target area.\n   \n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Drill) (Forehand)  \n   - Rule: All shots excluding the boast must land behind the T-line.\n   \n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 2 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Drill) (Forehand)  \n   - Rule: All shots excluding the boast must land behind the T-line.\n   \n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand Drill) (Forehand)  \n   - Rule: Cross & Drive: Every cross-court shot and the subsequent drive must be executed with precision.\n   \n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 3 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Forehand Drill) (Forehand)  \n   - Rule: All cross lob shots and volley drives must have their first bounce land in the designated target area.\n   \n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Forehand Drill) (Forehand)  \n   - Rule: All cross-court shots and drives must have their first bounce land in the designated target area.\n   \n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 4 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand Drill) (Forehand)  \n   - Rule: Cross & Drive: Every cross-court shot and the subsequent drive must be executed with precision.\n   \n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Forehand Drill) (Forehand)  \n   - Rule: All shots excluding the boast must land behind the T-line.\n   \n3. **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 5 (7.5 minutes)\n1. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Extra Drive (Forehand Drill) (Forehand)  \n   - Rule: All cross-court shots and drives must have their first bounce land in the designated target area.\n   \n2. **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Forehand Drill) (Forehand)  \n   - Rule: Cross & Drive: Every cross-court shot and the subsequent drive must be executed with precision.\n   \n3. **Rest:** 1.5 minutes\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "high_constraint_300_complex_33_drill_k10",
+    "session_id": "generated_session_36",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "retrieved_documents_info": [
+      "session_097",
+      "session_024",
+      "session_186",
+      "session_062",
+      "session_071",
+      "session_081",
+      "session_075",
+      "session_111",
+      "session_114",
+      "session_131"
+    ],
+    "generated_plan": "### Final Squash Session Plan: Backhand 3-Wall Boast Focus\n\n**Duration:** 45 minutes  \n**Player Level:** Professional  \n**Session Focus:** Drill Only (High-Constraint) - Backhand 3-Wall Boast\n\n---\n\n### Warm-up (6 minutes)\n- **3 min:** Drill: Warmup: Compound Boast-Drive + 2 shots  \n  *Focus on warming up the backhand side with a combination of boasts and drives.*\n\n- **3 min:** Drill: Warmup: Compound Boast-Cross-Boast-Drive + 2 shots  \n  *Incorporate cross-court shots to engage the full range of motion and prepare for the session.*\n\n---\n\n### Activity Block 1 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast - Cross Lob - Volley Drive (Backhand Drill)  \n  *Rule: All cross lob shots and volley drives must have their first bounce land behind the T-line.*  \n  *Focus on executing the backhand boast followed by a controlled cross lob and a precise volley drive.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 2 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive Deep Only (Backhand Drill)  \n  *Rule: All shots excluding the boast must land behind the T-line.*  \n  *Emphasize depth and control on the backhand side, ensuring all drives land deep.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 3 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Counter Drops (Backhand Drill)  \n  *Rule: Cross & Drive: Every cross-court shot and the subsequent drive must have their first bounce land behind the T-line.*  \n  *Incorporate counter drops to challenge precision and touch on the backhand boasts.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 4 (7.5 minutes)\n- **3 min:** Drill: Drop-Drive: Volley Drop - Drive (Deep Only - Backhand Drill)  \n  *Rule: Drive: The first bounce of all drives must land behind the T-line.*  \n  *Focus on transitioning from a volley drop to a deep drive, maintaining control and accuracy.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n### Activity Block 5 (7.5 minutes)\n- **3 min:** Drill: Boast-Cross-Drive: Boast-Cross-Drive With Kills Allowed (Backhand Drill)  \n  *Rule: For the cross-court and drive shots, the second bounce of the ball must land behind the T-line.*  \n  *Introduce kill shots to enhance offensive capabilities while maintaining depth control.*\n\n- **Rest:** 1.5 minutes\n\n---\n\n**End of Session**",
+    "reference": ""
+  }
+]

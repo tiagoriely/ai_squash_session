@@ -69,11 +69,74 @@ $ python3 scripts/01_build_indexes.py \
     --sparse-build-config configs/indexing/build_sparse_index_meta.yaml
 ```
 
-$ python3 scripts/01_build_indexes_standard.py \
+python3 scripts/01_build_indexes.py \
     --semantic-build-config configs/indexing/build_semantic_index.yaml \
-    --sparse-build-config configs/indexing/build_sparse_index_standard.yaml
+    --sparse-build-config configs/indexing/build_sparse_index_meta.yaml \
+    --force
 
 # 4. Generate Sessions with RAG
+
+pick size and topk
+```bash
+$ python scripts2/00_generate_outputs.py
+```
+
+# 5. Evaluate Diversity 
+
+## SelfBleu + Disctinct-n
+pick json path to file based on size and topk
+```bash
+$ python scripts2/eval_combined_diversity_100.py
+```
+
+## Diversity Index
+```bash
+python scripts2/eval_diversity_vs_size.py \
+  --inputs experiments/evaluation_sessions_set_k10_size100_samples3_20250907_213941.json \
+          experiments/evaluation_sessions_set_k10_size300_samples3_20250907_220445.json \
+          experiments/evaluation_sessions_set_k10_size500_samples3_20250907_234238.json \
+  --max-queries 4 \
+  --min-samples 3
+```
+
+
+# 6. Evaluate Reliability
+
+python scripts2/eval_reliability_with_ragas.py \
+  --input experiments/sample_query_1/evaluation_sessions_set_k10_size500_20250907_180221.json \
+  --k 10 \
+  --show-per-item \
+  --csv experiments/ragas_scores_size500.csv
+
+python scripts2/eval_reliability_with_ragas.py \
+  --inputs evaluation_sessions_test.json \
+  --k 10 \
+  --by-query \
+  --csv experiments/ragas_scores_all.csv \
+  --plot-dir experiments/
+
+## one file
+python scripts2/eval_reliability_with_ragas.py \
+  --inputs experiments/evaluation_sessions_set_k10_size500_*.json \
+  --k 10 --by-query --csv experiments/ragas_scores_size500.csv
+
+## many files (different sizes/grammars)
+python scripts2/eval_reliability_with_ragas.py \
+  --inputs experiments/sample_query_1/*.json \
+  --k 10 --by-query --csv experiments/ragas_scores_all.csv --plot-dir experiments/
+
+## Plot RAGAS with std
+python scripts2/plot_ragas_with_std.py \
+  --csv experiments/results/ragas_scores_all_1.csv \
+  --out-csv experiments/ragas_agg_with_std_shade.csv \
+  --out-dir experiments/plots
+
+
+
+
+python scripts2/eval_diversity_vs_size.py --inputs experiments/evaluation_sessions_set_k10_size300_samples3_20250907_220445.json --min-samples 3 --max-queries 4 --print-buckets --cross-summary
+
+
 
 ## Sparse-only retriever + gpt-4o Generator
 ```bash

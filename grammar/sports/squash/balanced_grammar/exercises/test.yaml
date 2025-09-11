@@ -1,0 +1,49 @@
+# sports/squash/exercises/boast_cross_drive.yaml
+id: test_hello
+family: test-hello
+family_id: squash.family.pattern.straight.test_hello
+category: diagonal
+base_description: A three-shot sequence of boast, cross and drive to move the opponent diagonally.
+
+# Defining parameters that can be applied to the variants of the exercise below
+# This eliminates the need for separate forehand/backhand entries.
+parameters:
+  - name: shotSide
+    description: The side of the court the exercise is focused on.
+    options: [forehand, backhand]
+
+# All variation of this exercise
+variants:
+  # Variant 1 – Deep Only
+  - variant_id: test_hello
+    name: test-hello test-hello test-hello
+    description: A version where all shots excluding the boast must land behind the T-line.
+    # METADATA: gives you information about the variant
+    types: [drill, conditioned_game]
+    difficulty_score: 6
+    foundational_shots: ["2-wall boast", "3-wall boast",
+                         "hard cross", "cross lob",
+                         "deep drive", "hard drive", "straight drive",
+                         "volley hard drive", "volley straight drive"]
+    tactical_shots: []
+    shots:
+      general: [ "boast", "cross", "drive", "volley", "lob" ]
+      specific: ["deep drive", "hard drive", "straight drive",
+                 "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                 "2-wall boast", "3-wall boast", "volley 2-wall boast",
+                 "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross"]
+    movement: ["diagonal", "front", "middle", "back"]
+    roles:
+      pattern: alternating # no fixed role
+      exercises_per_side: 1 # Players do not need to change role before changing sides
+    rules:
+      sequence: "boast (initiating player) -> cross (opponent) -> drive (initiating player) -> restart pattern with next boast"
+      # For the human coach and the RAG's semantic understanding
+      constraint_text: "All shots excluding the boast must land behind the T-line."
+      # For the grammar-based generator's validation and enforcement (using PEG)
+      constraint_formal: "FOR ALL shot EXCLUDING (boast) REQUIRE location.bounce[1] > t_line"
+
+    allowed_actions: ["drive", "deep drive", "hard drive", "straight drive",
+                      "volley drive", "volley deep drive", "volley hard drive", "volley straight drive",
+                      "boast", "2-wall boast", "3-wall boast", "volley 2-wall boast", "volley 3-wall boast",
+                      "cross", "cross lob", "deep cross", "wide cross", "cross down the middle", "hard cross"]

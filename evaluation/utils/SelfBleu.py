@@ -2,6 +2,8 @@
 
 import os
 from multiprocessing import Pool
+from typing import Any
+
 import nltk
 from nltk.translate.bleu_score import SmoothingFunction
 from .Metrics import Metrics
@@ -16,7 +18,7 @@ class SelfBleu(Metrics):
         self.gram = gram
         self.sample_size = 500
 
-    def get_score(self, is_fast=True):
+    def get_score(self, is_fast=True, **kwargs: Any):
         """Calculates the Self-BLEU score for the provided texts."""
         if not self.reference:
             return 0.0

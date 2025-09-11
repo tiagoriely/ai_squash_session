@@ -1,6 +1,6 @@
 # evaluation/utils/Metrics.py
 from abc import abstractmethod
-
+from typing import Any, Dict
 
 class Metrics:
     def __init__(self):
@@ -13,5 +13,5 @@ class Metrics:
         self.name = name
 
     @abstractmethod
-    def get_score(self):
+    def get_score(self, **kwargs: Any) -> Any:
         pass

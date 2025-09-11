@@ -5,7 +5,6 @@ import yaml
 from pathlib import Path
 from typing import Dict, Any
 
-# It's good practice to handle potential import errors if run standalone
 try:
     from lark import Lark, exceptions
     from rag.parsers.user_query_parser import parse_type
@@ -55,6 +54,60 @@ def calculate_psa(
     except (exceptions.LarkError, FileNotFoundError, Exception) as e:
         # If parsing fails or file not found, the structure is not adherent.
         # print(f"PSA Check Failed: {e}") # Optional: for debugging
+        return 0.0
+
+
+def calculate_psa_flexible(
+        generated_plan_text: str,
+        ebnf_grammar_path: str | Path
+) -> float:
+    """
+    Calculates Programmatic Structure Adherence (PSA) with flexible header parsing.
+
+    This version flexibly identifies headers and then uses the Lark parser to
+    validate the sequence against the EBNF grammar. This is robust to minor
+    formatting variations and correctly penalises plans with unknown sections.
+    """
+    if Lark is None:
+        raise ImportError("Lark library is required for PSA calculation.")
+
+    try:
+        with open(ebnf_grammar_path, 'r') as f:
+            grammar = f.read()
+
+        # Flexibly find all markdown headers and normalise them to EBNF terminals
+        # This approach is robust to extra text (e.g., timings) and formatting quirks.
+        found_blocks = []
+        for line in generated_plan_text.split('\n'):
+            line_lower = line.strip().lower()
+            if line_lower.startswith('### warm-up'):
+                found_blocks.append("WARMUP_BLOCK")
+            elif line_lower.startswith('### activity'):
+                found_blocks.append("ACTIVITY_BLOCK")
+            # NOTE: We are intentionally ignoring unknown headers like "cool-down".
+            # If an unknown header appears, it won't be added to found_blocks.
+            # If the grammar requires more blocks than are found, the parse will fail,
+            # correctly marking the structure as invalid.
+
+        structure_string = " ".join(found_blocks)
+
+        if not structure_string:
+            return 0.0
+
+        # Use Lark to parse the validated sequence of blocks
+        parser = Lark(grammar, start='session')
+        parser.parse(structure_string)
+
+        # Final check: does the generated text contain *only* known headers?
+        # This prevents a plan with an illegal "Cool-down" from passing.
+        all_headers = re.findall(r"### (.*)", generated_plan_text, re.IGNORECASE)
+        known_headers = ("warm-up", "activity block")
+        for header in all_headers:
+            if not any(known in header.lower() for known in known_headers):
+                return 0.0  # Found an unknown header, so the structure is invalid.
+
+        return 1.0
+    except (exceptions.LarkError, FileNotFoundError):
         return 0.0
 
 

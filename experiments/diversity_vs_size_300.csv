@@ -1,0 +1,4 @@
+grammar,size,diversity_index
+balanced,300,1.0
+high,300,0.8333333333333334
+loose,300,0.7916666666666667

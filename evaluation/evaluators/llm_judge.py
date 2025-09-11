@@ -1,26 +1,28 @@
 # evaluation/evaluators/llm_judge.py
-
-import os
 import json
+import os
 from pathlib import Path
-from typing import Dict, Any
+from typing import Any, Dict
+
+from dotenv import load_dotenv
 
 try:
     from openai import OpenAI
 except ImportError:
-    print("Warning: openai library not found. The LlmEvaluator will not be available.")
+    print("Warning: openai library not found. Install with: pip install openai")
     OpenAI = None
 
 
 class LlmEvaluator:
     """
-    A reusable class to handle evaluations using an LLM as a judge.
-
-    This class manages API calls, prompt formatting, response parsing, and caching
-    to ensure consistent and cost-effective evaluations.
+    Thin wrapper around OpenAI Chat Completions in JSON mode.
+    Loads prompt templates from evaluation/prompts/*.txt and enforces JSON output.
+    Includes a small in-memory cache per run.
     """
 
     def __init__(self, model_name: str = "gpt-4-turbo-preview", prompts_dir: str | Path = "evaluation/prompts"):
+        load_dotenv()  # make sure OPENAI_API_KEY in .env is available
+
         if OpenAI is None:
             raise ImportError("Please install the openai library: pip install openai")
 
@@ -29,88 +31,71 @@ class LlmEvaluator:
         if not self.prompts_dir.is_dir():
             raise FileNotFoundError(f"Prompts directory not found at: {self.prompts_dir}")
 
-        # Initialize OpenAI client (expects OPENAI_API_KEY environment variable)
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        if not self.client.api_key:
-            raise ValueError("OPENAI_API_KEY environment variable not set.")
+        api_key = os.getenv("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError("OPENAI_API_KEY is not set. Add it to your environment or .env file.")
 
-        # Simple in-memory cache to avoid repeated API calls during a single run
-        self.cache = {}
+        # OpenAI client
+        self.client = OpenAI(api_key=api_key)
+
+        # simple per-run cache
+        self.cache: Dict[str, Any] = {}
+
+    # --------------- core ---------------
 
     def _evaluate(self, prompt_name: str, **kwargs) -> Dict[str, Any]:
         """
-        Core evaluation method that formats a prompt, calls the LLM, and parses the JSON response.
-
-        Args:
-            prompt_name (str): The base name of the .txt prompt file in the prompts directory.
-            **kwargs: The variables to be formatted into the prompt template.
-
-        Returns:
-            Dict[str, Any]: The parsed JSON object from the LLM's response.
+        Load prompts/{prompt_name}.txt, format with kwargs, call the model in JSON mode, return parsed dict.
         """
-        # Create a unique key for caching based on prompt and its arguments
-        cache_key = json.dumps((prompt_name, sorted(kwargs.items())))
+        cache_key = json.dumps((prompt_name, sorted(kwargs.items())), ensure_ascii=False)
         if cache_key in self.cache:
             return self.cache[cache_key]
 
+        path = self.prompts_dir / f"{prompt_name}.txt"
+        if not path.exists():
+            raise FileNotFoundError(f"Prompt file not found: {path}")
+
+        template = path.read_text(encoding="utf-8")
+        final_prompt = template.format(**kwargs)
+
         try:
-            prompt_path = self.prompts_dir / f"{prompt_name}.txt"
-            prompt_template = prompt_path.read_text(encoding="utf-8")
-
-            final_prompt = prompt_template.format(**kwargs)
-
-            response = self.client.chat.completions.create(
+            resp = self.client.chat.completions.create(
                 model=self.model,
-                messages=[{"role": "user", "content": final_prompt}],
-                temperature=0.0,  # Set to 0 for deterministic evaluation
-                response_format={"type": "json_object"}
+                messages=[
+                    {"role": "user", "content": final_prompt}
+                ],
+                temperature=0.0,  # deterministic
+                response_format={"type": "json_object"},
             )
-
-            response_content = response.choices[0].message.content
-            parsed_json = json.loads(response_content)
-
-            # Cache the successful result
-            self.cache[cache_key] = parsed_json
-            return parsed_json
-
-        except (FileNotFoundError, KeyError) as e:
-            print(f"Error with prompt formatting or file: {e}")
-            return {"error": str(e)}
+            content = resp.choices[0].message.content
+            parsed = json.loads(content)
+            self.cache[cache_key] = parsed
+            return parsed
         except json.JSONDecodeError as e:
-            print(f"Error decoding JSON from LLM response: {e}")
-            print(f"LLM Raw Response: {response_content}")
-            return {"error": "JSONDecodeError", "raw_response": response_content}
+            raise RuntimeError(f"JSON decode error from LLM response: {e}\nRaw: {content}") from e
         except Exception as e:
-            print(f"An unexpected error occurred during LLM evaluation: {e}")
-            return {"error": str(e)}
+            raise RuntimeError(f"LLM evaluation failed: {e}") from e
 
-    # --- Public wrapper methods for specific evaluation tasks ---
+    # --------------- convenience wrappers ---------------
 
+    def extract_signature(self, plan_text: str) -> Dict[str, Any]:
+        """Extract a structural signature from a plan (exercises, rules, motifs, blocks, focus, level)."""
+        return self._evaluate("extract_signature", plan_text=plan_text)
+
+    def judge_pairwise(self, sig_json_A: str, sig_json_B: str) -> Dict[str, Any]:
+        """
+        Compare two signatures and return boolean facet differences + overall distinctness (0/1/2).
+        Pass JSON strings for stable formatting with .format().
+        """
+        return self._evaluate("judge_pairwise", sig_json_A=sig_json_A, sig_json_B=sig_json_B)
+
+    # Optional existing wrappers
     def evaluate_logical_coherence(self, query: str, generated_plan: str) -> Dict[str, Any]:
-        """Evaluates the structural and logical coherence of a plan."""
-        return self._evaluate(
-            prompt_name="judge_logical_coherence",
-            query=query,
-            generated_plan=generated_plan
-        )
+        return self._evaluate("judge_logical_coherence", query=query, generated_plan=generated_plan)
 
     def evaluate_faithfulness(self, context: str, generated_plan: str) -> Dict[str, Any]:
-        """Evaluates the faithfulness of a plan against its context."""
-        return self._evaluate(
-            prompt_name="judge_faithfulness",
-            context=context,
-            generated_plan=generated_plan
-        )
+        return self._evaluate("judge_faithfulness", context=context, generated_plan=generated_plan)
 
     def check_constraint_alignment(self, human_rule: str, formal_rule: str) -> float:
-        """
-        Checks if a human-readable rule aligns with a formal rule.
-        Returns a float score (1.0 for alignment, 0.0 for misalignment).
-        """
-        result = self._evaluate(
-            prompt_name="judge_constraint_alignment",
-            human_rule=human_rule,
-            formal_rule=formal_rule
-        )
-        # Safely get the score, defaulting to 0.0 on error
+        result = self._evaluate("judge_constraint_alignment", human_rule=human_rule, formal_rule=formal_rule)
         return result.get("alignment_score", 0.0)

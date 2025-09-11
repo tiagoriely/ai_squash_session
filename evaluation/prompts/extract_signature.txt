@@ -1,0 +1,20 @@
+You are an evaluation assistant. Extract a STRUCTURAL SIGNATURE of a squash session plan.
+Output VALID JSON only (no prose), matching this schema:
+
+{{
+  "exercises": [{{"family": "<string>", "variant": "<string>", "side": "forehand|backhand|both"}}],
+  "rules": ["deep_only","service_line_above","first_bounce_behind_t_line","short_near_sidewall"],
+  "motifs": [["boast","cross_lob","drive"], ["volley_drop","drive"]],
+  "blocks": [{{"name":"warm_up|activity_block_1|...","minutes":3,"type":"drill|conditioned_game"}}],
+  "focus": ["volley_drops","counter_drop","straight_lob"],
+  "level": "intermediate|advanced|professional"
+}}
+
+Constraints:
+- Canonicalize tokens to snake_case (e.g., "Volley Drop" -> "volley_drop", "Cross-lob" -> "cross_lob").
+- Deduplicate lists.
+- Use only information present in the plan.
+- No commentary.
+
+PLAN:
+{plan_text}
