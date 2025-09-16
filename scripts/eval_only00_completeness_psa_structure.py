@@ -22,7 +22,7 @@ from evaluation.utils.context_metrics.structure_metrics import calculate_psa_fle
 if __name__ == "__main__":
     # --- Input Configuration ---
     # Absolute path to the JSON file with the RAG-generated plans
-    INPUT_FILE_PATH = "/Users/tiago/projects/ai_squash_session/evaluation_sessions_set_k3_size1000_20250907_145234.json"
+    INPUT_FILE_PATH = "/archive/evaluation_sessions_set_k3_size1000_20250907_145234.json"
 
     # --- Evaluation Parameters ---
     # Use zero temperature for deterministic baseline generation

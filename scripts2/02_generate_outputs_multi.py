@@ -7,7 +7,6 @@ import os
 from tqdm import tqdm
 from dotenv import load_dotenv
 from datetime import datetime
-import random
 
 # --- Environment and Path Setup ---
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -23,7 +22,7 @@ from rag.retrieval.field_retriever import FieldRetriever
 from rag.retrieval.sparse_retriever import SparseRetriever
 from rag.retrieval.semantic_retriever import SemanticRetriever
 from field_adapters.squash_new_corpus_adapter import SquashNewCorpusAdapter
-from rag.retrieval_fusion.strategies import dynamic_query_aware_rrf
+from rag.retrieval_fusion.strategies import dynamic_query_aware_score_fusion
 from rag.generation.generator import Generator
 from rag.utils import load_and_format_config
 
@@ -75,7 +74,7 @@ def initialise_components(grammar_type: str, corpus_size: int) -> tuple:
 
 if __name__ == "__main__":
     # --- Experiment Parameters ---
-    CORPUS_SIZE = 200
+    CORPUS_SIZE = 50
     TOP_K_CONTEXT = 10
     GRAMMARS_TO_TEST = ['loose', 'balanced', 'high_constraint']
 
@@ -126,7 +125,7 @@ if __name__ == "__main__":
             if FIX_RETRIEVAL_PER_QUERY or NUM_SAMPLES_PER_QUERY == 1:
                 standalone_results = {name: retriever.search(query=query_text, top_k=30)
                                       for name, retriever in retrievers.items()}
-                fused_documents = dynamic_query_aware_rrf(standalone_results, query_text, field_scoring_config)
+                fused_documents = dynamic_query_aware_score_fusion(standalone_results, query_text, field_scoring_config)
                 context_docs = fused_documents[:TOP_K_CONTEXT]
                 context_str_fixed = "\n\n---\n\n".join(
                     [f"Source Document ID: {doc.get('id', 'N/A')}\n\n{doc.get('contents','')}" for doc in context_docs]
@@ -137,7 +136,7 @@ if __name__ == "__main__":
                 if not FIX_RETRIEVAL_PER_QUERY and NUM_SAMPLES_PER_QUERY > 1:
                     standalone_results = {name: retriever.search(query=query_text, top_k=30)
                                           for name, retriever in retrievers.items()}
-                    fused_documents = dynamic_query_aware_rrf(standalone_results, query_text, field_scoring_config)
+                    fused_documents = dynamic_query_aware_score_fusion(standalone_results, query_text, field_scoring_config)
                     context_docs = fused_documents[:TOP_K_CONTEXT]
                     context_str = "\n\n---\n\n".join(
                         [f"Source Document ID: {doc.get('id', 'N/A')}\n\n{doc.get('contents','')}" for doc in context_docs]

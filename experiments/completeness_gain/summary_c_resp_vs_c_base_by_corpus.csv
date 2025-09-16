@@ -1,0 +1,4 @@
+grammar,avg_c_resp,avg_c_base
+balanced,0.70835,0.24995
+high_constraint,0.8125,0.333325
+loose,0.604175,0.256925

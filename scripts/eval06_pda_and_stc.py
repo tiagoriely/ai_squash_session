@@ -28,7 +28,6 @@ from rag.generation.generator import Generator
 from rag.utils import load_and_format_config
 
 from rag.parsers.user_query_parser import parse_type
-from evaluation.utils.completeness_gain import CompletenessGain
 from evaluation.utils.context_metrics.structure_metrics import calculate_pda, calculate_stc
 
 

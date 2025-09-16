@@ -1,0 +1,1262 @@
+[
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_01_cg",
+    "query_text": "a 45-minute conditioned game session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_02_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_03_cg",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_04_cg",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_21_mix",
+    "query_text": "a 60-minute mix session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_22_mix",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_23_mix",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_24_mix",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_11_drill",
+    "query_text": "a 60-minute drill session",
+    "psa_score": 0.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_12_drill",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_22_drill",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "psa_score": 1.0
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "psa_score": 1.0
+  }
+]

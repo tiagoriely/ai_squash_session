@@ -1,0 +1,16 @@
+grammar,size,psa_score
+balanced,50,0.6667
+balanced,100,0.7500
+balanced,200,0.5000
+balanced,300,0.7500
+balanced,500,0.9167
+high_constraint,50,0.3333
+high_constraint,100,0.6667
+high_constraint,200,0.5833
+high_constraint,300,0.7500
+high_constraint,500,0.5000
+loose,50,0.3333
+loose,100,0.5000
+loose,200,0.6667
+loose,300,0.5833
+loose,500,0.5000

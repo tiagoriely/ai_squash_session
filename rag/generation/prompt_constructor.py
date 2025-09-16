@@ -8,7 +8,66 @@ from collections import Counter
 # Import the robust parser to infer session type
 from rag.parsers.user_query_parser import parse_type
 
+from pathlib import Path
+from typing import List, Dict
 
+
+class PromptConstructor_v2:
+    """
+    A simple prompt constructor that reads a single, pre-made prompt template file.
+    """
+
+    def __init__(self, template_path: str | Path):
+        """
+        Initialises the constructor by loading a specific prompt template from a file.
+
+        Args:
+            template_path (str | Path): The exact file path to the prompt template (.txt file).
+        """
+        self.template_path = Path(template_path)
+        if not self.template_path.is_file():
+            raise FileNotFoundError(f"Prompt template file not found at: {self.template_path}")
+        # Read the template once during initialization for efficiency
+        self.template = self.template_path.read_text(encoding="utf-8")
+
+    def create_prompt(self, query: str, documents: List[Dict]) -> str:
+        """
+        Builds the final prompt by filling the pre-loaded template with context and a query.
+
+        Args:
+            query (str): The original user query.
+            documents (List[Dict]): The list of documents to be used as context.
+
+        Returns:
+            str: The final, formatted prompt string.
+        """
+        # Build the context string using the helper method
+        context_str = self._build_context_string(documents)
+
+        # Format the pre-loaded template.
+        # This assumes your light_touch.txt file uses {query} and {context} placeholders.
+        return self.template.format(query=query, context=context_str)
+
+    def _build_context_string(self, documents: List[Dict], max_tokens: int = 3000) -> str:
+        """
+        Constructs a single context string from a list of documents, respecting a token limit.
+        This helper function is adapted from your original PromptConstructor.
+        """
+        context_parts = []
+        total_tokens = 0
+        for doc in documents:
+            content = doc.get("contents", "")
+            # A simple way to estimate tokens is by splitting by space
+            tokens = len(content.split())
+            if total_tokens + tokens > max_tokens:
+                break
+            context_parts.append(content)
+            total_tokens += tokens
+        return "\n\n---\n\n".join(context_parts)
+
+
+# ---------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
 class PromptConstructor:
     """
     Handles the creation of final prompt strings for the generator.

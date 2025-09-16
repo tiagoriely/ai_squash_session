@@ -3,7 +3,6 @@ from pathlib import Path
 import sys
 import os
 from dotenv import load_dotenv
-import numpy as np
 import pandas as pd
 import json
 
@@ -26,7 +25,6 @@ from field_adapters.squash_new_corpus_adapter import SquashNewCorpusAdapter
 from rag.retrieval_fusion.strategies import dynamic_query_aware_rrf
 from rag.generation.generator import Generator
 from rag.utils import load_and_format_config
-from evaluation.utils.SelfBleu import SelfBleu
 
 
 def initialise_components(grammar_type: str, corpus_size: int) -> tuple:

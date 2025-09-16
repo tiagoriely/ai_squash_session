@@ -8,6 +8,9 @@ import yaml
 from evaluation.corpus_analysis.statistics.measure_diversity import analyse_diversity_metrics
 from evaluation.corpus_analysis.statistics.measure_structure import analyse_structure_metrics
 from evaluation.corpus_analysis.statistics.measure_reliability import analyse_reliability_metrics
+from evaluation.corpus_analysis.utils import load_corpus
+from evaluation.corpus_analysis.statistics.pillar_scores import compute_pillar_scores
+
 
 
 def run_full_analysis(profiles_to_analyse: list, corpus_size: int, input_base_dir: Path, output_csv_path: Path):
@@ -27,12 +30,22 @@ def run_full_analysis(profiles_to_analyse: list, corpus_size: int, input_base_di
             print(f"⚠️  Warning: Corpus file not found at {corpus_path}. Skipping.")
             continue
 
-        diversity_results = analyse_diversity_metrics(corpus_path, profile_name)
-        structure_results = analyse_structure_metrics(corpus_path)
-        reliability_results = analyse_reliability_metrics(corpus_path, profile_name)
+        # Load once and pass to all analysers
+        corpus = load_corpus(corpus_path)
 
-        flat_results = {"grammar_profile": profile_name, **diversity_results, **structure_results,
-                        **reliability_results}
+        diversity_results = analyse_diversity_metrics(corpus, grammar_profile=profile_name)
+        structure_results = analyse_structure_metrics(corpus)
+        reliability_results = analyse_reliability_metrics(corpus)
+
+        pillar = compute_pillar_scores(diversity_results, structure_results, reliability_results)
+
+        flat_results = {
+            "grammar_profile": profile_name,
+            **pillar,
+            **diversity_results,
+            **structure_results,
+            **reliability_results
+        }
         all_results.append(flat_results)
 
     # --- Write to CSV ---
@@ -41,16 +54,30 @@ def run_full_analysis(profiles_to_analyse: list, corpus_size: int, input_base_di
         return
 
     output_csv_path.parent.mkdir(exist_ok=True, parents=True)
-    header = all_results[0].keys()
+
+    # Build a union of keys so later rows with extra fields don’t break the writer
+    all_keys = set()
+    for r in all_results:
+        all_keys.update(r.keys())
+    all_keys.add("grammar_profile")
+
+    # Put grammar_profile first, then the rest sorted for stability
+    rest = sorted(k for k in all_keys if k != "grammar_profile")
+    header = ["grammar_profile"] + rest
 
     with open(output_csv_path, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=header)
+        writer = csv.DictWriter(f, fieldnames=header, extrasaction='ignore')
         writer.writeheader()
         for row in all_results:
-            for key, value in row.items():
-                if isinstance(value, (dict, list)):
-                    row[key] = json.dumps(value)
-            writer.writerow(row)
+            # Ensure complex objects are JSON-serialised
+            serialisable = {}
+            for key in header:
+                val = row.get(key)
+                if isinstance(val, (dict, list)):
+                    serialisable[key] = json.dumps(val, ensure_ascii=False)
+                else:
+                    serialisable[key] = val
+            writer.writerow(serialisable)
 
     print(f"\n✅ Full analysis report saved to: {output_csv_path}")
 

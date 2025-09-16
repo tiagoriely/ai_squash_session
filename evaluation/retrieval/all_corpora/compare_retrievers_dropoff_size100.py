@@ -13,7 +13,7 @@ def create_final_dropoff_plots():
     Loads the consolidated results and generates a focused, 3-panel plot
     showing the normalised score drop-off for each grammar type.
     """
-    input_path = "../../../final_evaluation_all_grammars_size100.csv"
+    input_path = "../../../archive/final_evaluation_all_grammars_size100.csv"
     try:
         df = pd.read_csv(input_path)
     except FileNotFoundError:

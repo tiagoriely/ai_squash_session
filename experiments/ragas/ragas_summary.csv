@@ -1,0 +1,24 @@
+Overall Average Scores per Grammar Type
+grammar,faithfulness,answer_relevancy
+balanced,0.7500,0.8932
+high_constraint,0.7314,0.8851
+loose,0.7272,0.8958
+
+
+Average Scores per Grammar Type and Size
+grammar,size,faithfulness,answer_relevancy
+balanced,50,0.7613,0.8944
+balanced,100,0.8103,0.9028
+balanced,200,0.7296,0.8975
+balanced,300,0.7600,0.8806
+balanced,500,0.6885,0.8910
+high_constraint,50,0.6875,0.8986
+high_constraint,100,0.7731,0.8692
+high_constraint,200,0.7747,0.8904
+high_constraint,300,0.7708,0.8751
+high_constraint,500,0.6511,0.8919
+loose,50,0.7197,0.9043
+loose,100,0.7337,0.8906
+loose,200,0.8001,0.8903
+loose,300,0.6743,0.9034
+loose,500,0.7080,0.8904

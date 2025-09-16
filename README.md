@@ -137,6 +137,28 @@ python scripts2/plot_ragas_with_std.py \
 python scripts2/eval_diversity_vs_size.py --inputs experiments/evaluation_sessions_set_k10_size300_samples3_20250907_220445.json --min-samples 3 --max-queries 4 --print-buckets --cross-summary
 
 
+```bash
+$ python3 scripts2/eval_pairwise_diversity.py --input experiments/master_evaluation_file.json
+$ python scripts2/eval_reliability_with_ragas.py \
+  --inputs experiments/dynamic_fusion_retrieval/*.json \
+  --k 10 --by-query --csv experiments/ragas_scores_all.csv --plot-dir experiments/
+$ python3 scripts2/eval_completeness_gain.py
+$ python3 scripts2/eval_diversity_vs_size.py \
+  --input experiments/master_evaluation_file.json \
+  --max-queries 4 \
+  --min-samples 3
+$ python3 scripts2/eval_selfbleu_distinctn_diversity.py
+```
+
+
+
+
+
+
+
+
+
+
 
 ## Sparse-only retriever + gpt-4o Generator
 ```bash

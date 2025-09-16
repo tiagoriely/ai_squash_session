@@ -8,13 +8,14 @@ from pathlib import Path
 
 import pandas as pd
 from dotenv import load_dotenv
+from tqdm import tqdm
 
 # ---------- repo paths ----------
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(PROJECT_ROOT))
 
 # ---------- evaluator ----------
-from evaluation.evaluators.llm_judge import LlmEvaluator  # uses OpenAI chat + json mode
+from evaluation.evaluators.llm_judge import LlmEvaluator
 
 # ---------- constants (can be overridden via CLI) ----------
 WITHIN_PAIRS_PER_QUERY_PER_GRAMMAR = 50
@@ -44,6 +45,18 @@ def _sample_cross_pairs(ids_by_grammar, n_pairs, rng):
     return out
 
 
+def parse_case_id(case_id: str) -> tuple[str, int | None]:
+    """Parses a case_id like 'loose_100_query_k10' into ('loose', 100)."""
+    parts = case_id.split("_")
+    grammar = parts[0]
+    size = None
+    for p in parts[1:]:
+        if p.isdigit():
+            size = int(p)
+            break
+    return grammar, size
+
+
 def run_pairwise(input_file: Path,
                  within_pairs_per_query_per_grammar: int = WITHIN_PAIRS_PER_QUERY_PER_GRAMMAR,
                  cross_pairs_per_query: int = CROSS_PAIRS_PER_QUERY,
@@ -58,25 +71,20 @@ def run_pairwise(input_file: Path,
     if "case_id" not in df.columns:
         raise ValueError("Input JSON must contain 'case_id' for each item.")
 
-    # grammar from case_id (e.g., 'loose_500_complex_01_cg_k10' -> 'loose')
-    def grammar_from_case(case_id: str) -> str:
-        return case_id.split("_")[0]
+    parsed_ids = df["case_id"].apply(parse_case_id)
+    df["grammar"] = [g for g, s in parsed_ids]
+    df["size"] = [s for g, s in parsed_ids]
 
-    df["grammar"] = df["case_id"].apply(grammar_from_case)
-    # Use query_text if present; else group everything under one bucket
     if "query_text" not in df.columns:
         df["query_text"] = "<unknown-query>"
 
-    # Stable row id for caching
-    df["row_id"] = [f"{g}-{i}" for i, g in enumerate(df["grammar"])]
+    df["row_id"] = [f"{g}-{s if s else 'na'}-{i}" for i, (g, s) in enumerate(parsed_ids)]
 
-    # ----- init judge (loads OPENAI_API_KEY via dotenv in its constructor too) -----
     judge = LlmEvaluator(
         model_name="gpt-4-turbo-preview",
         prompts_dir=PROJECT_ROOT / "evaluation" / "prompts"
     )
 
-    # ----- cache signatures to avoid repeated extraction -----
     sig_cache: dict[str, dict] = {}
 
     def extract_signature(plan_text: str) -> dict:
@@ -95,143 +103,90 @@ def run_pairwise(input_file: Path,
         return res
 
     rng = random.Random(random_seed)
-
-    # ----- build pairs per query -----
     grouped_q = df.groupby("query_text")
+    within_results = []
+    cross_results = []
 
-    within_results = []   # pairs within the same grammar for a query
-    cross_results = []    # pairs across grammars for a query
-
+    print("\nProcessing pairs... (this may take a while)")
     for query, gdf in grouped_q:
-        ids_by_grammar = {g: grp["row_id"].tolist() for g, grp in gdf.groupby("grammar")}
+        ids_by_group = {gs: grp["row_id"].tolist() for gs, grp in gdf.groupby(["grammar", "size"])}
 
-        # WITHIN
-        for gram, ids in ids_by_grammar.items():
+        within_pairs_to_process = []
+        for (gram, size), ids in ids_by_group.items():
             if len(ids) < 2:
                 continue
+            unique_ids_in_pairs = set(
+                itertools.chain.from_iterable(_sample_pairs(ids, within_pairs_per_query_per_grammar, rng)))
+            for an_id in unique_ids_in_pairs:
+                if an_id not in sig_cache:
+                    plan_text = df.loc[df["row_id"] == an_id, "generated_plan"].iloc[0]
+                    sig_cache[an_id] = extract_signature(plan_text)
+
             for a, b in _sample_pairs(ids, within_pairs_per_query_per_grammar, rng):
-                ra = df.loc[df["row_id"] == a].iloc[0]
-                rb = df.loc[df["row_id"] == b].iloc[0]
+                within_pairs_to_process.append(((gram, size), a, b))
 
-                # signatures (cached)
-                if a in sig_cache:
-                    sig_a = sig_cache[a]
-                else:
-                    sig_a = extract_signature(ra["generated_plan"])
-                    sig_cache[a] = sig_a
+        for (gram, size), a, b in tqdm(within_pairs_to_process,
+                                       desc=f"Judging WITHIN pairs for query: {query[:30]}..."):
+            sig_a = sig_cache[a]
+            sig_b = sig_cache[b]
+            dec = judge_pair(sig_a, sig_b)
 
-                if b in sig_cache:
-                    sig_b = sig_cache[b]
-                else:
-                    sig_b = extract_signature(rb["generated_plan"])
-                    sig_cache[b] = sig_b
+            within_results.append({"query": query, "grammar": gram, "size": int(size), "a": a, "b": b, **dec})
 
-                dec = judge_pair(sig_a, sig_b)
-                within_results.append({
-                    "query": query,
-                    "grammar": gram,
-                    "a": a,
-                    "b": b,
-                    **dec
-                })
-
-        # CROSS
+        ids_by_grammar = {g: grp["row_id"].tolist() for g, grp in gdf.groupby("grammar")}
         cross_pairs = _sample_cross_pairs(ids_by_grammar, cross_pairs_per_query, rng)
-        for a, b in cross_pairs:
+        unique_ids_in_cross_pairs = set(itertools.chain.from_iterable(cross_pairs))
+        for an_id in unique_ids_in_cross_pairs:
+            if an_id not in sig_cache:
+                plan_text = df.loc[df["row_id"] == an_id, "generated_plan"].iloc[0]
+                sig_cache[an_id] = extract_signature(plan_text)
+
+        for a, b in tqdm(cross_pairs, desc=f"Judging CROSS pairs for query: {query[:30]}..."):
             ra = df.loc[df["row_id"] == a].iloc[0]
             rb = df.loc[df["row_id"] == b].iloc[0]
-
-            sig_a = sig_cache.get(a)
-            if sig_a is None:
-                sig_a = extract_signature(ra["generated_plan"])
-                sig_cache[a] = sig_a
-
-            sig_b = sig_cache.get(b)
-            if sig_b is None:
-                sig_b = extract_signature(rb["generated_plan"])
-                sig_cache[b] = sig_b
-
+            sig_a = sig_cache[a]
+            sig_b = sig_cache[b]
             dec = judge_pair(sig_a, sig_b)
-            cross_results.append({
-                "query": query,
-                "grammar_a": ra["grammar"],
-                "grammar_b": rb["grammar"],
-                "a": a,
-                "b": b,
-                **dec
-            })
+            cross_results.append(
+                {"query": query, "grammar_a": ra["grammar"], "grammar_b": rb["grammar"], "a": a, "b": b, **dec})
 
-    # ----- aggregate summaries -----
-    def summarize(records, by_keys):
-        if not records:
-            return {}
-        d = pd.DataFrame(records)
-        facet_cols = ["diff_exercises", "diff_rules", "diff_motifs", "diff_blocks", "diff_side_focus"]
-        out = {}
-        for key, grp in d.groupby(by_keys):
-            stats = {}
-            for c in facet_cols:
-                if c in grp:
-                    stats[f"mean_{c}"] = grp[c].astype(float).mean()
-            if "overall_distinctness" in grp:
-                stats["frac_overall_2"] = (grp["overall_distinctness"] == 2).mean()
-            stats["n_pairs"] = len(grp)
-            out[key if isinstance(key, tuple) else (key,)] = stats
-        return out
+    print("\n--- Summary generation ---")
 
-    within_summary = summarize(within_results, ["grammar"])
-    cross_summary = summarize(cross_results, ["grammar_a", "grammar_b"])
-
-    print("\n=== WITHIN-CORPUS (pooled across queries) ===")
-    if within_summary:
-        for (g,), s in within_summary.items():
-            print(f"[{g}] n={s['n_pairs']}"
-                  f"  overall_2={s.get('frac_overall_2', 0):.3f}"
-                  f" | ex:{s.get('mean_diff_exercises', 0):.2f}"
-                  f" rules:{s.get('mean_diff_rules', 0):.2f}"
-                  f" motifs:{s.get('mean_diff_motifs', 0):.2f}"
-                  f" blocks:{s.get('mean_diff_blocks', 0):.2f}"
-                  f" side:{s.get('mean_diff_side_focus', 0):.2f}")
-    else:
-        print("No within-corpus pairs (need >=2 plans per (query, grammar)).")
-
-    print("\n=== CROSS-CORPUS (same query, A vs B) ===")
-    if cross_summary:
-        for (ga, gb), s in cross_summary.items():
-            print(f"[{ga} vs {gb}] n={s['n_pairs']}"
-                  f"  overall_2={s.get('frac_overall_2', 0):.3f}"
-                  f" | ex:{s.get('mean_diff_exercises', 0):.2f}"
-                  f" rules:{s.get('mean_diff_rules', 0):.2f}"
-                  f" motifs:{s.get('mean_diff_motifs', 0):.2f}"
-                  f" blocks:{s.get('mean_diff_blocks', 0):.2f}"
-                  f" side:{s.get('mean_diff_side_focus', 0):.2f}")
-    else:
-        print("No cross-corpus pairs (need at least two grammars for any query).")
-
-    # ----- save raw judgments -----
     outdir = PROJECT_ROOT / "experiments" / "pairwise_diversity"
     outdir.mkdir(parents=True, exist_ok=True)
     (outdir / "within_pairs.json").write_text(json.dumps(within_results, indent=2), encoding="utf-8")
     (outdir / "cross_pairs.json").write_text(json.dumps(cross_results, indent=2), encoding="utf-8")
     print(f"\nSaved raw decisions to {outdir}/")
 
+    if within_results:
+        df_within = pd.DataFrame(within_results)
+        grouping_keys = ['grammar', 'size']
+
+        mean_scores = df_within.groupby(grouping_keys)['overall_distinctness'].mean().reset_index()
+        mean_scores = mean_scores.rename(columns={'overall_distinctness': 'mean_diversity_score'})
+
+        score_proportions = df_within.groupby(grouping_keys)['overall_distinctness'] \
+                                .value_counts(normalize=True) \
+                                .unstack(fill_value=0) \
+                                .reindex(columns=[0, 1, 2], fill_value=0) * 100
+
+        score_proportions.columns = ['percent_score_0', 'percent_score_1', 'percent_score_2']
+
+        summary_df = pd.merge(mean_scores, score_proportions, on=grouping_keys)
+        summary_df = summary_df.sort_values(by=['grammar', 'size'])
+
+        csv_output_path = outdir / "pairwise_summary.csv"
+        summary_df.to_csv(csv_output_path, index=False)
+        print(f"✅ Summary CSV (with size) saved to: {csv_output_path}")
+
 
 if __name__ == "__main__":
-    load_dotenv()  # ensure OPENAI_API_KEY is loaded
-
+    load_dotenv()
     parser = argparse.ArgumentParser(description="Pairwise LLM-as-judge diversity evaluation.")
-    parser.add_argument(
-        "--input",
-        type=Path,
-        required=False,
-        default=PROJECT_ROOT / "experiments" / "evaluation_sessions_set_k10_size500_20250907_180221.json",
-        help="Path to JSON file with generated plans.",
-    )
+    parser.add_argument("--input", type=Path, required=True, help="Path to JSON file with generated plans.")
     parser.add_argument("--within", type=int, default=WITHIN_PAIRS_PER_QUERY_PER_GRAMMAR,
                         help="Within-corpus pairs per (query, grammar).")
-    parser.add_argument("--cross", type=int, default=CROSS_PAIRS_PER_QUERY,
-                        help="Cross-corpus pairs per query.")
+    parser.add_argument("--cross", type=int, default=CROSS_PAIRS_PER_QUERY, help="Cross-corpus pairs per query.")
     parser.add_argument("--seed", type=int, default=RANDOM_SEED, help="Random seed.")
     args = parser.parse_args()
-
     run_pairwise(args.input, args.within, args.cross, args.seed)

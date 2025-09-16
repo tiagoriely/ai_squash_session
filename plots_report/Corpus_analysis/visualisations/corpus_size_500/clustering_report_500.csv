@@ -1,0 +1,4 @@
+corpus_name,clusters_found,outliers,outlier_percent
+loose_500,7,1,0.20%
+balanced_500,38,59,11.80%
+high_constraint_500,33,15,3.00%

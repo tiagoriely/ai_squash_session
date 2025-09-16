@@ -1,0 +1,25 @@
+# configs/corpus_analysis/analysis_config_plotting.yaml
+
+# The base directory where the processed datasets are stored.
+input_data_dir: "data/processed"
+
+# List of corpus sizes to analyse in this run.
+corpus_sizes: [50, 100, 200, 300, 500]
+
+# The base location for all output reports and visualisations.
+output_dir: "evaluation/corpus_analysis/visualisations"
+
+# The full path where the final plot image will be saved.
+plot_output_path: "evaluation/corpus_analysis/visualisations/impact_vs_size_plot.png"
+
+# List of grammar profiles to analyse for each corpus size.
+grammar_profiles:
+  - name: "loose_grammar"
+    adjective: "loose"
+    plot_label: "Low-Constraint"
+  - name: "balanced_grammar"
+    adjective: "balanced"
+    plot_label: "Balanced-Constraint"
+  - name: "high_constraint_grammar"
+    adjective: "high_constraint"
+    plot_label: "High-Constraint"

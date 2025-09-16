@@ -22,7 +22,7 @@ from rag.retrieval.field_retriever import FieldRetriever
 from rag.retrieval.sparse_retriever import SparseRetriever
 from rag.retrieval.semantic_retriever import SemanticRetriever
 from field_adapters.squash_new_corpus_adapter import SquashNewCorpusAdapter
-from rag.retrieval_fusion.strategies import dynamic_query_aware_rrf
+from rag.retrieval_fusion.strategies import dynamic_query_aware_score_fusion
 from rag.generation.generator import Generator
 from rag.utils import load_and_format_config
 
@@ -78,7 +78,7 @@ def initialise_components(grammar_type: str, corpus_size: int) -> tuple:
 
 if __name__ == "__main__":
     # --- Experiment Parameters ---
-    CORPUS_SIZE = 499
+    CORPUS_SIZE = 500
     TOP_K_CONTEXT = 10  # This is 'k', which we will vary in later experiments
     LLM_TEMPERATURE = 0.2
     GRAMMARS_TO_TEST = ['loose', 'balanced', 'high_constraint']
@@ -130,7 +130,7 @@ if __name__ == "__main__":
             # 1. RETRIEVAL & FUSION using your dynamic hybrid retriever
             standalone_results = {name: retriever.search(query=query_text, top_k=30) for name, retriever in
                                   all_retrievers.items()}
-            fused_documents = dynamic_query_aware_rrf(standalone_results, query_text, field_scoring_config)
+            fused_documents = dynamic_query_aware_score_fusion(standalone_results, query_text, field_scoring_config)
 
             # 2. CONTEXT FORMULATION
             context_docs = fused_documents[:TOP_K_CONTEXT]

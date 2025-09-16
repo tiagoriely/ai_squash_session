@@ -1,0 +1,152 @@
+[
+  {
+    "grammar": "loose",
+    "size": 50,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.75,
+    "c_resp": 0.6,
+    "c_base": 0.2,
+    "k_size": 5
+  },
+  {
+    "grammar": "loose",
+    "size": 100,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.75,
+    "c_resp": 0.6,
+    "c_base": 0.2,
+    "k_size": 5
+  },
+  {
+    "grammar": "loose",
+    "size": 200,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 1.0,
+    "c_resp": 0.6,
+    "c_base": 0.0,
+    "k_size": 5
+  },
+  {
+    "grammar": "loose",
+    "size": 300,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 1.0,
+    "c_resp": 0.6,
+    "c_base": 0.0,
+    "k_size": 5
+  },
+  {
+    "grammar": "loose",
+    "size": 500,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 1.0,
+    "c_resp": 0.6,
+    "c_base": 0.0,
+    "k_size": 5
+  },
+  {
+    "grammar": "balanced",
+    "size": 50,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.75,
+    "c_resp": 0.6,
+    "c_base": 0.2,
+    "k_size": 5
+  },
+  {
+    "grammar": "balanced",
+    "size": 100,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 1.0,
+    "c_resp": 0.6,
+    "c_base": 0.0,
+    "k_size": 5
+  },
+  {
+    "grammar": "balanced",
+    "size": 200,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.75,
+    "c_resp": 0.6,
+    "c_base": 0.2,
+    "k_size": 5
+  },
+  {
+    "grammar": "balanced",
+    "size": 300,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.75,
+    "c_resp": 0.6,
+    "c_base": 0.2,
+    "k_size": 5
+  },
+  {
+    "grammar": "balanced",
+    "size": 500,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.75,
+    "c_resp": 0.6,
+    "c_base": 0.2,
+    "k_size": 5
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 50,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 1.0,
+    "c_resp": 1.0,
+    "c_base": 0.0,
+    "k_size": 2
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 100,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.6667,
+    "c_resp": 1.0,
+    "c_base": 0.5,
+    "k_size": 2
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 200,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 1.0,
+    "c_resp": 1.0,
+    "c_base": 0.0,
+    "k_size": 2
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 300,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.6667,
+    "c_resp": 1.0,
+    "c_base": 0.5,
+    "k_size": 2
+  },
+  {
+    "grammar": "high_constraint",
+    "size": 500,
+    "query_id": "complex_33_drill",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "completeness_gain": 0.6667,
+    "c_resp": 1.0,
+    "c_base": 0.5,
+    "k_size": 2
+  }
+]

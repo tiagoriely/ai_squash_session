@@ -1,0 +1,13 @@
+grammar,size,avg_completeness_gain
+balanced,100,0.5417
+balanced,200,0.6875
+balanced,300,0.6458
+balanced,500,0.625
+high_constraint,100,0.6945
+high_constraint,200,0.7083
+high_constraint,300,0.5833
+high_constraint,500,0.6667
+loose,100,0.5625
+loose,200,0.5
+loose,300,0.4792
+loose,500,0.5833

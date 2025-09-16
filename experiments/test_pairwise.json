@@ -1,0 +1,56 @@
+[
+  {
+    "case_id": "loose_100_complex_01_cg_k10",
+    "session_id": "generated_session_0001",
+    "query_text": "a 45-minute conditioned game session",
+    "generated_plan": "### Plan A (Loose, Size 100)\n\n**Warm-up:** Boast-Drive Drill.\n**Activity:** Front court conditioned game.",
+    "grammar": "loose",
+    "temperature": 0.7,
+    "fix_retrieval_per_query": true
+  },
+  {
+    "case_id": "loose_100_complex_01_cg_k10",
+    "session_id": "generated_session_0002",
+    "query_text": "a 45-minute conditioned game session",
+    "generated_plan": "### Plan B (Loose, Size 100)\n\n**Warm-up:** Volley Drop Drill.\n**Activity:** Back court conditioned game.",
+    "grammar": "loose",
+    "temperature": 0.7,
+    "fix_retrieval_per_query": true
+  },
+  {
+    "case_id": "high_constraint_100_complex_01_cg_k10",
+    "session_id": "generated_session_0003",
+    "query_text": "a 45-minute conditioned game session",
+    "generated_plan": "### Plan C (High Constraint, Size 100)\n\n**Warm-up (6 minutes)**\n1. 3 min: Warmup Drill - Compound Boast-Drive\n\n**Activity Block 1 (21.5 minutes)**\n1. 9 pts: Conditioned Game: Drop-Drive",
+    "grammar": "high_constraint",
+    "temperature": 0.7,
+    "fix_retrieval_per_query": true
+  },
+  {
+    "case_id": "high_constraint_100_complex_01_cg_k10",
+    "session_id": "generated_session_0004",
+    "query_text": "a 45-minute conditioned game session",
+    "generated_plan": "### Plan D (High Constraint, Size 100)\n\n**Warm-up (6 minutes)**\n1. 3 min: Warmup Drill - Star Drill Ghosting\n\n**Activity Block 1 (21.5 minutes)**\n1. 9 pts: Conditioned Game: Boast-Cross-Drive",
+    "grammar": "high_constraint",
+    "temperature": 0.7,
+    "fix_retrieval_per_query": true
+  },
+  {
+    "case_id": "balanced_500_complex_01_cg_k10",
+    "session_id": "generated_session_0005",
+    "query_text": "a 45-minute conditioned game session",
+    "generated_plan": "### Plan E (Balanced, Size 500)\n\n**Activity Block 1 (19 minutes)**\n1. Conditioned Game: Boast-Cross-Drive (Forehand)\n   - Points: First to 9",
+    "grammar": "balanced",
+    "temperature": 0.7,
+    "fix_retrieval_per_query": true
+  },
+  {
+    "case_id": "balanced_500_complex_01_cg_k10",
+    "session_id": "generated_session_0006",
+    "query_text": "a 45-minute conditioned game session",
+    "generated_plan": "### Plan F (Balanced, Size 500)\n\n**Activity Block 1 (20 minutes)**\n1. Conditioned Game: Drop-Drive (Backhand)\n   - Points: First to 11",
+    "grammar": "balanced",
+    "temperature": 0.7,
+    "fix_retrieval_per_query": true
+  }
+]

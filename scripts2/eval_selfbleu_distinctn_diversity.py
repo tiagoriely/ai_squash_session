@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 import nltk
 import numpy as np
+import re # Imported for regular expression matching
 
 # --- Path and Environment Setup ---
 # Ensures the script can find the custom evaluation utility modules
@@ -28,16 +29,26 @@ except LookupError:
 def run_combined_diversity_evaluation(input_filepath: Path):
     """
     Loads generated session plans, evaluates them using both Self-Bleu and
-    a suite of Distinct-n metrics, and computes a final combined diversity score.
+    a suite of Distinct-n metrics, computes a final combined diversity score,
+    and returns the results for aggregation.
     """
-    # --- 1. Load Data From Specified JSON File ---
+    # --- 1. Load Data and Extract Metadata from Filename ---
     try:
         with open(input_filepath, 'r', encoding='utf-8') as f:
             data = json.load(f)
         print(f"✅ Successfully loaded {len(data)} items from '{input_filepath.name}'")
     except FileNotFoundError:
         print(f"❌ Error: Input file not found at '{input_filepath}'")
-        sys.exit(1)
+        return []
+
+    # NEW: Extract 'size' from the filename using a regular expression
+    filename = input_filepath.name
+    size_match = re.search(r'size(\d+)_', filename)
+    # Use a default value (e.g., 0) if the pattern isn't found
+    extracted_size = int(size_match.group(1)) if size_match else 0
+    if extracted_size:
+        print(f"  -> Extracted size: {extracted_size}")
+
 
     # --- 2. Prepare DataFrame and Group by Corpus Type ---
     df = pd.DataFrame(data)
@@ -48,6 +59,8 @@ def run_combined_diversity_evaluation(input_filepath: Path):
     print(f"\nFound {len(grouped_by_grammar)} grammar types to evaluate: {list(grouped_by_grammar.groups.keys())}")
 
     final_diversity_scores = {}
+    # List to store result dictionaries for CSV export
+    results_for_csv = []
 
     # --- 3. Main Evaluation Loop (One Iteration Per Grammar Type) ---
     for grammar, group in grouped_by_grammar:
@@ -58,33 +71,27 @@ def run_combined_diversity_evaluation(input_filepath: Path):
         generated_texts = group['generated_plan'].tolist()
 
         # --- Metric A: Calculate Self-BLEU ---
-        # Self-BLEU measures similarity; a lower score (closer to 0) indicates higher diversity.
         self_bleu_evaluator = SelfBleu(generated_texts=generated_texts, gram=4)
         self_bleu_score = self_bleu_evaluator.get_score(is_fast=True)
         print(f"  -> Intermediate Self-BLEU Score: {self_bleu_score:.4f}")
 
         # --- Metric B: Calculate Distinct-n Suite ---
-        # Distinct-n measures lexical richness; a higher score (closer to 1) indicates higher diversity.
         distinct_evaluator = DistinctnEvaluator()
         distinct_scores = distinct_evaluator.evaluate(generated_texts)
         print("  -> Intermediate Distinct-n Scores:")
         for key, value in distinct_scores.items():
             print(f"     - {key}: {value:.4f}")
 
-        # --- 4. Calculate the Final Combined Diversity Score using the CORRECTED formula ---
+        # --- 4. Calculate the Final Combined Diversity Score ---
         p_d_1 = distinct_scores.get('prose_distinct_1', 0.0)
         p_d_2 = distinct_scores.get('prose_distinct_2', 0.0)
         patt_d = distinct_scores.get('pattern_diversity', 0.0)
         shot_d = distinct_scores.get('specific_shot_diversity_2', 0.0)
 
-        # STEP 1: Average the distinct-n scores for a balanced contribution.
         average_distinct_score = (p_d_1 + p_d_2 + patt_d + shot_d) / 4.0
         print(f"  -> Intermediate Average Distinct Score: {average_distinct_score:.4f}")
 
-        # STEP 2: Harmonize Self-BLEU by converting it to a diversity metric.
         self_bleu_diversity_score = 1 - self_bleu_score
-
-        # STEP 3: Apply the corrected formula.
         diversity_score = np.sqrt(
             (0.5 * (self_bleu_diversity_score ** 2)) +
             (0.5 * (average_distinct_score ** 2))
@@ -92,9 +99,19 @@ def run_combined_diversity_evaluation(input_filepath: Path):
 
         final_diversity_scores[grammar] = diversity_score
 
-    # --- 5. Output the Final Results ---
+        # --- Store results for this grammar type for later CSV export ---
+        results_for_csv.append({
+            'source_file': filename,
+            'grammar_type': grammar,
+            'size': extracted_size, # Add the extracted size to the results
+            'avg_distinct_n': average_distinct_score,
+            'self_bleu': self_bleu_score,
+            'combined_diversity_score': diversity_score
+        })
+
+    # --- 5. Output the Final Results to Console ---
     print("\n" + "=" * 80)
-    print("      FINAL COMBINED DIVERSITY SCORES")
+    print("      FINAL COMBINED DIVERSITY SCORES (CONSOLE)")
     print("=" * 80)
 
     if not final_diversity_scores:
@@ -104,11 +121,61 @@ def run_combined_diversity_evaluation(input_filepath: Path):
             print(f"  -> Overall Diversity Score for '{grammar.upper()}': {score:.4f}")
     print("=" * 80)
 
+    return results_for_csv
+
 
 if __name__ == "__main__":
-    # Define the absolute path to the JSON file to be evaluated
-    INPUT_FILE = (
-        Path("/experiments/selfbleu_distinctn/evaluation_sessions_set_k10_size499_20250907_192536.json"))
+    TARGET_DIR = PROJECT_ROOT / "experiments" / "dynamic_fusion_retrieval"
 
-    # Run the main evaluation function
-    run_combined_diversity_evaluation(INPUT_FILE)
+    if not TARGET_DIR.is_dir():
+        print(f"❌ Error: Target directory not found at '{TARGET_DIR}'")
+        sys.exit(1)
+
+    # Find all JSON files in the directory that match the expected pattern
+    json_files_to_process = list(TARGET_DIR.glob('evaluation_sessions_set_*.json'))
+
+    if not json_files_to_process:
+        print(f"🤷 No matching JSON files found in '{TARGET_DIR}'. Nothing to process.")
+        sys.exit(0)
+
+    print(f"Found {len(json_files_to_process)} JSON file(s) to process in the target directory.")
+
+    all_results_aggregator = []
+
+    for filepath in sorted(json_files_to_process): # Sorting helps keep output consistent
+        print("\n\n" + "#" * 80)
+        print(f"   PROCESSING FILE: {filepath.name}")
+        print("#" * 80)
+        file_results = run_combined_diversity_evaluation(filepath)
+        if file_results:
+            all_results_aggregator.extend(file_results)
+
+    # --- Write aggregated results to a single CSV file ---
+    if not all_results_aggregator:
+        print("\n\n🤷 No results were generated to save.")
+    else:
+        results_df = pd.DataFrame(all_results_aggregator)
+        output_csv_path = TARGET_DIR / "diversity_evaluation_summary.csv"
+
+        # Define the desired column order, including the new 'size' column
+        column_order = [
+            'source_file',
+            'grammar_type',
+            'size',
+            'avg_distinct_n',
+            'self_bleu',
+            'combined_diversity_score'
+        ]
+        results_df = results_df[column_order]
+        # Sort the final CSV for better readability
+        results_df = results_df.sort_values(by=['size', 'grammar_type']).reset_index(drop=True)
+
+        try:
+            results_df.to_csv(output_csv_path, index=False, float_format='%.4f')
+            print("\n\n" + "*" * 80)
+            print(f"📊 Summary of all results saved to: {output_csv_path}")
+            print("*" * 80)
+        except Exception as e:
+            print(f"\n\n❌ Error saving results to CSV: {e}")
+
+    print("\n\n✅ All files processed.")

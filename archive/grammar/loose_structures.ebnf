@@ -1,0 +1,16 @@
+// Import and ignore whitespace globally
+%import common.WS
+%ignore WS
+
+// The top-level rule
+session: drill_session | conditioned_game_session | mix_session
+
+// Rule definitions
+drill_session: WARMUP_BLOCK ACTIVITY_BLOCK+
+conditioned_game_session: WARMUP_BLOCK CG_BLOCK+
+mix_session: WARMUP_BLOCK ACTIVITY_BLOCK+
+
+// Terminal definitions
+WARMUP_BLOCK: "WARMUP_BLOCK"
+ACTIVITY_BLOCK: "ACTIVITY_BLOCK"
+CG_BLOCK: "CG_BLOCK"
