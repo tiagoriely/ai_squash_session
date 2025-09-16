@@ -25,7 +25,7 @@ size_col = "size"
 metric_col = "psa_score"  # change this if you plot a different metric later
 
 # Sizes to display on the x-axis (others will be ignored)
-x_sizes = [100, 200, 300, 400, 500]
+x_sizes = [50, 100, 200, 300, 400, 500]
 
 # Fixed colour mapping (must never change)
 colour_map = {

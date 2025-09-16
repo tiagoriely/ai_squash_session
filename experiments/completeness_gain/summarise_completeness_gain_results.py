@@ -44,7 +44,7 @@ c_resp_col  = "c_resp"
 c_base_col  = "c_base"
 
 # Sizes that appear on the plots
-x_sizes = [100, 200, 300, 400, 500]
+x_sizes = [50, 100, 200, 300, 400, 500]
 
 # Canonical mapping for grammar values (British English comments)
 canonical = {

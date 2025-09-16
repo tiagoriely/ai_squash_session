@@ -1,66 +1,117 @@
+"""
+Summarise RAGAS visuals (Answer Relevancy & Faithfulness) into CSVs so you can
+quote the exact values shown on your plots.
+
+Reads
+-----
+- 'ragas_scores_all_v1.csv'
+
+Writes (values are means per grammar × size; includes count used)
+-----------------------------------------------------------------
+1) 'ragas_answer_relevancy_by_size.csv'
+   Columns: grammar, size, avg_answer_relevancy, n
+
+2) 'ragas_faithfulness_by_size.csv'
+   Columns: grammar, size, avg_faithfulness, n
+
+Notes
+-----
+- Grammar labels are normalised so any 'high' becomes 'high_constraint'.
+- Sizes are restricted to the standard x-axis ticks: [100, 200, 300, 400, 500].
+  (If you also want size=50 included, flip INCLUDE_SIZE_50 to True below.)
+"""
+
+from pathlib import Path
+import sys
 import pandas as pd
-import os
 
 
-def analyse_ragas_scores():
-    """
-    Reads Ragas scores from a CSV, calculates summary statistics,
-    and writes them to a new, properly formatted CSV file.
+# -------- fixed inputs/outputs -----------------------------------------------
 
-    The script calculates and outputs two separate tables:
-    1. Overall average faithfulness and answer relevancy for each grammar type.
-    2. Average scores for each grammar type, broken down by size.
-    """
-    # --- Configuration ---
-    # Define the input and output file paths in-code
-    input_path = 'ragas_scores_all_v1.csv'
-    output_path = 'ragas_summary.csv'
+CSV_IN  = Path("ragas_scores_all_v1.csv")
 
-    # --- Script Execution ---
-    try:
-        # Check if the input file exists before proceeding
-        if not os.path.exists(input_path):
-            print(f"❌ Error: The input file was not found at '{input_path}'")
-            return
+OUT_RELEVANCY   = Path("ragas_answer_relevancy_by_size.csv")
+OUT_FAITHFULNESS = Path("ragas_faithfulness_by_size.csv")
 
-        # Read the source CSV file into a pandas DataFrame
-        df = pd.read_csv(input_path)
+# Standard sizes for your visuals
+X_SIZES = [50, 100, 200, 300, 400, 500]
 
-        # --- 1. Calculate overall average score for each grammar type ---
-        overall_summary = df.groupby('grammar')[['faithfulness', 'answer_relevancy']].mean().reset_index()
-
-        # --- 2. Calculate average score for each grammar type per size ---
-        per_size_summary = df.groupby(['grammar', 'size'])[['faithfulness', 'answer_relevancy']].mean().reset_index()
-        per_size_summary = per_size_summary.sort_values(by=['grammar', 'size'])
-
-        # --- 3. Write the summaries to a single, well-formatted CSV ---
-        # Open the file in write mode ('w') to create it and add the first summary
-        with open(output_path, 'w', newline='') as f:
-            f.write("Overall Average Scores per Grammar Type\n")
-            overall_summary.to_csv(f, index=False, float_format='%.4f')
-
-            # Add two blank lines for clear visual separation
-            f.write("\n\n")
-
-        # Open the same file in append mode ('a') to add the second summary
-        with open(output_path, 'a', newline='') as f:
-            f.write("Average Scores per Grammar Type and Size\n")
-            per_size_summary.to_csv(f, index=False, float_format='%.4f')
-
-        print(f"✅ Summary report successfully generated at: '{output_path}'")
-        print("The CSV file now contains two separate, correctly formatted tables.")
-
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+# Optionally include size=50 as well (set True if your plot included it)
+INCLUDE_SIZE_50 = False
 
 
-def main():
-    """
-    Main function to execute the script.
-    """
-    print("Starting the Ragas score analysis...")
-    analyse_ragas_scores()
-    print("Analysis complete.")
+# -------- column names in the input ------------------------------------------
+
+COL_GRAMMAR = "grammar"
+COL_SIZE = "size"
+COL_RELEVANCY = "answer_relevancy"
+COL_FAITHFULNESS = "faithfulness"
+
+
+# -------- helpers -------------------------------------------------------------
+
+CANONICAL = {
+    "balanced": "balanced",
+    "high": "high_constraint",
+    "high_constraint": "high_constraint",
+    "loose": "loose",
+}
+
+ORDER = ["balanced", "high_constraint", "loose"]
+
+
+def fail(msg: str) -> None:
+    print(f"[error] {msg}", file=sys.stderr)
+    sys.exit(1)
+
+
+def main() -> None:
+    if not CSV_IN.exists():
+        fail(f"Input file not found: {CSV_IN}")
+
+    df = pd.read_csv(CSV_IN)
+
+    # Validate columns
+    needed = {COL_GRAMMAR, COL_SIZE, COL_RELEVANCY, COL_FAITHFULNESS}
+    missing = [c for c in needed if c not in df.columns]
+    if missing:
+        fail(f"Missing required column(s): {', '.join(missing)}")
+
+    # Normalise grammar labels
+    df["grammar_canon"] = (
+        df[COL_GRAMMAR].astype(str).str.lower().map(CANONICAL).fillna(df[COL_GRAMMAR])
+    )
+
+    # Restrict to the sizes used on the visuals (optionally include 50)
+    sizes = X_SIZES if not INCLUDE_SIZE_50 else sorted(set(X_SIZES + [50]))
+    df = df[df[COL_SIZE].isin(sizes)].copy()
+
+    # ---- Answer Relevancy summary -------------------------------------------
+    rel = (
+        df.groupby(["grammar_canon", COL_SIZE], as_index=False)
+          .agg(avg_answer_relevancy=(COL_RELEVANCY, "mean"), n=(COL_RELEVANCY, "size"))
+          .rename(columns={"grammar_canon": "grammar"})
+    )
+    # Stable ordering
+    rel["grammar"] = pd.Categorical(rel["grammar"], categories=ORDER, ordered=True)
+    rel = rel.sort_values(["grammar", COL_SIZE])
+
+    rel.to_csv(OUT_RELEVANCY, index=False)
+    print(f"Wrote: {OUT_RELEVANCY.resolve()}")
+
+    # ---- Faithfulness summary ------------------------------------------------
+    faith = (
+        df.groupby(["grammar_canon", COL_SIZE], as_index=False)
+          .agg(avg_faithfulness=(COL_FAITHFULNESS, "mean"), n=(COL_FAITHFULNESS, "size"))
+          .rename(columns={"grammar_canon": "grammar"})
+    )
+    faith["grammar"] = pd.Categorical(faith["grammar"], categories=ORDER, ordered=True)
+    faith = faith.sort_values(["grammar", COL_SIZE])
+
+    faith.to_csv(OUT_FAITHFULNESS, index=False)
+    print(f"Wrote: {OUT_FAITHFULNESS.resolve()}")
+
+    print("\nDone. These CSVs contain the exact values used for the curves.")
 
 
 if __name__ == "__main__":

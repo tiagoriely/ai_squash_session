@@ -1,0 +1,242 @@
+[
+  {
+    "case_id": "my_kb_0_complex_01_cg_k10",
+    "session_id": "generated_session_01",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session",
+    "retrieved_documents_info": [
+      11,
+      5,
+      22,
+      26,
+      30,
+      18,
+      31,
+      17,
+      16,
+      6
+    ],
+    "generated_plan": "**Final Squash Session Plan: 45-Minute Conditioned Game Session**\n\n**Focus:** Mastering Lob-Based Rally Control. Employing Height (lob cross and straight lob) Strategically for Attack and Defense.\n\n**Participants:** 2  \n**Squash Level:** Medium  \n**Intensity:** Medium  \n**Fitness:** Medium  \n**Rest Time Between Exercises:** 1 minute 30 seconds\n\n---\n\n### WARM-UP (10 minutes)\n\n1. **2min30sec: Boast\u2013 Drive \u2013 Drop \u2013 Drive**\n   - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives.\n\n2. **2min30sec: Boast \u2013 Drive 2 Shots (Keep Same Positions)**\n   - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots).\n\n3. **Switch Roles and Repeat the Exercises Above**\n\n---\n\n### SESSION\n\n**Conditioned Game 1: Drives in the Alley (Forehand and Backhand)**\n- **First to 7 points (Forehand):** Drives (Rules: Ball must land in the alley and kills are allowed).\n- **First to 7 points (Backhand):** Drives (Rules: Ball must land in the alley and kills are allowed).\n\n**Conditioned Game 2: Above The Service Line**\n- **First to 9 points (Both Sides):** Play every shot above the service line on the front wall.\n\n**Conditioned Game 3: Alley Game with Lob Cross from the Front**\n- **First to 11 points (Both Sides):** Focus on using lob crosses from the front to control the rally.\n\n**Conditioned Game 4: Diagonal Game with Straight Lob from the Front**\n- **First to 11 points (Both Sides):** Use straight lobs from the front to maintain diagonal play.\n\n**Conditioned Game 5: Free Game with Lob Bonus**\n- **First to 11 points:** Free game with a twist: Win 2 points if you win the rally with a lob (either as a winner or causing an unforced error).\n\n---\n\n**End of Session.**",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_02_cg_k10",
+    "session_id": "generated_session_02",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an advanced player",
+    "retrieved_documents_info": [
+      13,
+      8,
+      22,
+      5,
+      26,
+      30,
+      11,
+      31,
+      18,
+      17
+    ],
+    "generated_plan": "**45-Minute Conditioned Game Session for Advanced Player**\n\n**Warm-Up (10 minutes)**\n- **2min30sec:** Boast\u2013 Drive \u2013 Drop \u2013 Drive\n  - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives\n- **2min30sec:** Boast \u2013 Drive 2 shots\n  - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots)\n- Switch roles and repeat the exercises above.\n\n**Session (35 minutes)**\n\n**Conditioned Game 1 (8 minutes)**\n- **First to 11 points:** Open versus Halfcourt right side\n  - Rules: Player A can play everywhere. Player B is restricted to playing shots that land and stay within the right side of the court. If Player B plays a straight shot, it must be in the alley.\n\n**Conditioned Game 2 (8 minutes)**\n- **First to 11 points:** Open versus Halfcourt left side\n  - Rules: Player A can play everywhere. Player B is restricted to playing shots that land and stay within the left side of the court. If Player B plays a straight shot, it must be in the alley.\n\n**Conditioned Game 3 (8 minutes)**\n- **First to 11 points:** Open versus Alley Game\n  - Rules: Player A can play everywhere. Player B is restricted to playing shots that land and stay within the alley of the right side of the court.\n\n**Conditioned Game 4 (8 minutes)**\n- **First to 11 points:** Open versus Back\n  - Rules: Player A can play everywhere. Player B is restricted to playing deep shots behind the T-line only.\n\n**Cool Down (1 minute)**\n- Light stretching and deep breathing exercises to relax muscles and reduce heart rate.\n\n**End of Session**\n\n**Note:** Ensure a rest time of 1 minute and 30 seconds between each conditioned game to maintain high intensity and focus throughout the session.",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_03_cg_k10",
+    "session_id": "generated_session_03",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an advanced player focusing on volley drops",
+    "retrieved_documents_info": [
+      6,
+      24,
+      13,
+      8,
+      22,
+      26,
+      17,
+      30,
+      11,
+      31
+    ],
+    "generated_plan": "**45-Minute Conditioned Game Session Plan for Advanced Player Focusing on Volley Drops**\n\n**WARM-UP (10 minutes)**\n- **2min30sec:** Boast\u2013 Drive \u2013 Drop \u2013 Drive\n  - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives\n- **2min30sec:** Boast \u2013 Drive 2 shots\n  - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots)\n- **Switch roles and repeat the exercises above**\n\n**SESSION (35 minutes)**\n\n**Conditioned Game 1 (10 minutes)**\n- **First to 7 points (forehand): Straight Drives with Volley Drop**\n  - Rules: Both players can play on Zone 2 and Zone 3. Player A can play volley straight drop. The response to the volley straight drop must be a straight lob.\n- **First to 7 points (forehand): Straight Drives with Volley Drop**\n  - Rules: Both players can play on Zone 2 and Zone 3. Player B can play volley straight drop. The response to the volley straight drop must be a straight lob.\n\n**Conditioned Game 2 (10 minutes)**\n- **First to 7 points (forehand): Straight Drives with Drop**\n  - Rules: Both players can play on Zone 2 and Zone 3. Player A can play straight drop if the ball bounced. The response to the volley straight drop must be a straight lob.\n- **First to 7 points (forehand): Straight Drives with Drop**\n  - Rules: Both players can play on Zone 2 and Zone 3. Player B can play straight drop if the ball bounced. The response to the volley straight drop must be a straight lob.\n\n**Conditioned Game 3 (10 minutes)**\n- **First to 7 points (forehand): Straight Drives with Drop and Counter**\n  - Rules: Both players can play on Zone 2 and Zone 3. Player A can play straight drop if the ball bounced. The response to the volley straight drop must be a straight lob or a counter drop.\n- **First to 7 points (forehand): Straight Drives with Drop and Counter**\n  - Rules: Both players can play on Zone 2 and Zone 3. Player B can play straight drop if the ball bounced. The response to the volley straight drop must be a straight lob or a counter drop.\n\n**Conditioned Game 4 (5 minutes)**\n- **First to 11 points (forehand): Alley Game**\n  - Rules: Play only on the right side of the court, short or long, but in the alley delimited by the service box.\n\n**End of Session**\n\n**Note:** Rest time between exercises is 1 minute and 30 seconds. Focus on mastering forehand straight game strategy and execution within defined front wall zones, specifically targeting different shot heights from low to high.",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_04_cg_k10",
+    "session_id": "generated_session_04",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops",
+    "retrieved_documents_info": [
+      7,
+      22,
+      5,
+      18,
+      16,
+      11,
+      13,
+      26,
+      30,
+      31
+    ],
+    "generated_plan": "**Squash Session Plan: 45-Minute Conditioned Game Session for Intermediate Player Focusing on Backhand Counter Drops**\n\n---\n\n**WARM-UP (10 minutes):**\n\n1. **Boast\u2013 Drive \u2013 Drop \u2013 Drive (2min30sec)**\n   - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives.\n   \n2. **Boast \u2013 Drive 2 Shots (2min30sec)**\n   - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots).\n   \n3. **Switch roles and repeat the exercises above (5min).**\n\n**SESSION (35 minutes):**\n\n**Conditioned Game 1: Boast \u2013 Drive with One Counter (14 minutes)**\n- **First to 9 points:**\n  - **Player A** plays boasts under the service line only but can counter drop if Player B plays a drop.\n  - **Player B** plays drives behind the T-line but is allowed to play 1 counter drop per rally.\n  \n- **First to 9 points:**\n  - **Player B** plays boasts under the service line only but can counter drop if Player A plays a drop.\n  - **Player A** plays drives behind the T-line but is allowed to play 1 counter drop per rally.\n\n**Conditioned Game 2: Boast \u2013 Drive with Counters (14 minutes)**\n- **First to 9 points:**\n  - **Player A** plays boasts under the service line only but can counter drop if Player B plays a drop.\n  - **Player B** can play a straight drive behind the line or counter drops.\n  \n- **First to 9 points:**\n  - **Player B** plays boasts under the service line only but can counter drop if Player A plays a drop.\n  - **Player A** can play a straight drive behind the line or counter drops.\n\n**Conditioned Game 3: Free Game with Focus on Backhand Counter Drops (7 minutes)**\n- **First to 11 points:**\n  - Players play a free game with an emphasis on utilizing backhand counter drops strategically during rallies. If a player successfully executes a backhand counter drop that wins the rally, they earn an additional point.\n\n**End of Session.**\n\n---\n\n**Notes:**\n- Ensure players maintain high intensity throughout the session.\n- Focus on the strategic use of backhand counter drops to control the pace and direction of the game.\n- Allow 1 minute and 30 seconds of rest between each conditioned game to maintain performance levels.",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_21_mix_k10",
+    "session_id": "generated_session_05",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session",
+    "retrieved_documents_info": [
+      19,
+      22,
+      16,
+      11,
+      30,
+      29,
+      3,
+      6,
+      28,
+      18
+    ],
+    "generated_plan": "**Final Squash Session Plan: 60-Minute Mix Session**\n\n**Warm-Up (5 minutes)**\n- **4 minutes:** Boast\u2013Drive (Switch roles halfway)\n  - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A boasts \u2192 Player B drives\n\n**Session Exercises**\n\n**Exercise 1 (9 minutes 30 seconds)**\n- **2x4 minutes (forehand side):** Drop - Drive (Switch roles halfway)\n  - Player A: Feeds straight drops from the back\n  - Player B: Plays straight drives (first bounce behind the service box)\n  - Optional Target: Place a small target (e.g., wristband, shoe, or ball box) on the floor, 10 to 30 cm behind the service box and against the side wall. Aim to land the first bounce of your drive directly on it.\n\n**Rest: 1 minute 30 seconds**\n\n**Exercise 2 (9 minutes 30 seconds)**\n- **4 minutes (backhand side):** Drop \u2013 Drive (Switch roles halfway)\n  - Player A: Feeds straight drops from the back\n  - Player B: Plays straight drives (first bounce behind the service box)\n  - Optional Target: Place a small target on the floor, 10 to 30 cm behind the service box and against the side wall.\n\n**Rest: 1 minute 30 seconds**\n\n**Exercise 3 (9 minutes 30 seconds)**\n- **4x2 minutes (forehand side):** Drop \u2013 FH Drive \u2013 BH Ghost (Switch roles halfway)\n  - Sequence: Player A drops to the front right corner \u2192 Player B ghosts to the front left corner, then returns to the T \u2192 Player A feeds the next drop once B is back on the T.\n  - Player A: Feeds straight drops only\n  - Player B: Plays straight drives (first bounce behind the service box) from the front, then ghosts to the opposite corner in the front\n  - Optional Target: Place a small target on the floor, 10 to 30 cm behind the service box and against the side wall.\n\n**Rest: 1 minute 30 seconds**\n\n**Exercise 4 (9 minutes 30 seconds)**\n- **2x4 minutes (forehand side):** Drop/Boast \u2013 Drive (Switch roles halfway)\n  - Player A: Feeds straight drops or boasts from the back\n  - Player B: Plays straight drives only (first bounce behind the service box)\n  - Optional Target: Place a small target on the floor, 10 to 30 cm behind the service boxes and against the side walls.\n\n**Cool Down (5 minutes)**\n- Light stretching focusing on legs and arms to aid recovery and flexibility.\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_22_mix_k10",
+    "session_id": "generated_session_06",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an intermediate player",
+    "retrieved_documents_info": [
+      19,
+      7,
+      22,
+      16,
+      11,
+      6,
+      18,
+      29,
+      30,
+      24
+    ],
+    "generated_plan": "**Final Squash Session Plan: 60-Minute Mix Session for an Intermediate Player**\n\n**Warm-Up (5 minutes)**\n- **4 minutes:** Boast\u2013Drive (Switch roles halfway)\n  - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A boasts \u2192 Player B drives\n\n**Session**\n\n**Exercise 1 (9 minutes 30 seconds)**\n- **2x4 minutes (forehand side):** Drop - Drive (Switch roles halfway)\n  - Player A: Feeds straight drops from the back\n  - Player B: Plays straight drives (first bounce behind the service box)\n  - Optional Target: Place a small target (e.g., wristband, shoe, or ball box) on the floor, 10 to 30 cm behind the service box and against the side wall. Aim to land the first bounce of your drive directly on it.\n\n**Exercise 2 (9 minutes 30 seconds)**\n- **4 minutes (backhand side):** Drop \u2013 Drive (Switch roles halfway)\n  - Player A: Feeds straight drops from the back\n  - Player B: Plays straight drives (first bounce behind the service box)\n  - Optional Target: Place a small target (e.g., wristband, shoe, or ball box) on the floor, 10 to 30 cm behind the service box and against the side wall. Aim to land the first bounce of your drive directly on it.\n\n**Exercise 3 (9 minutes 30 seconds)**\n- **4x2 minutes (forehand side):** Drop \u2013 FH Drive \u2013 BH Ghost (Switch roles halfway)\n  - Sequence: Player A drops to the front right corner \u2192 Player B ghosts to the front left corner, then returns to the T \u2192 Player A feeds the next drop once B is back on the T.\n  - Player A: Feeds straight drops only\n  - Player B: Plays straight drives (first bounce behind the service box) from the front then ghosts to the opposite corner in the front\n  - Optional Target: Place a small target (e.g., wristband, shoe, or ball box) on the floor, 10 to 30 cm behind the service box and against the side wall.\n\n**Exercise 4 (9 minutes 30 seconds)**\n- **2x4 minutes (forehand side):** Drop/Boast \u2013 Drive (Switch roles halfway)\n  - Player A: Feeds straight drops or boasts from the back\n  - Player B: Plays straight drives only (first bounce behind the service box)\n  - Optional Target: Place a small target (e.g., wristband, shoe, or ball box) on the floor, 10 to 30 cm behind the service boxes and against the side walls.\n\n**Cool Down (5 minutes)**\n- Light stretching focusing on legs and arms to aid recovery.\n\n**Notes:**\n- Focus on mastering straight drives from the front and improving front court movement.\n- Maintain medium intensity throughout the session.\n- Rest for 1 minute 30 seconds between exercises to ensure recovery and maintain performance quality.",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_23_mix_k10",
+    "session_id": "generated_session_07",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an professional player focusing on straight lob",
+    "retrieved_documents_info": [
+      19,
+      29,
+      6,
+      10,
+      16,
+      22,
+      11,
+      30,
+      26,
+      18
+    ],
+    "generated_plan": "**Final Squash Session Plan: 60-Minute Mix Session for a Professional Player Focusing on Straight Lob**\n\n**WARM-UP (10 minutes)**\n- **2min30sec:** Boast\u2013Drive\u2013Drop\u2013Drive\n  - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives\n- **2min30sec:** Boast\u2013Drive 2 shots\n  - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots)\n- Switch roles and repeat the exercises above.\n\n**SESSION**\n\n**Exercise 1 (9min30sec)**\n- **4min (forehand side):** Drop \u2013 Drive \u2013 Drop \u2013 Lob Straight\n  - Player A: stays in the back and plays drops only\n  - Player B: alternates shots, straight drive then straight lob\n- **4min (forehand side, switch roles):** Drop \u2013 Drive \u2013 Drop \u2013 Lob Straight\n\n**Exercise 2 (9min30sec)**\n- **4min (backhand side):** Drop \u2013 Drive \u2013 Drop \u2013 Lob Straight\n  - Player A: stays in the back and plays drops only\n  - Player B: alternates shots, straight drive then straight lob\n- **4min (backhand side, switch roles):** Drop \u2013 Drive \u2013 Drop \u2013 Lob Straight\n\n**Exercise 3 (9min30sec)**\n- **4min (forehand side):** Boast \u2013 Lob cross \u2013 Straight Drive\n- **4min (backhand side):** Boast \u2013 Lob cross \u2013 Straight Drive\n\n**Exercise 4 (11min)**\n- **4min:** Front versus Back\n  - Start drill with a boast\n  - Player A: has the option to play boast or straight drop\n  - Player B: has the option to play cross lob or straight drive (deep or lob)\n- **4min (new options):** Front versus Back\n  - Start drill with a boast\n  - Player A: has the option to play boast or straight drop\n  - Player B: has the option to play cross lob or straight drive (deep or lob)\n- **1min30sec rest**\n- Switch roles and repeat both routines above.\n\n**Exercise 5 (5min30sec)**\n- **4min:** Short \u2013 Deep (Lob) \u2013 Deep (any)\n  - Start with a boast\n  - Deep shot = shot first bounce behind the service line\n  - Short shot = second bounce in front of the service line\n\n**END OF SESSION**\n\n**Note:** Ensure to maintain a rest time of 1min30sec between exercises to allow for recovery and maintain performance quality.",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_24_mix_k10",
+    "session_id": "generated_session_08",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute mix session for an intermediate player focusing on forehand straight kill",
+    "retrieved_documents_info": [
+      19,
+      7,
+      22,
+      6,
+      11,
+      18,
+      30,
+      24,
+      16,
+      27
+    ],
+    "generated_plan": "**60-Minute Squash Session Plan for Intermediate Player: Focus on Forehand Straight Kill**\n\n**WARM-UP (10 minutes)**\n- **2min30sec:** Boast\u2013Drive\u2013Drop\u2013Drive\n  - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives\n- **2min30sec:** Boast\u2013Drive 2 shots\n  - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots)\n- **Switch roles and repeat the exercises above**\n\n**SESSION (50 minutes)**\n\n**Exercise 1 (9min30sec)**\n- **2x4min (forehand side): Drop - Drive**\n  - Player A: feeds straight drops from the back\n  - Player B: plays straight drives (first bounce behind the service box)\n  - Optional Target: Place a small target (e.g., wristband, shoe, or ball box) on the floor, 10 to 30cm behind the service box and against the side wall. Aim to land the first bounce of your drive directly on it.\n- **Rest: 1min30sec**\n\n**Exercise 2 (9min30sec)**\n- **4min (backhand side): Drop \u2013 Drive**\n  - Player A: feeds straight drops from the back\n  - Player B: plays straight drives (first bounce behind the service box)\n  - Optional Target: Place a small target on the floor, 10 to 30cm behind the service box and against the side wall. Aim to land the first bounce of your drive directly on it.\n- **Rest: 1min30sec**\n\n**Exercise 3 (9min30sec)**\n- **4x2min (forehand side): Drop \u2013 FH Drive \u2013 BH Ghost**\n  - Sequence: Player A drops to the front right corner \u2192 Player B ghosts to the front left corner, then returns to the T \u2192 Player A feeds the next drop once B is back on the T.\n  - Player A: feeds straight drops only\n  - Player B: plays straight drives (first bounce behind the service box) from the front then ghosts to the opposite corner in the front\n  - Optional Target: Place a small target on the floor, 10 to 30cm behind the service box and against the side wall\n- **Rest: 1min30sec**\n\n**Exercise 4 (9min30sec)**\n- **2x4min (forehand side): Drop/Boast \u2013 Drive**\n  - Player A: feeds straight drops or boasts from the back\n  - Player B: plays straight drives only (first bounce behind the service box)\n  - Optional Target: Place a small target on the floor, 10 to 30cm behind the service boxes and against the side walls\n- **Rest: 1min30sec**\n\n**Cool Down (5 minutes)**\n- Light stretching focusing on legs and arms to aid recovery and flexibility.\n\n**Notes:**\n- Focus on mastering your straight drives from the front and improving front court movement.\n- Maintain medium intensity throughout the session.\n- Ensure proper technique by facing the side wall during straight drives and ghosting routines.\n- Rest for 1min30sec between exercises to maintain optimal performance and recovery.",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_11_drill_k10",
+    "session_id": "generated_session_09",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 60-minute drill session",
+    "retrieved_documents_info": [
+      29,
+      10,
+      28,
+      14,
+      6,
+      26,
+      19,
+      3,
+      17,
+      30
+    ],
+    "generated_plan": "**Final Squash Session Plan: 60-Minute Drill Session**\n\n**Participants:** 2  \n**Level:** Advanced  \n**Focus:** Using height from the front  \n**Intensity:** Medium  \n**Fitness:** Medium  \n**Specific Shots:** Cross lob, straight lob  \n**Shot Side:** Forehand, backhand  \n**Rest Time Between Exercises:** 1 minute 30 seconds  \n\n---\n\n### Warm-Up (10 minutes)\n1. **2min30sec:** Boast\u2013 Drive \u2013 Drop \u2013 Drive  \n   - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives\n2. **2min30sec:** Boast \u2013 Drive 2 shots  \n   - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots)\n3. **Switch roles and repeat the exercises above**\n\n---\n\n### Session\n\n**Exercise 1 (9min30sec)**\n- **4min (forehand side):** Drop \u2013 Drive \u2013 Drop \u2013 Lob Straight  \n  - Player A: stays in the back and plays drops only  \n  - Player B: alternates shots, straight drive then straight lob\n- **4min (forehand side, switch roles):** Drop \u2013 Drive \u2013 Drop \u2013 Lob Straight  \n\n**Exercise 2 (9min30sec)**\n- **4min (backhand side):** Drop \u2013 Drive \u2013 Drop \u2013 Lob Straight  \n  - Player A: stays in the back and plays drops only  \n  - Player B: alternates shots, straight drive then straight lob\n- **4min (backhand side, switch roles):** Drop \u2013 Drive \u2013 Drop \u2013 Lob Straight  \n\n**Exercise 3 (9min30sec)**\n- **4min (forehand side):** Boast \u2013 Lob Cross \u2013 Straight Drive\n- **4min (backhand side):** Boast \u2013 Lob Cross \u2013 Straight Drive\n\n**Exercise 4 (11min)**\n- **4min:** Front versus Back  \n  - Start drill with a boast  \n  - Player A: has the option to play boast or straight drop  \n  - Player B: has the option to play cross lob or straight drive (deep or lob)\n- **4min (new options):** Front versus Back  \n  - Start drill with a boast  \n  - Player A: has the option to play boast or straight drop  \n  - Player B: has the option to play cross lob or straight drive (deep or lob)\n- **1min30sec rest**\n- **Switch roles and repeat both routines above**\n\n**Exercise 5 (5min30sec)**\n- **4min:** Short \u2013 Deep (Lob) \u2013 Deep (any)  \n  - Start with a boast  \n  - Deep shot = shot first bounce behind the service line  \n  - Short shot = second bounce in front of the service line\n\n**Exercise 6 (Optional)**\n- **First to 15 points Free Game**  \n  - Win 2 points if you win the rally with a Lob (winner or unforced error)\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_12_drill_k10",
+    "session_id": "generated_session_10",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a 45-minute drill session focusing on the cross kill",
+    "retrieved_documents_info": [
+      28,
+      14,
+      29,
+      10,
+      11,
+      30,
+      23,
+      15,
+      18,
+      8
+    ],
+    "generated_plan": "**Squash Session Plan: 45-Minute Drill Session Focusing on the Cross Kill**\n\n**Participants:** 2  \n**Level:** Advanced  \n**Intensity:** Medium  \n**Focus:** Cross Kill  \n**Rest Time Between Exercises:** 1 minute 30 seconds  \n\n---\n\n### Warm-Up (10 minutes)\n\n1. **Boast \u2013 Drive \u2013 Drop \u2013 Drive**  \n   - Duration: 2 minutes 30 seconds  \n   - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives  \n\n2. **Boast \u2013 Cross \u2013 Boast \u2013 Drive**  \n   - Duration: 2 minutes 30 seconds  \n   - Sequence: Player A boasts \u2192 Player B crosses \u2192 Player A boasts \u2192 Player B drives  \n\n3. **Switch Roles and Repeat**  \n   - Ensure both players experience each role in the warm-up sequence.\n\n---\n\n### Session\n\n**Exercise 1: Cross Kill Drill (10 minutes 30 seconds)**\n\n- **3 minutes (forehand side):**  \n  - Sequence: Deep straight drive \u2192 Deep straight drive \u2192 Cross Kill  \n  - Focus on executing a precise cross kill after setting up with deep drives.\n\n- **3 minutes (backhand side):**  \n  - Sequence: Deep straight drive \u2192 Deep straight drive \u2192 Cross Kill  \n  - Practice the cross kill from the backhand side, maintaining accuracy and control.\n\n- **Switch Roles and Repeat**  \n  - Ensure both players practice on both forehand and backhand sides.\n\n**Exercise 2: Cross Kill with Variation (10 minutes 30 seconds)**\n\n- **3 minutes (forehand side):**  \n  - Sequence: Deep drive \u2192 Deep drive \u2192 Cross Kill \u2192 Hard Cross  \n  - Incorporate a hard cross after the cross kill to simulate match conditions.\n\n- **3 minutes (backhand side):**  \n  - Sequence: Deep drive \u2192 Deep drive \u2192 Cross Kill \u2192 Hard Cross  \n  - Focus on maintaining intensity and precision on the backhand side.\n\n- **Switch Roles and Repeat**  \n  - Both players should practice executing the sequence from both sides.\n\n**Exercise 3: Cross Kill Under Pressure (10 minutes)**\n\n- **5 minutes (forehand side):**  \n  - Sequence: Deep drive \u2192 Deep drive \u2192 Cross Kill \u2192 Opponent's Choice  \n  - Player B responds with any shot, and Player A must adapt and execute another cross kill.\n\n- **5 minutes (backhand side):**  \n  - Sequence: Deep drive \u2192 Deep drive \u2192 Cross Kill \u2192 Opponent's Choice  \n  - Practice adaptability and quick decision-making under pressure.\n\n- **Switch Roles and Repeat**  \n  - Ensure both players experience both roles and practice adaptability.\n\n---\n\n**Cool Down and Stretching (4 minutes)**\n\n- Focus on stretching major muscle groups used during the session, including legs, arms, and back.\n- Encourage players to reflect on their performance and areas for improvement.\n\n---\n\n**End of Session**",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_22_drill_k10",
+    "session_id": "generated_session_11",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a drill session to improve on the forehand 2-wall boast",
+    "retrieved_documents_info": [
+      29,
+      14,
+      10,
+      8,
+      9,
+      15,
+      1,
+      13,
+      17,
+      26
+    ],
+    "generated_plan": "**Squash Session Plan: Improving the Forehand 2-Wall Boast**\n\n**Duration:** 60 minutes  \n**Participants:** 2  \n**Level:** Advanced  \n**Intensity:** Medium  \n**Focus:** Mastering the 2-Wall Boast within a Driving Game  \n**Rest Time Between Exercises:** 1 minute 30 seconds  \n\n---\n\n**WARM-UP (10 minutes)**  \n- **2 minutes 30 seconds:** Boast\u2013 Drive \u2013 Drop \u2013 Drive  \n  - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives  \n- **2 minutes 30 seconds:** Boast \u2013 Drive 2 shots  \n  - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots)  \n- Switch roles and repeat the exercises above  \n\n---\n\n**SESSION**\n\n**Conditioned Game 1**  \n- **First to 7 points (forehand):** Deep Drives  \n  - Rules: The first bounce of the ball on the floor must land behind the T-line  \n\n**Conditioned Game 2**  \n- **First to 9 points (forehand):** Deep Drives with 2-Wall Boast  \n  - Rules: The first bounce of the ball on the floor must land behind the T-line. If you are in front of your opponent, you can play a 2-wall boast. The response after the boast must be a deep cross  \n\n**Conditioned Game 3**  \n- **First to 9 points (forehand):** Alley Game with 2-Wall Boast  \n  - Rules: The first bounce of the ball on the floor must land behind the T-line. If you are in front of your opponent, you can play a 2-wall boast. The response after the boast must be a cross  \n\n**Conditioned Game 4**  \n- **First to 11 points (both sides):** Length Game with 2-Wall Boast  \n  - Rules: The first bounce of the ball on the floor must land behind the T-line. If you are in front of your opponent, you can play a 2-wall boast. The response after the boast must be a deep shot  \n\n**Conditioned Game 5**  \n- **First to 11 points (both sides):** Free Game  \n  - Rules: If you win a rally with a 2-wall boast and you were in front of your opponent, you get 2 points  \n\n---\n\n**END OF SESSION**  \n\nThis session plan focuses on enhancing the forehand 2-wall boast by integrating it into various conditioned games, ensuring players develop strategic use of the shot within a driving game context.",
+    "reference": ""
+  },
+  {
+    "case_id": "my_kb_0_complex_33_drill_k10",
+    "session_id": "generated_session_12",
+    "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
+    "query_text": "a drill session for a professional to improve on the backhand 3-wall boast",
+    "retrieved_documents_info": [
+      29,
+      10,
+      14,
+      28,
+      24,
+      4,
+      17,
+      27,
+      26,
+      13
+    ],
+    "generated_plan": "**Squash Session Plan: Backhand 3-Wall Boast Improvement**\n\n**Participants:** 2  \n**Duration:** 60 minutes  \n**Level:** Advanced  \n**Intensity:** Medium  \n**Focus:** Backhand 3-Wall Boast  \n**Rest Time Between Exercises:** 1 minute 30 seconds  \n\n---\n\n### WARM-UP (10 minutes)\n1. **Boast\u2013 Drive \u2013 Drop \u2013 Drive (2 minutes 30 seconds)**\n   - Sequence: Player A boasts \u2192 Player B drives \u2192 Player A drops \u2192 Player B drives.\n2. **Boast \u2013 Drive 2 shots (2 minutes 30 seconds)**\n   - Sequence: Player A drives and then plays a boast (2 shots) \u2192 Player B drops and then plays a drive (2 shots).\n3. **Switch roles and repeat the exercises above.**\n\n---\n\n### SESSION\n\n#### Exercise 1: Backhand 3-Wall Boast Practice (9 minutes 30 seconds)\n- **4 minutes (backhand side):** \n  - Player A: Focus on executing the backhand 3-wall boast.\n  - Player B: Responds with a straight drive.\n- **Switch roles and repeat for another 4 minutes.**\n\n#### Exercise 2: Boast and Lob Combination (9 minutes 30 seconds)\n- **4 minutes (backhand side):** \n  - Player A: Plays a backhand boast followed by a cross lob.\n  - Player B: Alternates between straight drives and straight lobs.\n- **Switch roles and repeat for another 4 minutes.**\n\n#### Exercise 3: Boast with Options (9 minutes 30 seconds)\n- **4 minutes (backhand side):** \n  - Start with a boast.\n  - Player A: Can choose to play a boast or a straight drop.\n  - Player B: Can respond with a cross lob or a straight drive.\n- **Switch roles and repeat for another 4 minutes.**\n\n#### Exercise 4: Front vs. Back (11 minutes)\n- **4 minutes:** \n  - Start drill with a boast.\n  - Player A: Option to play boast or straight drop.\n  - Player B: Option to play cross lob or straight drive (deep or lob).\n- **Switch roles and repeat for another 4 minutes.**\n- **1 minute 30 seconds rest.**\n\n#### Exercise 5: Short and Deep Shots (5 minutes 30 seconds)\n- **4 minutes:** \n  - Start with a boast.\n  - Alternate between short shots (second bounce in front of the service line) and deep shots (first bounce behind the service line).\n\n#### Exercise 6: Optional Game (5 minutes)\n- **First to 15 points Free Game:**\n  - Win 2 points if you win the rally with a lob (winner or unforced error).\n\n---\n\n**END OF SESSION**",
+    "reference": ""
+  }
+]

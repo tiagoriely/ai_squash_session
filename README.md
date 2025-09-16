@@ -74,6 +74,12 @@ python3 scripts/01_build_indexes.py \
     --sparse-build-config configs/indexing/build_sparse_index_meta.yaml \
     --force
 
+python3 scripts/01_build_indexes.py \
+    --semantic-build-config configs/indexing/manual_semantic_index.yaml \
+    --sparse-build-config configs/indexing/manual_sparse_index.yaml \
+    --force
+
+
 # 4. Generate Sessions with RAG
 
 pick size and topk
@@ -124,6 +130,11 @@ python scripts2/eval_reliability_with_ragas.py \
 python scripts2/eval_reliability_with_ragas.py \
   --inputs experiments/sample_query_1/*.json \
   --k 10 --by-query --csv experiments/ragas_scores_all.csv --plot-dir experiments/
+
+## RAGAS with Raw Corpus
+python scripts2/eval_reliability_with_ragas.py \
+  --inputs experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json \
+  --k 10 --by-query --csv experiments/ragas_scores_raw.csv --plot-dir experiments/
 
 ## Plot RAGAS with std
 python scripts2/plot_ragas_with_std.py \

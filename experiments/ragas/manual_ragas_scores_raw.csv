@@ -1,0 +1,13 @@
+source_file,case_id,grammar,size,query_text,faithfulness,answer_relevancy
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_01_cg_k10,my_kb,0,a 45-minute conditioned game session,0.9565217391304348,0.777141442376949
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_02_cg_k10,my_kb,0,a 45-minute conditioned game session for an advanced player,0.6666666666666666,0.9598545895606438
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_03_cg_k10,my_kb,0,a 45-minute conditioned game session for an advanced player focusing on volley drops,0.7096774193548387,0.9579826925884274
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_04_cg_k10,my_kb,0,a 45-minute conditioned game session for an intermediate player focusing on backhand counter drops,0.5555555555555556,0.9214362277915186
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_21_mix_k10,my_kb,0,a 60-minute mix session,0.8235294117647058,0.8001003640485974
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_22_mix_k10,my_kb,0,a 60-minute mix session for an intermediate player,0.8823529411764706,0.8505756752487909
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_23_mix_k10,my_kb,0,a 60-minute mix session for an professional player focusing on straight lob,0.9615384615384616,0.8781450414601181
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_24_mix_k10,my_kb,0,a 60-minute mix session for an intermediate player focusing on forehand straight kill,0.95,0.911000405887192
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_11_drill_k10,my_kb,0,a 60-minute drill session,1.0,0.808435628420623
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_12_drill_k10,my_kb,0,a 45-minute drill session focusing on the cross kill,0.37142857142857144,0.8221595007815607
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_22_drill_k10,my_kb,0,a drill session to improve on the forehand 2-wall boast,0.9354838709677419,0.8793593223093104
+experiments/evaluation_sessions_set_k10_rawCorpus_20250916_195637.json,my_kb_0_complex_33_drill_k10,my_kb,0,a drill session for a professional to improve on the backhand 3-wall boast,0.4473684210526316,0.910079431199944
