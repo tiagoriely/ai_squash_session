@@ -24,7 +24,7 @@ size_col = "size"
 metric_col = "mean_diversity_score"  # maps to “Average Diversity Score”
 
 # Sizes to display on the x-axis (others will be ignored)
-x_sizes = [100, 200, 300, 400, 500]
+x_sizes = [50, 100, 200, 300, 400, 500]
 
 # Canonical label mapping (normalises any variants from the CSV)
 canonical = {

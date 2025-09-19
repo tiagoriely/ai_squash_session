@@ -1,20 +1,22 @@
 # Repo Overview
 ```text
 ├── configs
-├── data
-├── evaluation
-├── experiments
+├── data                      # Corpora in Processed, Generated Sessions Examples, Human-made sessions in Raw
+├── evaluation                # Core Metrics in Utils (RAGAS, Self-BLEU, CG, ...) , Corpora Analysis (Clustering, Stats, ...)
+├── experiments               # Experiment Results
+├── field_adapters            # Metadata adapter for corpora
 ├── grammar
-├── indexes
-├── notes
+├── indexes                   # Sparse and Dense indexes for all Corpora
 ├── prompts
-├── rag
+├── rag                       # RAG system core modules (excl. prompting, field retriever dictionary)
 ├── requirements.txt
-├── scripts
+├── scripts                   # Old scripts using rrf retriever
+├── scripts2                  # Evaluations 
+├── scripts_implementation    # implementation retrievers and prompting strategies
 ├── setup.py
 ├── src
-├── tests
-├── third_party
+├── tests                     # Testing PSA, Synthetic Corpora Generation Components (Grammar), Retrievers
+├── third_party               # Used for Dense Retriever
 └── venv
 
 ```
@@ -53,8 +55,7 @@ $ python3 -m src.grammar_tools.grammar_generator_dedup \
 
 
 # 2. Analyse Corpuses (Diversity, Reliability, Structure)
-
-• statistics: coverage, standard deviation, entropies, distributions, averages, adherence
+• statistics: coverage, standard deviation, entropies, distributions, averages, adherence, ...
 • DBSCAN: clustering visuals
 ```bash
 $ python -m evaluation.corpus_analysis.run_all_analyses --config configs/corpus_analysis/statistics_analysis_config.yaml
@@ -63,63 +64,63 @@ $ python -m evaluation.corpus_analysis.clustering.run_dbscan_clustering --config
 
 
 # 3. Building Sparse and Dense Indexes
+
+## Indexing Synthetic Corpus
 ```bash
 $ python3 scripts/01_build_indexes.py \
     --semantic-build-config configs/indexing/build_semantic_index.yaml \
     --sparse-build-config configs/indexing/build_sparse_index_meta.yaml
 ```
 
-python3 scripts/01_build_indexes.py \
-    --semantic-build-config configs/indexing/build_semantic_index.yaml \
-    --sparse-build-config configs/indexing/build_sparse_index_meta.yaml \
-    --force
-
-python3 scripts/01_build_indexes.py \
+## Indexing Manual Corpus
+```bash
+$ python3 scripts/01_build_indexes.py \
     --semantic-build-config configs/indexing/manual_semantic_index.yaml \
     --sparse-build-config configs/indexing/manual_sparse_index.yaml \
     --force
+```
 
 
 # 4. Generate Sessions with RAG
 
-pick size and topk
+## Generating Session for Reliability and Structure Evaluation
+top k = 10
+temperature = 0.2
 ```bash
 $ python scripts2/00_generate_outputs.py
+```
+
+## Generating Session for Diversity Evaluation
+top k = 10
+temperature = 0.7
+
+```bash
+$ python scripts2/02_generate_outputs_multi.py
 ```
 
 # 5. Evaluate Diversity 
 
 ## SelfBleu + Disctinct-n
-pick json path to file based on size and topk
+
 ```bash
-$ python scripts2/eval_combined_diversity_100.py
+$ python3 scripts2/eval_selfbleu_distinctn_diversity.py
 ```
 
 ## Diversity Index
 ```bash
-python scripts2/eval_diversity_vs_size.py \
-  --inputs experiments/evaluation_sessions_set_k10_size100_samples3_20250907_213941.json \
-          experiments/evaluation_sessions_set_k10_size300_samples3_20250907_220445.json \
-          experiments/evaluation_sessions_set_k10_size500_samples3_20250907_234238.json \
+python3 scripts2/eval_diversity_vs_size.py \
+  --input experiments/master_evaluation_file.json \
   --max-queries 4 \
   --min-samples 3
 ```
 
+## Pairwise LLM Judge
+```bash
+$ python3 scripts2/eval_pairwise_diversity.py --input experiments/master_evaluation_file.json
+```
+
 
 # 6. Evaluate Reliability
-
-python scripts2/eval_reliability_with_ragas.py \
-  --input experiments/sample_query_1/evaluation_sessions_set_k10_size500_20250907_180221.json \
-  --k 10 \
-  --show-per-item \
-  --csv experiments/ragas_scores_size500.csv
-
-python scripts2/eval_reliability_with_ragas.py \
-  --inputs evaluation_sessions_test.json \
-  --k 10 \
-  --by-query \
-  --csv experiments/ragas_scores_all.csv \
-  --plot-dir experiments/
 
 ## one file
 python scripts2/eval_reliability_with_ragas.py \
@@ -128,7 +129,7 @@ python scripts2/eval_reliability_with_ragas.py \
 
 ## many files (different sizes/grammars)
 python scripts2/eval_reliability_with_ragas.py \
-  --inputs experiments/sample_query_1/*.json \
+  --inputs experiments/dynamic_fusion_retrieval/*.json \
   --k 10 --by-query --csv experiments/ragas_scores_all.csv --plot-dir experiments/
 
 ## RAGAS with Raw Corpus
@@ -138,16 +139,23 @@ python scripts2/eval_reliability_with_ragas.py \
 
 ## Plot RAGAS with std
 python scripts2/plot_ragas_with_std.py \
-  --csv experiments/results/ragas_scores_all_1.csv \
+  --csv experiments/ragas/ragas_scores_all_1.csv \
   --out-csv experiments/ragas_agg_with_std_shade.csv \
   --out-dir experiments/plots
 
+# 7. Evaluate Structure
 
+## Completeness Gain for Structure
+```Bash
+$ python3 scripts2/eval_completeness_gain.py
+```
 
+## Programmatic Structure Adherence
+```bash
+$ python3 scripts2/eval_psa_structure.py
+```
 
-python scripts2/eval_diversity_vs_size.py --inputs experiments/evaluation_sessions_set_k10_size300_samples3_20250907_220445.json --min-samples 3 --max-queries 4 --print-buckets --cross-summary
-
-
+# Several Evaluations RunMarkDown
 ```bash
 $ python3 scripts2/eval_pairwise_diversity.py --input experiments/master_evaluation_file.json
 $ python scripts2/eval_reliability_with_ragas.py \

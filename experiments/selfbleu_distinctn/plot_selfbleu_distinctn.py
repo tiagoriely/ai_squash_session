@@ -9,7 +9,7 @@ Curves (one file each):
   3) 'combined_diversity_vs_size.png'   — Combined Diversity Score vs corpus size
 
 Bars (one file each; averaged across sizes):
-  4) 'self_bleu_avg_by_corpus.png'
+  4) 'self_bleu_avg_by_corpus.png'      — with a tighter y-scale for precision
   5) 'distinct_n_avg_by_corpus.png'
   6) 'combined_diversity_avg_by_corpus.png'
 
@@ -17,7 +17,7 @@ Conventions:
 - X-axis (curves): corpus sizes [50, 100, 200, 300, 400, 500]
 - Colours (fixed): balanced=#1f77b4, high_constraint=#ff7f0e, loose=#2ca02c
 - Grammar normalisation: 'high' → 'high_constraint'
-- Use default line thickness and default font sizes.
+- Default line thickness and default font sizes.
 """
 
 from pathlib import Path
@@ -97,8 +97,22 @@ def plot_curve(df: pd.DataFrame, metric_col: str, ylabel: str, title: str, outfi
     plt.close(fig)
 
 
-def plot_bars(means: pd.DataFrame, metric_col: str, pretty: str, outfile: Path) -> None:
-    """Plot a single bar figure (average per corpus). Default Matplotlib styling."""
+def _annotate_bars(ax: plt.Axes, bars, values):
+    """Write numeric values above bars."""
+    for bar, val in zip(bars, values):
+        ax.annotate(
+            f"{val:.3f}" if abs(val) < 1 else f"{val:.2f}",
+            xy=(bar.get_x() + bar.get_width() / 2, bar.get_height()),
+            xytext=(0, 3),
+            textcoords="offset points",
+            ha="center",
+            va="bottom",
+        )
+
+
+def plot_bars(means: pd.DataFrame, metric_col: str, pretty: str, outfile: Path,
+              tighten_scale: bool = False) -> None:
+    """Plot a single bar figure (average per corpus). Optionally tighten y-scale."""
     fig, ax = plt.subplots(figsize=(7, 5))
 
     heights = [
@@ -107,19 +121,28 @@ def plot_bars(means: pd.DataFrame, metric_col: str, pretty: str, outfile: Path) 
         for c in draw_order
     ]
 
-    ax.bar(
-        np.arange(len(draw_order)),
+    x = np.arange(len(draw_order))
+    bars = ax.bar(
+        x,
         heights,
         color=[colour_map[c] for c in draw_order],
         edgecolor="black",
         linewidth=0.6,
     )
 
-    ax.set_xticks(np.arange(len(draw_order)))
+    # Optional: tighter y-scale for better precision (used for Self BLEU)
+    if tighten_scale:
+        ymin, ymax = min(heights), max(heights)
+        pad = 0.01                        # small headroom
+        ax.set_ylim(ymin - pad, ymax + pad)
+
+    ax.set_xticks(x)
     ax.set_xticklabels(draw_order)
     ax.set_ylabel("Average score")
     ax.set_title(f"{pretty} — Average by Corpus")
     ax.grid(True, axis="y", linestyle="--", alpha=0.3)
+
+    _annotate_bars(ax, bars, heights)
 
     fig.tight_layout()
     fig.savefig(outfile, dpi=200, bbox_inches="tight")
@@ -145,9 +168,13 @@ def main() -> None:
 
     # --- Bar plots (averaged across sizes), three separate files
     means = df.groupby("grammar_canon", as_index=False)[metrics].mean()
-    plot_bars(means, col_self_bleu, "Self BLEU", out_self_bleu_bars)
-    plot_bars(means, col_distinct, "Distinct-n", out_distinct_bars)
-    plot_bars(means, col_combined, "Combined Diversity", out_combined_bars)
+
+    # Self BLEU bar plot: tighten y-scale so ~0.03 changes are clearly visible
+    plot_bars(means, col_self_bleu, "Self BLEU", out_self_bleu_bars, tighten_scale=True)
+
+    # Distinct-n and Combined: keep default scaling (distinct-n already fine)
+    plot_bars(means, col_distinct, "Distinct-n", out_distinct_bars, tighten_scale=False)
+    plot_bars(means, col_combined, "Combined Diversity", out_combined_bars, tighten_scale=False)
 
     print("Saved figures:")
     for p in [

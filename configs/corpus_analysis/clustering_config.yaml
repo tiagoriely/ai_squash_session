@@ -1,5 +1,5 @@
 # The size of the corpus to be analysed. This value will be used for all placeholders.
-corpus_size: 50
+corpus_size: 300
 
 # Base directories for input and output.
 embedding_dir: "evaluation/corpus_analysis/embeddings"
