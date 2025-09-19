@@ -1,20 +1,20 @@
 # Repo Overview
 ```text
-├── configs
+├── configs                   # Config files to run codes + Squash Dictionary for Field Retriever
 ├── data                      # Corpora in Processed, Generated Sessions Examples, Human-made sessions in Raw
 ├── evaluation                # Core Metrics in Utils (RAGAS, Self-BLEU, CG, ...) , Corpora Analysis (Clustering, Stats, ...)
 ├── experiments               # Experiment Results
 ├── field_adapters            # Metadata adapter for corpora
-├── grammar
+├── grammar                   # Grammatical Rules and Squash Knowledge Base
 ├── indexes                   # Sparse and Dense indexes for all Corpora
-├── prompts
+├── prompts                   # Former strict Prompts
 ├── rag                       # RAG system core modules (excl. prompting, field retriever dictionary)
 ├── requirements.txt
 ├── scripts                   # Old scripts using rrf retriever
 ├── scripts2                  # Evaluations 
 ├── scripts_implementation    # implementation retrievers and prompting strategies
 ├── setup.py
-├── src
+├── src                       # Synthetic Corpora Generator (Grammar_tools)
 ├── tests                     # Testing PSA, Synthetic Corpora Generation Components (Grammar), Retrievers
 ├── third_party               # Used for Dense Retriever
 └── venv
