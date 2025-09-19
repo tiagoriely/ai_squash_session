@@ -177,25 +177,3 @@ $ python3 scripts2/eval_selfbleu_distinctn_diversity.py
 
 
 
-
-
-## Sparse-only retriever + gpt-4o Generator
-```bash
-$ python scripts/03_run_experiment.py --config configs/retrieval/sparse_retriever.yaml
-```
-
-python scripts/06_run_full_experiment_hybrid_retriever.py --config configs/experiments/dissertation_experiment_config.yaml
-
-
-
-
-# 5. Evaluate Results
-python evaluation/evaluate_results.py \
-  --input-file experiment/results/dissertation_run_sparse_only_v1_20250831_004009.jsonl \
-  --output-file evaluation/results/test_evaluation.jsonl \
-  --grammar-dir grammar/sports/squash/
-
-
-
-
-
