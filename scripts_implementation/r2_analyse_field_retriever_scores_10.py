@@ -1,4 +1,4 @@
-# scripts/analyse_field_retriever.py
+# scripts_implementation/r2_analyse_field_retriever_scores_10.py
 
 import yaml
 import json
@@ -23,8 +23,6 @@ def load_jsonl(path: Path) -> List[Dict[str, Any]]:
     with open(path, 'r', encoding='utf-8') as f:
         return [json.loads(line) for line in f]
 
-
-# New function to get the FieldRetriever
 def get_field_retriever() -> FieldRetriever:
     """Sets up the FieldRetriever for analysis."""
     # 1. Load raw corpus from a defined path
@@ -99,7 +97,6 @@ def analyse_query(retriever: FieldRetriever, query_text: str, query_id: str, que
 
 
 if __name__ == "__main__":
-    # Use the new initialisation function
     field_retriever = get_field_retriever()
 
     # query list

@@ -1,4 +1,4 @@
-# scripts/eval_combined_diversity.py
+# scripts/eval_selfbleu_distinctn_diversity.py
 
 import json
 import pandas as pd
@@ -41,7 +41,7 @@ def run_combined_diversity_evaluation(input_filepath: Path):
         print(f"❌ Error: Input file not found at '{input_filepath}'")
         return []
 
-    # NEW: Extract 'size' from the filename using a regular expression
+    # Extract 'size' from the filename using a regular expression
     filename = input_filepath.name
     size_match = re.search(r'size(\d+)_', filename)
     # Use a default value (e.g., 0) if the pattern isn't found
@@ -157,7 +157,6 @@ if __name__ == "__main__":
         results_df = pd.DataFrame(all_results_aggregator)
         output_csv_path = TARGET_DIR / "diversity_evaluation_summary.csv"
 
-        # Define the desired column order, including the new 'size' column
         column_order = [
             'source_file',
             'grammar_type',

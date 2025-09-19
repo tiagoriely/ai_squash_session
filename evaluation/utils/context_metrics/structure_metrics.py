@@ -206,7 +206,6 @@ def calculate_stc(generated_plan_text: str, user_query: str) -> float:
     else:
         return 0.0
 
-# --- NEW STRUCTURE METRICS ---
 def _is_activity_block_valid(block_content: str) -> bool:
     """
     Determines whether an Activity block contains exactly two exercise entries.

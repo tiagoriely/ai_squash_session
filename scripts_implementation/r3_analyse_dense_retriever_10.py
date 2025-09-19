@@ -1,4 +1,4 @@
-# scripts/analyse_dense_retriever.py
+# scripts_implementation/r3_analyse_dense_retriever_10.py
 
 import yaml
 import json
@@ -20,12 +20,12 @@ import sys
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.append(str(PROJECT_ROOT))
 
-# --- CHANGED: Import SemanticRetriever and the config loader ---
+# --- Import SemanticRetriever and the config loader ---
 from rag.retrieval.semantic_retriever import SemanticRetriever
 from rag.utils import load_and_format_config
 
 
-# --- CHANGED: New function to get the SemanticRetriever ---
+# --- function to get the SemanticRetriever ---
 def get_dense_retriever() -> SemanticRetriever:
     """Sets up the SemanticRetriever for analysis."""
     # 1. Load and format the retriever's specific config file
@@ -55,10 +55,10 @@ def analyse_query(retriever: SemanticRetriever, query_text: str, query_id: str, 
 
     results = retriever.search(query=query_text, top_k=10)
 
-    # --- CHANGED: Look for 'semantic_score' ---
+    # --- Look for 'semantic_score' ---
     scores = np.array([doc.get('semantic_score', 0.0) for doc in results])
 
-    print(f"{'Rank':<5} | {'Doc ID':<12} | {'Semantic Score':<15}")  # CHANGED Label
+    print(f"{'Rank':<5} | {'Doc ID':<12} | {'Semantic Score':<15}")
     print("-" * 45)
     for i, doc in enumerate(results):
         rank, doc_id, score = i + 1, doc.get('id', 'N/A'), scores[i]

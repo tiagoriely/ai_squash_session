@@ -1,4 +1,4 @@
-# scripts/eval05_psa_batch_experiment.py
+# scripts2/eval_psa_structure.py
 
 import yaml
 import json

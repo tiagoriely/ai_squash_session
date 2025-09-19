@@ -1,4 +1,4 @@
-# scripts/gen02_generate_outputs.py
+# scripts2/gen02_generate_outputs.py
 import yaml
 import json
 from pathlib import Path

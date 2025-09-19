@@ -1,4 +1,4 @@
-# scripts2/plot_ragas_with_bands.py
+# scripts2/plot_ragas_with_std.py
 import argparse
 import os
 from pathlib import Path

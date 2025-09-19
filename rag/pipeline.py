@@ -2,7 +2,7 @@
 
 from typing import List, Dict, Callable
 from .retrieval.base_retriever import BaseRetriever
-from .generation.prompt_constructor import PromptConstructor_v2 # Using your new constructor
+from .generation.prompt_constructor import PromptConstructor_v2
 from .generation.generator import Generator
 
 
@@ -43,7 +43,6 @@ class RAGPipeline:
 
         # 2. --- FUSION ---
         if len(self.retrievers) > 1 and self.fusion_strategy:
-            # THE FIX IS ON THIS LINE 👇: Changed 'ranked_lists_map' to 'ranked_lists'
             fused_docs = self.fusion_strategy(ranked_lists=all_ranked_lists_map, query=query)
         else:
             fused_docs = next(iter(all_ranked_lists_map.values()))

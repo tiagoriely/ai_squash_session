@@ -1,4 +1,4 @@
-# scripts/eval05_psa_only_simple_prompt.py
+# scripts_implementation/p1_analyse_light_touch_prompt_with_psa.py
 
 import yaml
 import json

@@ -203,7 +203,6 @@ class DynamicPromptConstructor:
 
         analysis = self._analyse_docs(retrieved_docs)
 
-        # --- New Logic: Infer a Session Focus ---
         # We can create a simple focus based on the query. More advanced logic could go here.
         # For now, we'll let the LLM infer it based on the query and context.
         session_focus = "Inferred from User Request and Context"  # Placeholder for LLM
@@ -211,13 +210,12 @@ class DynamicPromptConstructor:
         # Determine session duration from analysis, fallback to a default if needed.
         session_duration = analysis.get('duration', 45)  # Default to 45 mins
 
-        # Format the context from documents (no change here)
+        # Format the context from documents
         formatted_context = "\n\n".join(
             [f"--- Document {i + 1} (ID: {doc.get('id', 'N/A')}) ---\n" + doc.get("contents", "") for i, doc in
              enumerate(retrieved_docs)]
         )
 
-        # --- Populate the new, more structured template ---
         return self.base_template.format(
             context=formatted_context,
             question=query,

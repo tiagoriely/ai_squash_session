@@ -1,4 +1,4 @@
-# scripts/gen02_generate_outputs.py
+# scripts2/generate_outputs_raw_manual_corpus.py
 import yaml
 import json
 from pathlib import Path
@@ -164,7 +164,7 @@ if __name__ == "__main__":
             # 4. STORE RESULTS in the specified format
             all_generated_results.append({
                 "case_id": f"{grammar}_{CORPUS_SIZE}_{query_id}_k{TOP_K_CONTEXT}",
-                "session_id": f"generated_session_{session_counter:02d}",  # A new unique ID for the generated session
+                "session_id": f"generated_session_{session_counter:02d}",
                 "rag_pipeline": "dynamic_hybrid_rrf_simple_prompt",
                 "query_text": query_text,
                 "retrieved_documents_info": retrieved_ids,

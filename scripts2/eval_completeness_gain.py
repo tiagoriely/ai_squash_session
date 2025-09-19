@@ -1,4 +1,4 @@
-# scripts/eval_completeness_gain.py (Corrected and Extended)
+# scripts2/eval_completeness_gain.py
 import yaml
 import json
 from pathlib import Path

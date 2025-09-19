@@ -325,7 +325,7 @@ class FieldRetriever(BaseRetriever):
         if user_val in applicable_levels:
             return base_weight * 0.75  # Penalise slightly for not being the recommended level
 
-        # --- Step 3: Fuzzy Match Fallback (The new addition) ---
+        # --- Step 3: Fuzzy Match Fallback ---
         # Get fuzzy matching parameters from the config
         threshold = config.get("similarity_threshold", 85)
         fuzzy_penalty = config.get("fuzzy_penalty_multiplier", 0.6)  # Apply a penalty for fuzzy matches
